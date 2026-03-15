@@ -1,0 +1,34 @@
+# Official Video Sources - Mixed Distribution
+
+## Current Verified Google Cloud Video IDs (6):
+- G2fqAlgmoPo - Introduction to Generative AI
+- zizonToFXDs - Introduction to Large Language Models
+- w_3L1Bf2P_g - Introduction to Responsible AI
+- Hnvb9b7a_Ps - Transformer Models and BERT
+- nE2skSRWTTs - Attention Mechanism
+- r9QjkdSJZ2g - Image Generation with AI
+
+## Strategy:
+Since we need 27 unique videos and only have 6 verified GC IDs, we'll:
+1. Use these 6 GC videos uniquely across personas
+2. Need 21 more unique video IDs
+3. Sources needed: More Google Cloud + Microsoft + OpenAI + Anthropic
+
+## Next Steps:
+- Find additional Google Cloud official course video IDs
+- Verify Microsoft official video IDs (Azure AI, Copilot tutorials)
+- Verify OpenAI official video IDs (GPT tutorials, OpenAI channel)
+- Verify Anthropic official video IDs (Claude tutorials, Anthropic channel)
+
+## Persona Distribution Plan:
+- General AI: Keep GC (3 videos)
+- Marketing: GC + Microsoft + OpenAI (1 each)
+- Analytics: GC + Microsoft + Anthropic (1 each)
+- Copywriting: OpenAI + Microsoft + GC (1 each)
+- Product: Microsoft + GC + Anthropic (1 each)
+- Data Science: GC + Microsoft + OpenAI (1 each)
+- Email: Microsoft + Anthropic + GC (1 each)
+- Customer Journey: Anthropic + Microsoft + GC (1 each)
+- Database Marketing: Microsoft + GC + OpenAI (1 each)
+
+This ensures variety while maintaining uniqueness per persona.

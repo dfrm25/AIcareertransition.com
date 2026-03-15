@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI 201 Advanced - Master AI agents, automation, app building, and advanced prompt engineering. Level up your AI skills with cutting-edge tools and techniques.">
+  <meta name="keywords" content="AI 201, advanced AI, AI agents, automation, Replit, Lovable, AI app building, advanced prompting">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 201 - Advanced AI Skills | AI Career Transition">
+  <meta property="og:description" content="Master AI agents, automation workflows, and build AI-powered applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aicareertransition.com/201.html">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 201 - Advanced AI Skills | AI Career Transition">
+  <meta name="twitter:description" content="Master AI agents, automation workflows, and build AI-powered applications.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aicareertransition.com/201.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>AI 201 - Advanced AI Skills | AI Career Transition</title>
+  
+  <!-- Structured Data - Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "AI 201 - Advanced Skills",
+    "description": "Build AI agents, automate workflows, create custom applications. Covers Replit, Lovable, Cursor, Zapier, Make, LangChain, and advanced prompting techniques.",
+    "provider": {"@type": "Organization", "name": "AI Career Transition", "url": "https://aicareertransition.com"},
+    "url": "https://aicareertransition.com/201.html",
+    "isAccessibleForFree": true,
+    "audience": {"@type": "Audience", "audienceType": "Intermediate to Advanced"}
+  }
+  </script>
+  
+  <!-- Structured Data - BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicareertransition.com/"}, {"@type": "ListItem", "position": 2, "name": "AI 201", "item": "https://aicareertransition.com/201.html"}]
+  }
+  </script>
+  
+  <!-- Structured Data - FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Do I need coding experience for AI 201?", "acceptedAnswer": {"@type": "Answer", "text": "No. Tools like Lovable and Bolt.new let you describe what you want and generate apps. Replit has an AI code assistant. Start with no-code, then pick up basics if you want to go deeper."}},
+      {"@type": "Question", "name": "What's the difference between AI 101 and AI 201?", "acceptedAnswer": {"@type": "Answer", "text": "101 = use AI tools (ChatGPT, Claude, etc.) for daily tasks. 201 = build things (apps, automations, agents) and integrate AI into workflows."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo" aria-label="AI Career Transition Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/>
+          <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+          <circle cx="18" cy="22" r="3" fill="white"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36">
+              <stop stop-color="#2563eb"/>
+              <stop offset="1" stop-color="#1d4ed8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AI Career Transition</span>
+      </a>
+      
+      <div class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="101.html" class="navbar-link">AI 101</a>
+        <a href="201.html" class="navbar-link active">AI 201</a>
+        <a href="prompts.html" class="navbar-link">Prompt Library</a>
+        <a href="blog.html" class="navbar-link">Blog</a>
+        <a href="apps.html" class="navbar-link">Apps</a>
+        <a href="tools-comparison.html" class="navbar-link">Compare Tools</a>
+        <a href="feedback.html" class="navbar-link">Feedback</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="index.html#quiz" class="btn btn-primary">Take Quiz</a>
+      </div>
+      
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
+      <div class="container">
+        <div class="hero-content animate-on-scroll">
+          <div class="hero-badge" style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); color: #10b981;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Advanced Learning
+          </div>
+          
+          <h1 class="hero-title">
+            AI 201<br>
+            <span class="text-gradient-forest">Advanced Skills</span>
+          </h1>
+          
+          <p class="hero-description">
+            Go beyond the basics. Build AI agents, automate workflows, create custom applications, and master advanced prompting techniques. Become an AI power user.
+          </p>
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Last updated February 2026</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Quick Navigation -->
+    <section class="section" style="padding-top: 0; padding-bottom: var(--space-2xl);">
+      <div class="container">
+        <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+          <a href="#advanced-tools" class="btn btn-secondary">Advanced Tools</a>
+          <a href="#ai-assistant" class="btn btn-secondary">AI Career Assistant</a>
+          <a href="#advanced-videos" class="btn btn-secondary">Learning Videos</a>
+          <a href="#advanced-certs" class="btn btn-secondary">Certifications</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Advanced AI Tools Section -->
+    <section id="advanced-tools" class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Advanced <span class="text-gradient-forest">AI Tools</span></h2>
+          <p>Tools for building, automating, and creating AI-powered solutions. Level up from consumer to creator.</p>
+        </div>
+        
+        <!-- App Builders -->
+        <h3 class="mb-lg" style="font-size: 1.125rem; color: var(--color-text-secondary); font-weight: 600;">AI App Builders</h3>
+        <div class="grid grid-4 mb-xl animate-on-scroll">
+          <a href="https://replit.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #f26207; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="tool-card-name">Replit</div>
+            <div class="tool-card-category">AI Code Generation & Hosting</div>
+          </a>
+          
+          <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="tool-card-name">Lovable</div>
+            <div class="tool-card-category">AI Full-Stack App Builder</div>
+          </a>
+          
+          <a href="https://bolt.new" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #000; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="tool-card-name">Bolt.new</div>
+            <div class="tool-card-category">AI Web App Generator</div>
+          </a>
+          
+          <a href="https://v0.dev" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #000; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">v0</div>
+            <div class="tool-card-name">v0 by Vercel</div>
+            <div class="tool-card-category">AI UI Component Builder</div>
+          </a>
+        </div>
+        
+        <!-- AI Agents (ChatGPT, Gemini, Claude) -->
+        <h3 class="mb-lg" style="font-size: 1.125rem; color: var(--color-text-secondary); font-weight: 600;">AI Agents — Research & Multi-Step Workflows</h3>
+        <p style="max-width: 700px; margin-bottom: var(--space-lg); font-size: 0.9375rem; color: var(--color-text-secondary);">Agents can search the web, run tools, and complete multi-step tasks. Use them for research, reports, and automation without coding.</p>
+        <div class="grid grid-4 mb-xl animate-on-scroll">
+          <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">ChatGPT</div>
+            <div class="tool-card-category">Operator • Computer-Use Agent</div>
+          </a>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini logo" class="tool-card-logo">
+            <div class="tool-card-name">Gemini</div>
+            <div class="tool-card-category">Agent Mode • Chrome Integration</div>
+          </a>
+          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="images/claude-logo.png" alt="Claude logo" class="tool-card-logo" style="background: #fff; padding: 8px;">
+            <div class="tool-card-name">Claude</div>
+            <div class="tool-card-category">Projects • Long Context & Docs</div>
+          </a>
+          <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="images/copilot-logo-official.svg" alt="Copilot logo" class="tool-card-logo" style="background: transparent; padding: 8px;">
+            <div class="tool-card-name">Microsoft Copilot</div>
+            <div class="tool-card-category">M365 Integration • Task Automation</div>
+          </a>
+        </div>
+        
+        <!-- Automation & Agents -->
+        <h3 class="mb-lg" style="font-size: 1.125rem; color: var(--color-text-secondary); font-weight: 600;">Automation & Agent Frameworks</h3>
+        <div class="grid grid-4 mb-xl animate-on-scroll">
+          <a href="https://zapier.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #ff4a00; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="tool-card-name">Zapier</div>
+            <div class="tool-card-category">Workflow Automation</div>
+          </a>
+          
+          <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #6d4aff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">M</div>
+            <div class="tool-card-name">Make</div>
+            <div class="tool-card-category">Visual Automation</div>
+          </a>
+          
+          <a href="https://n8n.io" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #ea4b71; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: bold; color: #fff;">n8n</div>
+            <div class="tool-card-name">n8n</div>
+            <div class="tool-card-category">Open-Source Automation</div>
+          </a>
+          
+          <a href="https://www.langchain.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #1c3c3c; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="tool-card-name">LangChain</div>
+            <div class="tool-card-category">AI Agent Framework • MCP Support</div>
+          </a>
+        </div>
+        
+        <!-- AI Development -->
+        <h3 class="mb-lg" style="font-size: 1.125rem; color: var(--color-text-secondary); font-weight: 600;">AI Development & APIs</h3>
+        <div class="grid grid-4 mb-3xl animate-on-scroll">
+          <a href="https://cursor.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #000; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="tool-card-name">Cursor</div>
+            <div class="tool-card-category">AI-Powered Code Editor</div>
+          </a>
+          <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">OpenAI API</div>
+            <div class="tool-card-category">GPT & DALL-E APIs</div>
+          </a>
+          
+          <a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg" alt="Anthropic logo" class="tool-card-logo" style="background: #fff; padding: 10px;">
+            <div class="tool-card-name">Anthropic API</div>
+            <div class="tool-card-category">Claude API Access</div>
+          </a>
+          
+          <a href="https://ai.google.dev" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Google AI logo" class="tool-card-logo">
+            <div class="tool-card-name">Google AI Studio</div>
+            <div class="tool-card-category">Gemini API</div>
+          </a>
+          
+          <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #ffcc00; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🤗</div>
+            <div class="tool-card-name">Hugging Face</div>
+            <div class="tool-card-category">Open-Source AI Models</div>
+          </a>
+        </div>
+        
+        <!-- Video & Audio AI -->
+        <h3 class="mb-lg" style="font-size: 1.125rem; color: var(--color-text-secondary); font-weight: 600;">Video & Audio AI</h3>
+        <div class="grid grid-4 animate-on-scroll">
+          <a href="https://runwayml.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #00d4ff, #0066ff); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">R</div>
+            <div class="tool-card-name">Runway</div>
+            <div class="tool-card-category">AI Video Generation</div>
+          </a>
+          
+          <a href="https://www.descript.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #1a1a2e; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">D</div>
+            <div class="tool-card-name">Descript</div>
+            <div class="tool-card-category">AI Video/Audio Editing</div>
+          </a>
+          
+          <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #000; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: bold; color: #fff;">11</div>
+            <div class="tool-card-name">ElevenLabs</div>
+            <div class="tool-card-category">AI Voice Synthesis</div>
+          </a>
+          
+          <a href="https://www.heygen.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">H</div>
+            <div class="tool-card-name">HeyGen</div>
+            <div class="tool-card-category">AI Avatar Videos</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- AI Career Assistant Section -->
+    <section id="ai-assistant" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>AI Career <span class="text-gradient-forest">Assistant</span></h2>
+          <p>Ask questions about how to use AI in your specific role. Get personalized guidance and examples.</p>
+        </div>
+        
+        <div class="animate-on-scroll">
+          <div class="chat-container">
+            <div class="chat-header">
+              <div class="chat-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="chat-info">
+                <h4>AI Career Coach</h4>
+                <p>Online • Ready to help</p>
+              </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+              <div class="chat-message assistant">
+                <p>👋 Hi! I'm your AI Career Coach. I can help you understand how to apply AI in your specific field.</p>
+                <p style="margin-top: 8px;">Try asking me questions like:</p>
+                <ul style="margin-top: 8px; padding-left: 20px; list-style: disc;">
+                  <li>"How can I use AI for email marketing campaigns?"</li>
+                  <li>"What AI tools should a data analyst learn?"</li>
+                  <li>"How can product managers use AI for user research?"</li>
+                  <li>"What agent workflows help analysts cut reporting time?"</li>
+                  <li>"How do I use ChatGPT's search to research competitors?"</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="chat-input-container">
+              <input type="text" class="chat-input" id="chat-input" placeholder="Ask about AI in your field..." aria-label="Chat message input">
+              <button class="chat-send" id="chat-send" aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- AI Implementation Frameworks -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>AI Implementation <span class="text-gradient-forest">Frameworks</span></h2>
+          <p>Structured approaches to implementing AI in your workflows. Start with these proven frameworks.</p>
+        </div>
+        
+        <div class="grid grid-2 animate-on-scroll" style="gap: var(--space-xl); max-width: 1200px; margin: 0 auto;">
+          <div class="card" style="padding: var(--space-xl);">
+            <div style="width: 48px; height: 48px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: var(--radius-lg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <h3 style="margin-bottom: var(--space-sm); font-size: 1.125rem;">The AI-First Workflow</h3>
+            <ol style="list-style: decimal; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Identify Repetitive Tasks:</strong> List tasks you do daily/weekly that follow patterns</li>
+              <li><strong>Map to AI Capabilities:</strong> Match tasks to AI strengths (generation, analysis, summarization)</li>
+              <li><strong>Create Templates:</strong> Build reusable prompts/workflows for common scenarios</li>
+              <li><strong>Iterate & Refine:</strong> Test, measure impact, and improve continuously</li>
+            </ol>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <div style="width: 48px; height: 48px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: var(--radius-lg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-primary)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 style="margin-bottom: var(--space-sm); font-size: 1.125rem;">The 80/20 AI Strategy</h3>
+            <ol style="list-style: decimal; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Start with Quick Wins:</strong> Focus on tasks where AI delivers 80% of value in 20% of time</li>
+              <li><strong>Automate First Drafts:</strong> Use AI for initial versions, then refine manually</li>
+              <li><strong>Scale What Works:</strong> Once proven, expand to similar tasks across team/department</li>
+              <li><strong>Measure ROI:</strong> Track time saved, quality improvements, and business impact</li>
+            </ol>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <div style="width: 48px; height: 48px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: var(--radius-lg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-primary)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <h3 style="margin-bottom: var(--space-sm); font-size: 1.125rem;">AI-Assisted Analysis</h3>
+            <ol style="list-style: decimal; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Data Collection:</strong> Use AI to gather and organize information from multiple sources</li>
+              <li><strong>Pattern Recognition:</strong> Let AI identify trends, anomalies, and insights you might miss</li>
+              <li><strong>Hypothesis Generation:</strong> AI suggests possible explanations and next steps</li>
+              <li><strong>Human Validation:</strong> You verify, refine, and act on AI-discovered insights</li>
+            </ol>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <div style="width: 48px; height: 48px; margin: 0 auto var(--space-md); display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: var(--radius-lg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-primary)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 style="margin-bottom: var(--space-sm); font-size: 1.125rem;">AI Content Pipeline</h3>
+            <ol style="list-style: decimal; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Ideation:</strong> AI generates topic ideas and angles based on audience/purpose</li>
+              <li><strong>Outlining:</strong> Create comprehensive structure with AI assistance</li>
+              <li><strong>Drafting:</strong> AI produces first draft from outline and brief</li>
+              <li><strong>Enhancement:</strong> You add expertise, personality, and brand voice</li>
+              <li><strong>Optimization:</strong> AI suggests improvements for clarity, SEO, and engagement</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Real-World Case Studies -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Real-World <span class="text-gradient-forest">Case Studies</span></h2>
+          <p>See how professionals are using AI to transform their work. Learn from their strategies and results.</p>
+        </div>
+        
+        <div class="accordion animate-on-scroll" style="max-width: 900px; margin: 0 auto;">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Marketing: 10x Email Campaign Performance with AI Personalization</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <p><strong>Challenge:</strong> Email marketing team spending 20+ hours per week on campaign creation, low engagement rates (12% open, 2% click-through)</p>
+                <p><strong>AI Solution:</strong></p>
+                <ul style="list-style: disc; padding-left: 20px; margin: var(--space-md) 0;">
+                  <li>Used ChatGPT to generate 30+ subject line variations per campaign</li>
+                  <li>Implemented dynamic content blocks using HubSpot AI based on subscriber behavior</li>
+                  <li>Automated personalized product recommendations using AI analysis of purchase history</li>
+                  <li>Created A/B testing matrix with AI-generated variations</li>
+                </ul>
+                <p><strong>Results:</strong> 340% increase in open rates (12% → 41%), 560% increase in click-through rates (2% → 11.2%), 15 hours saved per week</p>
+                <p><strong>Tools Used:</strong> ChatGPT, HubSpot AI, Zapier</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Analytics: Automated Weekly Reports in Minutes Instead of Days</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <p><strong>Challenge:</strong> Data analyst spending 2-3 days weekly creating executive dashboards and narrative summaries</p>
+                <p><strong>AI Solution:</strong></p>
+                <ul style="list-style: disc; padding-left: 20px; margin: var(--space-md) 0;">
+                  <li>Built SQL query templates using Claude for common report needs</li>
+                  <li>Created automated pipeline: Data extraction → AI analysis → Narrative generation</li>
+                  <li>Used ChatGPT to write executive summaries from raw metrics</li>
+                  <li>Integrated AI insights directly into Tableau dashboards</li>
+                </ul>
+                <p><strong>Results:</strong> Report creation time reduced from 16 hours to 1.5 hours (90% reduction), insights surfaced that were previously missed</p>
+                <p><strong>Tools Used:</strong> Claude, ChatGPT, Python + OpenAI API, Tableau</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Product: User Research Analysis in Hours Instead of Weeks</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <p><strong>Challenge:</strong> Product team conducting 20+ user interviews monthly, taking 2-3 weeks to synthesize insights into actionable PRDs</p>
+                <p><strong>AI Solution:</strong></p>
+                <ul style="list-style: disc; padding-left: 20px; margin: var(--space-md) 0;">
+                  <li>Uploaded interview transcripts to Claude for instant theme extraction</li>
+                  <li>Used AI to generate user personas based on interview patterns</li>
+                  <li>Created PRD templates that AI could populate from research findings</li>
+                  <li>Automated competitive analysis by feeding AI competitor reviews and features</li>
+                </ul>
+                <p><strong>Results:</strong> Research-to-PRD timeline reduced from 3 weeks to 3 days, more comprehensive insights captured</p>
+                <p><strong>Tools Used:</strong> Claude, Otter.ai (transcription), ChatGPT</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Content: 10x Content Output While Improving Quality</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <p><strong>Challenge:</strong> Content team producing 4 blog posts monthly, struggling with ideation and first drafts</p>
+                <p><strong>AI Solution:</strong></p>
+                <ul style="list-style: disc; padding-left: 20px; margin: var(--space-md) 0;">
+                  <li>Used ChatGPT for topic ideation based on SEO data and audience interests</li>
+                  <li>Created comprehensive outlines, then expanded to full drafts</li>
+                  <li>Implemented AI-assisted editing for clarity and SEO optimization</li>
+                  <li>Generated social media variations for each blog post</li>
+                </ul>
+                <p><strong>Results:</strong> Output increased from 4 to 20 posts monthly, SEO performance improved 45%, time per post reduced by 60%</p>
+                <p><strong>Tools Used:</strong> ChatGPT, Surfer SEO, Grammarly AI</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Use Cases by Role -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>AI Use Cases <span class="text-gradient-forest">By Role</span></h2>
+          <p>Practical examples of how AI can transform work in your field.</p>
+        </div>
+        
+        <div class="accordion animate-on-scroll" style="max-width: 800px; margin: 0 auto;">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Marketing & Digital Marketing</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <ul style="list-style: disc; padding-left: 20px;">
+                  <li><strong>Campaign Creation:</strong> Use AI to generate ad copy variations, A/B test ideas, and creative concepts</li>
+                  <li><strong>Audience Segmentation:</strong> Leverage AI for predictive analytics and customer clustering</li>
+                  <li><strong>Content Calendar:</strong> Generate content ideas and scheduling recommendations</li>
+                  <li><strong>Performance Analysis:</strong> Use AI to identify patterns in campaign data and suggest optimizations</li>
+                  <li><strong>Personalization:</strong> Create dynamic content that adapts to user behavior</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Copywriting & Content Creation</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <ul style="list-style: disc; padding-left: 20px;">
+                  <li><strong>First Drafts:</strong> Use AI to overcome writer's block and generate initial drafts</li>
+                  <li><strong>Headline Variations:</strong> Generate dozens of headline options for testing</li>
+                  <li><strong>Tone Adaptation:</strong> Rewrite content for different audiences or channels</li>
+                  <li><strong>SEO Optimization:</strong> Get AI suggestions for keywords and content structure</li>
+                  <li><strong>Editing & Proofreading:</strong> Use AI for grammar, clarity, and style improvements</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Analytics & Data Science</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <ul style="list-style: disc; padding-left: 20px;">
+                  <li><strong>Data Cleaning:</strong> Use AI to identify and fix data quality issues</li>
+                  <li><strong>Code Generation:</strong> Generate Python/SQL code from natural language descriptions</li>
+                  <li><strong>Insight Discovery:</strong> Let AI surface hidden patterns in your data</li>
+                  <li><strong>Report Writing:</strong> Automatically generate narrative summaries from data</li>
+                  <li><strong>Predictive Models:</strong> Build forecasting models with AI assistance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Email Marketing & CRM</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <ul style="list-style: disc; padding-left: 20px;">
+                  <li><strong>Subject Line Testing:</strong> Generate and test multiple subject line variations</li>
+                  <li><strong>Personalization at Scale:</strong> Create dynamic content blocks for different segments</li>
+                  <li><strong>Send Time Optimization:</strong> Use AI to predict optimal send times per recipient</li>
+                  <li><strong>Journey Mapping:</strong> Design automated customer journeys with AI suggestions</li>
+                  <li><strong>Win-Back Campaigns:</strong> Identify at-risk customers and generate re-engagement content</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Product Management</span>
+              <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body">
+                <ul style="list-style: disc; padding-left: 20px;">
+                  <li><strong>User Research:</strong> Analyze survey responses and interview transcripts with AI</li>
+                  <li><strong>PRD Writing:</strong> Generate product requirement documents from feature ideas</li>
+                  <li><strong>Competitive Analysis:</strong> Use AI to summarize competitor features and positioning</li>
+                  <li><strong>Roadmap Planning:</strong> Get AI suggestions for feature prioritization</li>
+                  <li><strong>User Story Generation:</strong> Create detailed user stories and acceptance criteria</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Advanced Learning Videos -->
+    <section id="advanced-videos" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Advanced <span class="text-gradient-forest">Video Tutorials</span></h2>
+          <p>Level up with advanced AI techniques from official sources.</p>
+        </div>
+        
+        <div class="grid grid-3 animate-on-scroll">
+          <a href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+            <div class="video-card-thumbnail">
+              <img src="https://i.ytimg.com/vi/G2fqAlgmoPo/maxresdefault.jpg" alt="Advanced Generative AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/G2fqAlgmoPo/hqdefault.jpg'">
+              <div class="video-card-play-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                <span>Watch on YouTube</span>
+              </div>
+            </div>
+            <div class="video-card-content">
+              <div class="video-card-source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                Google Cloud
+              </div>
+              <h4 class="video-card-title">Advanced Generative AI Concepts</h4>
+              <p class="video-card-description">Google Cloud's official course on generative AI for advanced practitioners.</p>
+            </div>
+          </a>
+          
+          <a href="https://www.youtube.com/watch?v=zizonToFXDs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+            <div class="video-card-thumbnail">
+              <img src="https://i.ytimg.com/vi/zizonToFXDs/maxresdefault.jpg" alt="Advanced LLM Applications" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/zizonToFXDs/hqdefault.jpg'">
+              <div class="video-card-play-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                <span>Watch on YouTube</span>
+              </div>
+            </div>
+            <div class="video-card-content">
+              <div class="video-card-source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                Google Cloud
+              </div>
+              <h4 class="video-card-title">Building with Large Language Models</h4>
+              <p class="video-card-description">Google Cloud's deep dive into advanced LLM applications and deployment.</p>
+            </div>
+          </a>
+          
+          <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+            <div class="video-card-thumbnail">
+              <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Enterprise AI Governance" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg'">
+              <div class="video-card-play-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                <span>Watch on YouTube</span>
+              </div>
+            </div>
+            <div class="video-card-content">
+              <div class="video-card-source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                Google Cloud
+              </div>
+              <h4 class="video-card-title">Enterprise AI Governance</h4>
+              <p class="video-card-description">Google Cloud's guide to responsible AI implementation at enterprise scale.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Advanced Certifications -->
+    <section id="advanced-certs" class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Advanced <span class="text-gradient-forest">Certifications</span></h2>
+          <p>Professional certifications to validate your advanced AI skills.</p>
+        </div>
+        
+        <div class="grid grid-2 animate-on-scroll">
+          <a href="https://www.coursera.org/professional-certificates/google-cloud-machine-learning-engineer" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud logo" class="cert-card-logo">
+            <div class="cert-card-content">
+              <div class="cert-card-provider">Google Cloud • Coursera</div>
+              <div class="cert-card-title">Machine Learning Engineer Professional Certificate</div>
+              <div class="cert-card-meta">
+                <span>🕐 6 months</span>
+                <span>📜 Professional Certificate</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft logo" class="cert-card-logo">
+            <div class="cert-card-content">
+              <div class="cert-card-provider">Microsoft</div>
+              <div class="cert-card-title">Azure AI Engineer Associate (AI-102)</div>
+              <div class="cert-card-meta">
+                <span>🎯 Intermediate</span>
+                <span>📜 Industry Certification</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://aws.amazon.com/certification/certified-machine-learning-specialty/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+            <div class="cert-card-logo" style="background: #232f3e; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <span style="color: #ff9900; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.05em;">AWS</span>
+            </div>
+            <div class="cert-card-content">
+              <div class="cert-card-provider">Amazon Web Services</div>
+              <div class="cert-card-title">AWS Certified Machine Learning - Specialty</div>
+              <div class="cert-card-meta">
+                <span>🎯 Advanced</span>
+                <span>📜 Specialty Certification</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://www.coursera.org/professional-certificates/ai-product-management" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+            <div class="cert-card-logo" style="background: #012169; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <span style="color: #fff; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.05em;">DUKE</span>
+            </div>
+            <div class="cert-card-content">
+              <div class="cert-card-provider">Duke University • Coursera</div>
+              <div class="cert-card-title">AI Product Management Specialization</div>
+              <div class="cert-card-meta">
+                <span>🕐 4 months</span>
+                <span>📜 Specialization Certificate</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://www.cloudskillsboost.google/paths/183" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud logo" class="cert-card-logo">
+            <div class="cert-card-content">
+              <div class="cert-card-provider">Google Cloud</div>
+              <div class="cert-card-title">Generative AI for Developers Learning Path</div>
+              <div class="cert-card-meta">
+                <span>🕐 10+ hours</span>
+                <span>📜 Skill Badges</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://www.deeplearning.ai/courses/generative-ai-with-llms/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+            <div class="cert-card-logo" style="background: #081e42; display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <span style="color: #fff; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em;">DeepLearning.AI</span>
+            </div>
+            <div class="cert-card-content">
+              <div class="cert-card-provider">DeepLearning.AI + AWS • Coursera</div>
+              <div class="cert-card-title">Generative AI with Large Language Models</div>
+              <div class="cert-card-meta">
+                <span>🕐 3 weeks</span>
+                <span>📜 Certificate Available</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Prompt Templates Library -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Ready-to-Use <span class="text-gradient-forest">Prompt Templates</span></h2>
+          <p>Copy these proven prompts and customize them for your needs. Start implementing AI workflows today.</p>
+        </div>
+        
+        <div class="grid grid-2 animate-on-scroll" style="gap: var(--space-lg); max-width: 1100px; margin: 0 auto;">
+          <div class="card" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Email Campaign Creator</h3>
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+              "Create a 5-email onboarding sequence for [product/service] targeting [audience]. Each email should:<br>
+              • Focus on a specific stage of the customer journey<br>
+              • Include a clear CTA<br>
+              • Be personalized based on [customer data points]<br>
+              • Use [tone/style]<br>
+              Generate subject lines and preview text for each."
+            </div>
+            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude, Jasper</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Data Analysis Report</h3>
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+              "Analyze this [dataset/metrics]. Provide:<br>
+              • Key insights and patterns<br>
+              • Anomalies or outliers worth investigating<br>
+              • Actionable recommendations<br>
+              • Executive summary (2 paragraphs)<br>
+              • Detailed analysis with supporting data points"
+            </div>
+            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: Claude (can upload files), ChatGPT, NotebookLM</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Customer Journey Mapping</h3>
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+              "Design a comprehensive customer journey for [industry/company] from awareness to post-purchase. Include:<br>
+              • Touchpoints at each stage<br>
+              • Pain points and opportunities<br>
+              • AI-powered solutions for each stage<br>
+              • Specific tools and tactics<br>
+              • Measurement KPIs"
+            </div>
+            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Content Strategy Generator</h3>
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+              "Create a 30-day content calendar for [topic/industry] including:<br>
+              • Blog post titles (SEO-optimized)<br>
+              • Social media post ideas<br>
+              • Email newsletter topics<br>
+              • Video content concepts<br>
+              • Content themes and messaging"
+            </div>
+            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude, Jasper</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">User Research Synthesis</h3>
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+              "Analyze these [interview transcripts/survey responses]. Extract:<br>
+              • Common themes and patterns<br>
+              • Pain points prioritized by frequency<br>
+              • User personas with key characteristics<br>
+              • Feature requests and priorities<br>
+              • Quotes that support insights"
+            </div>
+            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: Claude (best for analysis), ChatGPT</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">PRD Generator</h3>
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+              "Create a Product Requirements Document for [feature/product] including:<br>
+              • Problem statement and user needs<br>
+              • Success metrics and KPIs<br>
+              • Feature specifications<br>
+              • User stories with acceptance criteria<br>
+              • Technical considerations<br>
+              • Go-to-market plan"
+            </div>
+            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-2xl animate-on-scroll">
+          <a href="prompts.html" class="btn btn-primary btn-lg">
+            Browse 200+ More Prompts
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Next Steps -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="card animate-on-scroll" style="text-align: center; max-width: 800px; margin: 0 auto; padding: var(--space-3xl);">
+          <h2 style="margin-bottom: var(--space-lg);">Put Your Skills Into <span class="text-gradient-forest">Practice</span></h2>
+          <p style="font-size: 1.125rem; margin-bottom: var(--space-2xl);">
+            Now that you have advanced AI knowledge, it's time to apply it. Start with one use case, measure results, then expand. Explore our prompt library for ready-to-use templates, or check out AI apps built by our community.
+          </p>
+          <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+            <a href="prompts.html" class="btn btn-primary btn-lg">
+              Explore Prompts
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apps.html" class="btn btn-secondary btn-lg">View Apps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+              <circle cx="18" cy="22" r="3" fill="white"/>
+              <defs>
+                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="36" y2="36">
+                  <stop stop-color="#2563eb"/>
+                  <stop offset="1" stop-color="#1d4ed8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>AI Career Transition</span>
+          </div>
+          <p>Empowering professionals to master AI skills and future-proof their careers.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Learn</h4>
+          <div class="footer-links">
+            <a href="101.html">AI 101 - Fundamentals</a>
+            <a href="201.html">AI 201 - Advanced</a>
+            <a href="prompts.html">Prompt Library</a>
+            <a href="blog.html">Blog & Tips</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="apps.html">AI Apps Showcase</a>
+            <a href="tools-comparison.html">Compare AI Tools</a>
+            <a href="#advanced-certs">Certifications</a>
+            <a href="#advanced-videos">Video Tutorials</a>
+            <a href="#advanced-tools">AI Tools</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="feedback.html">Give Feedback</a>
+            <a href="feedback.html#feature">Suggest Features</a>
+            <a href="feedback.html#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI Career Transition. All rights reserved.</p>
+        <p>Built for the AI-powered future.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Chat Functionality Script -->
+  <script src="js/main.js"></script>
+  <script>
+    // Enhanced AI Career Coach with comprehensive knowledge base
+    document.getElementById('chat-send').addEventListener('click', sendMessage);
+    document.getElementById('chat-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') sendMessage();
+    });
+    
+    // Comprehensive knowledge base
+    const knowledgeBase = {
+      customerJourney: {
+        keywords: ['customer journey', 'customer experience', 'cx', 'user journey', 'travel', 'cruise', 'tourism', 'hospitality', 'carnival', 'royal caribbean', 'costa', 'hotel', 'airline'],
+        response: function(context) {
+          const industry = this.detectIndustry(context);
+          return `<p><strong>🎯 AI-Powered Customer Journey Optimization for ${industry}</strong></p>
+          
+<p><strong>1. Pre-Booking Journey (Awareness & Consideration)</strong></p>
+<ul>
+<li><strong>Personalized Content Generation:</strong> Use ChatGPT or Claude to create dynamic landing pages and email campaigns tailored to user behavior (e.g., "Based on your search for Caribbean cruises, here are 5 perfect itineraries...")</li>
+<li><strong>AI Chatbots:</strong> Deploy intelligent chatbots using Intercom, Drift, or custom GPT-powered assistants to answer booking questions 24/7, reducing abandonment</li>
+<li><strong>Predictive Recommendations:</strong> Use AI to analyze search patterns and suggest complementary experiences (excursions, spa packages, specialty dining)</li>
+<li><strong>Dynamic Pricing Optimization:</strong> Tools like Priceline's AI can optimize pricing based on demand patterns, competitor pricing, and customer segments</li>
+</ul>
+
+<p><strong>2. Booking & Onboarding</strong></p>
+<ul>
+<li><strong>Smart Form Completion:</strong> Use AI to auto-fill booking forms from previous interactions or CRM data</li>
+<li><strong>Personalized Upsells:</strong> AI analyzes booking details to suggest relevant add-ons (e.g., "86% of guests booking balcony cabins also enjoy specialty dining")</li>
+<li><strong>Automated Onboarding Emails:</strong> Create personalized email sequences using Jasper AI or ChatGPT with specific itinerary details, packing lists, and local insights</li>
+<li><strong>Virtual Room/Cabin Tours:</strong> Use AI-generated images (Midjourney/DALL-E) to show cabin categories with personalized decorations based on preferences</li>
+</ul>
+
+<p><strong>3. Pre-Trip Engagement</strong></p>
+<ul>
+<li><strong>AI Content Calendars:</strong> Generate countdown emails, destination guides, and packing checklists using Claude or ChatGPT</li>
+<li><strong>Sentiment Analysis:</strong> Monitor social media mentions and reviews to proactively address concerns before travel</li>
+<li><strong>Dynamic Itinerary Builder:</strong> Use AI to create personalized daily schedules based on guest preferences, dietary restrictions, and activity level</li>
+<li><strong>WhatsApp/Text Automation:</strong> Set up AI-powered chatbots for last-minute questions and changes using platforms like Twilio + OpenAI</li>
+</ul>
+
+<p><strong>4. During Trip Experience</strong></p>
+<ul>
+<li><strong>Concierge AI Assistant:</strong> Mobile app chatbot answers questions about ship amenities, restaurant availability, show times, and excursion details</li>
+<li><strong>Real-Time Personalization:</strong> AI analyzes dining preferences to suggest restaurants, adjusts entertainment recommendations based on attendance patterns</li>
+<li><strong>Photo Tagging & Organization:</strong> Use AI image recognition to automatically tag photos by location, people, and activities for easy sharing</li>
+<li><strong>Voice Assistants:</strong> In-cabin AI assistants (like Alexa for Hospitality) can handle room service, activity bookings, and questions</li>
+</ul>
+
+<p><strong>5. Post-Trip Engagement</strong></p>
+<ul>
+<li><strong>Automated Feedback Collection:</strong> AI-powered surveys adapt questions based on experience (dining, excursions, service touchpoints)</li>
+<li><strong>Review Generation:</strong> Help satisfied guests write detailed reviews using AI, while addressing concerns from negative feedback</li>
+<li><strong>Loyalty Program Optimization:</strong> AI analyzes trip data to predict future preferences and tailor loyalty rewards</li>
+<li><strong>Re-engagement Campaigns:</strong> Use predictive analytics to identify guests likely to book again and send personalized offers</li>
+</ul>
+
+<p><strong>🚀 Tools & Implementation Strategy</strong></p>
+<p><strong>Start with:</strong></p>
+<ul>
+<li><strong>ChatGPT/Claude:</strong> For content generation, email drafts, and strategy planning</li>
+<li><strong>HubSpot/Intercom:</strong> For chatbot automation and customer communication</li>
+<li><strong>Google Analytics 4 + AI Insights:</strong> For journey mapping and conversion optimization</li>
+<li><strong>Zapier/Make:</strong> To connect systems and automate workflows</li>
+</ul>
+
+<p><strong>📝 Example Prompts to Try:</strong></p>
+<ol>
+<li>"Create a 7-email onboarding sequence for cruise passengers, with personalized content based on itinerary (Caribbean vs. Mediterranean), cabin type, and number of travelers"</li>
+<li>"Design an AI chatbot conversation flow that helps cruise guests book excursions, considering factors like physical activity level, interests (adventure vs. cultural), and budget"</li>
+<li>"Generate 20 subject line variations for re-engagement emails targeting past guests who haven't booked in 18+ months, with different angles (exclusive offers, new destinations, family-focused)"</li>
+</ol>
+
+<p><strong>💡 Pro Tip:</strong> Start with one touchpoint (e.g., post-booking emails) and use A/B testing to measure AI-generated content performance against traditional approaches. Document results and expand to other journey stages.</p>`;
+        },
+        detectIndustry: function(context) {
+          if (context.includes('cruise') || context.includes('carnival') || context.includes('royal') || context.includes('costa')) return 'Cruise Lines';
+          if (context.includes('hotel') || context.includes('resort')) return 'Hotels';
+          if (context.includes('airline') || context.includes('flight')) return 'Airlines';
+          return 'Travel & Hospitality';
+        }
+      },
+      
+      emailMarketing: {
+        keywords: ['email', 'email marketing', 'email campaign', 'newsletter', 'email automation'],
+        response: `<p><strong>📧 AI-Powered Email Marketing Mastery</strong></p>
+
+<p><strong>1. Subject Line Generation & Optimization</strong></p>
+<ul>
+<li><strong>Tool:</strong> ChatGPT, Claude, or Phrasee</li>
+<li><strong>Strategy:</strong> Generate 20-50 variations, test emotional triggers (urgency, curiosity, exclusivity), use A/B testing platforms</li>
+<li><strong>Example Prompt:</strong> "Generate 15 subject lines for a [product/service] email campaign targeting [audience]. Mix urgency, curiosity, and benefit-driven approaches. Include emojis in 3 variations."</li>
+</ul>
+
+<p><strong>2. Personalized Content at Scale</strong></p>
+<ul>
+<li><strong>Dynamic Content Blocks:</strong> Use AI to create personalized sections based on subscriber data (location, past purchases, browsing behavior)</li>
+<li><strong>Segmentation:</strong> AI analyzes engagement patterns to create micro-segments automatically</li>
+<li><strong>Tool:</strong> HubSpot AI features, Mailchimp's AI assistant, or custom GPT integrations</li>
+</ul>
+
+<p><strong>3. Send Time Optimization</strong></p>
+<ul>
+<li><strong>Predictive Analytics:</strong> AI analyzes individual open patterns to determine optimal send times per subscriber</li>
+<li><strong>Tools:</strong> Klaviyo, Campaign Monitor, or Brevo's AI features</li>
+</ul>
+
+<p><strong>4. Content Creation Workflow</strong></p>
+<ol>
+<li>Use ChatGPT/Claude for initial drafts and multiple angles</li>
+<li>Refine for brand voice using tone templates</li>
+<li>Generate HTML versions with AI (using tools like v0.dev or Cursor)</li>
+<li>Test deliverability with AI-powered spam checkers</li>
+</ol>
+
+<p><strong>5. Performance Analysis</strong></p>
+<ul>
+<li><strong>AI Insights:</strong> Tools like Seventh Sense or built-in AI in email platforms analyze patterns to suggest improvements</li>
+<li><strong>Automated Reporting:</strong> Use ChatGPT to generate narrative summaries from email metrics</li>
+</ul>`
+      },
+      
+      dataAnalytics: {
+        keywords: ['data', 'analytics', 'data analysis', 'sql', 'python', 'reporting', 'insights', 'dashboard'],
+        response: `<p><strong>📊 AI Supercharged Data Analytics</strong></p>
+
+<p><strong>1. SQL Query Generation</strong></p>
+<ul>
+<li><strong>ChatGPT/Claude:</strong> "Generate SQL to find [specific insight] from [table schema]"</li>
+<li><strong>Natural Language to SQL:</strong> Tools like Text2SQL or MindsDB convert plain English to SQL</li>
+<li><strong>Error Debugging:</strong> Paste broken SQL into AI to get explanations and fixes</li>
+</ul>
+
+<p><strong>2. Python Data Analysis</strong></p>
+<ul>
+<li><strong>Code Generation:</strong> Ask ChatGPT/Claude to write pandas/numpy code for specific analyses</li>
+<li><strong>Data Cleaning:</strong> AI suggests cleaning steps and generates code to fix common issues</li>
+<li><strong>Visualization:</strong> Generate matplotlib/plotly/seaborn code for specific chart types</li>
+</ul>
+
+<p><strong>3. Insight Discovery</strong></p>
+<ul>
+<li><strong>NotebookLM (Google):</strong> Upload data and let AI surface key insights and patterns</li>
+<li><strong>Claude + Data:</strong> Upload CSV/Excel files directly to Claude for analysis</li>
+<li><strong>Automated Anomaly Detection:</strong> AI identifies outliers and unusual patterns</li>
+</ul>
+
+<p><strong>4. Report Generation</strong></p>
+<ul>
+<li><strong>Narrative Summaries:</strong> Convert data visualizations into written insights</li>
+<li><strong>Executive Briefs:</strong> Use AI to condense detailed analyses into high-level summaries</li>
+<li><strong>Tool Recommendations:</strong> ChatGPT plugins, PowerBI's Copilot, or Tableau's AI features</li>
+</ul>
+
+<p><strong>5. Predictive Modeling</strong></p>
+<ul>
+<li><strong>No-Code ML:</strong> Use tools like Google AutoML, DataRobot, or H2O.ai</li>
+<li><strong>Code Generation:</strong> ChatGPT can generate scikit-learn code for common models</li>
+</ul>`
+      },
+      
+      marketing: {
+        keywords: ['marketing', 'campaign', 'content', 'social media', 'ad copy', 'advertising', 'brand'],
+        response: `<p><strong>🎯 AI-Driven Marketing Strategy</strong></p>
+
+<p><strong>1. Content Creation Pipeline</strong></p>
+<ul>
+<li><strong>Blog Posts:</strong> ChatGPT/Claude for outlines, first drafts, SEO optimization</li>
+<li><strong>Social Media:</strong> Jasper AI, Copy.ai, or ChatGPT for platform-specific content (LinkedIn vs. Instagram vs. Twitter)</li>
+<li><strong>Ad Copy:</strong> Generate multiple variations for A/B testing, different audience segments</li>
+</ul>
+
+<p><strong>2. Audience Research & Segmentation</strong></p>
+<ul>
+<li><strong>Persona Development:</strong> Use AI to analyze customer data and create detailed buyer personas</li>
+<li><strong>Competitive Analysis:</strong> AI scrapes and summarizes competitor content, pricing, messaging</li>
+<li><strong>Trend Prediction:</strong> Tools like TrendSpottr or Google Trends + AI analysis</li>
+</ul>
+
+<p><strong>3. Campaign Optimization</strong></p>
+<ul>
+<li><strong>Creative Testing:</strong> Generate variations of headlines, images, CTAs for testing</li>
+<li><strong>Budget Allocation:</strong> AI analyzes performance to suggest optimal spend distribution</li>
+<li><strong>Attribution Modeling:</strong> Advanced AI models track multi-touch attribution accurately</li>
+</ul>
+
+<p><strong>4. SEO & Content Strategy</strong></p>
+<ul>
+<li><strong>Keyword Research:</strong> AI tools like Surfer SEO, Frase.io analyze top content and suggest improvements</li>
+<li><strong>Content Optimization:</strong> Real-time SEO suggestions as you write</li>
+<li><strong>Topic Clustering:</strong> AI identifies content gaps and opportunities</li>
+</ul>
+</ul>`
+      },
+      
+      productManagement: {
+        keywords: ['product', 'product manager', 'prd', 'user story', 'roadmap', 'user research', 'feature'],
+        response: `<p><strong>🎯 AI for Product Managers</strong></p>
+
+<p><strong>1. User Research Synthesis</strong></p>
+<ul>
+<li><strong>Interview Analysis:</strong> Upload transcripts to Claude/ChatGPT for key theme extraction</li>
+<li><strong>Survey Analysis:</strong> AI identifies patterns, sentiment, and priority insights from open-ended responses</li>
+<li><strong>Competitive Research:</strong> AI summarizes competitor features, reviews, and positioning</li>
+</ul>
+
+<p><strong>2. Documentation Generation</strong></p>
+<ul>
+<li><strong>PRDs:</strong> Use ChatGPT with templates: "Create a PRD for [feature] targeting [user segment] with [key requirements]"</li>
+<li><strong>User Stories:</strong> AI generates detailed stories with acceptance criteria</li>
+<li><strong>Release Notes:</strong> Automatically generate user-friendly release notes from JIRA/GitHub commits</li>
+</ul>
+
+<p><strong>3. Prioritization & Roadmapping</strong></p>
+<ul>
+<li><strong>RICE/ICE Scoring:</strong> AI helps estimate reach, impact, confidence, effort</li>
+<li><strong>Stakeholder Communication:</strong> Generate presentations and status updates from product data</li>
+<li><strong>Feature Impact Prediction:</strong> Analyze similar features' historical data to predict outcomes</li>
+</ul>
+
+<p><strong>4. Testing & Validation</strong></p>
+<ul>
+<li><strong>Hypothesis Formation:</strong> AI suggests testable hypotheses based on research</li>
+<li><strong>Experiment Design:</strong> Help design A/B tests and user studies</li>
+<li><strong>Results Analysis:</strong> Statistical significance calculations and narrative summaries</li>
+</ul>`
+      },
+      
+      copywriting: {
+        keywords: ['copy', 'copywriting', 'writing', 'headlines', 'ad copy', 'website copy', 'landing page'],
+        response: `<p><strong>✍️ AI Copywriting Mastery</strong></p>
+
+<p><strong>1. Headline Generation</strong></p>
+<ul>
+<li>Generate 20-50 variations for A/B testing</li>
+<li>Test different frameworks: benefit-driven, curiosity gap, social proof, urgency</li>
+<li>Tools: ChatGPT, Claude, Copy.ai, Jasper</li>
+</ul>
+
+<p><strong>2. Long-Form Content</strong></p>
+<ul>
+<li><strong>Outline First:</strong> Use AI to create comprehensive outlines, then expand sections</li>
+<li><strong>Multiple Angles:</strong> Generate same topic from different perspectives</li>
+<li><strong>Tone Adaptation:</strong> Rewrite for different audiences (B2B vs. B2C, formal vs. casual)</li>
+</ul>
+
+<p><strong>3. Conversion Optimization</strong></p>
+<ul>
+<li><strong>Landing Page Copy:</strong> AI generates hero sections, CTAs, social proof placements</li>
+<li><strong>Email Sequences:</strong> Create multi-email campaigns with consistent messaging</li>
+<li><strong>Product Descriptions:</strong> Generate SEO-optimized, persuasive product copy at scale</li>
+</ul>
+</ul>`
+      }
+    };
+    
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const messages = document.getElementById('chat-messages');
+      const message = input.value.trim();
+      
+      if (!message) return;
+      
+      // Add user message
+      const userMessageDiv = document.createElement('div');
+      userMessageDiv.className = 'chat-message user';
+      userMessageDiv.innerHTML = `<p>${escapeHtml(message)}</p>`;
+      messages.appendChild(userMessageDiv);
+      input.value = '';
+      
+      // Show typing indicator
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'chat-message assistant typing-indicator';
+      typingDiv.innerHTML = '<p>Thinking...</p>';
+      messages.appendChild(typingDiv);
+      messages.scrollTop = messages.scrollHeight;
+      
+      // Simulate AI response with intelligent matching
+      setTimeout(() => {
+        messages.removeChild(typingDiv);
+        
+        const lowerMessage = message.toLowerCase();
+        let response = null;
+        let matchedTopic = null;
+        
+        // Intelligent keyword matching with context
+        for (const [topic, data] of Object.entries(knowledgeBase)) {
+          const keywords = Array.isArray(data.keywords) ? data.keywords : [];
+          if (keywords.some(keyword => lowerMessage.includes(keyword.toLowerCase()))) {
+            matchedTopic = topic;
+            response = typeof data.response === 'function' ? data.response(lowerMessage) : data.response;
+            break;
+          }
+        }
+        
+        // Default enhanced response if no match
+        if (!response) {
+          response = `<p><strong>🤔 Let me help you with that!</strong></p>
+          
+<p>I'd love to provide specific guidance. Could you tell me more about:</p>
+<ul>
+<li>What industry or field you're working in?</li>
+<li>What specific AI challenge or opportunity you're exploring?</li>
+<li>What tools or platforms you're currently using?</li>
+</ul>
+
+<p><strong>💡 Popular Topics I Can Help With:</strong></p>
+<ul>
+<li>Customer journey optimization and experience design</li>
+<li>Email marketing automation and personalization</li>
+<li>Data analysis and reporting workflows</li>
+<li>Content creation and copywriting</li>
+<li>Product management and user research</li>
+<li>Marketing campaign strategy and execution</li>
+</ul>
+
+<p>Try asking something like: "How can I use AI for [specific use case] in [your industry]?"</p>`;
+        }
+        
+        const assistantMessageDiv = document.createElement('div');
+        assistantMessageDiv.className = 'chat-message assistant';
+        assistantMessageDiv.innerHTML = response;
+        messages.appendChild(assistantMessageDiv);
+        messages.scrollTop = messages.scrollHeight;
+      }, 1500 + Math.random() * 1000);
+      
+      messages.scrollTop = messages.scrollHeight;
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI 101 Fundamentals - Learn essential AI tools, basic prompt engineering, and foundational skills. Curated videos, certifications, and resources for beginners.">
+  <meta name="keywords" content="AI 101, AI fundamentals, ChatGPT tutorial, Gemini guide, AI for beginners, prompt engineering basics">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 101 - Learn AI Fundamentals | AI Career Transition">
+  <meta property="og:description" content="Master essential AI tools and prompt engineering basics with curated videos and certifications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aicareertransition.com/101.html">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 101 - Learn AI Fundamentals | AI Career Transition">
+  <meta name="twitter:description" content="Master essential AI tools and prompt engineering basics with curated videos and certifications.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aicareertransition.com/101.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>AI 101 - Learn AI Fundamentals | AI Career Transition</title>
+  
+  <!-- Structured Data - Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "AI 101 - Fundamentals",
+    "description": "Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Covers ChatGPT, Gemini, Claude, Copilot, and curated videos and certifications.",
+    "provider": {"@type": "Organization", "name": "AI Career Transition", "url": "https://aicareertransition.com"},
+    "url": "https://aicareertransition.com/101.html",
+    "isAccessibleForFree": true,
+    "audience": {"@type": "Audience", "audienceType": "Beginners"}
+  }
+  </script>
+  
+  <!-- Structured Data - BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicareertransition.com/"}, {"@type": "ListItem", "position": 2, "name": "AI 101", "item": "https://aicareertransition.com/101.html"}]
+  }
+  </script>
+  
+  <!-- Structured Data - FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Which AI tools should I start with?", "acceptedAnswer": {"@type": "Answer", "text": "Start with 2-3 tools that match your work: ChatGPT or Gemini for general use, Claude for long documents, and Copilot if you use Microsoft 365 daily."}},
+      {"@type": "Question", "name": "Do I need to pay for AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo" aria-label="AI Career Transition Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/>
+          <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+          <circle cx="18" cy="22" r="3" fill="white"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36">
+              <stop stop-color="#2563eb"/>
+              <stop offset="1" stop-color="#1d4ed8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AI Career Transition</span>
+      </a>
+      
+      <div class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="101.html" class="navbar-link active">AI 101</a>
+        <a href="201.html" class="navbar-link">AI 201</a>
+        <a href="prompts.html" class="navbar-link">Prompt Library</a>
+        <a href="blog.html" class="navbar-link">Blog</a>
+        <a href="apps.html" class="navbar-link">Apps</a>
+        <a href="tools-comparison.html" class="navbar-link">Compare Tools</a>
+        <a href="feedback.html" class="navbar-link">Feedback</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="index.html#quiz" class="btn btn-primary">Take Quiz</a>
+      </div>
+      
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
+      <div class="container">
+        <div class="hero-content animate-on-scroll">
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Foundational Learning
+          </div>
+          
+          <h1 class="hero-title">
+            AI 101<br>
+            <span class="text-gradient">Fundamentals</span>
+          </h1>
+          
+          <p class="hero-description">
+            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Curated from Google, OpenAI, Microsoft, and top educational institutions.
+          </p>
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Last updated February 2026</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Quick Navigation -->
+    <section class="section" style="padding-top: 0; padding-bottom: var(--space-2xl);">
+      <div class="container">
+        <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+          <a href="#tools" class="btn btn-secondary">AI Tools</a>
+          <a href="#videos" class="btn btn-secondary">Learning Videos</a>
+          <a href="#certifications" class="btn btn-secondary">Certifications</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- AI Tools Section -->
+    <section id="tools" class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Essential <span class="text-gradient">AI Tools</span></h2>
+          <p style="max-width: 700px; margin: 0 auto;">Your beginner's starter kit: Get familiar with these tools, download the mobile apps, and create free accounts. Start with 2-3 tools that match your work needs.</p>
+        </div>
+        
+        <!-- Beginner Action Steps -->
+        <div class="card animate-on-scroll" style="max-width: 800px; margin: 0 auto var(--space-xl); background: rgba(37, 99, 235, 0.08); border-left: 4px solid var(--color-accent-primary); padding: var(--space-lg);">
+          <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+            <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--color-accent-primary); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem;">✓</div>
+            <div>
+              <h4 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Your 3-Step Action Plan:</h4>
+              <ol style="margin: 0; padding-left: 20px; color: var(--color-text-secondary); line-height: 1.8;">
+                <li><strong>Get familiar:</strong> Click each tool below to visit their website and understand what they do</li>
+                <li><strong>Download mobile apps:</strong> Install the apps on your phone for on-the-go access</li>
+                <li><strong>Create free accounts:</strong> Sign up for 2-3 tools that match your role (start with ChatGPT or Gemini)</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        
+        <!-- AI Assistants -->
+        <h3 class="mb-xl" style="font-size: 1.25rem; color: var(--color-text-secondary);">🤖 AI Assistants & Chatbots</h3>
+        <div class="grid grid-4 mb-3xl animate-on-scroll">
+          <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">ChatGPT</div>
+            <div class="tool-card-category">OpenAI • General AI Assistant</div>
+          </a>
+          
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Google Gemini logo" class="tool-card-logo">
+            <div class="tool-card-name">Google Gemini</div>
+            <div class="tool-card-category">Google • Multimodal AI</div>
+          </a>
+          
+          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="images/claude-logo.png" alt="Claude logo" class="tool-card-logo" style="background: #fff; padding: 8px;">
+            <div class="tool-card-name">Claude</div>
+            <div class="tool-card-category">Anthropic • Safe AI Assistant</div>
+          </a>
+          
+          <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="images/copilot-logo-official.svg" alt="Microsoft Copilot logo" class="tool-card-logo" style="background: transparent; padding: 8px;">
+            <div class="tool-card-name">Microsoft Copilot</div>
+            <div class="tool-card-category">Microsoft • Productivity AI</div>
+          </a>
+        </div>
+        <p style="max-width: 700px; margin: -1.5rem 0 2rem 0; font-size: 0.9375rem; color: var(--color-text-muted);">These tools now support agent-style workflows: multi-step tasks, web search, and file analysis. ChatGPT, Gemini, and Claude can research, summarize, and iterate for you.</p>
+        
+        <!-- Search & Research -->
+        <h3 class="mb-xl" style="font-size: 1.25rem; color: var(--color-text-secondary);">🔍 AI Search & Research</h3>
+        <div class="grid grid-4 mb-3xl animate-on-scroll">
+          <a href="https://perplexity.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Perplexity_AI_logo.svg" alt="Perplexity logo" class="tool-card-logo" style="background: #fff; padding: 10px;">
+            <div class="tool-card-name">Perplexity</div>
+            <div class="tool-card-category">AI-Powered Search</div>
+          </a>
+          
+          <a href="https://x.com/i/grok" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #000; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 1.25rem; font-weight: bold; color: #fff;">𝕏</div>
+            <div class="tool-card-name">Grok</div>
+            <div class="tool-card-category">xAI • Real-time AI</div>
+          </a>
+          
+          <a href="https://you.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">You</div>
+            <div class="tool-card-name">You.com</div>
+            <div class="tool-card-category">AI Search Engine</div>
+          </a>
+          
+          <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="NotebookLM logo" class="tool-card-logo">
+            <div class="tool-card-name">NotebookLM</div>
+            <div class="tool-card-category">Google • Research Assistant</div>
+          </a>
+        </div>
+        
+        <!-- Writing & Content -->
+        <h3 class="mb-xl" style="font-size: 1.25rem; color: var(--color-text-secondary);">✍️ Writing & Content Creation</h3>
+        <div class="grid grid-4 mb-3xl animate-on-scroll">
+          <a href="https://www.grammarly.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #15c39a; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 1.25rem; font-weight: bold; color: #fff;">G</div>
+            <div class="tool-card-name">Grammarly</div>
+            <div class="tool-card-category">AI Writing Assistant</div>
+          </a>
+          
+          <a href="https://www.jasper.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">J</div>
+            <div class="tool-card-name">Jasper</div>
+            <div class="tool-card-category">Marketing AI Content</div>
+          </a>
+          
+          <a href="https://copy.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">C</div>
+            <div class="tool-card-name">Copy.ai</div>
+            <div class="tool-card-category">AI Copywriting</div>
+          </a>
+          
+          <a href="https://writer.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #1a1a2e; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">W</div>
+            <div class="tool-card-name">Writer</div>
+            <div class="tool-card-category">Enterprise AI Writing</div>
+          </a>
+        </div>
+        
+        <!-- Image Generation -->
+        <h3 class="mb-xl" style="font-size: 1.25rem; color: var(--color-text-secondary);">🎨 Image Generation</h3>
+        <div class="grid grid-4 animate-on-scroll">
+          <a href="https://openai.com/dall-e-3" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="DALL-E logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">DALL-E 3</div>
+            <div class="tool-card-category">OpenAI • Image Generation</div>
+          </a>
+          
+          <a href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: #fff; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 1.25rem; color: var(--color-text-primary);">⛵</div>
+            <div class="tool-card-name">Midjourney</div>
+            <div class="tool-card-category">AI Art Generator</div>
+          </a>
+          
+          <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #ff0080, #7928ca); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">Ff</div>
+            <div class="tool-card-name">Adobe Firefly</div>
+            <div class="tool-card-category">Creative AI</div>
+          </a>
+          
+          <a href="https://ideogram.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <div class="tool-card-logo" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">Id</div>
+            <div class="tool-card-name">Ideogram</div>
+            <div class="tool-card-category">Text-in-Image AI</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Learning Videos Section -->
+    <section id="videos" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Learning <span class="text-gradient">Videos</span></h2>
+          <p>Curated video tutorials from official sources: Google, OpenAI, Microsoft, and Anthropic. No influencer content.</p>
+        </div>
+        
+        <!-- Tabs for Personas -->
+        <div data-tabs class="animate-on-scroll">
+          <div class="tabs" style="justify-content: center; flex-wrap: wrap;">
+            <button class="tab active" data-tab="general">General AI</button>
+            <button class="tab" data-tab="marketing">Marketing</button>
+            <button class="tab" data-tab="copywriting">Copywriting</button>
+            <button class="tab" data-tab="analytics">Analytics</button>
+            <button class="tab" data-tab="data-science">Data Science</button>
+            <button class="tab" data-tab="product">Digital Product</button>
+            <button class="tab" data-tab="email">Email Marketing</button>
+            <button class="tab" data-tab="customer">Customer Journey</button>
+            <button class="tab" data-tab="database">Database Marketing</button>
+          </div>
+          
+          <!-- General AI Videos - ALL from Google Cloud Official -->
+          <div id="general" class="tab-content active">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/G2fqAlgmoPo/maxresdefault.jpg" alt="Introduction to Generative AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/G2fqAlgmoPo/hqdefault.jpg'">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Introduction to Generative AI</h4>
+                  <p class="video-card-description">Official Google Cloud course on generative AI fundamentals, how it works, and applications.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=zizonToFXDs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/zizonToFXDs/maxresdefault.jpg" alt="Introduction to Large Language Models" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/zizonToFXDs/hqdefault.jpg'">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Introduction to Large Language Models</h4>
+                  <p class="video-card-description">Official Google Cloud course explaining what LLMs are and how they're transforming technology.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Introduction to Responsible AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg'">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Introduction to Responsible AI</h4>
+                  <p class="video-card-description">Official Google Cloud course on ethical AI principles, bias mitigation, and trustworthy AI systems.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Marketing Videos - ALL from Google Cloud Official -->
+          <div id="marketing" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="Image Generation for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Image Generation for Marketing</h4>
+                  <p class="video-card-description">Google Cloud's official course on using AI image generation to create compelling marketing visuals and campaigns.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Transformer Models for Marketing</h4>
+                  <p class="video-card-description">Learn how BERT and transformer models power advanced marketing content creation and campaign optimization.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Marketing</h4>
+                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-powered marketing content and targeting.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Analytics Videos - ALL from Google Cloud Official -->
+          <div id="analytics" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for Analytics" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Transformer Models for Data Analytics</h4>
+                  <p class="video-card-description">Google Cloud's official course on transformer architecture and how it powers modern AI analytics workflows.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Analytics" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Analytics</h4>
+                  <p class="video-card-description">Learn how attention mechanisms enhance AI models for business intelligence and data analysis.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="Image Generation for Analytics Visualization" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Image Generation for Analytics Visualization</h4>
+                  <p class="video-card-description">Google Cloud's official course on using AI-generated visuals to enhance data presentation and reporting.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Copywriting Videos - ALL from Google Cloud Official -->
+          <div id="copywriting" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="Image Generation for Content Creation" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Image Generation for Content Creators</h4>
+                  <p class="video-card-description">Google Cloud's official course on using AI image generation to enhance visual content and marketing materials.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="BERT Models for Text Generation" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">BERT Models for Text Generation</h4>
+                  <p class="video-card-description">Learn how BERT and transformer models power advanced text generation for copywriting and content creation.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Writing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Writing</h4>
+                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI writing quality and coherence.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Product Videos - ALL from Google Cloud Official -->
+          <div id="product" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Responsible AI for Product Development" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Responsible AI for Product Development</h4>
+                  <p class="video-card-description">Google Cloud's official course on ethical AI principles and trustworthy product design practices.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Prototyping for Products" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">AI Prototyping for Product Teams</h4>
+                  <p class="video-card-description">Learn how AI image and content generation accelerates product prototyping and design iteration.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Product AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Product AI</h4>
+                  <p class="video-card-description">Google Cloud's official course on attention mechanisms and how they improve AI product capabilities.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Data Science Videos - ALL from Google Cloud Official -->
+          <div id="data-science" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for Data Science" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Transformer Models for Data Science</h4>
+                  <p class="video-card-description">Google Cloud's official course on transformer architecture and BERT models for advanced machine learning workflows.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for ML" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Machine Learning</h4>
+                  <p class="video-card-description">Learn how attention mechanisms improve neural network performance for data science and ML applications.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Responsible AI for Data Science" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Responsible AI for Data Scientists</h4>
+                  <p class="video-card-description">Google Cloud's official course on ethical AI principles, bias mitigation, and trustworthy ML models for data science.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Email Marketing Videos - ALL from Google Cloud Official -->
+          <div id="email" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Content Generation for Email" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">AI Content Generation for Email</h4>
+                  <p class="video-card-description">Google Cloud's official course on using AI image and text generation to enhance email marketing campaigns.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="BERT Models for Email Personalization" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">BERT Models for Email Personalization</h4>
+                  <p class="video-card-description">Learn how transformer models like BERT enable advanced personalization and automation in email marketing.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Email AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Email AI</h4>
+                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-driven email content and targeting.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Customer Journey Videos - ALL from Google Cloud Official -->
+          <div id="customer" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Visualization for Customer Journeys" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">AI Visualization for Customer Journeys</h4>
+                  <p class="video-card-description">Google Cloud's official course on using AI-generated visuals to map and enhance customer experience flows.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for CX Analysis" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Transformer Models for CX Analysis</h4>
+                  <p class="video-card-description">Learn how BERT and transformer models analyze customer touchpoints and optimize experience journeys.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Journey Mapping" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Journey Mapping</h4>
+                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-powered customer journey analysis and optimization.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Database Marketing Videos - ALL from Google Cloud Official -->
+          <div id="database" class="tab-content">
+            <div class="grid grid-3">
+              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Data Visualization for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">AI Data Visualization for Marketing</h4>
+                  <p class="video-card-description">Google Cloud's official course on using AI-generated visuals to enhance marketing database segmentation and reporting.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="BERT Models for Audience Segmentation" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">BERT Models for Audience Segmentation</h4>
+                  <p class="video-card-description">Learn how transformer models like BERT enable advanced audience creation and segmentation in database marketing.</p>
+                </div>
+              </a>
+              
+              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
+                <div class="video-card-thumbnail">
+                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Marketing AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
+                  <div class="video-card-play-overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Watch on YouTube</span>
+                  </div>
+                </div>
+                <div class="video-card-content">
+                  <div class="video-card-source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Google Cloud
+                  </div>
+                  <h4 class="video-card-title">Attention Mechanisms for Marketing AI</h4>
+                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-driven audience analysis and cross-channel marketing.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications" class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Beginner <span class="text-gradient">Certifications</span></h2>
+          <p>Foundational certifications from top institutions and companies. Build credentials while you learn.</p>
+        </div>
+        
+        <!-- Tabs for Personas -->
+        <div data-tabs class="animate-on-scroll">
+          <div class="tabs" style="justify-content: center; flex-wrap: wrap;">
+            <button class="tab active" data-tab="cert-general">General AI</button>
+            <button class="tab" data-tab="cert-marketing">Marketing</button>
+            <button class="tab" data-tab="cert-copywriting">Copywriting</button>
+            <button class="tab" data-tab="cert-analytics">Analytics</button>
+            <button class="tab" data-tab="cert-data">Data Science</button>
+            <button class="tab" data-tab="cert-product">Digital Product</button>
+            <button class="tab" data-tab="cert-email">Email Marketing</button>
+            <button class="tab" data-tab="cert-customer">Customer Journey</button>
+            <button class="tab" data-tab="cert-database">Database Marketing</button>
+          </div>
+          
+          <!-- General AI Certifications -->
+          <div id="cert-general" class="tab-content active">
+            <div class="grid grid-2">
+              <a href="https://www.cloudskillsboost.google/paths/118" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Cloud</div>
+                  <div class="cert-card-title">Introduction to Generative AI Learning Path</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/learn/generative-ai-for-everyone" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #081e42; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                  <span style="color: #fff; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em;">DeepLearning.AI</span>
+                </div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">DeepLearning.AI • Coursera</div>
+                  <div class="cert-card-title">Generative AI for Everyone</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 8 hours</span>
+                    <span>📜 Certificate Available</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://learn.microsoft.com/en-us/training/paths/introduction-generative-ai/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Microsoft Learn</div>
+                  <div class="cert-card-title">Introduction to Generative AI</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 3 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/learn/prompt-engineering" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #8B0000; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                  <span style="color: #fff; font-size: 1rem; font-weight: 700; letter-spacing: 0.05em;">VANDY</span>
+                </div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Vanderbilt University • Coursera</div>
+                  <div class="cert-card-title">Prompt Engineering for ChatGPT</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 18 hours</span>
+                    <span>📜 Certificate Available</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Marketing Certifications -->
+          <div id="cert-marketing" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://academy.hubspot.com/courses/ai-for-marketers" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">AI for Marketers</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 4 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://skillshop.withgoogle.com/googleai" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google AI Essentials</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://academy.hubspot.com/courses/content-marketing" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">Content Marketing Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google • Coursera</div>
+                  <div class="cert-card-title">Google Digital Marketing & E-commerce</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 months</span>
+                    <span>📜 Professional Certificate</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Analytics Certifications -->
+          <div id="cert-analytics" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://skillshop.withgoogle.com/googleanalytics" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google Analytics Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certification</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Microsoft Learn</div>
+                  <div class="cert-card-title">Power BI Data Analyst Path</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 24 hours</span>
+                    <span>📜 Free Learning Path</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google • Coursera</div>
+                  <div class="cert-card-title">Google Data Analytics Professional Certificate</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 months</span>
+                    <span>📜 Professional Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://academy.hubspot.com/courses/reporting" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">Reporting Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 3 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Copywriting Certifications -->
+          <div id="cert-copywriting" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://academy.hubspot.com/courses/content-marketing" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">Content Marketing Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/learn/prompt-engineering" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #8B0000; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                  <span style="color: #fff; font-size: 1rem; font-weight: 700; letter-spacing: 0.05em;">VANDY</span>
+                </div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Vanderbilt University • Coursera</div>
+                  <div class="cert-card-title">Prompt Engineering for ChatGPT</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 18 hours</span>
+                    <span>📜 Certificate Available</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://skillshop.withgoogle.com/googleai" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google AI Essentials</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/learn/generative-ai-for-everyone" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #081e42; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                  <span style="color: #fff; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em;">DeepLearning.AI</span>
+                </div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">DeepLearning.AI • Coursera</div>
+                  <div class="cert-card-title">Generative AI for Everyone</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 8 hours</span>
+                    <span>📜 Certificate Available</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Data Science Certifications -->
+          <div id="cert-data" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://www.coursera.org/professional-certificates/ibm-data-science" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #0530ad; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">IBM</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">IBM • Coursera</div>
+                  <div class="cert-card-title">IBM Data Science Professional Certificate</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 months</span>
+                    <span>📜 Professional Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.cloudskillsboost.google/paths/17" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Cloud</div>
+                  <div class="cert-card-title">Data Engineer Learning Path</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 40+ hours</span>
+                    <span>📜 Skill Badges</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #081e42; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                  <span style="color: #fff; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em;">DeepLearning.AI</span>
+                </div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">DeepLearning.AI • Coursera</div>
+                  <div class="cert-card-title">Deep Learning Specialization</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 months</span>
+                    <span>📜 Specialization Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://aws.amazon.com/training/learn-about/machine-learning/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #232f3e; display: flex; align-items: center; justify-content: center; padding: 12px;">
+                  <span style="color: #ff9900; font-size: 1.125rem; font-weight: 700; letter-spacing: 0.05em;">AWS</span>
+                </div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Amazon Web Services</div>
+                  <div class="cert-card-title">AWS Machine Learning Foundations</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 20+ hours</span>
+                    <span>📜 Free Training</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Digital Product Certifications -->
+          <div id="cert-product" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google • Coursera</div>
+                  <div class="cert-card-title">Google Digital Marketing & E-commerce</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 months</span>
+                    <span>📜 Professional Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://skillshop.withgoogle.com/googleai" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google AI Essentials</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://learn.microsoft.com/en-us/training/paths/introduction-generative-ai/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Microsoft Learn</div>
+                  <div class="cert-card-title">Introduction to Generative AI</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 3 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.cloudskillsboost.google/paths/118" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Cloud</div>
+                  <div class="cert-card-title">Introduction to Generative AI Learning Path</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Email Marketing Certifications -->
+          <div id="cert-email" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://academy.hubspot.com/courses/email-marketing" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">Email Marketing Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 4 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://skillshop.withgoogle.com/googleai" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google AI Essentials</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://academy.hubspot.com/courses/ai-for-marketers" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">AI for Marketers</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 4 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google • Coursera</div>
+                  <div class="cert-card-title">Google Digital Marketing & E-commerce</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 months</span>
+                    <span>📜 Professional Certificate</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Customer Journey Certifications -->
+          <div id="cert-customer" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://academy.hubspot.com/courses/customer-service" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">Customer Service Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://skillshop.withgoogle.com/googleai" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google AI Essentials</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://www.cloudskillsboost.google/paths/118" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Cloud</div>
+                  <div class="cert-card-title">Introduction to Generative AI Learning Path</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://learn.microsoft.com/en-us/training/paths/introduction-generative-ai/" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Microsoft Learn</div>
+                  <div class="cert-card-title">Introduction to Generative AI</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 3 hours</span>
+                    <span>📜 Free Badge</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Database Marketing Certifications -->
+          <div id="cert-database" class="tab-content">
+            <div class="grid grid-2">
+              <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google • Coursera</div>
+                  <div class="cert-card-title">Google Data Analytics Professional Certificate</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 6 months</span>
+                    <span>📜 Professional Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://academy.hubspot.com/courses/inbound-marketing" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">Inbound Marketing Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://skillshop.withgoogle.com/googleanalytics" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google logo" class="cert-card-logo">
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">Google Skillshop</div>
+                  <div class="cert-card-title">Google Analytics Certification</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 5 hours</span>
+                    <span>📜 Free Certification</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href="https://academy.hubspot.com/courses/ai-for-marketers" target="_blank" rel="noopener noreferrer" class="cert-card" style="text-decoration: none;">
+                <div class="cert-card-logo" style="background: #ff7a59; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; color: #fff;">HS</div>
+                <div class="cert-card-content">
+                  <div class="cert-card-provider">HubSpot Academy</div>
+                  <div class="cert-card-title">AI for Marketers</div>
+                  <div class="cert-card-meta">
+                    <span>🕐 4 hours</span>
+                    <span>📜 Free Certificate</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Next Steps CTA -->
+    <!-- FAQ Section -->
+    <section id="faq" class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Common <span class="text-gradient">Questions</span></h2>
+        </div>
+        <div class="accordion animate-on-scroll" style="max-width: 700px; margin: 0 auto;">
+          <div class="accordion-item active">
+            <div class="accordion-header">Which AI tools should I start with?</div>
+            <div class="accordion-content">Start with 2-3 tools that match your work: ChatGPT or Gemini for general use, Claude for long documents, and Copilot if you use Microsoft 365 daily.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">Do I need to pay for AI tools?</div>
+            <div class="accordion-content">No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container">
+        <div class="card animate-on-scroll" style="text-align: center; max-width: 800px; margin: 0 auto; padding: var(--space-3xl);">
+          <h2 style="margin-bottom: var(--space-lg);">Ready for <span class="text-gradient">Advanced Skills?</span></h2>
+          <p style="font-size: 1.125rem; margin-bottom: var(--space-2xl);">
+            Once you've mastered the fundamentals, move on to AI 201 for advanced techniques, automation, and building AI-powered applications.
+          </p>
+          <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+            <a href="201.html" class="btn btn-primary btn-lg">
+              Continue to AI 201
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="prompts.html" class="btn btn-secondary btn-lg">Explore Prompts</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+              <circle cx="18" cy="22" r="3" fill="white"/>
+              <defs>
+                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="36" y2="36">
+                  <stop stop-color="#2563eb"/>
+                  <stop offset="1" stop-color="#1d4ed8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>AI Career Transition</span>
+          </div>
+          <p>Empowering professionals to master AI skills and future-proof their careers.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Learn</h4>
+          <div class="footer-links">
+            <a href="101.html">AI 101 - Fundamentals</a>
+            <a href="201.html">AI 201 - Advanced</a>
+            <a href="prompts.html">Prompt Library</a>
+            <a href="blog.html">Blog & Tips</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="apps.html">AI Apps Showcase</a>
+            <a href="tools-comparison.html">Compare AI Tools</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#videos">Video Tutorials</a>
+            <a href="#tools">AI Tools Directory</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="feedback.html">Give Feedback</a>
+            <a href="feedback.html#feature">Suggest Features</a>
+            <a href="feedback.html#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI Career Transition. All rights reserved.</p>
+        <p>Built for the AI-powered future.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

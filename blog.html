@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practical AI prompting tips for analysts, product managers, and marketers. Learn how to use ChatGPT, Claude, and Copilot to save time on reports, specs, and campaigns.">
+  <meta name="keywords" content="AI prompting tips, ChatGPT for analysts, AI for product managers, AI for marketers, prompt engineering, AI career transition, AI best practices">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Blog — Prompting Tips for Analysts, PMs & Marketers | AI Career Transition">
+  <meta property="og:description" content="Practical AI tips you can use at work today. Prompting workflows for data analysis, product specs, and marketing campaigns.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aicareertransition.com/blog.html">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Blog — Prompting Tips for Analysts, PMs & Marketers | AI Career Transition">
+  <meta name="twitter:description" content="Practical AI tips you can use at work today. Prompting workflows for data analysis, product specs, and marketing campaigns.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aicareertransition.com/blog.html">
+  
+  <!-- Structured Data: Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "AI Career Transition Blog",
+    "url": "https://aicareertransition.com/blog.html",
+    "description": "Practical AI prompting tips for analysts, product managers, and marketers.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Career Transition",
+      "url": "https://aicareertransition.com"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "I Used to Spend 3 Hours on Monday Reports. Now It Takes 40 Minutes.",
+        "datePublished": "2026-02-16",
+        "description": "How one analyst cut weekly reporting time using simple ChatGPT prompts for data summarization, QA, and slide formatting.",
+        "author": { "@type": "Organization", "name": "AI Career Transition" },
+        "keywords": ["AI for analysts", "ChatGPT data analysis", "weekly reporting AI", "prompt engineering"]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "5 Prompting Best Practices That Actually Work",
+        "datePublished": "2025-01-20",
+        "description": "Clear, structured prompting techniques including context-setting, output formatting, and iterative refinement for better AI results.",
+        "author": { "@type": "Organization", "name": "AI Career Transition" },
+        "keywords": ["prompt engineering", "AI best practices", "ChatGPT tips", "prompting framework"]
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Structured Data - BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aicareertransition.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aicareertransition.com/blog.html"}]}
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>AI Blog — Prompting Tips for Analysts, PMs & Marketers | AI Career Transition</title>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo" aria-label="AI Career Transition Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/>
+          <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+          <circle cx="18" cy="22" r="3" fill="white"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36">
+              <stop stop-color="#2563eb"/>
+              <stop offset="1" stop-color="#1d4ed8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AI Career Transition</span>
+      </a>
+      
+      <div class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="101.html" class="navbar-link">AI 101</a>
+        <a href="201.html" class="navbar-link">AI 201</a>
+        <a href="prompts.html" class="navbar-link">Prompt Library</a>
+        <a href="blog.html" class="navbar-link active">Blog</a>
+        <a href="apps.html" class="navbar-link">Apps</a>
+        <a href="tools-comparison.html" class="navbar-link">Compare Tools</a>
+        <a href="feedback.html" class="navbar-link">Feedback</a>
+      </div>
+      
+      <div class="navbar-actions">
+        <a href="index.html#quiz" class="btn btn-primary">Take Quiz</a>
+      </div>
+      
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: auto; padding-top: 100px; padding-bottom: var(--space-xl);">
+      <div class="container">
+        <div class="hero-content animate-on-scroll">
+          <div class="hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Insights & Best Practices
+          </div>
+          
+          <h1 class="hero-title">
+            AI Career <span class="text-gradient">Blog</span>
+          </h1>
+          
+          <p class="hero-description" style="margin-bottom: var(--space-md);">
+            Practical AI tips for analysts, product managers, and marketers. <a href="index.html#quiz" style="color: var(--color-accent-primary); text-decoration: underline;">Start with our free quiz →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Post -->
+    <section class="section" style="padding-top: 0; padding-bottom: var(--space-lg);">
+      <div class="container" style="max-width: 820px;">
+        <article class="card animate-on-scroll" style="padding: var(--space-xl) var(--space-xl) var(--space-lg); overflow: hidden; border-left: 4px solid var(--color-accent-primary);">
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--color-accent-primary); flex-shrink: 0;">
+              <path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/>
+            </svg>
+            <span class="prompt-card-category" style="margin: 0;">Analytics</span>
+            <span style="font-size: 0.8125rem; color: var(--color-text-muted); margin-left: auto;"><time datetime="2026-02-16">February 16, 2026</time> · 5 min read</span>
+          </div>
+          <h2 style="margin-bottom: var(--space-md); font-size: 1.5rem; line-height: 1.35;">I Used to Spend 3 Hours on Monday Reports. Now It Takes 40 Minutes.</h2>
+          <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Every Monday I pull the same numbers. Weekly conversions, cost per lead by channel, email open rates, landing page bounce. I paste it into a slide deck, write some bullets, and send it to my director before our 11am. It used to eat my entire morning because the hard part was never pulling data — it was figuring out what to say about it.</p>
+          <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">A few months ago I started doing something different. After I pull the numbers into a spreadsheet, I paste the table directly into ChatGPT and say something like: "Here's this week's marketing data next to last week. Tell me what got worse, what got better, and what didn't change enough to matter. Be honest if nothing interesting happened." That last line is important. Without it, AI will manufacture a story out of noise — it'll tell you a 2% change is "notable" when it's just Tuesday being Tuesday.</p>
+          <div id="featured-more" style="display: none;">
+            <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Once I get that back, I'll usually ask a follow-up like "my director is going to ask why paid search cost went up — give me three things to check before I answer her." That's way more useful than "provide insights." It gives me a checklist I can actually run through in our BI tool before the meeting.</p>
+            <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">The part that saved me the most time, honestly, was formatting. I used to agonize over how to phrase things on slides. Now I paste the analysis back and say "turn this into 4 bullets for a slide — each one should start with what happened and end with what we're doing about it. Keep it under 15 words per bullet." Then I copy-paste into the deck and I'm done. It's not magic. The AI doesn't know our business. But it's really good at organizing messy thoughts into clean sentences, and that's the part that was eating my morning.</p>
+            <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">One thing I learned the hard way: don't ask AI to explain why a metric moved unless you give it context. I once sent a conversion table and asked "why did signups drop?" and it confidently told me it was probably seasonality. It wasn't. We had a broken form for two days. Now I always add "don't guess at causes — just tell me what questions I should be asking the team." That one change made the outputs way more trustworthy. <a href="prompts.html" style="color: var(--color-accent-primary); font-weight: 600; text-decoration: underline;">Explore our prompt library for more examples →</a></p>
+          </div>
+          <button onclick="var el=document.getElementById('featured-more');var btn=this;if(el.style.display==='none'){el.style.display='block';btn.textContent='Show less ↑';}else{el.style.display='none';btn.textContent='Continue reading ↓';}" style="background: none; border: none; color: var(--color-accent-primary); font-weight: 600; font-size: 0.9375rem; cursor: pointer; padding: var(--space-xs) 0;">Continue reading ↓</button>
+          <p style="margin-top: var(--space-md);"><a href="blog/chatgpt-monday-reports.html" style="color: var(--color-accent-primary); font-weight: 600; text-decoration: underline;">Read full post →</a></p>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Earlier Posts -->
+    <section class="section" style="background: var(--color-bg-secondary); padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+      <div class="container" style="max-width: 820px;">
+        <h3 class="animate-on-scroll" style="margin-bottom: var(--space-lg); font-size: 1.125rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Earlier Posts</h3>
+        
+        <article class="card animate-on-scroll" style="padding: var(--space-lg) var(--space-xl); border-left: 4px solid #3b82f6; margin-bottom: var(--space-lg);">
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: #3b82f6; flex-shrink: 0;">
+              <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <span class="prompt-card-category" style="margin: 0;">How-To</span>
+            <span style="font-size: 0.8125rem; color: var(--color-text-muted); margin-left: auto;"><time datetime="2026-02-08">February 8, 2026</time> · 6 min read</span>
+          </div>
+          <h3 style="margin-bottom: var(--space-sm); font-size: 1.25rem; line-height: 1.35;">You're Probably Using the Wrong AI Model. Here's Where to Change It.</h3>
+          <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-sm);">Most people use whatever model is selected by default—usually the fastest or cheapest, not the best. Same prompt, different model = different quality. This visual guide shows exactly where to change the model in Copilot, ChatGPT, Claude, and Gemini. Screenshots included. <a href="blog/how-to-change-ai-model.html" style="color: var(--color-accent-primary); font-weight: 600;">Read full post →</a></p>
+        </article>
+        
+        <article class="card animate-on-scroll" style="padding: var(--space-lg) var(--space-xl); border-left: 4px solid var(--color-accent-secondary, #8b5cf6);">
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--color-accent-secondary, #8b5cf6); flex-shrink: 0;">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <span class="prompt-card-category" style="margin: 0;">Prompt Engineering</span>
+            <span style="font-size: 0.8125rem; color: var(--color-text-muted); margin-left: auto;"><time datetime="2025-01-20">January 20, 2025</time> · 4 min read</span>
+          </div>
+          <h3 style="margin-bottom: var(--space-sm); font-size: 1.25rem; line-height: 1.35;">5 Prompting Best Practices That Actually Work</h3>
+          <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-sm);">I used to send vague prompts like "write a blog post" and get back generic fluff. Then I tried adding who I am and who it's for — "As a marketing director, write 500 words for small business owners on how AI saves time" — and the output was usable on the first try. Context matters more than I expected. Another thing: I always add "keep it under 15 words per bullet" or "3 bullet points max" when I need slides. Without that, ChatGPT gives me paragraphs. Break big asks into steps, say what format you want, and don't be afraid to ask again if it misses. Your first prompt is a draft, not the final answer. <a href="blog/5-prompting-best-practices.html" style="color: var(--color-accent-primary); font-weight: 600;">Read full post →</a></p>
+        </article>
+        
+        <div class="text-center animate-on-scroll" style="margin-top: var(--space-lg);">
+          <button class="btn btn-secondary" onclick="alert('More posts coming soon! Subscribe to get notified.')">
+            Load More Posts
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tips Section -->
+    <section class="section" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+      <div class="container">
+        <div class="section-header animate-on-scroll" style="margin-bottom: var(--space-lg);">
+          <h2>Quick <span class="text-gradient">Tips</span></h2>
+          <p>Bite-sized AI advice you can apply today.</p>
+        </div>
+        
+        <div class="grid grid-2 animate-on-scroll" style="max-width: 900px; margin: 0 auto; gap: var(--space-md);">
+          <div class="card" style="padding: var(--space-lg);">
+            <h4 class="card-title">💡 Add audience + tone</h4>
+            <p class="card-description">Works best when you tell ChatGPT who you're writing for. I use "Write for [audience] in a [tone] voice" — e.g. "small business owners, casual but expert" — and skip the generic corporate-speak.</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-lg);">
+            <h4 class="card-title">⚡ Claude's artifacts</h4>
+            <p class="card-description">When I need to iterate on a doc or chart, I use artifacts. It opens a side panel so you can see the output while chatting. Beats copy-pasting back and forth.</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-lg);">
+            <h4 class="card-title">🎯 Structure complex prompts</h4>
+            <p class="card-description">For messy asks, I use: Role (who you are), Instructions (what to do), Steps (in what order), End goal (what success looks like), Narrowing (constraints). Keeps the AI on track.</p>
+          </div>
+          
+          <div class="card" style="padding: var(--space-lg);">
+            <h4 class="card-title">🔄 Weekly challenge</h4>
+            <p class="card-description">This week: replace one manual task with AI. Summarizing notes, drafting an email, or pulling insights from a spreadsheet. Just one. See how much time you save.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Newsletter Signup -->
+    <section class="section" style="background: var(--color-bg-secondary); padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+      <div class="container">
+        <div class="card animate-on-scroll" style="text-align: center; max-width: 600px; margin: 0 auto; padding: var(--space-xl); background: linear-gradient(145deg, rgba(245,158,11,0.1) 0%, rgba(239,68,68,0.05) 100%);">
+          <h3 style="margin-bottom: var(--space-sm);">Stay Updated</h3>
+          <p style="margin-bottom: var(--space-lg);">Get weekly AI tips, new prompts, and course updates delivered to your inbox. No spam, unsubscribe anytime.</p>
+          <form id="subscribe-form" style="display: flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center;" onsubmit="handleSubscribe(event)">
+            <input type="email" id="subscribe-email" class="form-input" placeholder="Enter your email" style="flex: 1; min-width: 250px;" required>
+            <button type="submit" id="subscribe-btn" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p id="subscribe-msg" style="margin-top: var(--space-md); font-size: 0.9375rem; display: none;"></p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    var SUBSCRIBE_URL = 'https://script.google.com/macros/s/AKfycbwlodnDDto_5AE8NSh-6IX8LwcUL89fOCjkcQomNSbh9L1lQS1HJpmu2FDUNWYuBzqi/exec';
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+
+      var email = document.getElementById('subscribe-email').value.trim();
+      var btn = document.getElementById('subscribe-btn');
+      var msg = document.getElementById('subscribe-msg');
+
+      if (!email) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+      msg.style.display = 'none';
+
+      var img = new Image();
+      var url = SUBSCRIBE_URL + '?email=' + encodeURIComponent(email) + '&source=blog.html';
+
+      img.onload = img.onerror = function() {
+        msg.textContent = 'You are subscribed! We will send you weekly AI tips.';
+        msg.style.color = '#10b981';
+        msg.style.display = 'block';
+        document.getElementById('subscribe-email').value = '';
+        btn.textContent = 'Subscribed';
+      };
+
+      img.src = url;
+    }
+    </script>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="url(#footer-logo-gradient)"/>
+              <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+              <circle cx="18" cy="22" r="3" fill="white"/>
+              <defs>
+                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="36" y2="36">
+                  <stop stop-color="#2563eb"/>
+                  <stop offset="1" stop-color="#1d4ed8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>AI Career Transition</span>
+          </div>
+          <p>Empowering professionals to master AI skills and future-proof their careers.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Learn</h4>
+          <div class="footer-links">
+            <a href="101.html">AI 101 - Fundamentals</a>
+            <a href="201.html">AI 201 - Advanced</a>
+            <a href="prompts.html">Prompt Library</a>
+            <a href="blog.html">Blog & Tips</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="apps.html">AI Apps Showcase</a>
+            <a href="tools-comparison.html">Compare AI Tools</a>
+            <a href="101.html#certifications">Certifications</a>
+            <a href="101.html#videos">Video Tutorials</a>
+            <a href="101.html#tools">AI Tools</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="feedback.html">Give Feedback</a>
+            <a href="feedback.html#feature">Suggest Features</a>
+            <a href="feedback.html#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI Career Transition. All rights reserved.</p>
+        <p>Built for the AI-powered future.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

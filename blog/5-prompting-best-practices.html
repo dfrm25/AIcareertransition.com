@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Five prompting practices that actually work: context, structure, format constraints, and iteration. First-person examples and specific prompts you can use today.">
+  <meta name="keywords" content="prompt engineering, AI best practices, ChatGPT tips, prompting framework, AI for marketing">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="5 Prompting Best Practices That Actually Work | AI Career Transition">
+  <meta property="og:description" content="Five prompting practices that work: context, structure, format constraints, and iteration. With first-person examples.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aicareertransition.com/blog/5-prompting-best-practices.html">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="5 Prompting Best Practices That Actually Work">
+  <meta name="twitter:description" content="Five prompting practices that work: context, structure, format constraints, and iteration.">
+  
+  <link rel="canonical" href="https://aicareertransition.com/blog/5-prompting-best-practices.html">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "5 Prompting Best Practices That Actually Work",
+    "datePublished": "2025-01-20",
+    "description": "Five prompting practices that work: context, structure, format constraints, and iteration. First-person examples and specific prompts.",
+    "author": {"@type": "Organization", "name": "AI Career Transition"},
+    "publisher": {"@type": "Organization", "name": "AI Career Transition", "url": "https://aicareertransition.com"},
+    "url": "https://aicareertransition.com/blog/5-prompting-best-practices.html",
+    "keywords": ["prompt engineering", "AI best practices", "ChatGPT tips", "prompting framework"]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aicareertransition.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aicareertransition.com/blog.html"},{"@type":"ListItem","position":3,"name":"5 Prompting Best Practices","item":"https://aicareertransition.com/blog/5-prompting-best-practices.html"}]}
+  </script>
+  
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>5 Prompting Best Practices That Actually Work | AI Career Transition</title>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/>
+          <path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/>
+          <circle cx="18" cy="22" r="3" fill="white"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36">
+              <stop stop-color="#2563eb"/>
+              <stop offset="1" stop-color="#1d4ed8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AI Career Transition</span>
+      </a>
+      <div class="navbar-menu">
+        <a href="../index.html" class="navbar-link">Home</a>
+        <a href="../101.html" class="navbar-link">AI 101</a>
+        <a href="../201.html" class="navbar-link">AI 201</a>
+        <a href="../prompts.html" class="navbar-link">Prompt Library</a>
+        <a href="../blog.html" class="navbar-link active">Blog</a>
+        <a href="../apps.html" class="navbar-link">Apps</a>
+        <a href="../feedback.html" class="navbar-link">Feedback</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="../index.html#quiz" class="btn btn-primary">Take Quiz</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  
+  <main id="main-content">
+    <article class="section" style="padding-top: 120px; padding-bottom: var(--space-3xl);">
+      <div class="container" style="max-width: 720px; margin: 0 auto;">
+        <div style="margin-bottom: var(--space-xl);">
+          <a href="../blog.html" style="color: var(--color-accent-primary); font-size: 0.9375rem; text-decoration: underline;">← Back to Blog</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+          <span class="prompt-card-category" style="margin: 0;">Prompt Engineering</span>
+          <span style="font-size: 0.8125rem; color: var(--color-text-muted);"><time datetime="2025-01-20">January 20, 2025</time> · 4 min read</span>
+        </div>
+        <h1 style="font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.3; margin-bottom: var(--space-xl);">5 Prompting Best Practices That Actually Work</h1>
+        
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">I used to send vague prompts like "write a blog post" and get back generic fluff. Then I tried adding who I am and who it's for — "As a marketing director, write 500 words for small business owners on how AI saves time" — and the output was usable on the first try. Context matters more than I expected.</p>
+        
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Another thing: I always add "keep it under 15 words per bullet" or "3 bullet points max" when I need slides. Without that, ChatGPT gives me paragraphs. Break big asks into steps, say what format you want, and don't be afraid to ask again if it misses. Your first prompt is a draft, not the final answer.</p>
+        
+        <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">1. Add context up front</h2>
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Tell the AI who you are, who you're writing for, and why it matters. "As a PM, write a feature spec for engineers" beats "write a spec" every time.</p>
+        
+        <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">2. Specify format</h2>
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Bullets, word counts, section headers — say what you want. "5 bullets, 15 words each" or "3 paragraphs, 100 words total" saves a lot of editing.</p>
+        
+        <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">3. Break it into steps</h2>
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">For complex tasks, list steps: "Step 1: summarize the data. Step 2: identify 3 trends. Step 3: write 2 recommendations." Keeps the AI from wandering.</p>
+        
+        <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">4. Add constraints</h2>
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">"Don't guess at causes." "No jargon." "Grade-8 reading level." Constraints focus the output and cut the fluff.</p>
+        
+        <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">5. Iterate</h2>
+        <p style="margin-bottom: var(--space-xl); line-height: 1.7; color: var(--color-text-secondary);">Your first prompt rarely nails it. Ask for edits: "Shorter." "More casual." "Add an example." Treat it like a first draft.</p>
+        
+        <p><a href="../prompts.html" class="btn btn-primary">Explore our prompt library →</a></p>
+      </div>
+    </article>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#footer-logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></div>
+          <p>Empowering professionals to master AI skills and future-proof their careers.</p>
+        </div>
+        <div class="footer-column"><h4>Learn</h4><div class="footer-links"><a href="../101.html">AI 101</a><a href="../201.html">AI 201</a><a href="../prompts.html">Prompt Library</a><a href="../blog.html">Blog</a></div></div>
+        <div class="footer-column"><h4>Resources</h4><div class="footer-links"><a href="../apps.html">Apps</a><a href="../101.html#certifications">Certifications</a><a href="../feedback.html">Feedback</a></div></div>
+        <div class="footer-column"><h4>Connect</h4><div class="footer-links"><a href="../feedback.html">Give Feedback</a><a href="../feedback.html#contact">Contact</a></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

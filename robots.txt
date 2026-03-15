@@ -1,0 +1,8 @@
+# AI Career Transition - robots.txt
+# https://aicareertransition.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aicareertransition.com/sitemap.xml
