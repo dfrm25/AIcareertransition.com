@@ -1,10 +1,44 @@
 # Deployment: Cursor → GitHub → GoDaddy (Go-Live)
 
-This doc describes how to get code from this repo live on your GoDaddy-hosted site using Git and cPanel.
+This doc describes how to get code from this repo live on your GoDaddy-hosted site.
 
 ---
 
-## End-to-end flow
+## Auto-deploy on every push (recommended)
+
+Once set up, **every push to `main`** (e.g. from Cursor) automatically deploys to GoDaddy. No cPanel clicks.
+
+**Flow:** Code in Cursor → commit → `git push origin main` → GitHub Actions runs → files upload to GoDaddy via FTP → site updated.
+
+### One-time setup: add FTP secrets in GitHub
+
+1. In **GoDaddy**: get your FTP details  
+   - cPanel → **FTP Accounts** (or **File Manager** → note the server).  
+   - Create or use an FTP user; note **server hostname**, **username**, **password**.  
+   - Server is often `ftp.yourdomain.com` or the hostname shown in cPanel (e.g. `server123.hosting.com`).
+
+2. In **GitHub**: add repository secrets  
+   - Repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.  
+   - Add these four secrets (names must match exactly):
+
+   | Secret name       | Value |
+   |-------------------|--------|
+   | `FTP_SERVER`      | FTP hostname (e.g. `ftp.yourdomain.com`) |
+   | `FTP_USERNAME`    | Your FTP username |
+   | `FTP_PASSWORD`    | Your FTP password |
+   | `FTP_SERVER_DIR`  | Remote folder for the site (e.g. `public_html`) |
+
+3. Push to `main` (or run the workflow manually once).  
+   - **Actions** tab → **Deploy to GoDaddy** → run.  
+   - After the first successful run, every future push to `main` will deploy automatically.
+
+### What gets deployed
+
+The workflow uploads all site files (HTML, CSS, JS, images, blog, `robots.txt`, `sitemap.xml`, etc.) and excludes `.git`, `.github`, `.gitignore`, `.cpanel.yml`, `*.md`, and dev-only files.
+
+---
+
+## End-to-end flow (with auto-deploy)
 
 1. **Code** in Cursor (edit, save).
 2. **Commit & push** to GitHub:
@@ -13,11 +47,15 @@ This doc describes how to get code from this repo live on your GoDaddy-hosted si
    git commit -m "Your change description"
    git push origin main
    ```
-3. **Deploy to website** using one of the options below.
+3. **Deploy:** Automatic. GitHub Actions uploads to GoDaddy via FTP within a minute or two.
 
 ---
 
-## One-time setup in GoDaddy cPanel
+## Manual option: cPanel Git + Deploy
+
+If you prefer not to use GitHub Actions, you can use cPanel’s Git Version Control and deploy manually (or via push to cPanel if your host supports it).
+
+### One-time setup in GoDaddy cPanel
 
 ### 1. Open cPanel
 
