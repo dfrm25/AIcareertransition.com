@@ -1,0 +1,13 @@
+# cPanel deployment config for AI Career Transition site
+# Runs when you "Deploy HEAD Commit" in cPanel, or on git push (if pushing to cPanel repo)
+# See DEPLOYMENT.md for full workflow: Cursor → GitHub → GoDaddy
+---
+deployment:
+  tasks:
+    # Target: your account's web root ($HOME = /home/your_cpanel_user on cPanel)
+    - export DEPLOYPATH=${HOME}/public_html/
+    # Sync repo contents to live site (exclude version control and dev files)
+    - /bin/rsync -av --delete --exclude '.git' --exclude '.cpanel.yml' --exclude '.gitignore' --exclude '.DS_Store' ./ ${DEPLOYPATH}
+    # Sensible permissions: dirs 755, files 644
+    - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 {} \;
+    - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 {} \;
