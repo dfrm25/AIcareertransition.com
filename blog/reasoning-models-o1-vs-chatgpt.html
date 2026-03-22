@@ -96,13 +96,17 @@
           <span style="font-size: 0.8125rem; color: var(--color-text-muted);"><time datetime="2026-03-21">March 21, 2026</time> · 8 min read</span>
         </div>
         <h1 style="font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.3; margin-bottom: var(--space-xl);">Reasoning Models Explained: When to Use o1 vs ChatGPT</h1>
+
+        <div style="background: rgba(59,130,246,0.06); border-left: 3px solid var(--color-accent-primary); padding: var(--space-md) var(--space-lg); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: var(--space-xl);">
+          <p style="font-size: 0.875rem; color: var(--color-text-secondary); margin: 0;"><strong>March 2026 note:</strong> When this was written, o1 and o3-mini were OpenAI's standalone reasoning models. Since then, reasoning capability has been folded directly into ChatGPT as <strong>Thinking mode</strong> (currently GPT-5.4 Thinking). Claude now offers <strong>extended thinking</strong> across its main models too. The concepts below — when to use reasoning vs. fast chat — are unchanged. Just swap "o1" for "ChatGPT Thinking mode" when you read this.</p>
+        </div>
         
         <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">If you've been using ChatGPT for a while and then tried o1 or o3-mini, you probably noticed something weird. o1 takes forever. It spends like a minute "thinking" before it says anything. And when it does answer, the style is different — more careful, less chatty. That's because they're built for different jobs.</p>
         
-        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">In short: ChatGPT (and models like GPT-4o, Claude, Gemini) are chat models. They're optimized for fast back-and-forth. o1 and o3-mini are reasoning models — they're designed to actually think through hard problems step by step before giving you an answer. Knowing when to use which one will save you time and get you better results.</p>
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">In short: ChatGPT (and tools like Claude, Gemini) are chat models. They're optimized for fast back-and-forth. o1 and o3-mini were reasoning models — they're designed to actually think through hard problems step by step before giving you an answer. That capability is now built into ChatGPT as Thinking mode. Knowing when to use which one will save you time and get you better results.</p>
         
         <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">What is a Reasoning Model?</h2>
-        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">A reasoning model is an AI that's trained to show its work. Instead of jumping straight to a conclusion, it spends compute on chain-of-thought — basically, it reasons through the problem internally (you see the "thinking" delay) and then gives you an answer. OpenAI's o1 and o3-mini are the main examples right now; other vendors are building similar things.</p>
+        <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">A reasoning model is an AI that's trained to show its work. Instead of jumping straight to a conclusion, it spends compute on chain-of-thought — basically, it reasons through the problem internally (you see the "thinking" delay) and then gives you an answer. OpenAI's o1 and o3-mini were the first widely-used examples; today this is built into ChatGPT's Thinking mode and Claude's extended thinking.</p>
         
         <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Why does this matter? For math, logic, code debugging, and multi-step analysis, reasoning models tend to get fewer things wrong. Chat models can hallucinate or skip steps when the task gets complex. Reasoning models slow down on purpose.</p>
         
@@ -139,7 +143,7 @@
         <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Quick Reference</h2>
         <p style="margin-bottom: var(--space-md); line-height: 1.7; color: var(--color-text-secondary);">Summary of when to pick each model:</p>
         <ul style="margin-bottom: var(--space-xl); padding-left: 1.5rem; line-height: 1.8; color: var(--color-text-secondary);">
-          <li><strong>o1 / o3-mini:</strong> Complex analysis, math, logic, code review, multi-step reasoning.</li>
+          <li><strong>ChatGPT Thinking mode / Claude extended thinking:</strong> Complex analysis, math, logic, code review, multi-step reasoning.</li>
           <li><strong>ChatGPT / Claude / Gemini:</strong> Fast iteration, drafting, brainstorming, web search, day-to-day tasks.</li>
         </ul>
         

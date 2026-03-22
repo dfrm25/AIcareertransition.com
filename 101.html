@@ -72,7 +72,7 @@
     "mainEntity": [
       {"@type": "Question", "name": "Which AI tools should I start with?", "acceptedAnswer": {"@type": "Answer", "text": "Start with 2-3 tools that match your work: ChatGPT or Gemini for general use, Claude for long documents, and Copilot if you use Microsoft 365 daily."}},
       {"@type": "Question", "name": "Do I need to pay for AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits."}},
-      {"@type": "Question", "name": "What is a reasoning model and how is it different from ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Reasoning models like OpenAI o1 and o3-mini think step-by-step before answering. They are slower but more accurate for complex tasks like analysis, math, and code review. ChatGPT (GPT-4o) is a chat model — faster and better for drafting, iteration, and brainstorming. Use reasoning models when accuracy matters more than speed."}},
+      {"@type": "Question", "name": "What is a reasoning model and how is it different from ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Reasoning models think step-by-step before answering, making fewer logic errors on complex tasks. In ChatGPT this is called Thinking mode (GPT-5.4 Thinking as of 2026); in Claude it is extended thinking. The standard chat mode (ChatGPT, Gemini, Claude Sonnet) is faster and better for drafting, iteration, and brainstorming. Use Thinking mode when accuracy matters more than speed."}},
       {"@type": "Question", "name": "What does AGI mean for my job?", "acceptedAnswer": {"@type": "Answer", "text": "AGI (Artificial General Intelligence) refers to AI systems that can reason across tasks at or above human level. We are approaching this threshold. The best response is to build skills that work alongside AI: prompt engineering, AI agent workflows, and understanding which tasks AI can automate vs. which require human judgment. Our AI 101 and AI 201 courses cover both."}}
     ]
   }
@@ -142,7 +142,7 @@
           </h1>
           
           <p class="hero-description">
-            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Now updated for 2026 — including reasoning models (o1, o3-mini) and what the shift toward AGI means for how you work.
+            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Now updated for 2026 — including reasoning / Thinking models and what the shift toward AGI means for how you work.
           </p>
           <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Last updated March 2026</p>
         </div>
@@ -312,7 +312,7 @@
         <div class="grid grid-2 animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl);">
           <div class="card" style="border-left: 4px solid var(--color-accent-primary); padding: var(--space-xl);">
             <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color: var(--color-accent-primary);">Chat Models</h3>
-            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT (GPT-4o), Claude (Sonnet), Gemini Flash</p>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT (standard), Claude Sonnet, Gemini</p>
             <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Optimized for fast, conversational back-and-forth. Great for drafting, brainstorming, quick summaries, and iterating on copy.</p>
             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.9375rem; color: var(--color-text-secondary);">
               <li>✓ Fast responses</li>
@@ -322,8 +322,8 @@
             </ul>
           </div>
           <div class="card" style="border-left: 4px solid #10b981; padding: var(--space-xl);">
-            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color: #059669;">Reasoning Models</h3>
-            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">OpenAI o1, o3-mini, Claude Opus thinking</p>
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color: #059669;">Reasoning / Thinking Models</h3>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT Thinking mode, Claude extended thinking</p>
             <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Think step-by-step before answering. Take longer but handle complex analysis, logic, and math much more accurately.</p>
             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.9375rem; color: var(--color-text-secondary);">
               <li>✓ Better for complex analysis</li>
@@ -380,23 +380,21 @@
             </table>
           </div>
           <p style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--color-text-muted);"><a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">Read the full reasoning model guide →</a></p>
+          <div style="margin-top: var(--space-md); background: rgba(59,130,246,0.06); border-left: 3px solid var(--color-accent-primary); padding: var(--space-sm) var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+            <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;"><strong>Current model names (March 2026):</strong> ChatGPT → GPT-5.4 Thinking (reasoning) / GPT-5.3 Instant (fast chat) · Claude → Opus 4.6 with extended thinking / Sonnet 4.6 (fast) · Gemini → 2.0 Flash (standard). Vendors rename tiers regularly; the concepts above stay the same.</p>
+          </div>
         </div>
 
         <div class="grid grid-4 animate-on-scroll">
-          <a href="https://chat.openai.com/?model=o1" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI o1 logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
-            <div class="tool-card-name">OpenAI o1</div>
+          <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">ChatGPT Thinking</div>
             <div class="tool-card-category">Reasoning • High Accuracy</div>
-          </a>
-          <a href="https://chat.openai.com/?model=o3-mini" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI o3-mini logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
-            <div class="tool-card-name">OpenAI o3-mini</div>
-            <div class="tool-card-category">Reasoning • Faster &amp; Cheaper</div>
           </a>
           <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
             <img src="images/claude-logo.png" alt="Claude logo" class="tool-card-logo" style="background: #fff; padding: 8px;">
-            <div class="tool-card-name">Claude (Opus)</div>
-            <div class="tool-card-category">Extended Thinking Mode</div>
+            <div class="tool-card-name">Claude (extended thinking)</div>
+            <div class="tool-card-category">Reasoning • Extended Thinking</div>
           </a>
           <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
             <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini logo" class="tool-card-logo">

@@ -112,103 +112,138 @@
 
         <div style="background: var(--color-bg-secondary, #f8fafc); border-left: 4px solid var(--color-accent-primary, #2563eb); padding: var(--space-md) var(--space-lg); margin: var(--space-lg) 0; border-radius: 0 8px 8px 0;">
           <p style="margin: 0; font-size: 0.9375rem; font-weight: 600; color: var(--color-text-primary);">If cost isn't an issue, use the latest model.</p>
-          <p style="margin: var(--space-xs, 4px) 0 0; font-size: 0.875rem; color: var(--color-text-secondary);">Newer models (GPT-4o, Claude 3.5, Gemini 2.0, etc.) usually give better results. Pick the top-tier option when you can.</p>
+          <p style="margin: var(--space-xs, 4px) 0 0; font-size: 0.875rem; color: var(--color-text-secondary);">Newer model = better results. The UI moves around between updates, but the pattern is the same: find the model name near the top of chat and click it. Model names as of March 2026 are in the table below.</p>
         </div>
 
         <h2 style="font-size: 1.25rem; margin: var(--space-2xl) 0 var(--space-md);">Microsoft Copilot</h2>
-        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">Web (copilot.microsoft.com) or in Word/Outlook. Selector at top of chat or near input.</p>
+        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">Web (copilot.microsoft.com) or inside Word/Outlook via the sidebar.</p>
         <ol style="margin: var(--space-sm) 0; padding-left: 20px; line-height: 1.7; color: var(--color-text-secondary); font-size: 0.9375rem;">
-          <li>Open Copilot.</li>
-          <li>Click the dropdown (Balanced / Creative / Precise or GPT-4o).</li>
-          <li>Pick Creative or Precise—or GPT-4o if your plan has it.</li>
+          <li>Open Copilot at <strong>copilot.microsoft.com</strong> or inside a Microsoft 365 app.</li>
+          <li>Look for a <strong>dropdown near the chat input</strong> — it shows the current mode (Balanced, Creative, Precise) or a model name.</li>
+          <li>Select <strong>Creative</strong> for writing tasks or the highest-tier model if your plan includes it.</li>
         </ol>
-        <figure class="blog-figure">
-          <div style="position: relative;">
-            <img src="../images/blog/model-select-copilot.svg" alt="Copilot interface with model selector circled at top of chat pane">
-            <span class="blog-callout" style="top: 12%; right: 15%;">Click here →</span>
+        <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border, #e5e7eb); border-radius: 8px; padding: var(--space-md) var(--space-lg); margin: var(--space-lg) 0; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="color: var(--color-text-muted); font-size: 0.75rem; margin-left: 4px;">copilot.microsoft.com</span>
           </div>
-          <figcaption>Click the model dropdown to change it.</figcaption>
-        </figure>
+          <p style="margin: 0; color: var(--color-text-secondary); line-height: 1.6;">
+            <span style="color: var(--color-text-muted);">[ Copilot chat interface ]</span><br>
+            <span style="color: var(--color-text-muted);">─────────────────────────────────────</span><br>
+            <span style="background: rgba(37,99,235,0.12); color: var(--color-accent-primary); padding: 2px 8px; border-radius: 4px; font-weight: 600;">▼ Balanced  ← click here</span>
+            &nbsp; to pick Creative / Precise<br>
+            <span style="color: var(--color-text-muted); font-size: 0.75rem;">( appears top-right of chat or near the input box )</span>
+          </p>
+        </div>
 
         <h2 style="font-size: 1.25rem; margin: var(--space-2xl) 0 var(--space-md);">ChatGPT</h2>
-        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">Model name at top of chat. Free = one option; Plus = full list.</p>
+        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">The model name sits at the top of every chat. Free = limited options; Plus/Pro = full picker.</p>
         <ol style="margin: var(--space-sm) 0; padding-left: 20px; line-height: 1.7; color: var(--color-text-secondary); font-size: 0.9375rem;">
-          <li>Open a chat.</li>
-          <li>Click the model name (e.g. GPT-4o mini) at the top.</li>
-          <li>Choose GPT-4o or o1 for quality; mini for speed.</li>
+          <li>Open <strong>chatgpt.com</strong> and start or open a chat.</li>
+          <li>Click the model name at the <strong>top-centre of the chat window</strong> — it's usually "ChatGPT" with a dropdown arrow.</li>
+          <li>Choose the <strong>Thinking</strong> option for complex tasks; the standard mode for speed.</li>
         </ol>
-        <figure class="blog-figure">
-          <div style="position: relative;">
-            <img src="../images/blog/model-select-chatgpt.svg" alt="ChatGPT interface with model selector at top of chat">
-            <span class="blog-callout" style="top: 8%; right: 20%;">Click here →</span>
+        <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border, #e5e7eb); border-radius: 8px; padding: var(--space-md) var(--space-lg); margin: var(--space-lg) 0; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="color: var(--color-text-muted); font-size: 0.75rem; margin-left: 4px;">chatgpt.com</span>
           </div>
-          <figcaption>Click the model dropdown at the top.</figcaption>
-        </figure>
+          <p style="margin: 0; color: var(--color-text-secondary); line-height: 1.6;">
+            <span style="color: var(--color-text-muted);">[ Chat window — top-centre ]</span><br>
+            <span style="color: var(--color-text-muted);">─────────────────────────────────────</span><br>
+            <span style="background: rgba(37,99,235,0.12); color: var(--color-accent-primary); padding: 2px 8px; border-radius: 4px; font-weight: 600;">ChatGPT  ▼  ← click here</span><br>
+            <span style="color: var(--color-text-muted); padding-left: 16px;">• ChatGPT (standard — fast)</span><br>
+            <span style="color: #059669; padding-left: 16px; font-weight: 600;">• ChatGPT Thinking  ← use for complex tasks</span><br>
+            <span style="color: var(--color-text-muted); font-size: 0.75rem;">( picker appears at the top of the new-chat screen or in the model header )</span>
+          </p>
+        </div>
 
         <h2 style="font-size: 1.25rem; margin: var(--space-2xl) 0 var(--space-md);">Claude</h2>
-        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">claude.ai. Selector at top of chat or in sidebar.</p>
+        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">claude.ai. Model selector near the top of chat or in the left sidebar.</p>
         <ol style="margin: var(--space-sm) 0; padding-left: 20px; line-height: 1.7; color: var(--color-text-secondary); font-size: 0.9375rem;">
-          <li>Open claude.ai.</li>
-          <li>Find the model dropdown (top or sidebar).</li>
-          <li>Pick Sonnet (general) or Opus (complex / long docs).</li>
+          <li>Open <strong>claude.ai</strong>.</li>
+          <li>Find the model name <strong>near the top of chat</strong> or in the sidebar — it shows the current Claude version.</li>
+          <li>Choose <strong>Claude Sonnet</strong> for everyday tasks, <strong>Claude Opus</strong> for complex or long documents. Enable <strong>Extended Thinking</strong> in the same menu for reasoning-heavy tasks.</li>
         </ol>
-        <figure class="blog-figure">
-          <div style="position: relative;">
-            <img src="../images/blog/model-select-claude.svg" alt="Claude interface with model selector">
-            <span class="blog-callout" style="top: 10%; right: 18%;">Click here →</span>
+        <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border, #e5e7eb); border-radius: 8px; padding: var(--space-md) var(--space-lg); margin: var(--space-lg) 0; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="color: var(--color-text-muted); font-size: 0.75rem; margin-left: 4px;">claude.ai</span>
           </div>
-          <figcaption>Click the model selector (top or sidebar).</figcaption>
-        </figure>
+          <p style="margin: 0; color: var(--color-text-secondary); line-height: 1.6;">
+            <span style="color: var(--color-text-muted);">[ New chat — top of screen ]</span><br>
+            <span style="color: var(--color-text-muted);">─────────────────────────────────────</span><br>
+            <span style="background: rgba(37,99,235,0.12); color: var(--color-accent-primary); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Claude Sonnet  ▼  ← click here</span><br>
+            <span style="color: var(--color-text-muted); padding-left: 16px;">• Claude Sonnet (fast, general use)</span><br>
+            <span style="color: #059669; padding-left: 16px; font-weight: 600;">• Claude Opus  ← complex reasoning</span><br>
+            <span style="color: var(--color-text-muted); padding-left: 16px;">• Extended thinking toggle (same panel)</span>
+          </p>
+        </div>
 
         <h2 style="font-size: 1.25rem; margin: var(--space-2xl) 0 var(--space-md);">Gemini</h2>
-        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">gemini.google.com. Selector at top or near the input.</p>
+        <p style="margin-bottom: var(--space-sm); line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">gemini.google.com. Model name near the top or in a "Try Gemini Advanced" prompt.</p>
         <ol style="margin: var(--space-sm) 0; padding-left: 20px; line-height: 1.7; color: var(--color-text-secondary); font-size: 0.9375rem;">
-          <li>Open gemini.google.com.</li>
-          <li>Find the model dropdown.</li>
-          <li>Pick Flash (speed) or 1.5 Pro (reasoning).</li>
+          <li>Open <strong>gemini.google.com</strong>.</li>
+          <li>Look for the model name or <strong>"Gemini Advanced"</strong> option near the top of the page.</li>
+          <li>Use <strong>Gemini 2.0 Flash</strong> for everyday tasks; enable <strong>Deep Research</strong> mode (in the + menu near the input) for research-heavy queries.</li>
         </ol>
-        <figure class="blog-figure">
-          <div style="position: relative;">
-            <img src="../images/blog/model-select-gemini.svg" alt="Gemini interface with model selector">
-            <span class="blog-callout" style="top: 10%; right: 18%;">Click here →</span>
+        <div style="background: var(--color-bg-secondary); border: 1px solid var(--color-border, #e5e7eb); border-radius: 8px; padding: var(--space-md) var(--space-lg); margin: var(--space-lg) 0; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <span style="color: var(--color-text-muted); font-size: 0.75rem; margin-left: 4px;">gemini.google.com</span>
           </div>
-          <figcaption>Click the model selector.</figcaption>
-        </figure>
+          <p style="margin: 0; color: var(--color-text-secondary); line-height: 1.6;">
+            <span style="color: var(--color-text-muted);">[ Top of page ]</span><br>
+            <span style="color: var(--color-text-muted);">─────────────────────────────────────</span><br>
+            <span style="background: rgba(37,99,235,0.12); color: var(--color-accent-primary); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Gemini  ▼  ← click here</span><br>
+            <span style="color: var(--color-text-muted); padding-left: 16px;">• Gemini 2.0 Flash (default, fast)</span><br>
+            <span style="color: #059669; padding-left: 16px; font-weight: 600;">• Gemini Advanced  ← best quality</span><br>
+            <span style="color: var(--color-text-muted); padding-left: 16px;">• Deep Research (via + in chat input)</span>
+          </p>
+        </div>
 
         <h2 style="font-size: 1.25rem; margin: var(--space-2xl) 0 var(--space-md);">Quick comparison</h2>
         <table class="blog-table">
           <thead>
             <tr>
               <th>Tool</th>
-              <th>Use latest when you can</th>
-              <th>Where</th>
+              <th>Best quality option (March 2026)</th>
+              <th>Where to find it</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Copilot</td>
-              <td>Creative / Precise or GPT-4o</td>
-              <td>Top of chat or input</td>
+              <td>Creative mode or latest model in dropdown</td>
+              <td>Dropdown near chat input</td>
             </tr>
             <tr>
               <td>ChatGPT</td>
-              <td>GPT-4o / o1</td>
-              <td>Top of chat</td>
+              <td>ChatGPT Thinking (reasoning) / standard (fast)</td>
+              <td>Model name at top of chat</td>
             </tr>
             <tr>
               <td>Claude</td>
-              <td>Claude 3.5 Sonnet / Opus</td>
-              <td>Top or sidebar</td>
+              <td>Claude Opus + Extended Thinking toggle</td>
+              <td>Model picker top of chat / sidebar</td>
             </tr>
             <tr>
               <td>Gemini</td>
-              <td>Gemini 2.0 Flash / 1.5 Pro</td>
-              <td>Top of chat</td>
+              <td>Gemini Advanced / 2.0 Flash</td>
+              <td>Model dropdown at top of page</td>
             </tr>
           </tbody>
         </table>
 
-        <p style="margin: var(--space-xl) 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">Check your model before you start. If cost isn't a concern, stick with the latest.</p>
+        <p style="margin: var(--space-xl) 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;">UI layouts change with every update, but the pattern stays the same: model name near the top of chat → click → pick the best one available on your plan. Check it before you start a complex task.</p>
         
         <p><a href="../101.html#tools" class="btn btn-primary">Explore AI 101</a> <a href="../prompts.html" class="btn btn-secondary" style="margin-left: var(--space-md);">Prompt Library</a></p>
       </div>
