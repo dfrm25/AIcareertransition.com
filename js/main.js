@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
   initVideoPlayers();
   initCollapsibleSections();
   initBackToTop();
+  initPromptOfDay();
+  initPromptFilter();
+  initFavorites();
 });
 
 // ========================================
@@ -660,3 +663,159 @@ function getPersonalizedContent() {
 
 // Run personalization on page load
 document.addEventListener('DOMContentLoaded', getPersonalizedContent);
+
+// ========================================
+// Prompt of the Day (automatic — zero maintenance)
+// Changes daily based on date math; cycles through all existing prompts
+// ========================================
+function initPromptOfDay() {
+  const container = document.getElementById('prompt-of-day');
+  if (!container) return;
+
+  const prompts = Array.from(document.querySelectorAll('.prompt-section .prompt-card'));
+  if (!prompts.length) return;
+
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now - start) / 86400000);
+  const idx = dayOfYear % prompts.length;
+  const card = prompts[idx];
+
+  const title = card.querySelector('.prompt-card-title')?.textContent?.trim() || '';
+  const text = card.querySelector('.prompt-card-text')?.textContent?.trim() || '';
+  const category = card.querySelector('.prompt-card-category')?.textContent?.trim() || '';
+
+  container.innerHTML = `
+    <div class="prompt-card" style="max-width:680px;margin:0 auto;">
+      <div class="prompt-card-header">
+        <span class="prompt-card-category">${category}</span>
+        <button class="prompt-card-copy potd-copy" title="Copy to clipboard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <h4 class="prompt-card-title">${title}</h4>
+      <div class="prompt-card-text">${text}</div>
+    </div>`;
+
+  const btn = container.querySelector('.potd-copy');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+        }, 2000);
+      } catch(e) {}
+    });
+  }
+}
+
+// ========================================
+// Client-side Prompt Filter / Search
+// ========================================
+function initPromptFilter() {
+  const input = document.getElementById('prompt-search');
+  if (!input) return;
+
+  const clearBtn = document.getElementById('prompt-search-clear');
+
+  function doFilter() {
+    const query = input.value.toLowerCase().trim();
+    if (clearBtn) clearBtn.style.display = query ? 'flex' : 'none';
+
+    let totalVisible = 0;
+    document.querySelectorAll('.prompt-section').forEach(section => {
+      let sectionVisible = 0;
+      section.querySelectorAll('.prompt-card').forEach(card => {
+        const match = !query || card.textContent.toLowerCase().includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) sectionVisible++;
+      });
+      section.style.display = sectionVisible > 0 ? '' : 'none';
+      totalVisible += sectionVisible;
+    });
+
+    const noResults = document.getElementById('prompt-no-results');
+    if (noResults) noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+  }
+
+  input.addEventListener('input', doFilter);
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      input.value = '';
+      doFilter();
+      input.focus();
+    });
+  }
+}
+
+// ========================================
+// Save to Favourites (localStorage)
+// ========================================
+function initFavorites() {
+  if (!document.querySelector('.prompt-card')) return;
+
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('savedPrompts') || '[]'); } catch(e) {}
+
+  function updateCounter() {
+    const counter = document.getElementById('saved-count');
+    if (!counter) return;
+    counter.textContent = saved.length;
+  }
+
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 22px;border-radius:8px;font-size:0.875rem;z-index:9999;pointer-events:none;transition:opacity 0.3s;';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 1800);
+  }
+
+  document.querySelectorAll('.prompt-card').forEach(card => {
+    const title = card.querySelector('.prompt-card-title')?.textContent?.trim() || '';
+    const header = card.querySelector('.prompt-card-header');
+    if (!header || !title) return;
+
+    const isSaved = () => saved.includes(title);
+
+    const btn = document.createElement('button');
+    btn.className = 'prompt-card-fav';
+    btn.title = isSaved() ? 'Unsave' : 'Save prompt';
+    btn.setAttribute('aria-label', isSaved() ? 'Unsave prompt' : 'Save prompt');
+    const heartFilled = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+    const heartEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+    btn.innerHTML = isSaved() ? heartFilled : heartEmpty;
+    if (isSaved()) btn.style.color = '#ef4444';
+
+    btn.addEventListener('click', () => {
+      if (isSaved()) {
+        saved = saved.filter(s => s !== title);
+        btn.innerHTML = heartEmpty;
+        btn.style.color = '';
+        btn.title = 'Save prompt';
+        showToast('Removed from saved');
+      } else {
+        saved.push(title);
+        btn.innerHTML = heartFilled;
+        btn.style.color = '#ef4444';
+        btn.title = 'Unsave';
+        showToast('Prompt saved!');
+      }
+      localStorage.setItem('savedPrompts', JSON.stringify(saved));
+      updateCounter();
+    });
+
+    const copyBtn = header.querySelector('.prompt-card-copy');
+    if (copyBtn) {
+      header.insertBefore(btn, copyBtn);
+    } else {
+      header.appendChild(btn);
+    }
+  });
+
+  updateCounter();
+}

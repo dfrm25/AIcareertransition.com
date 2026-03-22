@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="30%" cy="20%" r="40%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="80%" r="40%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle grid pattern -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="900" y1="0" x2="900" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Logo mark -->
+  <rect x="80" y="72" width="60" height="60" rx="14" fill="url(#accent)"/>
+  <polygon points="110,86 130,116 90,116" fill="white" fill-opacity="0.95"/>
+  <circle cx="110" cy="111" r="5" fill="white"/>
+
+  <!-- Site name -->
+  <text x="160" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="600" fill="rgba(255,255,255,0.9)">AI Career Transition</text>
+  <text x="160" y="134" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="400" fill="rgba(255,255,255,0.45)">aicareertransition.com</text>
+
+  <!-- Main headline -->
+  <text x="80" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1.5">Master AI Skills,</text>
+  <text x="80" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="58" font-weight="800" fill="url(#accent)" letter-spacing="-1.5">Transform Your Career</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="rgba(255,255,255,0.65)">Practical AI education for working professionals  free, updated for 2026.</text>
+
+  <!-- Pill badges -->
+  <rect x="80" y="430" width="160" height="44" rx="22" fill="rgba(37,99,235,0.25)" stroke="rgba(59,130,246,0.5)" stroke-width="1.5"/>
+  <text x="160" y="458" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="600" fill="#93c5fd" text-anchor="middle">AI 101 &amp; 201</text>
+
+  <rect x="256" y="430" width="190" height="44" rx="22" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
+  <text x="351" y="458" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="600" fill="#6ee7b7" text-anchor="middle">75+ Prompts</text>
+
+  <rect x="462" y="430" width="230" height="44" rx="22" fill="rgba(124,58,237,0.2)" stroke="rgba(167,139,250,0.4)" stroke-width="1.5"/>
+  <text x="577" y="458" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="600" fill="#c4b5fd" text-anchor="middle">Reasoning Models</text>
+
+  <!-- Right side decorative element -->
+  <circle cx="1050" cy="315" r="180" fill="none" stroke="rgba(37,99,235,0.12)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="130" fill="none" stroke="rgba(37,99,235,0.1)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="80" fill="rgba(37,99,235,0.08)" stroke="rgba(37,99,235,0.2)" stroke-width="1"/>
+  <!-- Brain / AI icon suggestion -->
+  <text x="1050" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="64" text-anchor="middle" fill="rgba(59,130,246,0.4)">>à</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="rgba(0,0,0,0.2)"/>
+  <text x="80" y="614" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="rgba(255,255,255,0.35)">Free · No registration · No coding required</text>
+  <text x="1120" y="614" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="rgba(255,255,255,0.35)" text-anchor="end">© 2026</text>
+</svg>

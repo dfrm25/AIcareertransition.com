@@ -12,7 +12,7 @@
   <meta property="og:description" content="Master essential AI tools and prompt engineering basics with curated videos and certifications.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aicareertransition.com/101.html">
-  <meta property="og:image" content="https://aicareertransition.com/images/og-image.jpg">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.svg">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -21,6 +21,12 @@
   
   <!-- Canonical -->
   <link rel="canonical" href="https://aicareertransition.com/101.html">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JFKY1RSL2"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-9JFKY1RSL2");</script>
+  <!-- Google AdSense - REPLACE ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -65,7 +71,9 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type": "Question", "name": "Which AI tools should I start with?", "acceptedAnswer": {"@type": "Answer", "text": "Start with 2-3 tools that match your work: ChatGPT or Gemini for general use, Claude for long documents, and Copilot if you use Microsoft 365 daily."}},
-      {"@type": "Question", "name": "Do I need to pay for AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits."}}
+      {"@type": "Question", "name": "Do I need to pay for AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits."}},
+      {"@type": "Question", "name": "What is a reasoning model and how is it different from ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Reasoning models like OpenAI o1 and o3-mini think step-by-step before answering. They are slower but more accurate for complex tasks like analysis, math, and code review. ChatGPT (GPT-4o) is a chat model — faster and better for drafting, iteration, and brainstorming. Use reasoning models when accuracy matters more than speed."}},
+      {"@type": "Question", "name": "What does AGI mean for my job?", "acceptedAnswer": {"@type": "Answer", "text": "AGI (Artificial General Intelligence) refers to AI systems that can reason across tasks at or above human level. We are approaching this threshold. The best response is to build skills that work alongside AI: prompt engineering, AI agent workflows, and understanding which tasks AI can automate vs. which require human judgment. Our AI 101 and AI 201 courses cover both."}}
     ]
   }
   </script>
@@ -134,8 +142,9 @@
           </h1>
           
           <p class="hero-description">
-            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Curated from Google, OpenAI, Microsoft, and top educational institutions.
+            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Now updated for 2026 — including reasoning models (o1, o3-mini) and what the shift toward AGI means for how you work.
           </p>
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Last updated March 2026</p>
         </div>
       </div>
     </section>
@@ -145,6 +154,7 @@
       <div class="container">
         <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
           <a href="#tools" class="btn btn-secondary">AI Tools</a>
+          <a href="#reasoning" class="btn btn-secondary">Reasoning Models</a>
           <a href="#first-prompt" class="btn btn-secondary">Try a Prompt</a>
           <a href="#videos" class="btn btn-secondary">Learning Videos</a>
           <a href="#certifications" class="btn btn-secondary">Certifications</a>
@@ -290,6 +300,113 @@
       </div>
     </section>
     
+    <!-- Reasoning Models Section -->
+    <section id="reasoning" class="section" style="background: var(--color-bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="hero-badge" style="display: inline-flex; margin-bottom: var(--space-sm); background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); color: #059669;">2026 Update</div>
+          <h2>Chat Models vs <span class="text-gradient">Reasoning Models</span></h2>
+          <p>One of the most important things to understand in 2026: not all AI models think the same way. Knowing which to use saves you time and gets better results.</p>
+        </div>
+
+        <div class="grid grid-2 animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl);">
+          <div class="card" style="border-left: 4px solid var(--color-accent-primary); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color: var(--color-accent-primary);">Chat Models</h3>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT (GPT-4o), Claude (Sonnet), Gemini Flash</p>
+            <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Optimized for fast, conversational back-and-forth. Great for drafting, brainstorming, quick summaries, and iterating on copy.</p>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.9375rem; color: var(--color-text-secondary);">
+              <li>✓ Fast responses</li>
+              <li>✓ Great for iteration</li>
+              <li>✓ Best for creative & writing tasks</li>
+              <li>✓ Usually free tier available</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 4px solid #10b981; padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color: #059669;">Reasoning Models</h3>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">OpenAI o1, o3-mini, Claude Opus thinking</p>
+            <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Think step-by-step before answering. Take longer but handle complex analysis, logic, and math much more accurately.</p>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.9375rem; color: var(--color-text-secondary);">
+              <li>✓ Better for complex analysis</li>
+              <li>✓ Fewer logic errors</li>
+              <li>✓ Best for code review, math, decisions</li>
+              <li>✓ Worth the wait for high-stakes tasks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl); padding: var(--space-xl);">
+          <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-md);">Quick Reference: Which to Use?</h3>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9375rem;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--border-color);">
+                  <th style="text-align: left; padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Task</th>
+                  <th style="text-align: left; padding: var(--space-sm) var(--space-md); color: var(--color-accent-primary);">Chat Model</th>
+                  <th style="text-align: left; padding: var(--space-sm) var(--space-md); color: #059669;">Reasoning Model</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Draft an email</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">✓ Best</td>
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-muted);">Overkill</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color); background: var(--color-bg-secondary);">
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Complex budget model / forecast</td>
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-muted);">May make errors</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">✓ Best</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Brainstorm campaign ideas</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">✓ Best</td>
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-muted);">Slow for this</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color); background: var(--color-bg-secondary);">
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Debug code / logic</td>
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-muted);">OK</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">✓ Much better</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Rewrite / shorten copy</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">✓ Best</td>
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-muted);">Not needed</td>
+                </tr>
+                <tr style="background: var(--color-bg-secondary);">
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Multi-step analysis with stakes</td>
+                  <td style="padding: var(--space-sm) var(--space-md); color: var(--color-text-muted);">Risk of errors</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">✓ Best</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--color-text-muted);">Source: AI Career Transition (aicareertransition.com) · <a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">Read the full guide →</a></p>
+        </div>
+
+        <div class="grid grid-4 animate-on-scroll">
+          <a href="https://chat.openai.com/?model=o1" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI o1 logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">OpenAI o1</div>
+            <div class="tool-card-category">Reasoning • High Accuracy</div>
+          </a>
+          <a href="https://chat.openai.com/?model=o3-mini" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI o3-mini logo" class="tool-card-logo" style="background: #fff; padding: 12px;">
+            <div class="tool-card-name">OpenAI o3-mini</div>
+            <div class="tool-card-category">Reasoning • Faster &amp; Cheaper</div>
+          </a>
+          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="images/claude-logo.png" alt="Claude logo" class="tool-card-logo" style="background: #fff; padding: 8px;">
+            <div class="tool-card-name">Claude (Opus)</div>
+            <div class="tool-card-category">Extended Thinking Mode</div>
+          </a>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
+            <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini logo" class="tool-card-logo">
+            <div class="tool-card-name">Gemini 2.0 Flash</div>
+            <div class="tool-card-category">Fast · Deep Research Mode</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Try your first prompt (AI 101) -->
     <section id="first-prompt" class="section">
       <div class="container">
