@@ -32,9 +32,15 @@
   </url>
   <url>
     <loc>https://aicareertransition.com/blog.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aicareertransition.com/blog/copilot-better-model-than-auto.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
   </url>
   <url>
     <loc>https://aicareertransition.com/blog/reasoning-models-o1-vs-chatgpt.html</loc>
