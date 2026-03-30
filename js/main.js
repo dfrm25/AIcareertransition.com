@@ -4,10 +4,60 @@
  */
 
 // ========================================
+// Analytics data layer (GA4 + extensible)
+// Pushes structured events for quiz funnel, CTAs, prompt copies.
+// ========================================
+window.dataLayer = window.dataLayer || [];
+
+/**
+ * @param {string} eventName - GA4-style snake_case name
+ * @param {Record<string, unknown>} [params]
+ */
+function siteTrack(eventName, params) {
+  var payload = Object.assign(
+    {
+      event: eventName,
+      page_path: window.location.pathname,
+      page_title: document.title,
+      page_location: window.location.href,
+    },
+    params || {}
+  );
+  window.dataLayer.push(payload);
+  if (typeof window.gtag === 'function') {
+    try {
+      window.gtag('event', eventName, params || {});
+    } catch (e) {
+      /* gtag may not be loaded yet */
+    }
+  }
+}
+
+var quizSessionStarted = false;
+
+function initQuizCtaTracking() {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href="#quiz"], a[href$="index.html#quiz"], a[href*="/index.html#quiz"]');
+    if (!a) return;
+    var loc = 'other';
+    if (a.closest('.navbar')) loc = 'navbar';
+    else if (a.closest('.hero-actions') || a.closest('.hero-content')) loc = 'hero';
+    else if (a.closest('.journey-flow')) loc = 'journey';
+    else if (a.closest('footer')) loc = 'footer';
+    else if (a.closest('.tool-card') || a.closest('.card')) loc = 'card';
+    siteTrack('cta_quiz_click', {
+      cta_location: loc,
+      link_text: (a.textContent || '').trim().slice(0, 120),
+    });
+  });
+}
+
+// ========================================
 // Initialize on DOM Load
 // ========================================
 document.addEventListener('DOMContentLoaded', function() {
   initNavigation();
+  initQuizCtaTracking();
   initQuiz();
   initTabs();
   initAccordions();
@@ -252,6 +302,12 @@ function renderQuestion() {
   actionsHTML += '</div>';
   
   quizContainer.innerHTML = progressHTML + questionHTML + optionsHTML + actionsHTML;
+
+  siteTrack('quiz_question_view', {
+    step: currentQuestion + 1,
+    total_steps: quizQuestions.length,
+    question_key: 'q' + (currentQuestion + 1),
+  });
   
   // Enable button if answer already selected
   if (quizAnswers[currentQuestion] !== undefined) {
@@ -261,7 +317,15 @@ function renderQuestion() {
 }
 
 function selectOption(index) {
+  if (!quizSessionStarted) {
+    quizSessionStarted = true;
+    siteTrack('quiz_start', { total_questions: quizQuestions.length });
+  }
   quizAnswers[currentQuestion] = index;
+  siteTrack('quiz_option_select', {
+    step: currentQuestion + 1,
+    option_index: index,
+  });
   
   // Update UI
   document.querySelectorAll('.quiz-option').forEach((opt, i) => {
@@ -275,6 +339,10 @@ function selectOption(index) {
 
 function nextQuestion() {
   if (quizAnswers[currentQuestion] === undefined) return;
+  siteTrack('quiz_step_advance', {
+    completed_step: currentQuestion + 1,
+    next_step: currentQuestion + 2,
+  });
   currentQuestion++;
   renderQuestion();
 }
@@ -324,6 +392,13 @@ function showResults() {
     ctaText = 'Start AI 201 Courses';
   }
   
+  siteTrack('quiz_complete', {
+    readiness_score: percentage,
+    readiness_segment: level,
+    readiness_label: title,
+    total_questions: quizQuestions.length,
+  });
+
   quizContainer.innerHTML = `
     <div class="quiz-result">
       <div class="quiz-result-score">${percentage}%</div>
@@ -351,6 +426,8 @@ function showResults() {
 }
 
 function restartQuiz() {
+  siteTrack('quiz_restart', {});
+  quizSessionStarted = false;
   currentQuestion = 0;
   quizAnswers = [];
   renderQuestion();
@@ -418,6 +495,14 @@ function initCopyButtons() {
       
       try {
         await navigator.clipboard.writeText(promptText);
+        var card = btn.closest('.prompt-card');
+        var catEl = card && card.querySelector('.prompt-card-category');
+        var titleEl = card && card.querySelector('.prompt-card-title');
+        siteTrack('prompt_copy', {
+          prompt_category: (catEl && catEl.textContent ? catEl.textContent.trim() : '') || 'unknown',
+          prompt_title: (titleEl && titleEl.textContent ? titleEl.textContent.trim().slice(0, 120) : '') || '',
+          content_length: promptText.length,
+        });
         btn.classList.add('copied');
         btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
         
@@ -702,6 +787,12 @@ function initPromptOfDay() {
     btn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(text);
+        siteTrack('prompt_copy', {
+          prompt_category: category || 'prompt_of_day',
+          prompt_title: (title || '').slice(0, 120),
+          content_length: text.length,
+          copy_context: 'prompt_of_day',
+        });
         btn.classList.add('copied');
         btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
         setTimeout(() => {

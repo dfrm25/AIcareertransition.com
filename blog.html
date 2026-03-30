@@ -21,12 +21,8 @@
   
   <!-- Canonical -->
   <link rel="canonical" href="https://aicareertransition.com/blog.html">
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JFKY1RSL2"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-9JFKY1RSL2");</script>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179979583019834" crossorigin="anonymous"></script>
+  <!-- GA + AdSense: after load (PageSpeed) -->
+  <script>window.addEventListener("load",function(){var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);});</script>
   
   <!-- Structured Data: Blog -->
   <script type="application/ld+json">
@@ -113,7 +109,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -286,7 +283,7 @@
             <span style="font-size: 0.8125rem; color: var(--color-text-muted);"><time datetime="2026-02-08">February 8, 2026</time> · 6 min read</span>
           </div>
           <h3 style="margin-bottom: var(--space-sm); font-size: 1.25rem; line-height: 1.35;"><a href="blog/how-to-change-ai-model.html" style="color: var(--color-text-primary); text-decoration: none;">You're Probably Using the Wrong AI Model. Here's Where to Change It.</a></h3>
-          <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Most people use whatever model is selected by default — usually the cheapest, not the best. Same prompt, different model = noticeably different quality. Step-by-step: exactly where to switch models in ChatGPT, Claude, Gemini, and Copilot.</p>
+          <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Plain-language steps for where the model control lives in Copilot, ChatGPT, Claude, and Gemini. No schematic “fake browser” images; for a real Copilot screen capture, we link to the dedicated Copilot post.</p>
           <a href="blog/how-to-change-ai-model.html" style="color: var(--color-accent-primary); font-weight: 600; font-size: 0.9375rem;">Read full post →</a>
         </article>
 
@@ -447,6 +444,6 @@
   </footer>
   
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

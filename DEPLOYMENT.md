@@ -23,19 +23,31 @@ Record each go-live here so “last deployed” in cPanel always has a paper tra
 ## End-to-end workflow
 
 1. **Edit** in Cursor → save.
-2. **Commit and push** to GitHub:
+2. **Regenerate the sitemap** (includes new or renamed HTML): from the repo root run `python3 scripts/build_sitemap.py` so `sitemap.xml` stays in sync before you commit.
+3. **Commit and push** to GitHub:
    ```bash
    git add -A
    git commit -m "Describe the change"
    git push origin main
    ```
-3. **cPanel** → **Files** → **Git Version Control** → open this repo → **Pull or Deploy**:
+4. **cPanel** → **Files** → **Git Version Control** → open this repo → **Pull or Deploy**:
    - **Update from Remote**
    - **Deploy HEAD Commit**
 
-Live site updates after step 3. **GitHub `main` is the source of truth.**
+Live site updates after deploy. **GitHub `main` is the source of truth.**
 
 Repo: [github.com/dfrm25/AIcareertransition.com](https://github.com/dfrm25/AIcareertransition.com)
+
+---
+
+## Performance (PageSpeed / Lighthouse)
+
+- **`.htaccess`** — enables compression and `Cache-Control` for `css`, `js`, images, and short revalidation for `html` (Apache must allow `mod_headers` / `mod_expires` / `mod_deflate`; most cPanel hosts do).
+- **Third-party scripts** — GA4 and AdSense load **after** `window.load` via `/js/load-third-party.js` so they do not compete with first paint.
+- **Fonts** — Google Fonts CSS is loaded with `rel="preload" … as="style"` then applied on `onload` (non-blocking), with `<noscript>` fallback.
+- **Site JS** — `main.js` uses **`defer`** at the end of `<body>`.
+
+You cannot fully eliminate “unused JavaScript” from Google’s own tags in Lighthouse; the above targets what we control on the origin.
 
 ---
 
@@ -84,6 +96,7 @@ These are **not** the primary process anymore; Git deploy replaces manual file l
 | Step | Where | Action |
 |------|--------|--------|
 | Edit | Cursor | Save |
+| Sitemap | Terminal (repo root) | `python3 scripts/build_sitemap.py` before commit when HTML URLs change |
 | Publish to GitHub | Terminal | `git add -A && git commit -m "…" && git push origin main` |
 | Pull on server | cPanel → Git | **Update from Remote** |
 | Go live | cPanel → Git | **Deploy HEAD Commit** |

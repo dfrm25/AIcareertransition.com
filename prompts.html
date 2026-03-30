@@ -21,12 +21,8 @@
   
   <!-- Canonical -->
   <link rel="canonical" href="https://aicareertransition.com/prompts.html">
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JFKY1RSL2"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-9JFKY1RSL2");</script>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179979583019834" crossorigin="anonymous"></script>
+  <!-- GA + AdSense: after load (PageSpeed) -->
+  <script>window.addEventListener("load",function(){var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);});</script>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -34,7 +30,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -143,6 +140,7 @@
           <p class="hero-description">
             Copy-paste prompts for every professional need. Marketing, analytics, copywriting, job search and LinkedIn, interviews, reasoning models, and more. Click to copy, customize, and go.
           </p>
+          <p style="font-size: 0.875rem; color: var(--color-text-secondary); margin-top: var(--space-md); line-height: 1.6;">Role guides with context and FAQs: <a href="personas/marketing.html" style="color: var(--color-accent-primary);">Marketing</a> · <a href="personas/product.html" style="color: var(--color-accent-primary);">Product</a> · <a href="personas/analytics.html" style="color: var(--color-accent-primary);">Analytics</a> · <a href="personas/data-science.html" style="color: var(--color-accent-primary);">Data science</a> · <a href="personas/copywriting.html" style="color: var(--color-accent-primary);">Copywriting</a>.</p>
           <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Updated March 2026 · Includes AGI-era reasoning &amp; database marketing prompts</p>
         </div>
       </div>
@@ -1362,6 +1360,6 @@
   </footer>
   
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 # Authoritative deploy: Git → cPanel "Deploy HEAD Commit" (see DEPLOYMENT.md).
 
 ROOT (public_html/)
+  .htaccess
   ads.txt
   index.html
   101.html
@@ -17,6 +18,13 @@ ROOT (public_html/)
   tools-comparison.html
   robots.txt
   sitemap.xml
+
+personas/
+  marketing.html
+  product.html
+  analytics.html
+  data-science.html
+  copywriting.html
 
 blog/
   5-prompting-best-practices.html
@@ -33,6 +41,7 @@ css/
 
 js/
   main.js
+  load-third-party.js
 
 images/
   favicon.svg

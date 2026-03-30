@@ -21,12 +21,8 @@
   
   <!-- Canonical -->
   <link rel="canonical" href="https://aicareertransition.com/apps.html">
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JFKY1RSL2"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-9JFKY1RSL2");</script>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179979583019834" crossorigin="anonymous"></script>
+  <!-- GA + AdSense: after load (PageSpeed) -->
+  <script>window.addEventListener("load",function(){var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);});</script>
   
   <!-- Structured Data - BreadcrumbList -->
   <script type="application/ld+json">
@@ -39,7 +35,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -345,6 +342,6 @@
   </footer>
   
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
