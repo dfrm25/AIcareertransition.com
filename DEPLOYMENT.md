@@ -10,13 +10,13 @@ Record each go-live here so “last deployed” in cPanel always has a paper tra
 
 | Field | Value |
 |--------|--------|
-| **Last deployed (server)** | Mar 29, 2026 9:41:32 AM |
-| **Commit SHA** | `412f0f4fd831901f6efe7d78afa374eea8ba2dda` |
+| **Last deployed (server)** | Mar 29, 2026 8:29:53 PM (cPanel) |
+| **Commit SHA** | `b9a81470abf8f7d5f32ce8e17012186d2371621a` |
 | **Author** | Design Forge (designforge.rm@gmail.com) |
-| **Commit date** | Mar 22, 2026 10:37:37 AM |
-| **Subject** | ads.txt: use ASCII comments (fix mojibake in browser) |
+| **Commit date** | Mar 29, 2026 9:11:40 AM |
+| **Subject** | Blog: Microsoft Copilot model menu (screenshot) — better than Auto |
 
-**Note:** Newer commits may exist locally or on GitHub after this deploy (e.g. career hub, blog posts). The SHA above is **what was live** at that cPanel snapshot; after your next push + deploy, update this table.
+**On GitHub `main` (may be ahead of public_html):** `6bfae0b` — career hub, new blog posts, nav/sitemap, deployment docs. In cPanel: **Update from Remote**, then **Deploy HEAD Commit**, then refresh this table with the new “Last deployed” time and SHA.
 
 ---
 
