@@ -16,7 +16,7 @@ Record each go-live here so “last deployed” in cPanel always has a paper tra
 | **Commit date** | Mar 29, 2026 9:11:40 AM |
 | **Subject** | Blog: Microsoft Copilot model menu (screenshot) — better than Auto |
 
-**On GitHub `main` (may be ahead of public_html):** `6bfae0b` — career hub, new blog posts, nav/sitemap, deployment docs. In cPanel: **Update from Remote**, then **Deploy HEAD Commit**, then refresh this table with the new “Last deployed” time and SHA.
+**On GitHub `main` (may be ahead of public_html):** pull the latest `main` (includes career hub, new blog posts, nav/sitemap, deployment docs). In cPanel: **Update from Remote**, then **Deploy HEAD Commit**, then refresh this table with the new “Last deployed” time and SHA from cPanel.
 
 ---
 
