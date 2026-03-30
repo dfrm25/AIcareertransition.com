@@ -1,72 +1,91 @@
-# Deployment: Cursor → GitHub → GoDaddy (Go-Live)
+# Deployment — single package (Cursor → GitHub → cPanel)
 
-**Automated:** Code from Cursor to GitHub (push from here).  
-**Manual:** In cPanel, pull from GitHub and deploy to the live site.
+Everything you ship is **one Git repository**. There is no separate “deployment bundle”: **push `main`**, then in cPanel **pull** and **Deploy HEAD Commit**. The server copies the repo into `public_html` per `.cpanel.yml`.
 
 ---
 
-## Your workflow
+## Production deployment log (cPanel)
 
-1. **Code in Cursor** — edit, save.
-2. **Push to GitHub** (automated from your side):
+Record each go-live here so “last deployed” in cPanel always has a paper trail.
+
+| Field | Value |
+|--------|--------|
+| **Last deployed (server)** | Mar 29, 2026 9:41:32 AM |
+| **Commit SHA** | `412f0f4fd831901f6efe7d78afa374eea8ba2dda` |
+| **Author** | Design Forge (designforge.rm@gmail.com) |
+| **Commit date** | Mar 22, 2026 10:37:37 AM |
+| **Subject** | ads.txt: use ASCII comments (fix mojibake in browser) |
+
+**Note:** Newer commits may exist locally or on GitHub after this deploy (e.g. career hub, blog posts). The SHA above is **what was live** at that cPanel snapshot; after your next push + deploy, update this table.
+
+---
+
+## End-to-end workflow
+
+1. **Edit** in Cursor → save.
+2. **Commit and push** to GitHub:
    ```bash
    git add -A
-   git commit -m "Your change description"
+   git commit -m "Describe the change"
    git push origin main
    ```
-3. **Deploy to live site** (manual in cPanel):
-   - Go to **cPanel** → **Files** → **Git Version Control**.
-   - Open your repo → **Pull or Deploy** tab.
-   - Click **Update from Remote** (pulls latest from GitHub).
-   - Click **Deploy HEAD Commit**.
+3. **cPanel** → **Files** → **Git Version Control** → open this repo → **Pull or Deploy**:
+   - **Update from Remote**
+   - **Deploy HEAD Commit**
 
-Your live site updates after step 3. The repo on GitHub is always the source of truth; cPanel just pulls and deploys when you’re ready.
+Live site updates after step 3. **GitHub `main` is the source of truth.**
 
----
-
-## One-time setup in GoDaddy cPanel
-
-If you haven’t already connected the repo:
-
-1. **Open cPanel**  
-   GoDaddy → your hosting → **Manage** → **cPanel**.
-
-2. **Git Version Control**  
-   **Files** → **Git Version Control** → **Create** / **Clone a Repository**.
-
-3. **Clone from GitHub**
-   - **Repository URL:** `https://github.com/dfrm25/AIcareertransition.com.git`
-   - **Branch:** `main`
-   - **Repository path:** default (e.g. `repositories/AIcareertransition.com`) is fine.
-   - **Deployment path:** `public_html` (or your web root).
-
-4. **First deploy**  
-   **Pull or Deploy** → **Update from Remote** → **Deploy HEAD Commit**.
+Repo: [github.com/dfrm25/AIcareertransition.com](https://github.com/dfrm25/AIcareertransition.com)
 
 ---
 
 ## What `.cpanel.yml` does
 
-When you click **Deploy HEAD Commit**, cPanel runs the tasks in `.cpanel.yml`:
+On **Deploy HEAD Commit**, cPanel runs:
 
-- Syncs repo files into your deployment path (e.g. `public_html`), excluding `.git`, `.gitignore`, `.cpanel.yml`, `.DS_Store`.
-- Sets directory permissions to `755` and file permissions to `644`.
+- `rsync` from the clone into `${HOME}/public_html/` (see `.cpanel.yml` for exact flags).
+- Excludes: `.git`, `.cpanel.yml`, `.gitignore`, `.DS_Store`.
+- Sets directories **755**, files **644**.
 
-If your site lives in a subdirectory (e.g. `public_html/aireer`), edit `.cpanel.yml` and set:
+If the site lives in a subdirectory, edit `DEPLOYPATH` in `.cpanel.yml`.
 
-```yaml
-- export DEPLOYPATH=${HOME}/public_html/aireer/
-```
+---
+
+## Verify files on the server
+
+Use **`DEPLOY_MANIFEST.txt`** in this repo as the checklist of HTML/CSS/JS/images and key root files that should appear under `public_html` after deploy.
+
+---
+
+## Legacy docs (FTP era)
+
+These are **not** the primary process anymore; Git deploy replaces manual file lists.
+
+| File | Purpose |
+|------|--------|
+| `FILES_TO_UPLOAD.txt` | Deprecated list; see `DEPLOY_MANIFEST.txt` |
+| `UPLOAD_CHECKLIST.md` | Old step-by-step FTP checklist |
+| `GODADDY_*.md` | Historical GoDaddy notes |
+
+---
+
+## One-time cPanel Git setup
+
+1. **cPanel** → **Git Version Control** → **Clone**.
+2. **Repository URL:** `https://github.com/dfrm25/AIcareertransition.com.git`
+3. **Branch:** `main`
+4. **Deployment path:** `public_html` (or your web root).
+5. **Pull or Deploy** → **Update from Remote** → **Deploy HEAD Commit**.
 
 ---
 
 ## Quick reference
 
-| Step           | Where              | Action |
-|----------------|--------------------|--------|
-| Edit code      | Cursor             | Save files |
-| Push to GitHub | Cursor / Terminal  | `git add -A && git commit -m "..." && git push origin main` |
-| Pull on server | cPanel → Git → Pull or Deploy | **Update from Remote** |
-| Go live        | cPanel → Git → Pull or Deploy | **Deploy HEAD Commit** |
+| Step | Where | Action |
+|------|--------|--------|
+| Edit | Cursor | Save |
+| Publish to GitHub | Terminal | `git add -A && git commit -m "…" && git push origin main` |
+| Pull on server | cPanel → Git | **Update from Remote** |
+| Go live | cPanel → Git | **Deploy HEAD Commit** |
 
-Repo: [github.com/dfrm25/AIcareertransition.com](https://github.com/dfrm25/AIcareertransition.com)
+Optional: run `scripts/package-deployment.sh` from the repo root to build a local zip (backup or manual upload); normal go-live is still Git + cPanel.

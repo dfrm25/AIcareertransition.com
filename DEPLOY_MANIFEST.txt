@@ -1,0 +1,51 @@
+# AI Career Transition — production file manifest
+# Use this to verify public_html after a deploy, or for manual FTP parity.
+# Authoritative deploy: Git → cPanel "Deploy HEAD Commit" (see DEPLOYMENT.md).
+
+ROOT (public_html/)
+  ads.txt
+  index.html
+  101.html
+  201.html
+  prompts.html
+  career.html
+  blog.html
+  apps.html
+  feedback.html
+  about.html
+  privacy.html
+  tools-comparison.html
+  robots.txt
+  sitemap.xml
+
+blog/
+  5-prompting-best-practices.html
+  ai-career-transition-mistakes.html
+  chatgpt-monday-reports.html
+  copilot-better-model-than-auto.html
+  geo-basics-chatgpt-perplexity-citations.html
+  how-to-change-ai-model.html
+  reasoning-models-o1-vs-chatgpt.html
+  resume-linkedin-ai.html
+
+css/
+  styles.css
+
+js/
+  main.js
+
+images/
+  favicon.svg
+  og-image.svg
+  claude-logo.png
+  copilot-logo-official.svg
+  copilot-logo.ico
+  blog/.gitkeep
+  blog/copilot-model-picker.png
+  blog/model-select-chatgpt.svg
+  blog/model-select-claude.svg
+  blog/model-select-copilot.svg
+  blog/model-select-gemini.svg
+
+# Not required for the public site (dev / reference); may still exist in repo root if rsync is wide open:
+#   *.md, test_videos.py, google-apps-script*.js, video_source_mapping.txt

@@ -1,64 +1,15 @@
 ===========================================
-AI CAREER TRANSITION - FILES TO UPLOAD TO GODADDY
+DEPRECATED — USE GIT DEPLOY INSTEAD
 ===========================================
 
-UPLOAD ALL FILES TO: public_html folder
+Manual FTP file lists are no longer maintained here.
 
-FILE LIST:
-----------
+Single deployment flow:
+  Cursor → git push origin main → cPanel → Update from Remote → Deploy HEAD Commit
 
-ROOT FILES (upload to public_html/):
-- index.html
-- 101.html
-- 201.html
-- prompts.html
-- blog.html
-- apps.html
-- feedback.html
-- robots.txt
-- sitemap.xml
-
-CSS FOLDER (create folder "css" and upload):
-- css/styles.css
-
-JS FOLDER (create folder "js" and upload):
-- js/main.js
-
-IMAGES FOLDER (create folder "images" and upload):
-- images/favicon.svg
-
-===========================================
-TOTAL: 12 files across 3 folders
-===========================================
-
-STRUCTURE:
-public_html/
-  ├── index.html
-  ├── 101.html
-  ├── 201.html
-  ├── prompts.html
-  ├── blog.html
-  ├── apps.html
-  ├── feedback.html
-  ├── robots.txt
-  ├── sitemap.xml
-  ├── css/
-  │   └── styles.css
-  ├── js/
-  │   └── main.js
-  └── images/
-      └── favicon.svg
-
-===========================================
-QUICK UPLOAD STEPS:
-===========================================
-1. Login to GoDaddy cPanel
-2. Open File Manager
-3. Navigate to public_html folder
-4. Upload all HTML files, robots.txt, sitemap.xml
-5. Create css folder, upload styles.css
-6. Create js folder, upload main.js
-7. Create images folder, upload favicon.svg
-8. Visit yourdomain.com to test
+See:
+  - DEPLOYMENT.md     (full workflow + production deployment log)
+  - DEPLOY_MANIFEST.txt (files that should appear in public_html)
+  - .cpanel.yml       (what the server runs on deploy)
 
 ===========================================

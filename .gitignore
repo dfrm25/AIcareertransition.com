@@ -25,6 +25,9 @@ env/
 *.swo
 *~
 
+# Local deploy zip (scripts/package-deployment.sh)
+ai-career-transition-deploy.zip
+
 # Logs and temp
 *.log
 *.tmp
