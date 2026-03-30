@@ -10,13 +10,13 @@ Record each go-live here so “last deployed” in cPanel always has a paper tra
 
 | Field | Value |
 |--------|--------|
-| **Last deployed (server)** | Mar 29, 2026 8:29:53 PM (cPanel) |
-| **Commit SHA** | `b9a81470abf8f7d5f32ce8e17012186d2371621a` |
+| **Last deployed (server)** | Mar 29, 2026 8:33:21 PM (cPanel) |
+| **Commit SHA** | `9608c5ab1f63c931405bad7bf87ddde93660f863` |
 | **Author** | Design Forge (designforge.rm@gmail.com) |
-| **Commit date** | Mar 29, 2026 9:11:40 AM |
-| **Subject** | Blog: Microsoft Copilot model menu (screenshot) — better than Auto |
+| **Commit date** | Mar 29, 2026 8:32:06 PM |
+| **Subject** | DEPLOYMENT.md: avoid pinning stale SHA for pending deploy |
 
-**On GitHub `main` (may be ahead of public_html):** pull the latest `main` (includes career hub, new blog posts, nav/sitemap, deployment docs). In cPanel: **Update from Remote**, then **Deploy HEAD Commit**, then refresh this table with the new “Last deployed” time and SHA from cPanel.
+**Note:** This SHA is current `main` and includes the career hub, new blog posts, site-wide nav/sitemap updates, and deployment packaging docs. After each future go-live, replace the rows above using **Last Deployment Information** from cPanel.
 
 ---
 
