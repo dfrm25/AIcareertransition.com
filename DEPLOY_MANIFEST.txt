@@ -38,6 +38,7 @@ blog/
   how-to-change-ai-model.html
   reasoning-models-o1-vs-chatgpt.html
   resume-linkedin-ai.html
+  chrome-mobile-ai-mode-any-website.html
   weekly-ai-career-update-apr-2026.html
 
 css/
@@ -55,6 +56,13 @@ images/
   copilot-logo.ico
   blog/.gitkeep
   blog/copilot-model-picker.png
+  blog/chrome-mobile-ai-step-1.png
+  blog/chrome-mobile-ai-step-2.png
+  blog/chrome-mobile-ai-step-3.png
+  blog/chrome-mobile-ai-step-4.png
+  blog/chrome-mobile-ai-step-5.png
+  blog/chrome-mobile-ai-step-6.png
+  blog/chrome-mobile-ai-step-7.png
   blog/model-select-chatgpt.svg
   blog/model-select-claude.svg
   blog/model-select-copilot.svg

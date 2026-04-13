@@ -28,4 +28,5 @@ description: Practical AI education for professionals focused on career outcomes
 
 ## Recent Updates
 - https://aicareertransition.com/blog.html
+- https://aicareertransition.com/blog/chrome-mobile-ai-mode-any-website.html
 - https://aicareertransition.com/blog/weekly-ai-career-update-apr-2026.html
