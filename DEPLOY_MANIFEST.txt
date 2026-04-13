@@ -15,8 +15,11 @@ ROOT (public_html/)
   feedback.html
   about.html
   privacy.html
+  terms.html
+  editorial-policy.html
   tools-comparison.html
   robots.txt
+  llms.txt
   sitemap.xml
 
 personas/
@@ -35,6 +38,7 @@ blog/
   how-to-change-ai-model.html
   reasoning-models-o1-vs-chatgpt.html
   resume-linkedin-ai.html
+  weekly-ai-career-update-apr-2026.html
 
 css/
   styles.css

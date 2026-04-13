@@ -1,0 +1,31 @@
+# AI Career Transition - LLM content map
+# Last updated: 2026-04-12
+
+site: https://aicareertransition.com
+name: AI Career Transition
+description: Practical AI education for professionals focused on career outcomes, role-specific workflows, and prompt execution.
+
+## Core Pages
+- https://aicareertransition.com/
+- https://aicareertransition.com/career.html
+- https://aicareertransition.com/prompts.html
+- https://aicareertransition.com/101.html
+- https://aicareertransition.com/201.html
+- https://aicareertransition.com/tools-comparison.html
+
+## Role Guides
+- https://aicareertransition.com/personas/marketing.html
+- https://aicareertransition.com/personas/product.html
+- https://aicareertransition.com/personas/analytics.html
+- https://aicareertransition.com/personas/data-science.html
+- https://aicareertransition.com/personas/copywriting.html
+
+## Trust and Policy
+- https://aicareertransition.com/about.html
+- https://aicareertransition.com/privacy.html
+- https://aicareertransition.com/terms.html
+- https://aicareertransition.com/editorial-policy.html
+
+## Recent Updates
+- https://aicareertransition.com/blog.html
+- https://aicareertransition.com/blog/weekly-ai-career-update-apr-2026.html
