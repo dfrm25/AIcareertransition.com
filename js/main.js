@@ -43,6 +43,7 @@ function getPageType() {
   if (path.indexOf('/blog/') !== -1) return 'blog_post';
   if (/\/blog\.html$/.test(path)) return 'blog_index';
   if (path.indexOf('/personas/') !== -1) return 'persona';
+  if (/artifacts\.html$/.test(path)) return 'artifact_library';
   if (/prompts\.html$/.test(path)) return 'prompt_library';
   if (/career\.html$/.test(path)) return 'career_hub';
   if (/101\.html$/.test(path) || /201\.html$/.test(path)) return 'course';
@@ -53,8 +54,8 @@ function getPageType() {
 
 function getContentCluster() {
   var path = window.location.pathname;
-  if (/career\.html$/.test(path) || path.indexOf('resume-linkedin-ai') !== -1 || path.indexOf('ai-career-transition-mistakes') !== -1) return 'ai_career_transition';
-  if (/tools-comparison\.html$/.test(path) || path.indexOf('how-to-change-ai-model') !== -1 || path.indexOf('copilot-better-model') !== -1 || path.indexOf('reasoning-models') !== -1 || path.indexOf('chrome-mobile-ai-mode') !== -1) return 'ai_tools_for_work';
+  if (/career\.html$/.test(path) || /artifacts\.html$/.test(path) || path.indexOf('resume-linkedin-ai') !== -1 || path.indexOf('ai-skills-resume') !== -1 || path.indexOf('ai-career-transition-mistakes') !== -1) return 'ai_career_transition';
+  if (/tools-comparison\.html$/.test(path) || path.indexOf('ai-lab-updates') !== -1 || path.indexOf('how-to-change-ai-model') !== -1 || path.indexOf('copilot-better-model') !== -1 || path.indexOf('reasoning-models') !== -1 || path.indexOf('chrome-mobile-ai-mode') !== -1) return 'ai_tools_for_work';
   if (/prompts\.html$/.test(path) || path.indexOf('/personas/') !== -1 || path.indexOf('chatgpt-monday-reports') !== -1 || path.indexOf('5-prompting-best-practices') !== -1) return 'role_specific_workflows';
   if (path.indexOf('geo-basics') !== -1) return 'seo_geo';
   if (path.indexOf('weekly-ai-career-update') !== -1) return 'weekly_update';

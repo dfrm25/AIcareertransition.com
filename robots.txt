@@ -4,6 +4,16 @@
 User-agent: *
 Allow: /
 
+# AI search and answer engines may crawl public educational content.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://aicareertransition.com/sitemap.xml
 

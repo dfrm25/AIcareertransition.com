@@ -18,6 +18,7 @@ ROOT (public_html/)
   terms.html
   editorial-policy.html
   tools-comparison.html
+  artifacts.html
   robots.txt
   llms.txt
   sitemap.xml
@@ -32,7 +33,9 @@ personas/
 
 blog/
   5-prompting-best-practices.html
+  ai-lab-updates-career-actions-apr-2026.html
   ai-career-transition-mistakes.html
+  ai-skills-resume-without-sounding-fake.html
   chatgpt-monday-reports.html
   copilot-better-model-than-auto.html
   geo-basics-chatgpt-perplexity-citations.html

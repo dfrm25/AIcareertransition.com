@@ -8,6 +8,7 @@ description: Practical AI education for professionals focused on career outcomes
 ## Core Pages
 - https://aicareertransition.com/
 - https://aicareertransition.com/career.html
+- https://aicareertransition.com/artifacts.html
 - https://aicareertransition.com/prompts.html
 - https://aicareertransition.com/101.html
 - https://aicareertransition.com/201.html
@@ -30,10 +31,13 @@ description: Practical AI education for professionals focused on career outcomes
 ## Recent Updates
 - https://aicareertransition.com/blog.html
 - https://aicareertransition.com/blog/chrome-mobile-ai-mode-any-website.html
+- https://aicareertransition.com/blog/ai-lab-updates-career-actions-apr-2026.html
+- https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
 - https://aicareertransition.com/blog/weekly-ai-career-update-apr-2026.html
 
 ## Evergreen Blog Posts
 - https://aicareertransition.com/blog/resume-linkedin-ai.html
+- https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
 - https://aicareertransition.com/blog/ai-career-transition-mistakes.html
 - https://aicareertransition.com/blog/how-to-change-ai-model.html
 - https://aicareertransition.com/blog/copilot-better-model-than-auto.html

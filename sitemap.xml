@@ -25,6 +25,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://aicareertransition.com/artifacts.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://aicareertransition.com/blog.html</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -38,6 +44,18 @@
   </url>
   <url>
     <loc>https://aicareertransition.com/blog/ai-career-transition-mistakes.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://aicareertransition.com/blog/ai-lab-updates-career-actions-apr-2026.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
@@ -92,7 +110,7 @@
   </url>
   <url>
     <loc>https://aicareertransition.com/career.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
