@@ -33,6 +33,8 @@ def priority_for(rel_posix: str) -> str:
 def loc_for(rel_posix: str) -> str:
     if rel_posix == "index.html":
         return f"{BASE}/"
+    if rel_posix.endswith("/index.html"):
+        return f"{BASE}/{rel_posix[:-10].rstrip('/')}/"
     return f"{BASE}/{rel_posix}"
 
 

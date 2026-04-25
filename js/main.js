@@ -20,17 +20,45 @@ function siteTrack(eventName, params) {
       page_path: window.location.pathname,
       page_title: document.title,
       page_location: window.location.href,
+      page_type: getPageType(),
+      content_cluster: getContentCluster(),
     },
     params || {}
   );
   window.dataLayer.push(payload);
   if (typeof window.gtag === 'function') {
     try {
-      window.gtag('event', eventName, params || {});
+      var eventParams = Object.assign({}, payload);
+      delete eventParams.event;
+      window.gtag('event', eventName, eventParams);
     } catch (e) {
       /* gtag may not be loaded yet */
     }
   }
+}
+
+function getPageType() {
+  var path = window.location.pathname;
+  if (path === '/' || /index\.html$/.test(path)) return 'home';
+  if (path.indexOf('/blog/') !== -1) return 'blog_post';
+  if (/\/blog\.html$/.test(path)) return 'blog_index';
+  if (path.indexOf('/personas/') !== -1) return 'persona';
+  if (/prompts\.html$/.test(path)) return 'prompt_library';
+  if (/career\.html$/.test(path)) return 'career_hub';
+  if (/101\.html$/.test(path) || /201\.html$/.test(path)) return 'course';
+  if (/tools-comparison\.html$/.test(path)) return 'tool_comparison';
+  if (/feedback\.html$/.test(path)) return 'feedback';
+  return 'standard_page';
+}
+
+function getContentCluster() {
+  var path = window.location.pathname;
+  if (/career\.html$/.test(path) || path.indexOf('resume-linkedin-ai') !== -1 || path.indexOf('ai-career-transition-mistakes') !== -1) return 'ai_career_transition';
+  if (/tools-comparison\.html$/.test(path) || path.indexOf('how-to-change-ai-model') !== -1 || path.indexOf('copilot-better-model') !== -1 || path.indexOf('reasoning-models') !== -1 || path.indexOf('chrome-mobile-ai-mode') !== -1) return 'ai_tools_for_work';
+  if (/prompts\.html$/.test(path) || path.indexOf('/personas/') !== -1 || path.indexOf('chatgpt-monday-reports') !== -1 || path.indexOf('5-prompting-best-practices') !== -1) return 'role_specific_workflows';
+  if (path.indexOf('geo-basics') !== -1) return 'seo_geo';
+  if (path.indexOf('weekly-ai-career-update') !== -1) return 'weekly_update';
+  return 'general';
 }
 
 var quizSessionStarted = false;
@@ -52,12 +80,104 @@ function initQuizCtaTracking() {
   });
 }
 
+function initContentEngagementTracking() {
+  var pageType = getPageType();
+  var shouldTrack = pageType === 'blog_post' || pageType === 'persona' || pageType === 'career_hub' || pageType === 'tool_comparison';
+  if (!shouldTrack) return;
+
+  var milestones = [25, 50, 75, 90];
+  var seen = {};
+  var articleReadSent = false;
+  var startedAt = Date.now();
+
+  function getScrollPercent() {
+    var doc = document.documentElement;
+    var body = document.body;
+    var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop || 0;
+    var scrollHeight = Math.max(body.scrollHeight, doc.scrollHeight, body.offsetHeight, doc.offsetHeight);
+    var viewport = window.innerHeight || doc.clientHeight || 0;
+    var denominator = Math.max(scrollHeight - viewport, 1);
+    return Math.min(100, Math.round((scrollTop / denominator) * 100));
+  }
+
+  function checkScroll() {
+    var percent = getScrollPercent();
+    milestones.forEach(function (milestone) {
+      if (percent >= milestone && !seen[milestone]) {
+        seen[milestone] = true;
+        siteTrack('scroll_depth', {
+          scroll_percent: milestone,
+        });
+      }
+    });
+
+    if (!articleReadSent && percent >= 90 && Date.now() - startedAt > 30000) {
+      articleReadSent = true;
+      siteTrack('article_read', {
+        read_time_seconds: Math.round((Date.now() - startedAt) / 1000),
+      });
+    }
+  }
+
+  window.addEventListener('scroll', throttle(checkScroll, 750), { passive: true });
+  setTimeout(checkScroll, 1500);
+}
+
+function initOutboundLinkTracking() {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href || href.indexOf('#') === 0 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) return;
+    var url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (err) {
+      return;
+    }
+    if (url.hostname && url.hostname !== window.location.hostname) {
+      siteTrack('outbound_click', {
+        link_url: url.href,
+        link_domain: url.hostname,
+        link_text: (link.textContent || '').trim().slice(0, 120),
+      });
+    }
+  });
+}
+
+function throttle(fn, wait) {
+  var last = 0;
+  var timeout = null;
+  return function () {
+    var now = Date.now();
+    var remaining = wait - (now - last);
+    var args = arguments;
+    var context = this;
+    if (remaining <= 0) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      last = now;
+      fn.apply(context, args);
+    } else if (!timeout) {
+      timeout = setTimeout(function () {
+        last = Date.now();
+        timeout = null;
+        fn.apply(context, args);
+      }, remaining);
+    }
+  };
+}
+
 // ========================================
 // Initialize on DOM Load
 // ========================================
 document.addEventListener('DOMContentLoaded', function() {
   initNavigation();
   initQuizCtaTracking();
+  initContentEngagementTracking();
+  initOutboundLinkTracking();
   initQuiz();
   initTabs();
   initAccordions();
@@ -634,6 +754,11 @@ function submitFormViaPing(params, btn, msgEl, successText) {
   var url = FORM_SUBMIT_URL + '?' + qs;
   var img = new Image();
   img.onload = img.onerror = function() {
+    siteTrack('form_submit_success', {
+      form_type: params.form || 'unknown',
+      form_category: params.category || '',
+      form_subject: (params.subject || '').slice(0, 120),
+    });
     if (msgEl) {
       msgEl.textContent = successText || 'Thank you! Your message has been received.';
       msgEl.style.color = '#10b981';

@@ -23,6 +23,7 @@ ROOT (public_html/)
   sitemap.xml
 
 personas/
+  index.html
   marketing.html
   product.html
   analytics.html
