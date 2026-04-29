@@ -34,6 +34,12 @@ personas/
 blog/
   5-prompting-best-practices.html
   ai-lab-updates-career-actions-apr-2026.html
+  ai-career-transition-roadmap.html
+  ai-career-transition-portfolio-examples.html
+  ai-career-transition-timeline.html
+  ai-career-transition-no-code.html
+  ai-career-transition-interview-prep.html
+  ai-career-transition-salary-outlook.html
   ai-career-transition-mistakes.html
   ai-skills-resume-without-sounding-fake.html
   chatgpt-monday-reports.html

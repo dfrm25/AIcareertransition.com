@@ -1,6 +1,19 @@
 # AI Career Transition — caching & compression (Apache / cPanel)
 # Improves PageSpeed "efficient cache" for css, js, images.
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Canonical SEO host: force HTTPS and non-www.
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.aicareertransition\.com$ [NC]
+  RewriteRule ^(.*)$ https://aicareertransition.com/$1 [R=301,L]
+
+  # Consolidate /index.html variants to the directory root.
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^(.*/)?index\.html$ https://aicareertransition.com/$1 [R=301,L]
+</IfModule>
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
   AddOutputFilterByType DEFLATE application/javascript application/json application/xml
