@@ -12,7 +12,7 @@
   <meta property="og:description" content="Master essential AI tools and prompt engineering basics with curated videos and certifications.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aicareertransition.com/101.html">
-  <meta property="og:image" content="https://aicareertransition.com/images/og-image.svg">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.png">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -69,8 +69,8 @@
     "mainEntity": [
       {"@type": "Question", "name": "Which AI tools should I start with?", "acceptedAnswer": {"@type": "Answer", "text": "Start with 2-3 tools that match your work: ChatGPT or Gemini for general use, Claude for long documents, and Copilot if you use Microsoft 365 daily."}},
       {"@type": "Question", "name": "Do I need to pay for AI tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits."}},
-      {"@type": "Question", "name": "What is a reasoning model and how is it different from ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Reasoning models think step-by-step before answering, making fewer logic errors on complex tasks. In ChatGPT this is called Thinking mode (GPT-5.4 Thinking as of 2026); in Claude it is extended thinking. The standard chat mode (ChatGPT, Gemini, Claude Sonnet) is faster and better for drafting, iteration, and brainstorming. Use Thinking mode when accuracy matters more than speed."}},
-      {"@type": "Question", "name": "What does AGI mean for my job?", "acceptedAnswer": {"@type": "Answer", "text": "AGI (Artificial General Intelligence) refers to AI systems that can reason across tasks at or above human level. We are approaching this threshold. The best response is to build skills that work alongside AI: prompt engineering, AI agent workflows, and understanding which tasks AI can automate vs. which require human judgment. Our AI 101 and AI 201 courses cover both."}}
+      {"@type": "Question", "name": "What is a reasoning model and how is it different from ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "Reasoning modes spend more effort before answering, which can reduce logic errors on complex tasks. In ChatGPT this is usually surfaced as Thinking mode; in Claude it is extended thinking or effort control. The standard chat mode (ChatGPT, Gemini, Claude Sonnet) is faster and better for drafting, iteration, and brainstorming. Use Thinking mode when accuracy matters more than speed."}},
+      {"@type": "Question", "name": "Should I worry about AGI predictions?", "acceptedAnswer": {"@type": "Answer", "text": "Do not build your plan around AGI predictions. Build durable skills: prompt framing, source-aware research, AI output review, and knowing which tasks require human judgment. AI 101 covers the basics; AI 201 covers agents and connected workflows."}}
     ]
   }
   </script>
@@ -104,7 +104,6 @@
         <a href="prompts.html" class="navbar-link">Prompt Library</a>
         <a href="career.html" class="navbar-link">Career</a>
         <a href="blog.html" class="navbar-link">Blog</a>
-        <a href="apps.html" class="navbar-link">Apps</a>
         <a href="tools-comparison.html" class="navbar-link">Compare Tools</a>
         <a href="feedback.html" class="navbar-link">Feedback</a>
       </div>
@@ -140,9 +139,9 @@
           </h1>
           
           <p class="hero-description">
-            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Now updated for 2026 — including reasoning / Thinking models and what the shift toward AGI means for how you work.
+            Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Now updated for 2026 — including reasoning / Thinking models and how supervised AI workflows change daily work.
           </p>
-          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Last updated March 2026</p>
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Last reviewed May 2026</p>
         </div>
       </div>
     </section>
@@ -379,7 +378,7 @@
           </div>
           <p style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--color-text-muted);"><a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">Read the full reasoning model guide →</a></p>
           <div style="margin-top: var(--space-md); background: rgba(59,130,246,0.06); border-left: 3px solid var(--color-accent-primary); padding: var(--space-sm) var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
-            <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;"><strong>Current model names (March 2026):</strong> ChatGPT → GPT-5.4 Thinking (reasoning) / GPT-5.3 Instant (fast chat) · Claude → Opus 4.6 with extended thinking / Sonnet 4.6 (fast) · Gemini → 2.0 Flash (standard). Vendors rename tiers regularly; the concepts above stay the same.</p>
+            <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;"><strong>Current pattern (reviewed May 2026):</strong> Use fast chat modes for drafting and iteration, deeper reasoning or effort modes for complex analysis, and connected/agent workflows when the task needs files, tools, or multiple steps. Vendors rename model tiers regularly; the mode-selection habit is the durable skill.</p>
           </div>
         </div>
 
@@ -433,557 +432,25 @@
       <div class="container">
         <div class="section-header animate-on-scroll">
           <h2>Learning <span class="text-gradient">Videos</span></h2>
-          <p>Curated video tutorials from official sources: Google, OpenAI, Microsoft, and Anthropic. No influencer content.</p>
+          <p>Honest curation: these are official beginner primers we have verified. Role practice comes from exercises below, not relabeled duplicate videos.</p>
         </div>
-        
-        <!-- Tabs for Personas -->
-        <div data-tabs class="animate-on-scroll">
-          <div class="tabs" style="justify-content: center; flex-wrap: wrap;">
-            <button class="tab active" data-tab="general">General AI</button>
-            <button class="tab" data-tab="marketing">Marketing</button>
-            <button class="tab" data-tab="copywriting">Copywriting</button>
-            <button class="tab" data-tab="analytics">Analytics</button>
-            <button class="tab" data-tab="data-science">Data Science</button>
-            <button class="tab" data-tab="product">Digital Product</button>
-            <button class="tab" data-tab="email">Email Marketing</button>
-            <button class="tab" data-tab="customer">Customer Journey</button>
-            <button class="tab" data-tab="database">Database Marketing</button>
-          </div>
-          
-          <!-- General AI Videos - ALL from Google Cloud Official -->
-          <div id="general" class="tab-content active">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/G2fqAlgmoPo/maxresdefault.jpg" alt="Introduction to Generative AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/G2fqAlgmoPo/hqdefault.jpg'">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Introduction to Generative AI</h4>
-                  <p class="video-card-description">Official Google Cloud course on generative AI fundamentals, how it works, and applications.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=zizonToFXDs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/zizonToFXDs/maxresdefault.jpg" alt="Introduction to Large Language Models" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/zizonToFXDs/hqdefault.jpg'">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Introduction to Large Language Models</h4>
-                  <p class="video-card-description">Official Google Cloud course explaining what LLMs are and how they're transforming technology.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Introduction to Responsible AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg'">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Introduction to Responsible AI</h4>
-                  <p class="video-card-description">Official Google Cloud course on ethical AI principles, bias mitigation, and trustworthy AI systems.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Marketing Videos - ALL from Google Cloud Official -->
-          <div id="marketing" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="Image Generation for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Image Generation for Marketing</h4>
-                  <p class="video-card-description">Google Cloud's official course on using AI image generation to create compelling marketing visuals and campaigns.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Transformer Models for Marketing</h4>
-                  <p class="video-card-description">Learn how BERT and transformer models power advanced marketing content creation and campaign optimization.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Marketing</h4>
-                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-powered marketing content and targeting.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Analytics Videos - ALL from Google Cloud Official -->
-          <div id="analytics" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for Analytics" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Transformer Models for Data Analytics</h4>
-                  <p class="video-card-description">Google Cloud's official course on transformer architecture and how it powers modern AI analytics workflows.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Analytics" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Analytics</h4>
-                  <p class="video-card-description">Learn how attention mechanisms enhance AI models for business intelligence and data analysis.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="Image Generation for Analytics Visualization" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Image Generation for Analytics Visualization</h4>
-                  <p class="video-card-description">Google Cloud's official course on using AI-generated visuals to enhance data presentation and reporting.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Copywriting Videos - ALL from Google Cloud Official -->
-          <div id="copywriting" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="Image Generation for Content Creation" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Image Generation for Content Creators</h4>
-                  <p class="video-card-description">Google Cloud's official course on using AI image generation to enhance visual content and marketing materials.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="BERT Models for Text Generation" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">BERT Models for Text Generation</h4>
-                  <p class="video-card-description">Learn how BERT and transformer models power advanced text generation for copywriting and content creation.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Writing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Writing</h4>
-                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI writing quality and coherence.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Product Videos - ALL from Google Cloud Official -->
-          <div id="product" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Responsible AI for Product Development" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Responsible AI for Product Development</h4>
-                  <p class="video-card-description">Google Cloud's official course on ethical AI principles and trustworthy product design practices.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Prototyping for Products" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">AI Prototyping for Product Teams</h4>
-                  <p class="video-card-description">Learn how AI image and content generation accelerates product prototyping and design iteration.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Product AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Product AI</h4>
-                  <p class="video-card-description">Google Cloud's official course on attention mechanisms and how they improve AI product capabilities.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Data Science Videos - ALL from Google Cloud Official -->
-          <div id="data-science" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for Data Science" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Transformer Models for Data Science</h4>
-                  <p class="video-card-description">Google Cloud's official course on transformer architecture and BERT models for advanced machine learning workflows.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for ML" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Machine Learning</h4>
-                  <p class="video-card-description">Learn how attention mechanisms improve neural network performance for data science and ML applications.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Responsible AI for Data Science" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Responsible AI for Data Scientists</h4>
-                  <p class="video-card-description">Google Cloud's official course on ethical AI principles, bias mitigation, and trustworthy ML models for data science.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Email Marketing Videos - ALL from Google Cloud Official -->
-          <div id="email" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Content Generation for Email" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">AI Content Generation for Email</h4>
-                  <p class="video-card-description">Google Cloud's official course on using AI image and text generation to enhance email marketing campaigns.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="BERT Models for Email Personalization" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">BERT Models for Email Personalization</h4>
-                  <p class="video-card-description">Learn how transformer models like BERT enable advanced personalization and automation in email marketing.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Email AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Email AI</h4>
-                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-driven email content and targeting.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Customer Journey Videos - ALL from Google Cloud Official -->
-          <div id="customer" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Visualization for Customer Journeys" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">AI Visualization for Customer Journeys</h4>
-                  <p class="video-card-description">Google Cloud's official course on using AI-generated visuals to map and enhance customer experience flows.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="Transformer Models for CX Analysis" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Transformer Models for CX Analysis</h4>
-                  <p class="video-card-description">Learn how BERT and transformer models analyze customer touchpoints and optimize experience journeys.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Journey Mapping" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Journey Mapping</h4>
-                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-powered customer journey analysis and optimization.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Database Marketing Videos - ALL from Google Cloud Official -->
-          <div id="database" class="tab-content">
-            <div class="grid grid-3">
-              <a href="https://www.youtube.com/watch?v=r9QjkdSJZ2g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/r9QjkdSJZ2g/maxresdefault.jpg" alt="AI Data Visualization for Marketing" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/r9QjkdSJZ2g/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">AI Data Visualization for Marketing</h4>
-                  <p class="video-card-description">Google Cloud's official course on using AI-generated visuals to enhance marketing database segmentation and reporting.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=Hnvb9b7a_Ps" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/Hnvb9b7a_Ps/maxresdefault.jpg" alt="BERT Models for Audience Segmentation" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/Hnvb9b7a_Ps/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">BERT Models for Audience Segmentation</h4>
-                  <p class="video-card-description">Learn how transformer models like BERT enable advanced audience creation and segmentation in database marketing.</p>
-                </div>
-              </a>
-              
-              <a href="https://www.youtube.com/watch?v=nE2skSRWTTs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link">
-                <div class="video-card-thumbnail">
-                  <img src="https://i.ytimg.com/vi/nE2skSRWTTs/maxresdefault.jpg" alt="Attention Mechanisms for Marketing AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/nE2skSRWTTs/hqdefault.jpg';">
-                  <div class="video-card-play-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    <span>Watch on YouTube</span>
-                  </div>
-                </div>
-                <div class="video-card-content">
-                  <div class="video-card-source">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    Google Cloud
-                  </div>
-                  <h4 class="video-card-title">Attention Mechanisms for Marketing AI</h4>
-                  <p class="video-card-description">Google Cloud's official course on how attention mechanisms improve AI-driven audience analysis and cross-channel marketing.</p>
-                </div>
-              </a>
-            </div>
+        <div class="grid grid-3 animate-on-scroll">
+          <a href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener noreferrer" class="video-card video-card-link"><div class="video-card-thumbnail"><img src="https://i.ytimg.com/vi/G2fqAlgmoPo/maxresdefault.jpg" alt="Introduction to Generative AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/G2fqAlgmoPo/hqdefault.jpg'"><div class="video-card-play-overlay"><span>Watch on YouTube</span></div></div><div class="video-card-content"><div class="video-card-source">Google Cloud</div><h4 class="video-card-title">Introduction to Generative AI</h4><p class="video-card-description">A durable official primer on what generative AI is, where it helps, and where human review still matters.</p></div></a>
+          <a href="https://www.youtube.com/watch?v=zizonToFXDs" target="_blank" rel="noopener noreferrer" class="video-card video-card-link"><div class="video-card-thumbnail"><img src="https://i.ytimg.com/vi/zizonToFXDs/maxresdefault.jpg" alt="Introduction to Large Language Models" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/zizonToFXDs/hqdefault.jpg'"><div class="video-card-play-overlay"><span>Watch on YouTube</span></div></div><div class="video-card-content"><div class="video-card-source">Google Cloud</div><h4 class="video-card-title">Introduction to Large Language Models</h4><p class="video-card-description">A beginner-friendly explanation of LLMs. Pair it with the prompt library so the concept turns into practice.</p></div></a>
+          <a href="https://www.youtube.com/watch?v=w_3L1Bf2P_g" target="_blank" rel="noopener noreferrer" class="video-card video-card-link"><div class="video-card-thumbnail"><img src="https://i.ytimg.com/vi/w_3L1Bf2P_g/maxresdefault.jpg" alt="Introduction to Responsible AI" loading="lazy" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/w_3L1Bf2P_g/hqdefault.jpg'"><div class="video-card-play-overlay"><span>Watch on YouTube</span></div></div><div class="video-card-content"><div class="video-card-source">Google Cloud</div><h4 class="video-card-title">Introduction to Responsible AI</h4><p class="video-card-description">Use this before publishing, presenting, or operationalizing AI output. It supports the review checklists in Artifacts.</p></div></a>
+        </div>
+        <div class="card animate-on-scroll" style="margin-top: var(--space-xl); padding: var(--space-xl); background: var(--color-bg-secondary);">
+          <h3 style="font-size: 1.2rem; margin-bottom: var(--space-md);">Role exercises after watching</h3>
+          <div class="grid grid-2" style="gap: var(--space-md);">
+            <a href="personas/marketing.html" class="card" style="text-decoration:none; padding:var(--space-lg);"><h4 style="font-size:1rem; margin-bottom:var(--space-sm);">Marketing</h4><p>Turn a campaign brief into message variants plus a claims checklist.</p></a>
+            <a href="personas/analytics.html" class="card" style="text-decoration:none; padding:var(--space-lg);"><h4 style="font-size:1rem; margin-bottom:var(--space-sm);">Analytics</h4><p>Summarize dashboard data, then verify totals and caveats.</p></a>
+            <a href="personas/product.html" class="card" style="text-decoration:none; padding:var(--space-lg);"><h4 style="font-size:1rem; margin-bottom:var(--space-sm);">Product</h4><p>Convert interview notes into requirements, assumptions, and edge cases.</p></a>
+            <a href="artifacts.html#qa-checklist" class="card" style="text-decoration:none; padding:var(--space-lg);"><h4 style="font-size:1rem; margin-bottom:var(--space-sm);">Review</h4><p>Use the AI output QA checklist before any output leaves your desk.</p></a>
           </div>
         </div>
       </div>
     </section>
-    
+
     <!-- Certifications Section -->
     <section id="certifications" class="section" style="background: var(--color-bg-secondary);">
       <div class="container">
@@ -1573,7 +1040,7 @@
         <div class="footer-column">
           <h4>Resources</h4>
           <div class="footer-links">
-            <a href="apps.html">AI Apps Showcase</a>
+            <a href="artifacts.html">Career Artifacts</a>
             <a href="tools-comparison.html">Compare AI Tools</a>
             <a href="#certifications">Certifications</a>
             <a href="#videos">Video Tutorials</a>

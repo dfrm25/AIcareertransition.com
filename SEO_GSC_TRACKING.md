@@ -52,3 +52,24 @@ Record these from Google Search Console:
 - Add 4-8 internal links into pages with impressions.
 - Run 40 qualified outreach touches using `BACKLINK_OUTREACH_PLAYBOOK.md`.
 - Update the pillar page with new questions from GSC query data.
+
+
+## Quality Traffic Sprint - May 2026 Event Taxonomy
+
+Use these events to judge quality traffic instead of raw pageviews:
+
+- `article_read`: visitor reached deep scroll after meaningful time on page.
+- `artifact_cta_click`: visitor moved from content into a proof-of-work template.
+- `prompt_library_cta_click`: visitor moved into prompts from a guide or persona page.
+- `persona_cta_click`: visitor selected a role workflow.
+- `prompt_copy`: visitor copied a prompt or prompt-of-day item.
+- `cta_quiz_click`: visitor started the learning path from a page CTA.
+- `form_submit_success`: visitor submitted feedback, contact, or feature forms.
+- `cookie_consent_update`: visitor accepted or rejected analytics/ad storage.
+
+Weekly review:
+
+1. In GA4, compare landing pages by engaged reads, artifact clicks, prompt copies, quiz clicks, and form submissions.
+2. In Search Console, inspect pages with impressions but low CTR; update titles/meta only when the page already satisfies the query.
+3. Promote pages that produce quality actions, not pages that only create bounces.
+4. Keep current-event pages source-linked and review them monthly.

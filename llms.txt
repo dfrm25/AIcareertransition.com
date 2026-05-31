@@ -1,9 +1,9 @@
 # AI Career Transition - LLM content map
-# Last updated: 2026-04-25
+# Last updated: 2026-05-30
 
 site: https://aicareertransition.com
 name: AI Career Transition
-description: Practical AI education for professionals focused on career outcomes, role-specific workflows, and prompt execution.
+description: Practical AI education for professionals focused on career outcomes, role-specific workflows, proof-of-work artifacts, and current AI workflow changes.
 
 ## Core Pages
 - https://aicareertransition.com/
@@ -13,6 +13,7 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/101.html
 - https://aicareertransition.com/201.html
 - https://aicareertransition.com/tools-comparison.html
+- https://aicareertransition.com/blog.html
 
 ## Role Guides
 - https://aicareertransition.com/personas/
@@ -21,27 +22,29 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/personas/analytics.html
 - https://aicareertransition.com/personas/data-science.html
 - https://aicareertransition.com/personas/copywriting.html
+- https://aicareertransition.com/personas/email-marketing.html
+- https://aicareertransition.com/personas/customer-journey.html
+- https://aicareertransition.com/personas/database-marketing.html
+
+## Current AI Workflow Updates
+- https://aicareertransition.com/blog/ai-career-transition-may-2026-agentic-workflows.html
+- https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html
+- https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html
+- https://aicareertransition.com/blog/ai-workflow-evals-human-review.html
+- https://aicareertransition.com/blog/ai-video-generation-career-skills.html
+- https://aicareertransition.com/blog/chatgpt-claude-gemini-copilot-which-to-use-2026.html
+
+## Career Proof and Evergreen Guides
+- https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
+- https://aicareertransition.com/blog/ai-career-transition-roadmap.html
+- https://aicareertransition.com/blog/ai-career-transition-portfolio-examples.html
+- https://aicareertransition.com/blog/ai-career-transition-interview-prep.html
+- https://aicareertransition.com/blog/chatgpt-monday-reports.html
+- https://aicareertransition.com/blog/how-to-change-ai-model.html
+- https://aicareertransition.com/blog/reasoning-models-o1-vs-chatgpt.html
 
 ## Trust and Policy
 - https://aicareertransition.com/about.html
 - https://aicareertransition.com/privacy.html
 - https://aicareertransition.com/terms.html
 - https://aicareertransition.com/editorial-policy.html
-
-## Recent Updates
-- https://aicareertransition.com/blog.html
-- https://aicareertransition.com/blog/chrome-mobile-ai-mode-any-website.html
-- https://aicareertransition.com/blog/ai-lab-updates-career-actions-apr-2026.html
-- https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
-- https://aicareertransition.com/blog/weekly-ai-career-update-apr-2026.html
-
-## Evergreen Blog Posts
-- https://aicareertransition.com/blog/resume-linkedin-ai.html
-- https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
-- https://aicareertransition.com/blog/ai-career-transition-mistakes.html
-- https://aicareertransition.com/blog/how-to-change-ai-model.html
-- https://aicareertransition.com/blog/copilot-better-model-than-auto.html
-- https://aicareertransition.com/blog/reasoning-models-o1-vs-chatgpt.html
-- https://aicareertransition.com/blog/geo-basics-chatgpt-perplexity-citations.html
-- https://aicareertransition.com/blog/chatgpt-monday-reports.html
-- https://aicareertransition.com/blog/5-prompting-best-practices.html

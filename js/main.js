@@ -58,7 +58,8 @@ function getContentCluster() {
   if (/tools-comparison\.html$/.test(path) || path.indexOf('ai-lab-updates') !== -1 || path.indexOf('how-to-change-ai-model') !== -1 || path.indexOf('copilot-better-model') !== -1 || path.indexOf('reasoning-models') !== -1 || path.indexOf('chrome-mobile-ai-mode') !== -1) return 'ai_tools_for_work';
   if (/prompts\.html$/.test(path) || path.indexOf('/personas/') !== -1 || path.indexOf('chatgpt-monday-reports') !== -1 || path.indexOf('5-prompting-best-practices') !== -1) return 'role_specific_workflows';
   if (path.indexOf('geo-basics') !== -1) return 'seo_geo';
-  if (path.indexOf('weekly-ai-career-update') !== -1) return 'weekly_update';
+  if (path.indexOf('weekly-ai-career-update') !== -1 || path.indexOf('may-2026-agentic-workflows') !== -1) return 'weekly_update';
+  if (path.indexOf('agentic-ai-workflows') !== -1 || path.indexOf('mcp-and-connected') !== -1 || path.indexOf('ai-workflow-evals') !== -1 || path.indexOf('ai-video-generation') !== -1) return 'modern_ai_workflows';
   return 'general';
 }
 
@@ -146,6 +147,48 @@ function initOutboundLinkTracking() {
   });
 }
 
+function initQualityEventTracking() {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var text = (link.textContent || '').trim().slice(0, 120);
+    if (href.indexOf('artifacts.html') !== -1 || href.indexOf('#portfolio-case-study') !== -1 || href.indexOf('#qa-checklist') !== -1) {
+      siteTrack('artifact_cta_click', { link_url: href, link_text: text });
+    }
+    if (href.indexOf('/personas/') !== -1 || href.indexOf('personas/') !== -1) {
+      siteTrack('persona_cta_click', { link_url: href, link_text: text });
+    }
+    if (href.indexOf('prompts.html') !== -1) {
+      siteTrack('prompt_library_cta_click', { link_url: href, link_text: text });
+    }
+  });
+}
+
+function initConsentBanner() {
+  var key = 'aict_cookie_consent_v1';
+  var existing = null;
+  try { existing = JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { existing = null; }
+  if (existing && existing.status) return;
+
+  var banner = document.createElement('div');
+  banner.className = 'cookie-consent';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-live', 'polite');
+  banner.innerHTML = '<div><strong>Cookies and ads</strong><p>We use analytics to improve the site and may load Google ads only after consent. You can reject non-essential storage.</p></div><div class="cookie-consent-actions"><button class="btn btn-secondary" type="button" data-consent="rejected">Reject</button><button class="btn btn-primary" type="button" data-consent="accepted">Accept</button></div>';
+  document.body.appendChild(banner);
+
+  banner.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-consent]');
+    if (!button) return;
+    var consent = { status: button.getAttribute('data-consent'), updated_at: new Date().toISOString() };
+    try { localStorage.setItem(key, JSON.stringify(consent)); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('aict:consent-updated', { detail: consent }));
+    siteTrack('cookie_consent_update', { consent_status: consent.status });
+    banner.remove();
+  });
+}
+
 function throttle(fn, wait) {
   var last = 0;
   var timeout = null;
@@ -179,6 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initQuizCtaTracking();
   initContentEngagementTracking();
   initOutboundLinkTracking();
+  initQualityEventTracking();
+  initConsentBanner();
   initQuiz();
   initTabs();
   initAccordions();
