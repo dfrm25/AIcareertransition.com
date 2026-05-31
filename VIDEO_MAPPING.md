@@ -1,56 +1,36 @@
-# Video Mapping Strategy - Mixed Official Sources
+# Official AI Learning Source Mapping
 
-## Persona Video Distribution
+This site no longer maintains persona-specific YouTube video rotations. That approach created stale and repetitive content.
 
-Each persona gets 3 videos from a mix of official sources (Google Cloud, Microsoft, OpenAI, Anthropic):
+Current rule:
 
-### General AI (101 - Keep Google Cloud)
-- G2fqAlgmoPo - Google Cloud - Introduction to Generative AI
-- zizonToFXDs - Google Cloud - Introduction to Large Language Models  
-- w_3L1Bf2P_g - Google Cloud - Introduction to Responsible AI
+- Use only official, vendor-maintained sources from OpenAI, Microsoft, Google, and Anthropic.
+- Prefer current documentation, academy pages, Microsoft Learn modules, Google Skills paths, and official workshops over old embedded videos.
+- Link videos only when they are from an official vendor channel and clearly current for the workflow being taught.
 
-### Marketing (Mix: Google Cloud, Microsoft, OpenAI)
-- r9QjkdSJZ2g - Google Cloud - Image Generation (keep one GC)
-- TBD_MICROSOFT_1 - Microsoft - AI for Marketing
-- TBD_OPENAI_1 - OpenAI - GPT for Content Creation
+Primary sources now referenced:
 
-### Analytics (Mix: Google Cloud, Microsoft, Anthropic)
-- Hnvb9b7a_Ps - Google Cloud - Transformer Models
-- TBD_MICROSOFT_2 - Microsoft - Azure AI Analytics
-- TBD_ANTHROPIC_1 - Anthropic - Claude for Data Analysis
+## OpenAI
+- https://openai.com/academy/using-chatgpt/
+- https://openai.com/academy/chatgpt-for-work/
+- https://openai.com/academy/workspace-agents/
+- https://openai.com/academy/codex/
+- https://www.youtube.com/watch?v=tK32trvj_b4
 
-### Copywriting (Mix: OpenAI, Microsoft, Google Cloud)
-- TBD_OPENAI_2 - OpenAI - Writing with GPT
-- TBD_MICROSOFT_3 - Microsoft - Copilot for Writers
-- nE2skSRWTTs - Google Cloud - Attention Mechanisms (keep one GC)
+## Microsoft
+- https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/
+- https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder
+- https://learn.microsoft.com/en-us/training/courses/ab-620t00
+- https://adoption.microsoft.com/en-us/copilot/skilling-center/
 
-### Product (Mix: Microsoft, Google Cloud, Anthropic)
-- TBD_MICROSOFT_4 - Microsoft - AI Product Development
-- w_3L1Bf2P_g - Google Cloud - Responsible AI
-- TBD_ANTHROPIC_2 - Anthropic - Claude for Product
+## Google
+- https://ai.google.dev/gemini-api/docs/aistudio-agents
+- https://ai.google.dev/gemini-api/docs/custom-agents
+- https://cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview
+- https://www.cloudskillsboost.google/paths/1282
+- https://www.cloudskillsboost.google/course_templates/1162
 
-### Data Science (Mix: Google Cloud, Microsoft, OpenAI)
-- Hnvb9b7a_Ps - Google Cloud - Transformer Models
-- TBD_MICROSOFT_5 - Microsoft - Azure ML
-- TBD_OPENAI_3 - OpenAI - AI for Data Science
-
-### Email Marketing (Mix: Microsoft, Anthropic, Google Cloud)
-- TBD_MICROSOFT_6 - Microsoft - Copilot for Email
-- TBD_ANTHROPIC_3 - Anthropic - Claude for Personalization
-- r9QjkdSJZ2g - Google Cloud - Image Generation
-
-### Customer Journey (Mix: Anthropic, Microsoft, Google Cloud)
-- TBD_ANTHROPIC_4 - Anthropic - Claude for CX
-- TBD_MICROSOFT_7 - Microsoft - AI Customer Experience
-- zizonToFXDs - Google Cloud - LLMs (reuse one GC)
-
-### Database Marketing (Mix: Microsoft, Google Cloud, OpenAI)
-- TBD_MICROSOFT_8 - Microsoft - AI Audience Segmentation
-- G2fqAlgmoPo - Google Cloud - Gen AI Fundamentals (reuse one GC)
-- TBD_OPENAI_4 - OpenAI - AI for Marketing Data
-
-## Notes
-- Using TBD placeholders for IDs we need to verify
-- Maintaining some Google Cloud videos that are confirmed working
-- Each persona has a unique combination
-- Sources are mixed across personas for variety
+## Anthropic
+- https://docs.anthropic.com/claude/docs/chain-prompts
+- https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking
+- https://docs.anthropic.com/en/docs/build-with-claude/computer-use
