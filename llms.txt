@@ -1,5 +1,5 @@
 # AI Career Transition - LLM content map
-# Last updated: 2026-05-30
+# Last updated: 2026-07-05
 
 site: https://aicareertransition.com
 name: AI Career Transition
@@ -27,6 +27,8 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/personas/database-marketing.html
 
 ## Current AI Workflow Updates
+- https://aicareertransition.com/blog/multi-agent-workflows-for-professionals.html
+- https://aicareertransition.com/blog/ai-agents-memory-connectors-governance.html
 - https://aicareertransition.com/blog/ai-career-transition-may-2026-agentic-workflows.html
 - https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html
 - https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html

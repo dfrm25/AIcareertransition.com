@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://aicareertransition.com/blog.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -45,6 +45,12 @@
   <url>
     <loc>https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html</loc>
     <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://aicareertransition.com/blog/ai-agents-memory-connectors-governance.html</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
@@ -152,13 +158,19 @@
   </url>
   <url>
     <loc>https://aicareertransition.com/blog/how-to-change-ai-model.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>
   <url>
     <loc>https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html</loc>
     <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://aicareertransition.com/blog/multi-agent-workflows-for-professionals.html</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>

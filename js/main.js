@@ -59,7 +59,7 @@ function getContentCluster() {
   if (/prompts\.html$/.test(path) || path.indexOf('/personas/') !== -1 || path.indexOf('chatgpt-monday-reports') !== -1 || path.indexOf('5-prompting-best-practices') !== -1) return 'role_specific_workflows';
   if (path.indexOf('geo-basics') !== -1) return 'seo_geo';
   if (path.indexOf('weekly-ai-career-update') !== -1 || path.indexOf('may-2026-agentic-workflows') !== -1) return 'weekly_update';
-  if (path.indexOf('agentic-ai-workflows') !== -1 || path.indexOf('mcp-and-connected') !== -1 || path.indexOf('ai-workflow-evals') !== -1 || path.indexOf('ai-video-generation') !== -1) return 'modern_ai_workflows';
+  if (path.indexOf('agentic-ai-workflows') !== -1 || path.indexOf('mcp-and-connected') !== -1 || path.indexOf('ai-workflow-evals') !== -1 || path.indexOf('ai-video-generation') !== -1 || path.indexOf('multi-agent-workflows') !== -1 || path.indexOf('ai-agents-memory-connectors') !== -1) return 'modern_ai_workflows';
   return 'general';
 }
 
