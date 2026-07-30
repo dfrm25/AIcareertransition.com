@@ -20,6 +20,19 @@ BORDER_LEFT_RE = re.compile(r'\s*border-left:\s*\d+px\s+solid\s+[^;"]+;?')
 CHIP_RE = re.compile(r'(class="prompt-card-category"\s+style=")([^"]*)(")')
 PILL_STYLE_RE = re.compile(r'style="([^"]*border-radius:\s*20px[^"]*)"')
 
+# Neon accent text colors -> single brand blue, for a calm, uniform palette.
+NEON_HEXES = (
+    "059669", "10b981", "34d399", "22c55e", "7c3aed", "8b5cf6", "a855f7",
+    "0891b2", "06b6d4", "0ea5e9", "0284c7", "0078d4", "3b82f6", "d97706",
+    "b45309", "f59e0b", "ef4444",
+)
+NEON_HEX_RE = re.compile(
+    r"color:\s*#(?:" + "|".join(NEON_HEXES) + r")\b", re.IGNORECASE
+)
+NEON_VAR_RE = re.compile(
+    r"color:\s*var\(--color-accent-(?:tertiary|purple|success|info)\)"
+)
+
 
 def clean_chip(m: re.Match) -> str:
     pre, style, post = m.group(1), m.group(2), m.group(3)
@@ -50,13 +63,20 @@ def process(path: Path) -> dict:
     n_pill = len(PILL_STYLE_RE.findall(text))
     text = PILL_STYLE_RE.sub(clean_pill, text)
 
+    n_color = len(NEON_HEX_RE.findall(text)) + len(NEON_VAR_RE.findall(text))
+    text = NEON_HEX_RE.sub("color:var(--color-accent-primary)", text)
+    text = NEON_VAR_RE.sub("color:var(--color-accent-primary)", text)
+
     if text != orig:
         path.write_text(text, encoding="utf-8")
-    return {"border": n_border, "chip": n_chip, "pill": n_pill, "changed": text != orig}
+    return {
+        "border": n_border, "chip": n_chip, "pill": n_pill,
+        "color": n_color, "changed": text != orig,
+    }
 
 
 def main() -> None:
-    totals = {"border": 0, "chip": 0, "pill": 0, "files": 0}
+    totals = {"border": 0, "chip": 0, "pill": 0, "color": 0, "files": 0}
     for p in sorted(ROOT.rglob("*.html")):
         if any(part.startswith(".") for part in p.parts):
             continue
@@ -66,11 +86,12 @@ def main() -> None:
             totals["border"] += r["border"]
             totals["chip"] += r["chip"]
             totals["pill"] += r["pill"]
-            print(f"  {p.relative_to(ROOT)}: borders={r['border']} chips={r['chip']} pills={r['pill']}")
+            totals["color"] += r["color"]
+            print(f"  {p.relative_to(ROOT)}: borders={r['border']} chips={r['chip']} pills={r['pill']} colors={r['color']}")
     print(
         f"Done. {totals['files']} files changed · "
-        f"{totals['border']} accent bars removed · {totals['chip']} chips neutralized · "
-        f"{totals['pill']} pills normalized."
+        f"{totals['border']} accent bars · {totals['chip']} chips · "
+        f"{totals['pill']} pills · {totals['color']} neon text colors normalized."
     )
 
 
