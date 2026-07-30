@@ -334,7 +334,7 @@ p {
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-md);
 }
 
 .navbar-link {
@@ -343,6 +343,7 @@ p {
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
   position: relative;
+  white-space: nowrap;
 }
 
 .navbar-link.active {
@@ -384,8 +385,8 @@ p {
   height: 24px;
 }
 
-/* Mobile Navigation */
-@media (max-width: 968px) {
+/* Mobile Navigation — collapses to drawer before the 10-item row can overflow */
+@media (max-width: 1120px) {
   .navbar-menu {
     display: none;
     position: fixed !important;
