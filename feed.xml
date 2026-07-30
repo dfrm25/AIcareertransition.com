@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Career Transition — This Week in AI</title>
+    <link>https://aicareertransition.com/this-week.html</link>
+    <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+    <ttl>1440</ttl>
+    <item>
+      <title>AI Agents That Remember and Connect: Memory, Connectors, and Governance</title>
+      <link>https://aicareertransition.com/blog/ai-agents-memory-connectors-governance.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-agents-memory-connectors-governance.html</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Modern AI agents remember context, connect to your files and tools, and run under governance. A practical guide for professionals to design connected, trustworthy AI workflows.</description>
+    </item>
+    <item>
+      <title>Multi-Agent AI Workflows: Coordinating Agent Teams as a Professional</title>
+      <link>https://aicareertransition.com/blog/multi-agent-workflows-for-professionals.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/multi-agent-workflows-for-professionals.html</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+      <description>How professionals coordinate multiple AI agents into supervised workflows: orchestration patterns, handoffs, A2A, and the proof artifact that shows the skill.</description>
+    </item>
+    <item>
+      <title>Agentic AI Workflows for Non-Engineers</title>
+      <link>https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>A practical guide to using AI agents for research, reporting, planning, and operations without pretending to be a software engineer.</description>
+    </item>
+    <item>
+      <title>May 2026 AI Career Brief: From Chatbots to Supervised Workflows</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-may-2026-agentic-workflows.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-may-2026-agentic-workflows.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>A current AI career brief on agents, reasoning effort controls, Copilot and Workspace integration, multimodal creation, and the proof artifacts professionals should build now.</description>
+    </item>
+    <item>
+      <title>AI Video Generation Career Skills for Marketers, Trainers, and Product Teams</title>
+      <link>https://aicareertransition.com/blog/ai-video-generation-career-skills.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-video-generation-career-skills.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>What AI video and multimodal generation mean for career skills, review workflows, and proof artifacts in non-technical roles.</description>
+    </item>
+    <item>
+      <title>AI Workflow Evals and Human Review for Working Professionals</title>
+      <link>https://aicareertransition.com/blog/ai-workflow-evals-human-review.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-workflow-evals-human-review.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>A practical guide to evaluating AI outputs, building human review loops, and turning quality checks into proof-of-work.</description>
+    </item>
+    <item>
+      <title>ChatGPT vs Claude vs Gemini vs Copilot: Which Workbench to Use in 2026</title>
+      <link>https://aicareertransition.com/blog/chatgpt-claude-gemini-copilot-which-to-use-2026.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/chatgpt-claude-gemini-copilot-which-to-use-2026.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>A living model and workbench picker for professionals choosing between ChatGPT, Claude, Gemini, Copilot, Perplexity, and reasoning modes.</description>
+    </item>
+    <item>
+      <title>MCP and Connected AI Tools: A Career Guide</title>
+      <link>https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <description>A plain-English guide to MCP, connected AI tools, and the career artifacts non-engineers can build to prove workflow fluency.</description>
+    </item>
+    <item>
+      <title>AI Interview Prep for Career Changers</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-interview-prep.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-interview-prep.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>How to explain AI workflows, verification, mistakes, and business impact in interviews.</description>
+    </item>
+    <item>
+      <title>No-Code AI Career Transition Path for Non-Engineers</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-no-code.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-no-code.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A no-code AI career path for professionals who want AI-adjacent work without becoming software engineers.</description>
+    </item>
+    <item>
+      <title>AI Career Portfolio Examples That Prove Real Skill</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-portfolio-examples.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-portfolio-examples.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Practical AI portfolio examples and proof-of-work artifacts for career transitions.</description>
+    </item>
+    <item>
+      <title>AI Career Transition Roadmap: From Curious to Credible</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-roadmap.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-roadmap.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A practical roadmap for professionals who want to transition into AI-adjacent work.</description>
+    </item>
+    <item>
+      <title>AI Career Salary &amp; Market Signals: What to Watch</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-salary-outlook.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-salary-outlook.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>How to evaluate AI career salary and job market signals without hype.</description>
+    </item>
+    <item>
+      <title>30-60-90 Day AI Career Transition Timeline</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-timeline.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-timeline.html</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A realistic timeline for transitioning into AI-adjacent work with proof-of-work.</description>
+    </item>
+    <item>
+      <title>Archived April 2026 AI Career Brief</title>
+      <link>https://aicareertransition.com/blog/ai-lab-updates-career-actions-apr-2026.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-lab-updates-career-actions-apr-2026.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A weekly career brief translating April 2026 AI announcements into practical workplace and job-search actions.</description>
+    </item>
+    <item>
+      <title>How to Show AI Skills on a Resume Without Sounding Fake</title>
+      <link>https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A practical guide to adding AI skills to a resume with honest examples, proof-of-work, and verification notes.</description>
+    </item>
+    <item>
+      <title>How to Use Chrome Mobile AI Mode on Any Website (Step-by-Step)</title>
+      <link>https://aicareertransition.com/blog/chrome-mobile-ai-mode-any-website.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/chrome-mobile-ai-mode-any-website.html</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A story-driven walkthrough of Chrome mobile AI mode with reusable prompts, mistakes to avoid, and verification tips.</description>
+    </item>
+    <item>
+      <title>Weekly AI Career Update: What Changed and What To Do This Week</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-career-update-apr-2026.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-career-update-apr-2026.html</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A weekly operational update for professionals using AI in career workflows.</description>
+    </item>
+    <item>
+      <title>Mistakes People Make When Learning AI for a Career</title>
+      <link>https://aicareertransition.com/blog/ai-career-transition-mistakes.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-mistakes.html</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Common pitfalls when upskilling for AI-related roles and practical alternatives.</description>
+    </item>
+    <item>
+      <title>Resume and LinkedIn With AI (Without Sounding Like a Bot)</title>
+      <link>https://aicareertransition.com/blog/resume-linkedin-ai.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/resume-linkedin-ai.html</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <description>How to use ChatGPT or Claude for resumes and LinkedIn: inputs, verification, and prompts.</description>
+    </item>
+    <item>
+      <title>Microsoft Copilot: Better Models Than Auto — Where to Click</title>
+      <link>https://aicareertransition.com/blog/copilot-better-model-than-auto.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/copilot-better-model-than-auto.html</guid>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+      <description>How to switch off default Auto in Microsoft Copilot and pick Quick response or Think deeper for stronger answers.</description>
+    </item>
+    <item>
+      <title>How to Get Your Content Cited in ChatGPT and Perplexity (GEO Basics)</title>
+      <link>https://aicareertransition.com/blog/geo-basics-chatgpt-perplexity-citations.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/geo-basics-chatgpt-perplexity-citations.html</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Generative Engine Optimization (GEO) is optimizing so AI-powered search (ChatGPT, Perplexity, Google AI Overviews) cite your content. Learn the basics: structure, authority signals, and citation-friendly writing.</description>
+    </item>
+    <item>
+      <title>Reasoning Models Explained: When to Use Thinking Mode</title>
+      <link>https://aicareertransition.com/blog/reasoning-models-o1-vs-chatgpt.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/reasoning-models-o1-vs-chatgpt.html</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Reasoning and Thinking modes spend more effort before answering. Learn when to use deeper reasoning for complex analysis vs fast chat for quick tasks.</description>
+    </item>
+    <item>
+      <title>You&#x27;re Probably Using the Wrong AI Model. Here&#x27;s Where to Change It.</title>
+      <link>https://aicareertransition.com/blog/how-to-change-ai-model.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/how-to-change-ai-model.html</guid>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Text-only guide: where to switch models in Copilot, ChatGPT, Claude, and Gemini. No schematic UI images.</description>
+    </item>
+    <item>
+      <title>I Used to Spend 3 Hours on Monday Reports. Now It Takes 40 Minutes.</title>
+      <link>https://aicareertransition.com/blog/chatgpt-monday-reports.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/chatgpt-monday-reports.html</guid>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <description>How one analyst cut weekly reporting time using simple ChatGPT prompts for data summarization, QA, and slide formatting.</description>
+    </item>
+    <item>
+      <title>5 Prompting Best Practices That Actually Work</title>
+      <link>https://aicareertransition.com/blog/5-prompting-best-practices.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/5-prompting-best-practices.html</guid>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <description>Five prompting practices that work: context, structure, format constraints, and iteration. First-person examples and specific prompts.</description>
+    </item>
+  </channel>
+</rss>

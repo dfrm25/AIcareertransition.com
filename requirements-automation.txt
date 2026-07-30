@@ -1,0 +1,3 @@
+# Dependencies for the weekly automation pipeline (.github/workflows/weekly-update.yml)
+# The site itself is static and needs none of these to run.
+cursor-sdk
