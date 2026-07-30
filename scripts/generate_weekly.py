@@ -41,10 +41,8 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
-CATEGORY_COLORS = {
-    "Models": "#7c3aed", "Agents": "#10b981", "Tools": "#2563eb",
-    "Governance": "#b45309", "Multimodal": "#0284c7", "Connected AI": "#0891b2",
-}
+# Keep the palette calm and on-brand: neutral card borders, default chips.
+UPDATE_BORDER = "var(--color-border)"
 
 
 # --------------------------------------------------------------------------- #
@@ -82,9 +80,16 @@ HARD RULES (violating any means your output is rejected):
 - 2 to 4 updates. Each source_url MUST be on one of these official domains ONLY: {", ".join(OFFICIAL_DOMAINS)}.
 - Do NOT name specific stale/retired models (no "Gemini 2.0 Flash", "GPT-3.5", "Claude 2", "Bard", "Gemini 1.5", etc.). Refer to current families generally (e.g. "GPT-5 family", "Gemini with Deep Think", "Claude with extended thinking") and link the vendor's live model page for exact versions.
 - post.body_html MUST contain at least two links to official domains above.
-- Emphasize durable workflow skills and concrete career actions over hype.
 - Keep everything factual and conservative; if unsure about a claim, describe the capability generally and link the official docs.
-- The post.body_html must NOT include <html>, <head>, <nav>, or <footer> — body content only.
+- The post.body_html must NOT include <html>, <head>, <nav>, or <footer> (body content only).
+
+VOICE RULES (write like a knowledgeable human, not marketing copy):
+- Plain, direct English. Short sentences. No hype.
+- Do NOT use em dashes. Use commas, periods, or parentheses instead.
+- Ban these words/phrases: "no hype", "durable skill", "game-changer", "unlock",
+  "leverage", "seamless", "delve", "cutting-edge", "supercharge", "in today's
+  fast-paced", "Here is how", "the signal for professionals".
+- Prefer "What to do" over "Career action". Avoid stacked buzzword lists.
 
 Existing post slugs (do not reuse): {", ".join(existing_slugs[:40])}
 """
@@ -205,17 +210,16 @@ def esc(s: str) -> str:
 def render_updates(updates: list[dict]) -> str:
     out = []
     for u in updates:
-        color = CATEGORY_COLORS.get(u["category"], "#2563eb")
         internal = u["action_link"]
         out.append(
-            f'''        <article class="card" style="padding: var(--space-xl); border-left: 4px solid {color}; margin-bottom: var(--space-lg);">
+            f'''        <article class="card" style="padding: var(--space-xl); border-left: 3px solid {UPDATE_BORDER}; margin-bottom: var(--space-lg);">
           <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-sm);flex-wrap:wrap;">
             <span class="prompt-card-category" style="margin:0;">{esc(u["category"])}</span>
             <span style="font-size:0.8125rem;color:var(--color-text-muted);">Official source</span>
           </div>
           <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">{esc(u["title"])}</h3>
           <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">{esc(u["body"])} <a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-primary);">Source →</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Career action:</strong> {esc(u["action"])} <a href="{esc(internal)}" style="color:var(--color-accent-primary);">Go →</a></p>
+          <p style="line-height:1.75;font-size:0.95rem;"><strong>What to do:</strong> {esc(u["action"])} <a href="{esc(internal)}" style="color:var(--color-accent-primary);">Go →</a></p>
         </article>'''
         )
     return "\n".join(out)
@@ -311,7 +315,7 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
       <div class="hero-badge" style="margin-bottom: var(--space-md);">Published {date_human}</div>
       <h1 style="font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.2; margin-bottom: var(--space-lg);">{title}</h1>
       <p style="font-size: 1.0625rem; line-height: 1.8; color: var(--color-text-secondary);">{desc}</p>
-      <p style="font-size:0.9rem; color:var(--color-text-muted); margin-top:var(--space-md);">Reviewed by the AI Career Transition editorial team. We prioritize official product docs and source links over hype. Model and product names change fast; the workflow patterns are the durable skill.</p>
+      <p style="font-size:0.9rem; color:var(--color-text-muted); margin-top:var(--space-md);">Every claim links to the official source. Product and model names change often, so we focus on the workflows that stay useful.</p>
     </header>
 {body}
     <div class="card" style="padding: var(--space-xl); margin-top: var(--space-2xl); background: linear-gradient(145deg, rgba(37,99,235,0.06) 0%, rgba(16,185,129,0.06) 100%);">
