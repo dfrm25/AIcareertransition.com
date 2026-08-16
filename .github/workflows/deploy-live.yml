@@ -1,7 +1,7 @@
 name: Deploy live site
 
 # Pushes to main go live over FTPS. Weekly content uses the same
-# FTP step inside weekly-update.yml because GitHub will not start a
+# script inside weekly-update.yml because GitHub will not start a
 # second workflow from a GITHUB_TOKEN commit.
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         run: |
           echo "::warning::FTP_PASSWORD is not set. GitHub updated, but aicareertransition.com was not deployed. Add FTP_USERNAME and FTP_PASSWORD under Settings → Secrets → Actions."
 
-      - name: Find FTP folder and drop a test file
+      - name: Deploy to GoDaddy (FTPS)
         if: env.FTP_PASSWORD != ''
         env:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
@@ -34,16 +34,5 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y lftp
-          echo "ok $(date -u +%Y-%m-%dT%H:%M:%SZ)" > github-deploy-ok.txt
-          lftp -u "$FTP_USER","$FTP_PASS" aicareertransition.com -e "
-            set ssl:verify-certificate no;
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set net:max-retries 2;
-            set net:timeout 30;
-            pwd;
-            ls;
-            put github-deploy-ok.txt;
-            ls github-deploy-ok.txt;
-            bye
-          "
+          chmod +x scripts/ftp_deploy.sh
+          scripts/ftp_deploy.sh
