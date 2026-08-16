@@ -64,14 +64,8 @@ jobs:
           git commit -m "chore(content): weekly AI update $(date -u +%Y-%m-%d) [skip ci]"
           git push origin HEAD:main
 
-      - name: Deploy to GoDaddy (FTPS)
-        if: steps.diff.outputs.changed == 'true' && env.FTP_PASSWORD != ''
-        env:
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+      - name: Live FTP deploy paused
+        if: steps.diff.outputs.changed == 'true'
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y lftp
-          chmod +x scripts/ftp_deploy.sh
-          scripts/ftp_deploy.sh
+          echo "::warning::Weekly content was committed to GitHub. Live FTP deploy is paused because the extra FTP account cannot overwrite existing HTML. Use cPanel Git: Update from Remote, then Deploy HEAD Commit."
 

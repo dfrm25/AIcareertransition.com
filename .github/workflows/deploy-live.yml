@@ -1,11 +1,8 @@
 name: Deploy live site
 
-# Pushes to main go live over FTPS. Weekly content uses the same
-# script inside weekly-update.yml because GitHub will not start a
-# second workflow from a GITHUB_TOKEN commit.
+# Manual only. Automatic FTP on push is disabled: the extra FTP
+# account cannot safely overwrite live HTML (403/404 risk).
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -24,7 +21,7 @@ jobs:
       - name: Skip if FTP secrets are missing
         if: env.FTP_PASSWORD == ''
         run: |
-          echo "::warning::FTP_PASSWORD is not set. GitHub updated, but aicareertransition.com was not deployed. Add FTP_USERNAME and FTP_PASSWORD under Settings → Secrets → Actions."
+          echo "::warning::FTP_PASSWORD is not set."
 
       - name: Deploy to GoDaddy (FTPS)
         if: env.FTP_PASSWORD != ''
