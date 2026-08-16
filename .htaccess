@@ -36,7 +36,7 @@
 <IfModule mod_headers.c>
   # Long cache for fingerprint-free static assets; redeploy or rename files to bust cache.
   <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=2592000"
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
   </FilesMatch>
   <FilesMatch "\.(svg|png|jpg|jpeg|webp|ico|woff2|woff)$">
     Header set Cache-Control "public, max-age=2592000"

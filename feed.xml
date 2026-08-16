@@ -6,9 +6,16 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 11 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>GPT-5.6 is the default. Agents are the job.</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-11.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-11.html</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Week of August 11, 2026: GPT-5.6 is the ChatGPT default, Claude Opus 5 and Sonnet 5 are agent models, and Copilot Agent Builder is how workplace agents ship.</description>
+    </item>
     <item>
       <title>This Week in AI: Agents Go Mainstream, Reasoning Becomes Default</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-07-29.html</link>

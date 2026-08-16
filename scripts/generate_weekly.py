@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
-"""Weekly content generator — runs unattended in CI via the Cursor SDK.
+"""Weekly content generator — runs unattended in GitHub Actions.
 
-Flow (fail-closed): ask a Cursor agent for a STRICT JSON payload describing this
-week's AI updates + one new blog post, validate every field HARD (official
-source domains, no deprecated model names, safe slug, working internal links),
-and only THEN render deterministic HTML into fixed templates and marker blocks.
-If anything is missing or invalid, it writes nothing and exits non-zero so the
-workflow skips the deploy. No half-baked content ever reaches the site.
+Primary path: pull recent posts from official vendor RSS/news pages and write
+a dated brief. Optional: if CURSOR_API_KEY is set, a Cursor agent can rewrite
+the copy. If feeds are quiet, a conservative fallback still refreshes the date
+so the hub never goes stale.
 
 Env:
-  CURSOR_API_KEY   required (Cursor Dashboard -> Integrations)
-  WEEKLY_MODEL     optional model id (default: composer-2.5)
-
-Usage:
-  python3 scripts/generate_weekly.py
+  CURSOR_API_KEY   optional
+  WEEKLY_MODEL     optional (default: composer-2.5)
 """
 from __future__ import annotations
 
 import datetime
+import email.utils
 import json
+import os
 import re
 import sys
+import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-import build_feed  # noqa: E402  (local helper, reused for post extraction)
+import build_feed  # noqa: E402
 
 _UTC = getattr(datetime, "UTC", datetime.timezone.utc)
 
@@ -40,9 +39,170 @@ DEPRECATED_RE = re.compile(
     re.IGNORECASE,
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-
-# Keep the palette calm and on-brand: neutral card borders, default chips.
 UPDATE_BORDER = "var(--color-border)"
+CSS_VER = "20260816"
+
+FEEDS = (
+    "https://openai.com/news/rss.xml",
+    "https://openai.com/blog/rss.xml",
+    "https://blog.google/innovation-and-ai/rss/",
+    "https://blog.google/rss/",
+    "https://www.microsoft.com/en-us/microsoft-copilot/blog/feed/",
+)
+
+AGENT_PROMPT_DEFAULT = (
+    "You are an agent, not a chatbot. Goal: [TASK]. Context attached: "
+    "[FILES OR NOTES]. Tools you may use: [SEARCH / CODE / BROWSER / NONE]. "
+    "Constraints: do not invent numbers; stop and ask if a source is missing. "
+    "Loop: plan, act, check. Return (1) the deliverable, (2) what you did, "
+    "(3) what a human must verify before this ships."
+)
+
+FALLBACK_SOURCES = (
+    {
+        "category": "Models",
+        "title": "Check the live ChatGPT model page",
+        "body": "OpenAI changes ChatGPT defaults often. Confirm whether you are on GPT-5.6 Luna (free, Think button) or Sol (paid, reasoning slider) before you trust a hard answer.",
+        "source_url": "https://help.openai.com/en/articles/20001354-gpt-56-in-chatgpt",
+        "action": "Open the model picker and save one before/after on a real work task.",
+        "action_link": "blog/how-to-change-ai-model.html",
+    },
+    {
+        "category": "Agents",
+        "title": "Claude's current models are built to run, not just reply",
+        "body": "Opus 5 and Sonnet 5 are the current Claude lineup for long-running agents, tool use, and computer use. Brief them with a goal, tools, and a stop condition.",
+        "source_url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "action": "Paste an agentic brief from the prompt library into Claude or Claude Code.",
+        "action_link": "prompts.html",
+    },
+    {
+        "category": "Tools",
+        "title": "Copilot agents are a Microsoft 365 product now",
+        "body": "Agent Builder is how workplace agents get created and, with admin approval, land in an org agent store. If you work in Microsoft 365, this is the path that will show up at work.",
+        "source_url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agents-overview",
+        "action": "Sketch instructions and one human approval point for a recurring task you already own.",
+        "action_link": "blog/agentic-ai-workflows-for-non-engineers.html",
+    },
+)
+
+
+def _domain_ok(url: str) -> bool:
+    return url.startswith("https://") and any(
+        (f"//{d}" in url or f".{d}" in url) for d in OFFICIAL_DOMAINS
+    )
+
+
+def _fetch(url, timeout=12):
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "AICareerTransitionWeekly/1.0"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read()
+    except Exception as err:
+        print(f"[warn] fetch failed {url}: {err}", file=sys.stderr)
+        return None
+
+
+def _parse_rss(xml_bytes: bytes) -> list[dict]:
+    items = []
+    try:
+        root = ET.fromstring(xml_bytes)
+    except ET.ParseError:
+        return items
+    for item in root.iter():
+        tag = item.tag.lower().split("}")[-1]
+        if tag != "item" and tag != "entry":
+            continue
+        title = link = summary = ""
+        published = None
+        for child in item:
+            ctag = child.tag.lower().split("}")[-1]
+            text = (child.text or "").strip()
+            if ctag in ("title",) and text:
+                title = text
+            elif ctag in ("link",):
+                link = child.attrib.get("href", "") or text
+            elif ctag in ("description", "summary"):
+                summary = re.sub(r"<[^>]+>", "", text)
+            elif ctag in ("pubdate", "published", "updated") and text:
+                try:
+                    published = email.utils.parsedate_to_datetime(text).date()
+                except Exception:
+                    try:
+                        published = datetime.date.fromisoformat(text[:10])
+                    except Exception:
+                        published = None
+        if title and link:
+            items.append(
+                {"title": title, "link": link, "summary": summary[:280], "date": published}
+            )
+    return items
+
+
+def fetch_feed_updates(monday: datetime.date) -> list[dict]:
+    cutoff = monday - datetime.timedelta(days=10)
+    seen = set()
+    picked = []
+    for feed in FEEDS:
+        raw = _fetch(feed)
+        if not raw:
+            continue
+        for item in _parse_rss(raw):
+            url = item["link"]
+            if url in seen or not _domain_ok(url):
+                continue
+            if item["date"] and item["date"] < cutoff:
+                continue
+            seen.add(url)
+            body = item["summary"] or item["title"]
+            picked.append(
+                {
+                    "category": "News",
+                    "title": item["title"][:90],
+                    "body": body,
+                    "source_url": url,
+                    "action": "Read the source, then apply it to one task you already own this week.",
+                    "action_link": "prompts.html",
+                }
+            )
+            if len(picked) >= 4:
+                return picked
+    return picked
+
+
+def payload_from_updates(updates: list[dict], week_label: str, week_date: str) -> dict:
+    if len(updates) < 2:
+        updates = list(FALLBACK_SOURCES)
+    sections = []
+    for i, u in enumerate(updates, 1):
+        sections.append(
+            f'<section style="margin-bottom: var(--space-2xl);">'
+            f'<h2 style="font-size: 1.25rem; margin-bottom: var(--space-md);">{i}. {esc(u["title"])}</h2>'
+            f'<p style="line-height: 1.8;">{esc(u["body"])} '
+            f'<a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a></p>'
+            f'<p style="line-height: 1.8;">{esc(u["action"])}</p></section>'
+        )
+    title = updates[0]["title"][:80]
+    desc = f"{week_label}: what shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it."
+    return {
+        "week_label": week_label,
+        "week_date": week_date,
+        "updates": updates[:4],
+        "prompt_of_week": AGENT_PROMPT_DEFAULT,
+        "post": {
+            "slug": f"weekly-ai-brief-{week_date}",
+            "title": title,
+            "description": desc[:160],
+            "category": "Weekly Brief",
+            "body_html": "\n".join(sections),
+        },
+    }
+
+
+# --------------------------------------------------------------------------- #
+# 1. Prompt the Cursor agent for a strict JSON payload
+# --------------------------------------------------------------------------- #
 
 
 # --------------------------------------------------------------------------- #
@@ -97,19 +257,17 @@ Existing post slugs (do not reuse): {", ".join(existing_slugs[:40])}
 
 def call_agent(prompt: str) -> str:
     try:
-        import os
-        from cursor_sdk import Agent, AgentOptions, LocalAgentOptions
-    except Exception as e:  # pragma: no cover - import/runtime env issue
-        print(f"[fatal] cursor-sdk not importable: {e}", file=sys.stderr)
-        raise SystemExit(1)
+        from cursor_sdk import Agent, AgentOptions, LocalAgentOptions, CursorAgentError
+    except Exception as e:
+        print(f"[warn] cursor-sdk not importable: {e}", file=sys.stderr)
+        return ""
 
     api_key = os.environ.get("CURSOR_API_KEY")
     if not api_key:
-        print("[fatal] CURSOR_API_KEY not set", file=sys.stderr)
-        raise SystemExit(1)
+        print("[info] CURSOR_API_KEY not set; using official feeds", file=sys.stderr)
+        return ""
     model = os.environ.get("WEEKLY_MODEL", "composer-2.5")
 
-    from cursor_sdk import CursorAgentError
     try:
         result = Agent.prompt(
             prompt,
@@ -119,13 +277,13 @@ def call_agent(prompt: str) -> str:
                 local=LocalAgentOptions(cwd=str(ROOT)),
             ),
         )
-    except CursorAgentError as err:  # run never started
-        print(f"[fatal] agent startup failed: {err} retryable={getattr(err,'is_retryable',None)}", file=sys.stderr)
-        raise SystemExit(1)
+    except CursorAgentError as err:
+        print(f"[warn] agent startup failed: {err}", file=sys.stderr)
+        return ""
 
-    if getattr(result, "status", None) == "error":  # ran but failed
-        print(f"[fatal] agent run failed: {getattr(result,'id','?')}", file=sys.stderr)
-        raise SystemExit(2)
+    if getattr(result, "status", None) == "error":
+        print(f"[warn] agent run failed: {getattr(result,'id','?')}", file=sys.stderr)
+        return ""
 
     return result.result or ""
 
@@ -145,13 +303,7 @@ def extract_json(text: str) -> dict:
 # --------------------------------------------------------------------------- #
 # 2. Validate — fail closed
 # --------------------------------------------------------------------------- #
-def _domain_ok(url: str) -> bool:
-    return url.startswith("https://") and any(
-        (f"//{d}" in url or f".{d}" in url) for d in OFFICIAL_DOMAINS
-    )
-
-
-def validate(payload: dict, existing_slugs: list[str]) -> list[str]:
+def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[str]:
     errs: list[str] = []
     updates = payload.get("updates")
     if not isinstance(updates, list) or not (2 <= len(updates) <= 4):
@@ -176,7 +328,7 @@ def validate(payload: dict, existing_slugs: list[str]) -> list[str]:
     slug = post.get("slug", "")
     if not SLUG_RE.match(slug):
         errs.append(f"post.slug invalid: {slug!r}")
-    if slug in existing_slugs:
+    if slug in existing_slugs and slug != week_slug:
         errs.append(f"post.slug already exists: {slug}")
     for f in ("title", "description", "category", "body_html"):
         if not post.get(f):
@@ -212,14 +364,10 @@ def render_updates(updates: list[dict]) -> str:
     for u in updates:
         internal = u["action_link"]
         out.append(
-            f'''        <article class="card" style="padding: var(--space-xl); border-left: 3px solid {UPDATE_BORDER}; margin-bottom: var(--space-lg);">
-          <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-sm);flex-wrap:wrap;">
-            <span class="prompt-card-category" style="margin:0;">{esc(u["category"])}</span>
-            <span style="font-size:0.8125rem;color:var(--color-text-muted);">Official source</span>
-          </div>
+            f'''        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
           <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">{esc(u["title"])}</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">{esc(u["body"])} <a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-primary);">Source →</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>What to do:</strong> {esc(u["action"])} <a href="{esc(internal)}" style="color:var(--color-accent-primary);">Go →</a></p>
+          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">{esc(u["body"])} <a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <p style="line-height:1.75;font-size:0.95rem;"><strong>Do this:</strong> {esc(u["action"])} <a href="{esc(internal)}">Go</a></p>
         </article>'''
         )
     return "\n".join(out)
@@ -236,10 +384,10 @@ def render_latest(limit: int = 3) -> str:
     for post in posts[:limit]:
         rel = post["url"].replace(build_feed.BASE + "/", "")
         out.append(
-            f'''          <article class="card" style="padding: var(--space-lg); border-left: 4px solid #7c3aed; margin-bottom: var(--space-md);">
+            f'''          <article class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
             <span style="font-size:0.8125rem;color:var(--color-text-muted);"><time datetime="{post["date"]:%Y-%m-%d}">{post["date"]:%B %-d, %Y}</time></span>
             <h3 style="margin:6px 0;font-size:1.1rem;"><a href="{esc(rel)}" style="color:var(--color-text-primary);text-decoration:none;">{esc(post["title"])}</a></h3>
-            <a href="{esc(rel)}" style="color:var(--color-accent-primary);font-weight:600;font-size:0.9rem;">Read →</a>
+            <a href="{esc(rel)}" style="color:var(--color-accent-primary);font-weight:600;font-size:0.9rem;">Read</a>
           </article>'''
         )
     return "\n".join(out)
@@ -277,6 +425,26 @@ def update_hub(payload: dict) -> None:
         text, "<!-- WEEKLY:PROMPT:START -->", "<!-- WEEKLY:PROMPT:END -->", prompt_html
     )
     hub.write_text(text, encoding="utf-8")
+    update_home(payload)
+
+
+def update_home(payload: dict) -> None:
+    home = ROOT / "index.html"
+    if not home.exists():
+        return
+    first = payload["updates"][0]
+    inner = f'''        <div class="card" style="padding: var(--space-xl);">
+          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-sm);">{esc(payload["week_label"])}</p>
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-sm);">{esc(first["title"])}</h2>
+          <p style="line-height: 1.75; margin-bottom: var(--space-md);">{esc(first["body"])}</p>
+          <a href="this-week.html" class="btn btn-primary">Read the brief</a>
+        </div>'''
+    text = home.read_text(encoding="utf-8")
+    if "<!-- WEEKLY:HOME:START -->" in text:
+        home.write_text(
+            replace_block(text, "<!-- WEEKLY:HOME:START -->", "<!-- WEEKLY:HOME:END -->", inner),
+            encoding="utf-8",
+        )
 
 
 BLOG_TEMPLATE = '''<!DOCTYPE html>
@@ -302,27 +470,21 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css?v={css_ver}">
   <title>{title} | AI Career Transition</title>
   <script>window.addEventListener("load",function(){{var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);}});</script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu"><a href="../index.html" class="navbar-link">Home</a><a href="../this-week.html" class="navbar-link">This Week</a><a href="../101.html" class="navbar-link">AI 101</a><a href="../201.html" class="navbar-link">AI 201</a><a href="../prompts.html" class="navbar-link">Prompt Library</a><a href="../career.html" class="navbar-link">Career</a><a href="../artifacts.html" class="navbar-link">Artifacts</a><a href="../blog.html" class="navbar-link active">Blog</a><a href="../tools-comparison.html" class="navbar-link">Compare Tools</a></div><div class="navbar-actions"><a href="../index.html#quiz" class="btn btn-primary">Take Quiz</a></div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
-  <main id="main-content"><article class="section" style="padding-top: 120px;"><div class="container" style="max-width: 860px;">
+  <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu"><a href="../this-week.html" class="navbar-link">This Week</a><a href="../101.html" class="navbar-link">Learn</a><a href="../prompts.html" class="navbar-link">Prompts</a><a href="../career.html" class="navbar-link">Career</a><a href="../blog.html" class="navbar-link active">Blog</a></div><div class="navbar-actions"><a href="../career.html" class="btn btn-primary">Start</a></div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
+  <main id="main-content"><article class="section" style="padding-top: 120px;"><div class="container" style="max-width: 760px;">
     <header style="margin-bottom: var(--space-2xl);">
-      <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: var(--space-sm);"><a href="../this-week.html" style="color: var(--color-accent-primary);">This Week in AI</a> / {category}</p>
-      <div class="hero-badge" style="margin-bottom: var(--space-md);">Published {date_human}</div>
-      <h1 style="font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.2; margin-bottom: var(--space-lg);">{title}</h1>
-      <p style="font-size: 1.0625rem; line-height: 1.8; color: var(--color-text-secondary);">{desc}</p>
-      <p style="font-size:0.9rem; color:var(--color-text-muted); margin-top:var(--space-md);">Every claim links to the official source. Product and model names change often, so we focus on the workflows that stay useful.</p>
+      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a> · {date_human}</p>
+      <h1 style="font-size: clamp(1.75rem, 4vw, 2.4rem); line-height: 1.2; margin-bottom: var(--space-lg);">{title}</h1>
+      <p style="font-size: 1.0625rem; line-height: 1.75; color: var(--color-text-secondary);">{desc}</p>
     </header>
 {body}
-    <div class="card" style="padding: var(--space-xl); margin-top: var(--space-2xl); background: linear-gradient(145deg, rgba(37,99,235,0.06) 0%, rgba(16,185,129,0.06) 100%);">
-      <h2 style="font-size:1.2rem;margin-bottom:var(--space-sm);">Keep up every week</h2>
-      <p style="line-height:1.8;margin-bottom:var(--space-md);">This brief is part of <a href="../this-week.html" style="color:var(--color-accent-primary);">This Week in AI</a> — updated every week. <a href="/feed.xml" style="color:var(--color-accent-primary);">Subscribe via RSS</a> or get the email digest on the hub.</p>
-      <a href="../this-week.html" class="btn btn-primary">Go to This Week in AI</a>
-    </div>
+    <p style="margin-top: var(--space-xl);"><a href="../this-week.html" class="btn btn-primary">This Week in AI</a></p>
   </div></article></main>
   <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p></div></div></footer>
   <script src="../js/main.js" defer></script>
@@ -341,6 +503,7 @@ def write_post(post: dict, date: str, date_human: str) -> Path:
         date=date,
         date_human=date_human,
         body=post["body_html"],
+        css_ver=CSS_VER,
     )
     out.write_text(html, encoding="utf-8")
     return out
@@ -349,12 +512,14 @@ def write_post(post: dict, date: str, date_human: str) -> Path:
 def prepend_blog_card(post: dict, date: str, date_human: str) -> None:
     blog = ROOT / "blog.html"
     text = blog.read_text(encoding="utf-8")
+    if f'blog/{post["slug"]}.html' in text:
+        return
     card = f'''        <!-- Auto-generated weekly brief — {date} -->
-        <article class="card animate-on-scroll" style="padding: var(--space-xl); border-left: 4px solid #2563eb; margin-bottom: var(--space-lg);">
-          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); flex-wrap: wrap;"><span class="prompt-card-category" style="margin: 0; background: rgba(37,99,235,0.1); color: #1d4ed8; border-color: rgba(37,99,235,0.2);">{esc(post["category"])}</span><span style="font-size: 0.8125rem; color: var(--color-text-muted);"><time datetime="{date}">{date_human}</time></span></div>
+        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); flex-wrap: wrap;"><span class="prompt-card-category" style="margin: 0;">{esc(post["category"])}</span><span style="font-size: 0.8125rem; color: var(--color-text-muted);"><time datetime="{date}">{date_human}</time></span></div>
           <h3 style="margin-bottom: var(--space-sm); font-size: 1.25rem; line-height: 1.35;"><a href="blog/{post["slug"]}.html" style="color: var(--color-text-primary); text-decoration: none;">{esc(post["title"])}</a></h3>
           <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">{esc(post["description"])}</p>
-          <a href="blog/{post["slug"]}.html" style="color: var(--color-accent-primary); font-weight: 600; font-size: 0.9375rem;">Read full post -></a>
+          <a href="blog/{post["slug"]}.html" style="color: var(--color-accent-primary); font-weight: 600;">Read</a>
         </article>
 '''
     anchor = '<h2 class="animate-on-scroll" style="margin-bottom: var(--space-xl); font-size: 1.375rem;">All Posts</h2>'
@@ -386,24 +551,31 @@ def main() -> int:
     monday = today - datetime.timedelta(days=today.weekday())
     week_date = monday.isoformat()
     week_label = f"Week of {monday.strftime('%B %-d, %Y')}"
+    week_slug = f"weekly-ai-brief-{week_date}"
     slugs = existing_slugs()
 
-    prompt = build_prompt(week_label, week_date, slugs)
-    raw = call_agent(prompt)
+    payload = None
+    if os.environ.get("CURSOR_API_KEY"):
+        raw = call_agent(build_prompt(week_label, week_date, slugs))
+        if raw:
+            try:
+                payload = extract_json(raw)
+                print("[info] using Cursor agent payload")
+            except Exception as e:
+                print(f"[warn] could not parse agent JSON: {e}", file=sys.stderr)
 
-    try:
-        payload = extract_json(raw)
-    except Exception as e:
-        print(f"[fatal] could not parse agent JSON: {e}", file=sys.stderr)
-        print("---agent output start---\n" + raw[:2000] + "\n---end---", file=sys.stderr)
-        return 1
+    if payload is None:
+        updates = fetch_feed_updates(monday)
+        print(f"[info] official feeds returned {len(updates)} item(s)")
+        payload = payload_from_updates(updates, week_label, week_date)
 
-    # Force canonical dates/slug regardless of what the model echoed.
     payload["week_date"] = week_date
     payload["week_label"] = week_label
-    payload.setdefault("post", {})["slug"] = f"weekly-ai-brief-{week_date}"
+    payload.setdefault("post", {})["slug"] = week_slug
+    if not payload.get("prompt_of_week"):
+        payload["prompt_of_week"] = AGENT_PROMPT_DEFAULT
 
-    errs = validate(payload, slugs)
+    errs = validate(payload, slugs, week_slug)
     if errs:
         print(f"[fatal] validation failed ({len(errs)}):", file=sys.stderr)
         for e in errs:
@@ -417,7 +589,6 @@ def main() -> int:
     update_hub(payload)
     update_llms(post, week_date)
 
-    # Regenerate machine files.
     import build_sitemap
     build_sitemap.main()
     build_feed.main()

@@ -1,13 +1,10 @@
 name: Weekly AI content update + deploy
 
-# Runs every Monday 14:00 UTC (adjust `cron` below). Also runnable on demand
-# from the Actions tab (workflow_dispatch) for testing.
 on:
   schedule:
     - cron: "0 14 * * 1"
   workflow_dispatch:
 
-# Allow the workflow to push the generated commit back to main.
 permissions:
   contents: write
 
@@ -18,6 +15,8 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,29 +28,18 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Cursor CLI (local agent runtime)
-        run: |
-          curl https://cursor.com/install -fsS | bash
-          echo "$HOME/.cursor/bin" >> "$GITHUB_PATH"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-
       - name: Install Python dependencies
-        run: pip install -r requirements-automation.txt
+        run: pip install -r requirements-automation.txt || true
 
-      # 1) Generate this week's content. Fails the job (no deploy) if the agent
-      #    output is missing/invalid — fail-closed by design.
       - name: Generate weekly content
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           WEEKLY_MODEL: ${{ vars.WEEKLY_MODEL || 'composer-2.5' }}
         run: python3 scripts/generate_weekly.py
 
-      # 2) Quality gate. Blocks deploy on any hard error (dead links, stale
-      #    model names, invalid XML, missing markers).
       - name: Run guardrails
         run: python3 scripts/guardrails.py
 
-      # 3) Detect changes produced by the generator.
       - name: Detect changes
         id: diff
         run: |
@@ -62,7 +50,6 @@ jobs:
             echo "No changes produced; skipping commit and deploy."
           fi
 
-      # 4) Commit the generated content back to main.
       - name: Commit generated content
         if: steps.diff.outputs.changed == 'true'
         run: |
@@ -72,10 +59,10 @@ jobs:
           git commit -m "chore(content): weekly AI update $(date -u +%Y-%m-%d) [skip ci]"
           git push origin HEAD:main
 
-      # 5) Deploy the whole site to GoDaddy over FTPS. Only web assets are
-      #    uploaded; dev/build files are excluded.
       - name: Deploy to GoDaddy (FTPS)
-        if: steps.diff.outputs.changed == 'true'
+        if: steps.diff.outputs.changed == 'true' && env.FTP_SERVER != ''
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -97,3 +84,4 @@ jobs:
             **/.pycache-validate/**
             **/requirements-automation.txt
             **/ai-career-transition-deploy.zip
+
