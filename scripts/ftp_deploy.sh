@@ -11,14 +11,12 @@ lftp -u "$FTP_USER","$FTP_PASS" aicareertransition.com -e "
 set ssl:verify-certificate no;
 set ftp:ssl-force true;
 set ftp:ssl-protect-data true;
-set net:max-retries 3;
-set net:timeout 30;
+set net:max-retries 2;
+set net:timeout 20;
 pwd;
 cd public_html;
 pwd;
 put this-week.html;
-put index.html;
 ls this-week.html;
-mirror -R --no-perms --no-umask --verbose --exclude-glob .git --exclude-glob .github --exclude-glob scripts --exclude-glob \"*.md\" --exclude-glob \"*.py\" --exclude-glob .cpanel.yml --exclude-glob .gitignore --exclude-glob requirements-automation.txt --exclude-glob ai-career-transition-deploy.zip --exclude-glob github-deploy-ok.txt .;
 bye
 "
