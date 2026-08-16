@@ -1,5 +1,5 @@
 #!/bin/bash
-# Upload the site into the FTP login directory (already public_html).
+# Main cPanel FTP user logs into /home/... so we cd into public_html first.
 set -euo pipefail
 
 if [[ -z "${FTP_USER:-}" || -z "${FTP_PASS:-}" ]]; then
@@ -13,14 +13,12 @@ set ftp:ssl-force true;
 set ftp:ssl-protect-data true;
 set net:max-retries 3;
 set net:timeout 30;
-set cmd:fail-exit yes;
 pwd;
-chmod 666 this-week.html;
+cd public_html;
+pwd;
 put this-week.html;
-chmod 644 this-week.html;
-chmod 666 index.html;
 put index.html;
-chmod 644 index.html;
 ls this-week.html;
+mirror -R --no-perms --no-umask --verbose --exclude-glob .git --exclude-glob .github --exclude-glob scripts --exclude-glob \"*.md\" --exclude-glob \"*.py\" --exclude-glob .cpanel.yml --exclude-glob .gitignore --exclude-glob requirements-automation.txt --exclude-glob ai-career-transition-deploy.zip --exclude-glob github-deploy-ok.txt .;
 bye
 "
