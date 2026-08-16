@@ -50,6 +50,11 @@ jobs:
             echo "No changes produced; skipping commit and deploy."
           fi
 
+      - name: Warn if live deploy is not configured
+        if: env.FTP_SERVER == ''
+        run: |
+          echo "::warning::FTP_SERVER is not set. The weekly brief will land on GitHub only. aicareertransition.com will not update until FTP secrets are added."
+
       - name: Commit generated content
         if: steps.diff.outputs.changed == 'true'
         run: |

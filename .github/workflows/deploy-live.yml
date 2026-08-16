@@ -1,0 +1,51 @@
+name: Deploy live site
+
+# Pushes to main go live over FTPS. Weekly content uses the same
+# FTP step inside weekly-update.yml because GitHub will not start a
+# second workflow from a GITHUB_TOKEN commit.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: live-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Skip if FTP secrets are missing
+        if: env.FTP_SERVER == ''
+        run: |
+          echo "::warning::FTP_SERVER is not set. GitHub updated, but aicareertransition.com was not deployed. Add FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD under Settings → Secrets → Actions."
+
+      - name: Deploy to GoDaddy (FTPS)
+        if: env.FTP_SERVER != ''
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: public_html/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/scripts/**
+            **/*.md
+            **/*.py
+            **/.cpanel.yml
+            **/.gitignore
+            **/__pycache__/**
+            **/.pycache-validate/**
+            **/requirements-automation.txt
+            **/ai-career-transition-deploy.zip
