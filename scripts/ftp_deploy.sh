@@ -1,5 +1,5 @@
 #!/bin/bash
-# Main cPanel FTP user logs into /home/... so we cd into public_html first.
+# Extra FTP account is already jailed to public_html.
 set -euo pipefail
 
 if [[ -z "${FTP_USER:-}" || -z "${FTP_PASS:-}" ]]; then
@@ -14,9 +14,11 @@ set ftp:ssl-protect-data true;
 set net:max-retries 2;
 set net:timeout 20;
 pwd;
-cd public_html;
-pwd;
 put this-week.html;
+put index.html;
+chmod 644 this-week.html;
+chmod 644 index.html;
 ls this-week.html;
+ls index.html;
 bye
 "
