@@ -26,27 +26,24 @@ jobs:
         run: |
           echo "::warning::FTP_PASSWORD is not set. GitHub updated, but aicareertransition.com was not deployed. Add FTP_USERNAME and FTP_PASSWORD under Settings → Secrets → Actions."
 
-      - name: Deploy to GoDaddy (FTPS)
+      - name: Find FTP folder and drop a test file
         if: env.FTP_PASSWORD != ''
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: aicareertransition.com
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          security: loose
-          server-dir: public_html/
-          local-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/scripts/**
-            **/*.md
-            **/*.py
-            **/.cpanel.yml
-            **/.gitignore
-            **/__pycache__/**
-            **/.pycache-validate/**
-            **/requirements-automation.txt
-            **/ai-career-transition-deploy.zip
+        env:
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y lftp
+          echo "ok $(date -u +%Y-%m-%dT%H:%M:%SZ)" > github-deploy-ok.txt
+          lftp -u "$FTP_USER","$FTP_PASS" aicareertransition.com -e "
+            set ssl:verify-certificate no;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set net:max-retries 2;
+            set net:timeout 30;
+            pwd;
+            ls;
+            put github-deploy-ok.txt;
+            ls github-deploy-ok.txt;
+            bye
+          "
