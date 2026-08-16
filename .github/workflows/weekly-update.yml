@@ -16,7 +16,7 @@ jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
     env:
-      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,9 +51,9 @@ jobs:
           fi
 
       - name: Warn if live deploy is not configured
-        if: env.FTP_SERVER == ''
+        if: env.FTP_PASSWORD == ''
         run: |
-          echo "::warning::FTP_SERVER is not set. The weekly brief will land on GitHub only. aicareertransition.com will not update until FTP secrets are added."
+          echo "::warning::FTP_PASSWORD is not set. The weekly brief will land on GitHub only. aicareertransition.com will not update until FTP secrets are added."
 
       - name: Commit generated content
         if: steps.diff.outputs.changed == 'true'
@@ -65,15 +65,14 @@ jobs:
           git push origin HEAD:main
 
       - name: Deploy to GoDaddy (FTPS)
-        if: steps.diff.outputs.changed == 'true' && env.FTP_SERVER != ''
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        if: steps.diff.outputs.changed == 'true' && env.FTP_PASSWORD != ''
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: aicareertransition.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
+          security: loose
           server-dir: public_html/
           local-dir: ./
           exclude: |

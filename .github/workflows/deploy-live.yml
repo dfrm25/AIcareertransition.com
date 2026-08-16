@@ -16,24 +16,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Skip if FTP secrets are missing
-        if: env.FTP_SERVER == ''
+        if: env.FTP_PASSWORD == ''
         run: |
-          echo "::warning::FTP_SERVER is not set. GitHub updated, but aicareertransition.com was not deployed. Add FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD under Settings → Secrets → Actions."
+          echo "::warning::FTP_PASSWORD is not set. GitHub updated, but aicareertransition.com was not deployed. Add FTP_USERNAME and FTP_PASSWORD under Settings → Secrets → Actions."
 
       - name: Deploy to GoDaddy (FTPS)
-        if: env.FTP_SERVER != ''
+        if: env.FTP_PASSWORD != ''
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: aicareertransition.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
+          security: loose
           server-dir: public_html/
           local-dir: ./
           exclude: |
