@@ -14,10 +14,10 @@ set ftp:ssl-protect-data true;
 set net:max-retries 2;
 set net:timeout 20;
 pwd;
+rm this-week.html;
 put this-week.html;
+rm index.html;
 put index.html;
-chmod 644 this-week.html;
-chmod 644 index.html;
 ls this-week.html;
 ls index.html;
 bye
