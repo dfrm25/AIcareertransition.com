@@ -41,8 +41,8 @@
   <FilesMatch "\.(svg|png|jpg|jpeg|webp|ico|woff2|woff)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
-  # HTML should revalidate so deploys show up quickly
+  # HTML must revalidate on every request so cPanel deploys are visible immediately.
   <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
+    Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
