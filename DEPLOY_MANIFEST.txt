@@ -23,6 +23,13 @@ ROOT (public_html/)
   llms.txt
   sitemap.xml
 
+guides/
+  index.html
+  product-manager-ai-transition.html
+
+research/
+  knowledge-work-ai.html
+
 personas/
   index.html
   marketing.html

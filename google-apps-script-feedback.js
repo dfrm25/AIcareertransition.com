@@ -84,7 +84,7 @@ function truncate(str, maxLen) {
 
 function processFeedbackForm(p) {
   var formType = (p.form || 'feedback').toLowerCase();
-  if (formType !== 'feedback' && formType !== 'feature' && formType !== 'contact') {
+  if (formType !== 'feedback' && formType !== 'feature' && formType !== 'contact' && formType !== 'survey') {
     return sendResponse('error', 'Invalid form type.');
   }
   var name = (p.name || '').trim();

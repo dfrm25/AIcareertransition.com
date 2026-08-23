@@ -236,6 +236,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initPromptOfDay();
   initPromptFilter();
   initFavorites();
+  initGuideMatrix();
+  initSurveyForm();
 });
 
 // ========================================
@@ -520,6 +522,150 @@ function prevQuestion() {
   }
 }
 
+function competencyFromScore(percentage) {
+  if (percentage < 30) return 'L2';
+  if (percentage < 60) return 'L3';
+  return 'L4';
+}
+
+var TRANSITION_MATRICES = {
+  product: {
+    label: 'Product',
+    guide: 'guides/product-manager-ai-transition.html',
+    L2: {
+      title: 'L2 → L3: ship one PRD review SOP',
+      weeks: [
+        ['1', 'Log baseline hours on the last 3 PRDs. Write the packet schema.', 'Empty packet template', 'Hours per review'],
+        ['2', 'Run 3 live PRDs through Claude or Gemini. Keep a miss log.', '10 scored findings', 'P0 catch vs unassisted'],
+        ['3', 'Add the human gate with eng/design. Ban invented scope.', 'Redacted before/after PRD', 'Peer-accepted rewrites'],
+        ['4', 'Publish the case study. Offer the SOP in critique.', 'Portfolio page + resume bullet', 'Cycle time on ≥8 reviews']
+      ]
+    },
+    L3: {
+      title: 'L3 → L4: own the eval, not just the prompt',
+      weeks: [
+        ['1', 'Freeze the SOP. Instrument time, P0s, false positives.', '20-PRD eval sheet', 'False-positive rate'],
+        ['2', 'Dual-pass Claude vs Gemini on 10 packets.', 'Model comparison memo', 'Agreement + unique catches'],
+        ['3', 'Add governance: PII, quotes, dates the model may not invent.', 'Wiki guardrail checklist', '0 confidential leaks'],
+        ['4', 'Train a second PM. Hand off the rubric.', '20-min walkthrough + playbook', 'Independent second-PM review']
+      ]
+    },
+    L4: {
+      title: 'L4 → L5: route three jobs, fail closed',
+      weeks: [
+        ['1', 'Split the desk: discovery, spec review, launch note.', 'Three-job DAG', 'Handoff errors'],
+        ['2', 'Connect only approved tickets/docs. No shadow IT.', 'Permission matrix', 'Data classes the agent cannot read'],
+        ['3', 'Golden set of 15 packets. Fail closed on P0 schema gaps.', 'Golden set + harness', 'Rubric ≥ 12/16'],
+        ['4', 'Org playbook and office hours. Stop being the bottleneck.', 'L5 case study', '≥3 PMs on the SOP']
+      ]
+    }
+  },
+  marketing: {
+    label: 'Marketing',
+    guide: 'guides/product-manager-ai-transition.html',
+    L2: {
+      title: 'L2 → L3: brief QA SOP (same shape as PRD review)',
+      weeks: [
+        ['1', 'Pick campaign briefs, not “learn AI.” Log baseline hours.', 'Brief schema', 'Hours per brief'],
+        ['2', 'Run 3 briefs through a claims/source checker.', 'Finding log', 'Unsourced claims caught'],
+        ['3', 'Human gate with brand/legal. Ban invented proof points.', 'Before/after brief', 'Legal-accepted rewrites'],
+        ['4', 'Case study with cycle time and error rate.', 'Portfolio page', 'Hours saved on ≥8 briefs']
+      ]
+    },
+    L3: {
+      title: 'L3 → L4: eval the checker',
+      weeks: [
+        ['1', 'Score 20 historical briefs.', 'Eval sheet', 'False-positive rate'],
+        ['2', 'Dual-model pass on 10 packets.', 'Comparison memo', 'Agreement rate'],
+        ['3', 'Claims, offers, and restricted phrases list.', 'Guardrail list', '0 policy misses'],
+        ['4', 'Train one other marketer.', 'Playbook', 'Second person ships independently']
+      ]
+    },
+    L4: {
+      title: 'L4 → L5: research → brief → QA agents',
+      weeks: [
+        ['1', 'Map three jobs and handoffs.', 'Workflow DAG', 'Handoff errors'],
+        ['2', 'Approved sources only.', 'Source allowlist', 'Off-list URLs blocked'],
+        ['3', 'Golden briefs.', 'Golden set', 'Rubric threshold'],
+        ['4', 'Team adoption.', 'Desk playbook', '≥3 marketers on SOP']
+      ]
+    }
+  },
+  analytics: {
+    label: 'Analytics',
+    guide: 'guides/product-manager-ai-transition.html',
+    L2: {
+      title: 'L2 → L3: insight QA SOP',
+      weeks: [
+        ['1', 'Baseline the last 3 insight docs.', 'Packet schema (question, grain, metric, caveats)', 'Hours per doc'],
+        ['2', 'Force every number to cite a query or dashboard.', 'Finding log', 'Uncited numbers caught'],
+        ['3', 'Analyst gate. Ban invented causal claims.', 'Before/after memo', 'Peer-accepted rewrites'],
+        ['4', 'Publish the workflow.', 'Portfolio page', 'Cycle time on ≥8 memos']
+      ]
+    },
+    L3: {
+      title: 'L3 → L4: eval the checker',
+      weeks: [
+        ['1', '20 historical memos.', 'Eval sheet', 'False-positive rate'],
+        ['2', 'Dual-model on 10 packets.', 'Comparison memo', 'Agreement rate'],
+        ['3', 'Metric dictionary + grain rules.', 'Guardrails', '0 grain mismatches shipped'],
+        ['4', 'Train a second analyst.', 'Playbook', 'Independent review']
+      ]
+    },
+    L4: {
+      title: 'L4 → L5: question → SQL draft → narrative',
+      weeks: [
+        ['1', 'Three-job DAG.', 'DAG', 'Handoff errors'],
+        ['2', 'Warehouse permissions.', 'Permission matrix', 'Blocked tables'],
+        ['3', 'Golden questions.', 'Golden set', 'Rubric ≥ 12/16'],
+        ['4', 'Team adoption.', 'Playbook', '≥3 analysts on SOP']
+      ]
+    }
+  }
+};
+
+TRANSITION_MATRICES.operations = TRANSITION_MATRICES.analytics;
+TRANSITION_MATRICES.other = TRANSITION_MATRICES.product;
+
+function matrixTableHTML(roleKey, levelKey) {
+  var pack = TRANSITION_MATRICES[roleKey] || TRANSITION_MATRICES.product;
+  var plan = pack[levelKey] || pack.L3;
+  var rows = plan.weeks.map(function (w) {
+    return '<tr><td>' + w[0] + '</td><td>' + w[1] + '</td><td>' + w[2] + '</td><td>' + w[3] + '</td></tr>';
+  }).join('');
+  return '<h4>' + plan.title + '</h4>' +
+    '<div class="data-table-wrap"><table class="data-table"><thead><tr><th>Week</th><th>Workplace SOP</th><th>Proof artifact</th><th>Manager-visible metric</th></tr></thead><tbody>' +
+    rows + '</tbody></table></div>';
+}
+
+function bindQuizMatrix(percentage, defaultLevel) {
+  var mount = document.getElementById('quiz-matrix-mount');
+  var pills = document.getElementById('quiz-role-pills');
+  if (!mount || !pills) return;
+  var state = { role: 'product', level: defaultLevel };
+  function paint() {
+    localStorage.setItem('aiQuizRole', state.role);
+    localStorage.setItem('aiQuizCompetency', state.level);
+    var pack = TRANSITION_MATRICES[state.role] || TRANSITION_MATRICES.product;
+    var guide = pack.guide + '?level=' + encodeURIComponent(state.level) + '&role=' + encodeURIComponent(state.role) + '#thirty-day';
+    mount.innerHTML = matrixTableHTML(state.role, state.level) +
+      '<p class="quiz-result-description" style="margin-top:1rem;">Flagship walkthrough (schema, rubric, resume bullet) is the Product Manager guide. Other roles use the same four-week shape.</p>' +
+      '<div class="flex justify-center gap-md" style="flex-wrap:wrap;margin-top:1rem;">' +
+      '<a class="btn btn-primary" href="' + guide + '">Open ' + pack.label + ' 30-day plan</a>' +
+      '<button type="button" class="btn btn-secondary" onclick="window.print()">Print this plan</button>' +
+      '</div>';
+    siteTrack('quiz_matrix_view', { quiz_role: state.role, competency_level: state.level, readiness_score: percentage });
+  }
+  pills.querySelectorAll('button[data-role]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      state.role = btn.getAttribute('data-role');
+      pills.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      paint();
+    });
+  });
+  paint();
+}
+
 function showResults() {
   const quizContainer = document.getElementById('quiz-container');
   
@@ -531,37 +677,39 @@ function showResults() {
   
   const maxScore = quizQuestions.length * 3;
   const percentage = Math.round((totalScore / maxScore) * 100);
+  const competency = competencyFromScore(percentage);
   
   // Determine level and recommendation
   let level, title, description, recommendation, ctaLink, ctaText;
   
   if (percentage < 30) {
     level = '101';
-    title = 'AI Beginner';
-    description = "You're at the start of your AI journey! That's great - there's huge potential for growth. Our 101 courses are designed specifically for you, with step-by-step guidance to build your foundation.";
-    recommendation = "Start with AI 101: Learn the fundamentals of AI tools, basic prompt engineering, and how to integrate AI into your daily workflow.";
-    ctaLink = '101.html';
-    ctaText = 'Start AI 101 Courses';
+    title = 'AI Beginner · start at L2';
+    description = "You are at the start. The next 30 days are one repeating workplace task with a schema and a human gate — not a tool tour.";
+    recommendation = "Use the 30-day matrix below, then AI 101 for tool fundamentals if you still need them.";
+    ctaLink = 'guides/product-manager-ai-transition.html?level=L2#thirty-day';
+    ctaText = 'Open the L2 30-day plan';
   } else if (percentage < 60) {
     level = '101-201';
-    title = 'AI Practitioner';
-    description = "You have solid AI basics! You're using tools but there's room to deepen your skills. We recommend completing any 101 gaps, then moving to 201 for advanced techniques.";
-    recommendation = "Review 101 fundamentals, then advance to 201: Learn advanced prompting, automation, and field-specific AI applications.";
-    ctaLink = '101.html';
-    ctaText = 'Review 101 & Start 201';
+    title = 'AI Practitioner · start at L3';
+    description = "You already prompt. The gap is a scored SOP: packet, rubric, dual-model pass, and a number a manager can defend.";
+    recommendation = "Run the L3 matrix (eval + false-positive rate). AI 201 is optional after you have one measured workflow.";
+    ctaLink = 'guides/product-manager-ai-transition.html?level=L3#thirty-day';
+    ctaText = 'Open the L3 30-day plan';
   } else {
     level = '201';
-    title = 'AI Power User';
-    description = "Impressive! You're already leveraging AI effectively. Our 201 courses will help you master advanced techniques, build AI-powered applications, and lead AI initiatives.";
-    recommendation = "Jump into AI 201: Master advanced agents, build custom applications, and learn to lead AI transformation in your organization.";
-    ctaLink = '201.html';
-    ctaText = 'Start AI 201 Courses';
+    title = 'AI Power User · start at L4';
+    description = "You already ship with AI. The gap is routing, permissions, and a golden set — so the desk still works when you are on leave.";
+    recommendation = "Use the L4 matrix (three-job DAG). AI 201 supports agents only after the eval harness exists.";
+    ctaLink = 'guides/product-manager-ai-transition.html?level=L4#thirty-day';
+    ctaText = 'Open the L4 30-day plan';
   }
   
   siteTrack('quiz_complete', {
     readiness_score: percentage,
     readiness_segment: level,
     readiness_label: title,
+    competency_level: competency,
     total_questions: quizQuestions.length,
   });
 
@@ -572,23 +720,35 @@ function showResults() {
       <p class="quiz-result-description">${description}</p>
       
       <div class="quiz-result-recommendation">
-        <h4>📚 Our Recommendation</h4>
+        <h4>Your 30-day plan</h4>
         <p>${recommendation}</p>
       </div>
+
+      <div class="quiz-matrix">
+        <p style="font-weight:600;margin-bottom:0.35rem;">Which role is this for?</p>
+        <div class="role-pills" id="quiz-role-pills">
+          <button type="button" data-role="product" aria-pressed="true">Product</button>
+          <button type="button" data-role="marketing" aria-pressed="false">Marketing</button>
+          <button type="button" data-role="analytics" aria-pressed="false">Analytics</button>
+          <button type="button" data-role="operations" aria-pressed="false">Operations</button>
+          <button type="button" data-role="other" aria-pressed="false">Other</button>
+        </div>
+        <div id="quiz-matrix-mount"></div>
+      </div>
       
-      <div class="flex justify-center gap-md">
-        <a href="${ctaLink}" class="btn btn-primary btn-lg">
-          ${ctaText}
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button class="btn btn-secondary" onclick="restartQuiz()">Retake Quiz</button>
+      <div class="flex justify-center gap-md" style="flex-wrap:wrap;margin-top:1.25rem;">
+        <a href="${ctaLink}" class="btn btn-primary btn-lg">${ctaText}</a>
+        <a href="101.html" class="btn btn-secondary">AI 101</a>
+        <a href="201.html" class="btn btn-secondary">AI 201</a>
+        <button class="btn btn-secondary" onclick="restartQuiz()">Retake</button>
       </div>
     </div>
   `;
   
-  // Store result in localStorage for personalization
   localStorage.setItem('aiReadinessLevel', level);
   localStorage.setItem('aiReadinessScore', percentage);
+  localStorage.setItem('aiQuizCompetency', competency);
+  bindQuizMatrix(percentage, competency);
 }
 
 function restartQuiz() {
@@ -679,6 +839,71 @@ function initCopyButtons() {
       } catch (err) {
         console.error('Failed to copy:', err);
       }
+    });
+  });
+
+  document.querySelectorAll('[data-copy-target]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.getAttribute('data-copy-target'));
+      if (!el) return;
+      var text = el.textContent || '';
+      navigator.clipboard.writeText(text).then(function () {
+        var prev = btn.textContent;
+        btn.textContent = 'Copied';
+        siteTrack('snippet_copy', { snippet_id: btn.getAttribute('data-copy-target') });
+        setTimeout(function () { btn.textContent = prev; }, 1600);
+      }).catch(function () {});
+    });
+  });
+}
+
+function initGuideMatrix() {
+  var mount = document.getElementById('guide-matrix');
+  if (!mount || typeof matrixTableHTML !== 'function') return;
+  var params = new URLSearchParams(window.location.search);
+  var level = params.get('level') || 'L3';
+  if (!/^L[234]$/.test(level)) level = 'L3';
+  var pills = document.getElementById('guide-level-pills');
+  function paint(lv) {
+    mount.innerHTML = matrixTableHTML('product', lv);
+    if (pills) {
+      pills.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-level') === lv ? 'true' : 'false');
+      });
+    }
+  }
+  if (pills) {
+    pills.querySelectorAll('button[data-level]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        paint(btn.getAttribute('data-level'));
+      });
+    });
+  }
+  paint(level);
+}
+
+function initSurveyForm() {
+  var form = document.getElementById('knowledge-survey');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fd = new FormData(form);
+    var payload = {};
+    fd.forEach(function (v, k) { payload[k] = String(v); });
+    var compact = JSON.stringify(payload);
+    var btn = form.querySelector('[type="submit"]');
+    var msgEl = document.getElementById('survey-msg');
+    submitFormViaPing({
+      form: 'feedback',
+      name: payload.role || '',
+      email: payload.email || '',
+      category: 'survey-w1',
+      subject: [payload.seniority, payload.region, payload.size].filter(Boolean).join(' | '),
+      message: compact.slice(0, 800)
+    }, btn, msgEl, 'Thank you. Your Wave 1 response is recorded.');
+    siteTrack('survey_submit', {
+      survey_role: payload.role || '',
+      survey_seniority: payload.seniority || ''
     });
   });
 }

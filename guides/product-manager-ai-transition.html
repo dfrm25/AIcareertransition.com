@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product manager AI transition guide: a 4-step PRD review SOP, input schema, scoring rubric, and a 30-day L2–L4 plan with proof-of-work a hiring manager can check.">
+  <meta name="keywords" content="product manager AI transition, PRD review agent, Claude PRD review, AI for product managers, 30 day AI plan for PMs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aicareertransition.com/guides/product-manager-ai-transition.html">
+  <meta property="og:title" content="Product Manager AI Transition Guide | SOP, Schema, 30-Day Plan">
+  <meta property="og:description" content="Replace prompt lists with a workplace SOP: bind a PRD packet, run a dual-model review, human-gate P0s, and measure cycle time.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aicareertransition.com/guides/product-manager-ai-transition.html">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.png">
+  <title>Product Manager AI Transition Guide: PRD Review SOP &amp; 30-Day Plan</title>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"Build a PRD review agent as a product manager","description":"Four-step workplace SOP: bind a packet, run a dual-model review, human-gate P0s, then ship with cycle-time metrics.","totalTime":"P30D","step":[{"@type":"HowToStep","position":1,"name":"Bind the packet","text":"Validate PRD id, problem, user, success metrics, non-goals, constraints, open questions, and evidence. Reject unnamed stakeholders."},{"@type":"HowToStep","position":2,"name":"Run the review agent","text":"Send the system prompt, JSON packet, and rubric to Claude or Gemini. Every finding must cite a packet field."},{"@type":"HowToStep","position":3,"name":"Human gate","text":"PM plus engineering or design lead accept, rewrite, or reject each finding. No P0 stays open without an owner."},{"@type":"HowToStep","position":4,"name":"Ship and measure","text":"Log hours saved and P0 catch rate. Publish a redacted before/after as proof-of-work."}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an AI-enabled product manager?","acceptedAnswer":{"@type":"Answer","text":"A PM who can bind messy product input into a schema, run a review agent with a rubric, and keep a human gate on scope, metrics, and risk. They do not need to train models."}},{"@type":"Question","name":"How do I show AI skill on a PM resume without sounding fake?","acceptedAnswer":{"@type":"Answer","text":"Name the tool, the task, the verification step, and a business number. Example: built a PRD review SOP that cut spec-review cycle time from 4.5 days to 2.1 and caught 11 missing-metric defects over 8 launches."}},{"@type":"Question","name":"Claude or Gemini for PRD review?","acceptedAnswer":{"@type":"Answer","text":"Use both on the same packet. A finding counts if both models surface it or a human confirms it. Do not treat a single polished draft as a review."}},{"@type":"Question","name":"When should a PM not use AI on a PRD?","acceptedAnswer":{"@type":"Answer","text":"Do not use AI to invent users, metrics, dates, or engineering effort. If evidence is missing, emit a P0 gap instead of a confident requirement."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aicareertransition.com/"},{"@type":"ListItem","position":2,"name":"Career","item":"https://aicareertransition.com/career.html"},{"@type":"ListItem","position":3,"name":"Product Manager AI Transition","item":"https://aicareertransition.com/guides/product-manager-ai-transition.html"}]}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../css/styles.css?v=20260823">
+  <script>window.addEventListener("load",function(){var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);});</script>
+  <link rel="alternate" type="application/rss+xml" title="AI Career Transition — This Week in AI" href="/feed.xml">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg>
+        <span>AI Career Transition</span>
+      </a>
+      <div class="navbar-menu">
+        <a href="../this-week.html" class="navbar-link">This Week</a>
+        <a href="../101.html" class="navbar-link">Learn</a>
+        <a href="../prompts.html" class="navbar-link">Prompts</a>
+        <a href="../career.html" class="navbar-link active">Career</a>
+        <a href="../blog.html" class="navbar-link">Blog</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="../index.html#quiz" class="btn btn-primary">Take the quiz</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero" style="min-height:auto;padding-top:120px;padding-bottom:var(--space-2xl);">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">Workplace SOP · not a prompt dump</div>
+          <h1 class="hero-title">Product Manager <span class="text-gradient">AI Transition Guide</span></h1>
+          <p class="hero-description">A four-step PRD review SOP with an input schema, guardrails, a 16-point rubric, and a 30-day matrix from L2 operator to L4 eval owner. Built for senior ICs who need proof a manager can check.</p>
+          <div class="hero-actions">
+            <a href="#thirty-day" class="btn btn-primary btn-lg">30-day matrix</a>
+            <a href="../index.html#quiz" class="btn btn-secondary btn-lg">Get your starting level</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container" style="max-width:900px;">
+
+        <div class="card" style="padding:var(--space-2xl);margin-bottom:var(--space-xl);background:var(--color-bg-secondary);">
+          <h2 style="font-size:1.35rem;margin-bottom:var(--space-md);">Direct answer</h2>
+          <p style="line-height:1.8;color:var(--color-text-secondary);margin:0;">An AI-enabled product manager does not “write PRDs with ChatGPT.” They bind a packet (problem, evidence, metrics, constraints), run a review agent that is forbidden to invent users or dates, gate P0s with engineering or design, and log cycle time plus defect catch. If you cannot name the verification step and a number, you do not have a career artifact yet.</p>
+        </div>
+
+        <div class="guide-callout">
+          <p style="margin:0;line-height:1.75;"><strong>How we test this SOP.</strong> Same packet through Claude and Gemini. A finding counts only if both models surface it or a human reviewer confirms it. The finding log below is a <em>worked example</em>, not a named case study. We will replace it when a practitioner signs real hours. See the <a href="../editorial-policy.html">editorial policy</a>.</p>
+        </div>
+
+        <h2>AI-enabled product manager, defined</h2>
+        <p style="line-height:1.8;color:var(--color-text-secondary);">A PM who can choose a model, structure messy input, score output against a rubric, and refuse to ship invented scope. They are not an ML engineer. They are the person who turns discovery noise into reviewable artifacts: PRD outline, stories, edge cases, events, launch risks.</p>
+
+        <h2>Competency scale (same L1–L5 as the survey)</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Level</th><th>Name</th><th>What they can ship</th><th>What they must not claim</th></tr></thead>
+            <tbody>
+              <tr><td>L1</td><td>Prompt user</td><td>One-off drafts with heavy rewrite</td><td>Workflow ownership</td></tr>
+              <tr><td>L2</td><td>Workflow operator</td><td>Saved prompts + checklist on a repeating task</td><td>Agent / automation skill</td></tr>
+              <tr><td>L3</td><td>SOP builder</td><td>Schema + rubric + human gate on one job</td><td>Org-wide transformation</td></tr>
+              <tr><td>L4</td><td>Eval owner</td><td>Quality bar, failure taxonomy, before/after metrics</td><td>Model development</td></tr>
+              <tr><td>L5</td><td>Multi-agent orchestrator</td><td>Routed agents, memory, connectors, governance</td><td>Research-scientist role</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="sop">PRD review agent in 4 steps</h2>
+        <ol class="sop-list">
+          <li><strong>Bind the packet.</strong> PRD draft, tickets, constraints, success metrics. Output is validated JSON. Done when the schema validates and there are no unnamed “stakeholders.”</li>
+          <li><strong>Run the review agent.</strong> System prompt + packet + rubric into Claude or Gemini. Output is a finding log with severity and evidence spans. Done when every finding cites a packet field, not vibes.</li>
+          <li><strong>Human gate.</strong> PM + eng/design lead. Accept / rewrite / reject. Done when no P0 remains open without an owner.</li>
+          <li><strong>Ship and measure.</strong> Decisions + before/after PRD. Output is a review memo and cycle-time log. Done when hours saved and P0 catch rate are recorded.</li>
+        </ol>
+
+        <h2>Input schema</h2>
+        <p style="line-height:1.8;color:var(--color-text-secondary);">Reject the run if any required field is empty.</p>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>prd-review.schema.json</span><button type="button" class="btn btn-secondary" data-copy-target="schema-json">Copy</button></div>
+          <pre id="schema-json">{
+  "prd_id": "string",
+  "problem": "string",
+  "user": "segment + job-to-be-done",
+  "success_metrics": ["leading", "lagging"],
+  "non_goals": ["string"],
+  "constraints": {
+    "eng_weeks": "number",
+    "platforms": ["ios", "web"],
+    "compliance": ["PII", "SOC2"]
+  },
+  "open_questions": ["string"],
+  "evidence": ["interview notes", "ticket ids"]
+}</pre>
+        </div>
+
+        <h2>System prompt rules</h2>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>prd-review.system.txt</span><button type="button" class="btn btn-secondary" data-copy-target="system-prompt">Copy</button></div>
+          <pre id="system-prompt">You are a staff product reviewer. You do not invent users, metrics, or engineering effort. If evidence is missing, emit a P0 finding with gap: evidence instead of a polished requirement.
+
+Never convert an assumption into a committed scope item. Flag roadmap language that implies a date or capacity the packet does not contain. Quote the source span for every finding.
+
+Score the packet with the 8-row rubric (0–2). Ship threshold: no P0, total ≥ 12 / 16.</pre>
+        </div>
+
+        <h2>Review rubric (0–2 per row)</h2>
+        <p style="line-height:1.8;color:var(--color-text-secondary);">Ship threshold: no P0, total ≥ 12 / 16.</p>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Check</th><th>0</th><th>1</th><th>2</th><th>If fail</th></tr></thead>
+            <tbody>
+              <tr><td>Problem is evidenced</td><td>Opinion only</td><td>One source</td><td>≥2 independent sources</td><td>P0</td></tr>
+              <tr><td>Success metric is measurable</td><td>Vanity / missing</td><td>Lagging only</td><td>Leading + lagging + window</td><td>P0</td></tr>
+              <tr><td>Non-goals are explicit</td><td>None</td><td>Vague</td><td>Named cuts with owners</td><td>P1</td></tr>
+              <tr><td>Constraints bound the solution</td><td>Ignored</td><td>Listed</td><td>Tied to scope cuts</td><td>P1</td></tr>
+              <tr><td>Edge cases and empty states</td><td>Happy path only</td><td>A few</td><td>Errors, permissions, offline</td><td>P1</td></tr>
+              <tr><td>Analytics events named</td><td>None</td><td>Page views</td><td>Funnel events + properties</td><td>P1</td></tr>
+              <tr><td>Open questions have owners</td><td>Hidden</td><td>Listed</td><td>Owner + due date</td><td>P2</td></tr>
+              <tr><td>Assumptions labeled</td><td>Written as facts</td><td>Mixed</td><td>Tagged + test plan</td><td>P0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Worked example — finding log</h2>
+        <p style="line-height:1.8;color:var(--color-text-secondary);">Synthetic packet for teaching. Not a signed case study.</p>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>ID</th><th>Finding</th><th>Evidence span</th><th>Rewrite</th><th>Decision</th></tr></thead>
+            <tbody>
+              <tr><td>P0-1</td><td>Success metric is “increase engagement”</td><td>Goals §2</td><td>Raise 7-day retained teams from 22% to 30% in 90 days</td><td>Accept</td></tr>
+              <tr><td>P0-2</td><td>Enterprise SSO listed as in-scope without eng estimate</td><td>Requirements R12</td><td>Move SSO to non-goal; spike in Q4</td><td>Accept</td></tr>
+              <tr><td>P1-3</td><td>No empty-state copy for zero projects</td><td>UX § missing</td><td>Add empty, loading, and permission-denied states</td><td>Rewrite</td></tr>
+              <tr><td>P2-4</td><td>Open question on pricing has no owner</td><td>Risks §4</td><td>Assign to Finance PM; decision by 12 Sep</td><td>Accept</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Claude vs Gemini for spec review</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th></th><th>Claude</th><th>Gemini</th><th>Rule</th></tr></thead>
+            <tbody>
+              <tr><td>Long packets</td><td>Strong at citing spans</td><td>Strong at structured tables</td><td>Dual-pass; keep intersection + human confirms</td></tr>
+              <tr><td>Invented metrics</td><td>Still happens if schema is empty</td><td>Still happens if schema is empty</td><td>Fail closed on empty success_metrics</td></tr>
+              <tr><td>When to skip both</td><td colspan="2">Live strategy calls, unannounced headcount, customer legal language you have not read</td><td>Human only</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="thirty-day">30-day matrix for senior PMs</h2>
+        <p style="line-height:1.8;color:var(--color-text-secondary);">This is what the homepage quiz should return. Pick the level that matches your score (under 30% → L2, 30–59% → L3, 60%+ → L4).</p>
+        <div class="level-pills" id="guide-level-pills">
+          <button type="button" data-level="L2">L2 → L3</button>
+          <button type="button" data-level="L3" aria-pressed="true">L3 → L4</button>
+          <button type="button" data-level="L4">L4 → L5</button>
+        </div>
+        <div id="guide-matrix"></div>
+        <p><button type="button" class="btn btn-secondary" onclick="window.print()">Print this plan</button>
+        <a href="../artifacts.html" class="btn btn-primary" style="margin-left:0.5rem;">Portfolio template</a></p>
+
+        <h2>Resume bullet — proof vs puff</h2>
+        <div class="grid grid-2" style="gap:var(--space-lg);margin-bottom:var(--space-xl);">
+          <div class="card" style="padding:var(--space-lg);">
+            <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:var(--space-sm);">Before</p>
+            <p style="margin:0;line-height:1.7;">Used ChatGPT to help write PRDs and improve documentation quality across the product team.</p>
+          </div>
+          <div class="card" style="padding:var(--space-lg);">
+            <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-bottom:var(--space-sm);">After</p>
+            <p style="margin:0;line-height:1.7;">Built a PRD review SOP (schema + rubric + human gate) that cut spec-review cycle time from 4.5 days to 2.1 days and caught 11 missing-metric defects over 8 launches.</p>
+          </div>
+        </div>
+        <p style="line-height:1.8;color:var(--color-text-secondary);">Rule: tool + task + verification + business number. No number, no bullet. Use redacted real work only.</p>
+
+        <h2>FAQ</h2>
+        <div class="card" style="padding:var(--space-xl);margin-bottom:var(--space-xl);">
+          <h3 style="font-size:1.05rem;">What is an AI-enabled product manager?</h3>
+          <p style="line-height:1.75;color:var(--color-text-secondary);">Someone who binds input, runs a gated review, and can explain what the model is not allowed to invent. Not a prompt collector.</p>
+          <h3 style="font-size:1.05rem;">Do I need to code?</h3>
+          <p style="line-height:1.75;color:var(--color-text-secondary);">Not for L2–L3. L4 needs an eval sheet (even a spreadsheet). L5 needs connectors your security team has approved.</p>
+          <h3 style="font-size:1.05rem;">Where are paste-ready product prompts?</h3>
+          <p style="line-height:1.75;color:var(--color-text-secondary);margin:0;">In the <a href="../prompts.html#product">prompt library</a>. Use them inside this SOP, not instead of it. Persona landing: <a href="../personas/product.html">Product</a>.</p>
+        </div>
+
+        <div class="card" style="padding:var(--space-2xl);text-align:center;">
+          <h2 style="font-size:1.35rem;margin-bottom:var(--space-md);">Start with your level, then one packet</h2>
+          <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:var(--space-lg);">Quiz for the 30-day plan. Survey if you want the industry benchmark to include people like you.</p>
+          <a href="../index.html#quiz" class="btn btn-primary">Take the 8-question quiz</a>
+          <a href="../research/knowledge-work-ai.html" class="btn btn-secondary" style="margin-left:var(--space-sm);">Wave 1 survey</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-brand-logo"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#fgp)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="fgp" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></div><p>Practical AI skills for people who already have a job.</p></div>
+        <div class="footer-column"><h4>Learn</h4><div class="footer-links"><a href="../101.html">AI 101</a><a href="../201.html">AI 201</a><a href="../prompts.html">Prompt Library</a><a href="../career.html">Career</a><a href="../blog.html">Blog</a></div></div>
+        <div class="footer-column"><h4>Resources</h4><div class="footer-links"><a href="product-manager-ai-transition.html">PM AI guide</a><a href="../research/knowledge-work-ai.html">Knowledge-work survey</a><a href="../artifacts.html">Career Artifacts</a><a href="../personas/index.html">Role Guides</a><a href="../editorial-policy.html">Editorial Policy</a></div></div>
+        <div class="footer-column"><h4>Connect</h4><div class="footer-links"><a href="../feedback.html">Feedback</a><a href="../feedback.html#contact">Contact</a></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js?v=20260823" defer></script>
+</body>
+</html>
