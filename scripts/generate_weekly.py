@@ -40,7 +40,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260816"
+CSS_VER = "20260823"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -184,7 +184,7 @@ def payload_from_updates(updates: list[dict], week_label: str, week_date: str) -
             f'<p style="line-height: 1.8;">{esc(u["action"])}</p></section>'
         )
     title = updates[0]["title"][:80]
-    desc = f"{week_label}: what shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it."
+    desc = "What shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it."
     return {
         "week_label": week_label,
         "week_date": week_date,
@@ -385,7 +385,6 @@ def render_latest(limit: int = 3) -> str:
         rel = post["url"].replace(build_feed.BASE + "/", "")
         out.append(
             f'''          <article class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
-            <span style="font-size:0.8125rem;color:var(--color-text-muted);"><time datetime="{post["date"]:%Y-%m-%d}">{post["date"]:%B %-d, %Y}</time></span>
             <h3 style="margin:6px 0;font-size:1.1rem;"><a href="{esc(rel)}" style="color:var(--color-text-primary);text-decoration:none;">{esc(post["title"])}</a></h3>
             <a href="{esc(rel)}" style="color:var(--color-accent-primary);font-weight:600;font-size:0.9rem;">Read</a>
           </article>'''
@@ -402,10 +401,9 @@ def update_hub(payload: dict) -> None:
     hub = ROOT / "this-week.html"
     text = hub.read_text(encoding="utf-8")
     wd = payload["week_date"]
-    label = payload["week_label"]
     text = re.sub(
-        r'<time id="hub-updated" datetime="[^"]*"><!-- WEEKLY:DATE -->[^<]*</time>',
-        f'<time id="hub-updated" datetime="{wd}"><!-- WEEKLY:DATE -->{esc(label)}</time>',
+        r'<time id="hub-updated" datetime="[^"]*"[^>]*><!-- WEEKLY:DATE -->[^<]*</time>',
+        f'<time id="hub-updated" datetime="{wd}" hidden><!-- WEEKLY:DATE --></time>',
         text,
     )
     text = replace_block(
@@ -434,7 +432,6 @@ def update_home(payload: dict) -> None:
         return
     first = payload["updates"][0]
     inner = f'''        <div class="card" style="padding: var(--space-xl);">
-          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-sm);">{esc(payload["week_label"])}</p>
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-sm);">{esc(first["title"])}</h2>
           <p style="line-height: 1.75; margin-bottom: var(--space-md);">{esc(first["body"])}</p>
           <a href="this-week.html" class="btn btn-primary">Read the brief</a>
@@ -479,7 +476,7 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
   <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu"><a href="../this-week.html" class="navbar-link">This Week</a><a href="../101.html" class="navbar-link">Learn</a><a href="../prompts.html" class="navbar-link">Prompts</a><a href="../career.html" class="navbar-link">Career</a><a href="../blog.html" class="navbar-link active">Blog</a></div><div class="navbar-actions"><a href="../career.html" class="btn btn-primary">Start</a></div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
   <main id="main-content"><article class="section" style="padding-top: 120px;"><div class="container" style="max-width: 760px;">
     <header style="margin-bottom: var(--space-2xl);">
-      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a> · {date_human}</p>
+      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a></p>
       <h1 style="font-size: clamp(1.75rem, 4vw, 2.4rem); line-height: 1.2; margin-bottom: var(--space-lg);">{title}</h1>
       <p style="font-size: 1.0625rem; line-height: 1.75; color: var(--color-text-secondary);">{desc}</p>
     </header>
@@ -516,7 +513,7 @@ def prepend_blog_card(post: dict, date: str, date_human: str) -> None:
         return
     card = f'''        <!-- Auto-generated weekly brief — {date} -->
         <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); flex-wrap: wrap;"><span class="prompt-card-category" style="margin: 0;">{esc(post["category"])}</span><span style="font-size: 0.8125rem; color: var(--color-text-muted);"><time datetime="{date}">{date_human}</time></span></div>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); flex-wrap: wrap;"><span class="prompt-card-category" style="margin: 0;">{esc(post["category"])}</span></div>
           <h3 style="margin-bottom: var(--space-sm); font-size: 1.25rem; line-height: 1.35;"><a href="blog/{post["slug"]}.html" style="color: var(--color-text-primary); text-decoration: none;">{esc(post["title"])}</a></h3>
           <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">{esc(post["description"])}</p>
           <a href="blog/{post["slug"]}.html" style="color: var(--color-accent-primary); font-weight: 600;">Read</a>
@@ -546,16 +543,82 @@ def existing_slugs() -> list[str]:
     return [p.stem for p in (ROOT / "blog").glob("*.html")]
 
 
+_HERO_DATE_BADGE = re.compile(
+    r'\s*<div class="hero-badge"[^>]*>\s*(?:Updated|Published|Archived)[^<]*</div>',
+    re.IGNORECASE,
+)
+_UPDATED_MONTH_LINE = re.compile(
+    r'\s*<p style="font-size: 0.8125rem; color: var\(--color-text-muted\); margin-top: var\(--space-sm\);">Updated [A-Za-z]+ 20\d{2}</p>',
+)
+_LAST_UPDATED_HERO = re.compile(
+    r'<p class="hero-description">Last updated: [^<]+</p>\s*',
+)
+_LISTING_TIME = re.compile(
+    r'<span style="font-size: 0.8125rem; color: var\(--color-text-muted\);">'
+    r'<time datetime="[^"]*">[^<]*</time>'
+    r'(?:\s*·\s*([^<]+))?</span>',
+)
+_WEEK_OF_PREFIX = re.compile(
+    r"Week of (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}:\s*",
+)
+_BYLINE_DATE = re.compile(
+    r'(This Week in AI</a>)\s*·\s*[A-Z][a-z]+ \d{1,2}, \d{4}',
+)
+
+
+def strip_date_labels() -> None:
+    """Remove visible calendar chips so pages do not look frozen. Keep JSON-LD/RSS dates."""
+    for path in ROOT.rglob("*.html"):
+        if any(part.startswith(".") for part in path.parts):
+            continue
+        text = path.read_text(encoding="utf-8")
+        orig = text
+        text = _HERO_DATE_BADGE.sub("", text)
+        text = _UPDATED_MONTH_LINE.sub("", text)
+        text = _LAST_UPDATED_HERO.sub("", text)
+        text = _WEEK_OF_PREFIX.sub("", text)
+        text = _BYLINE_DATE.sub(r"\1", text)
+
+        def _listing(m: re.Match) -> str:
+            extra = m.group(1)
+            if extra:
+                return (
+                    f'<span style="font-size: 0.8125rem; color: var(--color-text-muted);">'
+                    f"{extra}</span>"
+                )
+            return ""
+
+        text = _LISTING_TIME.sub(_listing, text)
+        text = text.replace(
+            'Updated weekly · <time id="hub-updated"',
+            'Updated weekly <time id="hub-updated"',
+        )
+        if text != orig:
+            path.write_text(text, encoding="utf-8")
+
+
 def main() -> int:
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--payload", type=Path, default=None)
+    parser.add_argument("--date", default=None, help="ISO date for the brief slug (default: today)")
+    args = parser.parse_args()
+
     today = datetime.datetime.now(_UTC).date()
+    if args.date:
+        today = datetime.date.fromisoformat(args.date)
     monday = today - datetime.timedelta(days=today.weekday())
-    week_date = monday.isoformat()
-    week_label = f"Week of {monday.strftime('%B %-d, %Y')}"
+    week_date = today.isoformat()
+    week_label = "This week"
     week_slug = f"weekly-ai-brief-{week_date}"
     slugs = existing_slugs()
 
     payload = None
-    if os.environ.get("CURSOR_API_KEY"):
+    if args.payload:
+        payload = json.loads(args.payload.read_text(encoding="utf-8"))
+        print(f"[info] using payload {args.payload}")
+    elif os.environ.get("CURSOR_API_KEY"):
         raw = call_agent(build_prompt(week_label, week_date, slugs))
         if raw:
             try:
@@ -582,12 +645,13 @@ def main() -> int:
             print(f"  x {e}", file=sys.stderr)
         return 1
 
-    date_human = monday.strftime("%B %-d, %Y")
+    date_human = today.strftime("%B %-d, %Y")
     post = payload["post"]
     write_post(post, week_date, date_human)
     prepend_blog_card(post, week_date, date_human)
     update_hub(payload)
     update_llms(post, week_date)
+    strip_date_labels()
 
     import build_sitemap
     build_sitemap.main()

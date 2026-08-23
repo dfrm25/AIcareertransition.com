@@ -6,22 +6,29 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>Sol got cheaper. Gemini is in Chrome. Students get a year of Gemini.</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-23.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-23.html</guid>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+      <description>GPT-5.6 Sol dropped more than 20% for three months, Gemini landed in Chrome on Android, eligible students get a year of Google AI, and Copilot Agent Builder is still the workplace agent path. One action for each.</description>
+    </item>
     <item>
       <title>The Defender’s Window</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-17.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-17.html</guid>
       <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Week of August 17, 2026: what shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
+      <description>what shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
     </item>
     <item>
       <title>GPT-5.6 is now the default model in ChatGPT. Agents are the job.</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-11.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-11.html</guid>
       <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Week of August 11, 2026: GPT-5.6 is the ChatGPT default, Claude Opus 5 and Sonnet 5 are agent models, and Copilot Agent Builder is how workplace agents ship.</description>
+      <description>GPT-5.6 is the ChatGPT default, Claude Opus 5 and Sonnet 5 are agent models, and Copilot Agent Builder is how workplace agents ship.</description>
     </item>
     <item>
       <title>This Week in AI: Agents Go Mainstream, Reasoning Becomes Default</title>

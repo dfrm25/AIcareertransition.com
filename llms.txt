@@ -34,6 +34,7 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/personas/database-marketing.html
 
 ## Current AI Workflow Updates
+- https://aicareertransition.com/blog/weekly-ai-brief-2026-08-23.html
 - https://aicareertransition.com/blog/weekly-ai-brief-2026-08-17.html
 - https://aicareertransition.com/blog/weekly-ai-brief-2026-08-11.html
 - https://aicareertransition.com/blog/weekly-ai-brief-2026-07-29.html

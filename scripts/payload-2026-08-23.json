@@ -1,0 +1,43 @@
+{
+  "updates": [
+    {
+      "category": "Models",
+      "title": "GPT-5.6 Sol costs over 20% less for the next three months",
+      "body": "OpenAI cut API and credit pricing on GPT-5.6 Sol by more than 20% for about three months. Paid ChatGPT plans still pick Sol, Terra, or Luna; Free and Go stay on Luna. If you pay for Sol, this is the week to re-check the picker and your API bill.",
+      "source_url": "https://openai.com/index/gpt-5-6/",
+      "action": "Open the ChatGPT model picker, confirm Sol vs Luna, and save one before/after on a real work task.",
+      "action_link": "blog/how-to-change-ai-model.html"
+    },
+    {
+      "category": "Tools",
+      "title": "Gemini is now in Chrome on Android, with auto browse on paid plans",
+      "body": "Google turned on Gemini in Chrome for Android users in the US. It can summarize a page, answer questions about it, and reach Calendar and Keep without hopping tabs. AI Pro and AI Ultra subscribers also get auto browse for multi-step tasks, with a confirm step before sensitive actions.",
+      "source_url": "https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android-auto-browse/",
+      "action": "On Android Chrome, open Gemini and run one real page (a spec, a job post, a client brief) with you approving any action that spends money or sends a message.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Access",
+      "title": "Eligible college students get a year of Google AI free",
+      "body": "Google is giving eligible college students 12 months of a Google AI plan at no cost. US students can claim Google AI Pro; students outside the US can claim Google AI Plus. Study notebooks and Deep Research in Gemini Live are rolling out in the Gemini app.",
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/student-offer-google-ai/",
+      "action": "If you are in school, or you hire interns, claim or share the student plan and use it on one real class or onboarding workflow.",
+      "action_link": "101.html"
+    },
+    {
+      "category": "Agents",
+      "title": "Copilot Agent Builder is how workplace agents show up in Microsoft 365",
+      "body": "In Microsoft 365 Copilot you can describe an agent in plain language, attach SharePoint or OneDrive knowledge, and set a default response mode. If your job runs on Microsoft 365, this is the agent path that will appear at work, with admin approval before it spreads.",
+      "source_url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-agent-builder-build",
+      "action": "Open Copilot, start a new agent for one recurring task you already own, attach a single folder, and add a human approval step before it sends anything.",
+      "action_link": "blog/agentic-ai-workflows-for-non-engineers.html"
+    }
+  ],
+  "prompt_of_week": "You are an agent, not a chatbot. Goal: compare GPT-5.6 Sol, Gemini 3.7 Flash, and Claude Opus 5 on the attached work file. Context attached: [FILE]. Tools you may use: [NONE]. Constraints: do not invent citations; quote the file. For each model, return (1) the draft, (2) what you changed, (3) what a human must verify before this ships. Then pick one model for this task and say why in two sentences.",
+  "post": {
+    "title": "Sol got cheaper. Gemini is in Chrome. Students get a year of Gemini.",
+    "description": "GPT-5.6 Sol dropped more than 20% for three months, Gemini landed in Chrome on Android, eligible students get a year of Google AI, and Copilot Agent Builder is still the workplace agent path. One action for each.",
+    "category": "Weekly Brief",
+    "body_html": "<section style=\"margin-bottom: var(--space-2xl);\"><h2 style=\"font-size: 1.25rem; margin-bottom: var(--space-md);\">1. GPT-5.6 Sol is cheaper for three months</h2><p style=\"line-height: 1.8;\">OpenAI cut API and credit pricing on GPT-5.6 Sol by more than 20% for the next three months. Paid ChatGPT plans can still choose Sol, Terra, or Luna. Free and Go stay on Luna. <a href=\"https://openai.com/index/gpt-5-6/\" target=\"_blank\" rel=\"noopener noreferrer\">Source</a></p><p style=\"line-height: 1.8;\">Do this: open the model picker, confirm you are on Sol if you pay for it, and save one before/after on a task you already own.</p></section>\n<section style=\"margin-bottom: var(--space-2xl);\"><h2 style=\"font-size: 1.25rem; margin-bottom: var(--space-md);\">2. Gemini in Chrome on Android</h2><p style=\"line-height: 1.8;\">Gemini in Chrome is on for Android users in the US. It summarizes pages, answers questions about them, and can reach Calendar and Keep. AI Pro and AI Ultra add auto browse, with a confirm step before sensitive actions. <a href=\"https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android-auto-browse/\" target=\"_blank\" rel=\"noopener noreferrer\">Source</a></p><p style=\"line-height: 1.8;\">Do this: run Gemini on one real page this week. You approve anything that spends money or sends a message.</p></section>\n<section style=\"margin-bottom: var(--space-2xl);\"><h2 style=\"font-size: 1.25rem; margin-bottom: var(--space-md);\">3. A year of Google AI for eligible students</h2><p style=\"line-height: 1.8;\">Eligible college students can claim 12 months of a Google AI plan free. US students get Google AI Pro; students outside the US get Google AI Plus. Study notebooks and Deep Research in Gemini Live are rolling out in the Gemini app. <a href=\"https://blog.google/innovation-and-ai/products/gemini-app/student-offer-google-ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Source</a></p><p style=\"line-height: 1.8;\">Do this: if you are in school or you hire interns, claim or share the plan and use it on one real workflow.</p></section>\n<section style=\"margin-bottom: var(--space-2xl);\"><h2 style=\"font-size: 1.25rem; margin-bottom: var(--space-md);\">4. Copilot Agent Builder is the Microsoft 365 path</h2><p style=\"line-height: 1.8;\">Agent Builder lets you describe a workplace agent in plain language and attach SharePoint or OneDrive files. If your company runs Microsoft 365 Copilot, this is how agents show up at work. <a href=\"https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-agent-builder-build\" target=\"_blank\" rel=\"noopener noreferrer\">Source</a></p><p style=\"line-height: 1.8;\">Do this: build one agent for a recurring task you already own, attach a single folder, and require a human approval step.</p></section>"
+  }
+}
