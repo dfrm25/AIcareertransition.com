@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical caution on AI Excel analysis: it cannot reliably read every tab, follow formulas that reference other sheets, or tell a live total from a pasted number. Issues and human workarounds.">
+  <meta name="keywords" content="AI Excel mistakes, ChatGPT Excel analysis, multi-tab Excel AI, Excel formulas other sheets, data analysis with AI for beginners">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html">
+  <meta property="og:title" content="What AI Gets Wrong in Excel (and How to Work Around It)">
+  <meta property="og:description" content="AI cannot see every tab or follow formulas that point at other sheets. The issues, and the human checks that keep a bad number off a slide.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html">
+  <meta property="og:image" content="https://aicareertransition.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"What AI Gets Wrong in Excel (and How to Work Around It)","description":"A practical caution on AI Excel analysis: unread tabs, formulas that reference other sheets, and the human workarounds.","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Person","name":"AI Career Transition Editorial Team"},"publisher":{"@type":"Organization","name":"AI Career Transition","logo":{"@type":"ImageObject","url":"https://aicareertransition.com/images/og-image.png"}},"image":"https://aicareertransition.com/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aicareertransition.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aicareertransition.com/blog.html"},{"@type":"ListItem","position":3,"name":"What AI Gets Wrong in Excel","item":"https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html"}]}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../css/styles.css?v=20260823">
+  <title>What AI Gets Wrong in Excel (and How to Work Around It) | AI Career Transition</title>
+  <script>window.addEventListener("load",function(){var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);});</script>
+  <link rel="alternate" type="application/rss+xml" title="AI Career Transition — This Week in AI" href="/feed.xml">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu">
+        <a href="../this-week.html" class="navbar-link">This Week</a>
+        <a href="../101.html" class="navbar-link">Learn</a>
+        <a href="../prompts.html" class="navbar-link">Prompts</a>
+        <a href="../career.html" class="navbar-link">Career</a>
+        <a href="../blog.html" class="navbar-link active">Blog</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="../career.html" class="btn btn-primary">Start</a>
+      </div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
+  <main id="main-content">
+    <article class="section" style="padding-top: 120px;">
+      <div class="container" style="max-width: 760px;">
+        <header style="margin-bottom: var(--space-2xl);">
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: var(--space-sm);"><a href="../blog.html" style="color: var(--color-accent-primary);">Blog</a> / Data Analysis</p>
+          <h1 style="font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.2; margin-bottom: var(--space-lg);">What AI Gets Wrong in Excel (and How to Work Around It)</h1>
+          <p style="font-size: 1.0625rem; line-height: 1.8; color: var(--color-text-secondary);">A workbook is not a document. It is a set of tabs that talk to each other. ChatGPT, Claude, Gemini, and Copilot will still give you a tidy paragraph. That does not mean they saw the whole file, or followed the formulas that actually produce the number.</p>
+        </header>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);">If you only remember one thing: <strong>you still own the number</strong>. The model is a fast reader with no memory of how your office built this file. It cannot sit next to you, click every tab along the bottom, and trace “this total comes from that sheet.” When it sounds sure, check anyway.</p>
+          <p style="line-height: 1.8; color: var(--color-text-secondary);">Before you upload anything, do this in Excel yourself: count the tabs. Click a few totals and look at the formula bar (the long strip above the grid). If you see another sheet name in there, that cell is a chain, not a fact. Write those tab names on a sticky note. Then ask the AI how many tabs it saw. If its list is shorter than yours, do not trust the analysis.</p>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">1. It cannot read every tab</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> A real file often has twelve tabs: Raw, Mapping, Assumptions, Jan–Jun, YTD, Pivot, Notes. Tools drop tabs when the file is large, when a sheet is hidden, or when they only ingest the first sheet. The model will still talk as if it read “the workbook.”</p>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);">You will not get a humble “I only saw two sheets.” You will get a revenue story built on the pretty Summary tab, while the complete list lives on Raw.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> Open the file. Count the tabs with your finger. Ask: “List every tab name you can see, and how many rows each has. If you cannot see a tab, say so.” If the list is incomplete, do not ask for a grand total. Export the one tab that is the source of truth as its own CSV, or paste that range only. One honest tab beats a fake tour of the whole book.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">2. Formulas that point at other tabs</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> Dashboard cells often look like simple numbers. Click one and the formula bar shows something like <code style="font-size: 0.9rem;">=SUM('Jan'!F:F)+'Assumptions'!B2</code>. That total is not stored on the dashboard. It is pulled from other sheets, which may pull from still other sheets. AI mostly sees the finished number on the screen. It does not walk the chain.</p>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);">So it can “analyze Q2” from a dashboard that is still pointing at last year’s Assumptions tab, or at a named range you renamed last Tuesday. The sentence will still sound current.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> For any number you care about, click the cell. If the formula bar mentions another sheet, that is your map. Tell the model: “Do not use the Dashboard numbers as source data. Recalculate from tab X, columns A–G, rows 2–500.” Better: copy the <em>source</em> range, not the dashboard. If you cannot follow the formula in ten seconds, do not outsource the total.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">3. It sees the number, not the recipe</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> Excel shows 1,240,000. The cell might be <code style="font-size: 0.9rem;">=E12*Assumptions!C4</code>, or a value someone pasted yesterday to “lock” a slide. AI cannot tell a live formula from a dead paste. If you ask “why did this change,” it will invent a business reason instead of “someone overwrote the formula.”</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> In Excel, use Formulas → Trace Precedents (or click the cell and look up). If it is a formula, ask AI only after you say so: “This cell is =SUM(Raw!F2:F900). Check my range, do not re-guess the total.” If it is a paste, treat it as a snapshot. Do not let the model update it.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">4. Lookups that quietly grab the wrong row</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> VLOOKUP, XLOOKUP, INDEX/MATCH stitch tabs together: “find this customer ID on the Rates sheet and bring back the fee.” Duplicate IDs, extra spaces, or an approximate match will pull the neighbor’s rate. AI then averages those fees like they are gospel. You cannot see the miss unless you spot-check IDs.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> Pick three IDs you know by heart. Find them on both tabs. If the lookup fee does not match, stop the AI job. Tell it: “Join on column A only. Exact match. If an ID is missing, return UNKNOWN, do not skip or guess.” Never let it “fill in” missing rates.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">5. Titles, notes, and TOTAL rows get treated as data</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> Row 1 is a report title. Row 3 is headers. The last row says TOTAL. AI adds those into counts, averages, and “top customers.” Your average revenue jumps because it included the grand total as if it were one more customer.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> Say it out loud in the prompt: “Header is row 3. Skip rows 1–2. Do not include any row that says Total, Subtotal, or Note.” Then in Excel, click the data block and glance at the count in the status bar. If AI used 201 rows and Excel shows 200 plus a total, you found it.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">6. A filter is still on (or rows are hidden)</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> You filtered to West last week and left it. You see 40 rows. The sheet has 400. Hidden rows and merged header cells make it worse. The model often treats the visible slice as the whole dataset, then writes “company-wide.”</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> Data → Clear (the funnel icon). Unhide rows. Ask yourself: do I want all rows, or only this filter? Write that in the prompt. If you need a regional cut, filter in Excel first, save a copy named <code style="font-size: 0.9rem;">west-only.csv</code>, and upload that. Do not hope the model noticed the little funnel on column C.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">7. Mixed units, currencies, and Excel date numbers</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> One tab is in thousands. Another is in dollars. Dates show up as 45900. Percents are 0.15 on one sheet and 15 on another. AI adds them, then writes a clean sentence. Nobody at the meeting will catch it until finance does.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> Name the unit in the prompt: “Column F is USD, not thousands. Column G is a percent stored as 0.15.” Ask for five raw sample values <em>before</em> any summary. If a “date” is a five-digit number, fix the column in Excel first. Do not ask the model to interpret it.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">8. It adds the summary tab to the detail tab</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> Monthly tabs plus a YTD tab that already sums the months. A pivot next to the source list. Ask “total revenue” and it may add every tab. Same trap as stacking a dashboard that already references the months.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> One source of truth. Either the detail rows <em>or</em> the YTD sheet, never both. Say: “Sum Jan–Jun on the monthly tabs only. Ignore YTD, Dashboard, and Pivot.” If you cannot name the source tab in one breath, you are not ready to ask for a total.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.35rem; margin-bottom: var(--space-md);">9. Broken cells get filled in</h2>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md);"><strong>The issue.</strong> <code style="font-size: 0.9rem;">#REF!</code>, <code style="font-size: 0.9rem;">#N/A</code>, cutoff pastes, blurry screenshots. The model would rather finish the sentence than say it cannot see the cell. That is how a made-up $1.2M lands in a deck.</p>
+          <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <p style="line-height: 1.75; margin: 0;"><strong>Work around it.</strong> Put this in every data prompt: “If a figure is missing, filtered, or unreadable, write UNKNOWN. Do not guess.” Then pick three numbers from its answer and find them in the file with your own eyes. If you cannot click them, they do not ship.</p>
+          </div>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.25rem; margin-bottom: var(--space-md);">A human checklist before you send it</h2>
+          <ul style="list-style: disc; padding-left: 1.25rem; line-height: 1.85; color: var(--color-text-secondary);">
+            <li>Did I count the tabs? Did the AI list the same ones?</li>
+            <li>For the headline number: is it a typed value, or a formula pointing at another sheet?</li>
+            <li>Did I name one source tab, not “the whole file”?</li>
+            <li>Are filters off, unless I meant them?</li>
+            <li>Did a TOTAL row get counted twice?</li>
+            <li>Same units (thousands vs dollars, 0.15 vs 15%)?</li>
+            <li>Can I click three of its numbers in Excel?</li>
+          </ul>
+          <p style="line-height: 1.8; color: var(--color-text-secondary); margin-top: var(--space-md);">If any answer is “I’m not sure,” do not paste it into an email. That pause is the job. For a wider review habit, see <a href="ai-workflow-evals-human-review.html" style="color: var(--color-accent-primary);">AI workflow evals and human review</a>.</p>
+        </section>
+
+        <section style="margin-bottom: var(--space-2xl);">
+          <h2 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Prompt to paste</h2>
+          <div style="background: var(--color-bg-tertiary); padding: var(--space-lg); border-radius: var(--radius-lg); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.7;">You are checking a spreadsheet, not writing a story. First list every tab name you can actually see. If you cannot see a tab, say UNSEEN. Do not assume you have the whole workbook. Ask me which tab is the source of truth before you calculate. Ignore title rows, notes, and TOTAL rows. Do not add a summary or dashboard tab to a detail tab. Do not trust a dashboard number if it is a formula pointing at another sheet — ask me for the source range instead. If a value is missing, filtered, an error (#REF, #N/A), or unreadable, write UNKNOWN. After the answer, show: tabs seen, tab used, row count, unit, whether the number was a value or a cross-sheet formula, and 3 sample cells I can click in Excel.</div>
+        </section>
+
+        <section style="margin-top: var(--space-2xl);">
+          <div class="card" style="padding: var(--space-xl); background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(16,185,129,0.06) 100%);">
+            <h2 style="font-size: 1.2rem; margin-bottom: var(--space-sm);">Turn one catch into proof</h2>
+            <p style="line-height: 1.8; margin-bottom: var(--space-md);">Run this on a file you already use. Screenshot the wrong total, the formula bar that showed another tab, and the corrected number. That is a stronger career artifact than “I use AI for analysis.”</p>
+            <a href="../artifacts.html#portfolio-case-study" class="btn btn-primary">Case study template</a>
+            <a href="../prompts.html" class="btn btn-secondary" style="margin-left: var(--space-sm);">Prompt library</a>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand-logo"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#footer-logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></div><p>Practical AI workflows and proof-of-work for professionals.</p></div><div class="footer-column"><h4>Learn</h4><div class="footer-links"><a href="../101.html">AI 101</a>
+        <a href="../201.html">AI 201</a>
+        <a href="../prompts.html">Prompt Library</a>
+        <a href="../career.html">Career</a>
+        <a href="../blog.html">Blog</a></div></div><div class="footer-column"><h4>Resources</h4><div class="footer-links"><a href="../artifacts.html">Career Artifacts</a>
+        <a href="../personas/index.html">Role Guides</a>
+        <a href="../tools-comparison.html">Compare Tools</a>
+        <a href="../about.html">About</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../editorial-policy.html">Editorial Policy</a>
+        <a href="../feedback.html">Feedback</a></div></div><div class="footer-column"><h4>Connect</h4><div class="footer-links"><a href="../feedback.html">Give Feedback</a>
+        <a href="../feedback.html#contact">Contact</a></div></div></div><div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p></div></div></footer>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

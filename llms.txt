@@ -48,6 +48,7 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/blog/chatgpt-claude-gemini-copilot-which-to-use-2026.html
 
 ## Career Proof and Evergreen Guides
+- https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html
 - https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
 - https://aicareertransition.com/blog/ai-career-transition-roadmap.html
 - https://aicareertransition.com/blog/ai-career-transition-portfolio-examples.html
