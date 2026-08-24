@@ -6,9 +6,16 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>Introducing AI Futures</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-24.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-24.html</guid>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <description>What shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
+    </item>
     <item>
       <title>What AI Gets Wrong in Excel (and How to Work Around It)</title>
       <link>https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html</link>
