@@ -6,15 +6,15 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sat, 29 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <item>
-      <title>Introducing AI Futures</title>
-      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-24.html</link>
-      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-24.html</guid>
-      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
-      <description>What shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
+      <title>Verify before you ship</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-29.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-29.html</guid>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <description>August 29, 2026 weekly AI brief: OpenAI&#x27;s ChatGPT-and-review study, Gemini Notebook source binding, a Codex workplace story, and Copilot agents.</description>
     </item>
     <item>
       <title>What AI Gets Wrong in Excel (and How to Work Around It)</title>
@@ -29,13 +29,6 @@
       <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-23.html</guid>
       <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
       <description>GPT-5.6 Sol dropped more than 20% for three months, Gemini landed in Chrome on Android, eligible students get a year of Google AI, and Copilot Agent Builder is still the workplace agent path. One action for each.</description>
-    </item>
-    <item>
-      <title>The Defender’s Window</title>
-      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-17.html</link>
-      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-17.html</guid>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <description>what shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
     </item>
     <item>
       <title>GPT-5.6 is now the default model in ChatGPT. Agents are the job.</title>

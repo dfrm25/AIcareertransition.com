@@ -122,6 +122,10 @@ def check_hub_markers() -> None:
     ):
         if marker not in text:
             errors.append(f"[hub] missing marker {marker} in this-week.html")
+    if re.search(r'<time id="hub-updated"[^>]*\bhidden\b', text):
+        errors.append("[hub] last-reviewed date on this-week.html is hidden")
+    if not re.search(r'<time id="hub-updated" datetime="\d{4}-\d{2}-\d{2}"', text):
+        errors.append("[hub] this-week.html is missing a dated hub-updated time")
 
 
 def check_meta(files: list[Path]) -> None:

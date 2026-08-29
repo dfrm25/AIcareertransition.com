@@ -40,7 +40,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260823"
+CSS_VER = "20260829"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -397,13 +397,32 @@ def replace_block(text: str, start: str, end: str, new_inner: str) -> str:
     return pattern.sub(f"{start}\n{new_inner}\n        {end}", text, count=1)
 
 
+def next_monday(day: datetime.date) -> datetime.date:
+    days_ahead = (7 - day.weekday()) % 7
+    if days_ahead == 0:
+        days_ahead = 7
+    return day + datetime.timedelta(days=days_ahead)
+
+
+def human_date(day: datetime.date) -> str:
+    return day.strftime("%B %-d, %Y")
+
+
 def update_hub(payload: dict) -> None:
     hub = ROOT / "this-week.html"
     text = hub.read_text(encoding="utf-8")
     wd = payload["week_date"]
+    reviewed = datetime.date.fromisoformat(wd)
+    nxt = next_monday(reviewed)
+    date_block = (
+        f'<time id="hub-updated" datetime="{wd}"><!-- WEEKLY:DATE -->'
+        f"{human_date(reviewed)}</time>"
+        f' · Next update <time datetime="{nxt.isoformat()}">{nxt.strftime("%A, %B %-d, %Y")}</time>'
+    )
     text = re.sub(
-        r'<time id="hub-updated" datetime="[^"]*"[^>]*><!-- WEEKLY:DATE -->[^<]*</time>',
-        f'<time id="hub-updated" datetime="{wd}" hidden><!-- WEEKLY:DATE --></time>',
+        r'<time id="hub-updated" datetime="[^"]*"[^>]*><!-- WEEKLY:DATE -->[^<]*</time>'
+        r'(?:\s*·\s*Next update <time datetime="[^"]*">[^<]*</time>)?',
+        date_block,
         text,
     )
     text = replace_block(
@@ -431,7 +450,11 @@ def update_home(payload: dict) -> None:
     if not home.exists():
         return
     first = payload["updates"][0]
+    wd = payload["week_date"]
+    reviewed = datetime.date.fromisoformat(wd)
+    nxt = next_monday(reviewed)
     inner = f'''        <div class="card" style="padding: var(--space-xl);">
+          <p class="proof-meta" style="margin-bottom: var(--space-sm);">This week · Reviewed <time datetime="{wd}">{human_date(reviewed)}</time> · Next update <time datetime="{nxt.isoformat()}">{nxt.strftime("%A, %B %-d, %Y")}</time></p>
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-sm);">{esc(first["title"])}</h2>
           <p style="line-height: 1.75; margin-bottom: var(--space-md);">{esc(first["body"])}</p>
           <a href="this-week.html" class="btn btn-primary">Read the brief</a>
@@ -476,9 +499,10 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
   <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="../index.html" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu"><a href="../this-week.html" class="navbar-link">This Week</a><a href="../101.html" class="navbar-link">Learn</a><a href="../prompts.html" class="navbar-link">Prompts</a><a href="../career.html" class="navbar-link">Career</a><a href="../blog.html" class="navbar-link active">Blog</a></div><div class="navbar-actions"><a href="../career.html" class="btn btn-primary">Start</a></div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
   <main id="main-content"><article class="section" style="padding-top: 120px;"><div class="container" style="max-width: 760px;">
     <header style="margin-bottom: var(--space-2xl);">
-      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a></p>
+      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a> · Reviewed <time datetime="{date}">{date_human}</time></p>
       <h1 style="font-size: clamp(1.75rem, 4vw, 2.4rem); line-height: 1.2; margin-bottom: var(--space-lg);">{title}</h1>
       <p style="font-size: 1.0625rem; line-height: 1.75; color: var(--color-text-secondary);">{desc}</p>
+      <p class="proof-meta" style="margin-top: var(--space-md);">Official vendor sources only. This is a career brief, not a news dump and not a university catalog.</p>
     </header>
 {body}
     <p style="margin-top: var(--space-xl);"><a href="../this-week.html" class="btn btn-primary">This Week in AI</a></p>
@@ -651,7 +675,7 @@ def main() -> int:
     prepend_blog_card(post, week_date, date_human)
     update_hub(payload)
     update_llms(post, week_date)
-    strip_date_labels()
+    # Keep visible last-reviewed dates. Do not strip calendar labels.
 
     import build_sitemap
     build_sitemap.main()

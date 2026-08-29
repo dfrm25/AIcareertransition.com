@@ -45,4 +45,15 @@
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
+  # Sitemap, robots, and feed must not sit in a long cache after a weekly refresh.
+  <FilesMatch "^(sitemap\.xml|robots\.txt|feed\.xml|llms\.txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
 </IfModule>
+
+<Files "sitemap.xml">
+  ForceType application/xml
+</Files>
+<Files "feed.xml">
+  ForceType application/xml
+</Files>

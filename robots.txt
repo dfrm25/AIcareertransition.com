@@ -17,7 +17,7 @@ Allow: /
 # Sitemap location
 Sitemap: https://aicareertransition.com/sitemap.xml
 
-# RSS feed (updated weekly)
+# RSS feed (updated with each weekly brief)
 # https://aicareertransition.com/feed.xml
 
 # LLM content map

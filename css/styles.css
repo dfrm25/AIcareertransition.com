@@ -2720,6 +2720,47 @@ p {
   margin: var(--space-lg) 0;
 }
 
+.proof-meta {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.proof-meta time {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+.scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+.scope-box h3 {
+  font-size: 0.95rem;
+  margin-bottom: var(--space-sm);
+}
+.scope-box ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+.archive-banner {
+  border: 1px solid rgba(217, 119, 6, 0.28);
+  background: rgba(217, 119, 6, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+.archive-banner p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+@media (max-width: 640px) {
+  .scope-grid { grid-template-columns: 1fr; }
+}
+
 /* Cookie consent */
 .cookie-consent {
   position: fixed;

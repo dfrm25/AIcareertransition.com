@@ -58,6 +58,8 @@ def _post_type(item: dict) -> bool:
 
 def extract_post(path: Path) -> dict | None:
     text = path.read_text(encoding="utf-8", errors="ignore")
+    if re.search(r'<meta[^>]*name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', text[:8000], re.I):
+        return None
     posting = next((i for i in _iter_ld(text) if isinstance(i, dict) and _post_type(i)), None)
 
     canon = _CANON_RE.search(text)
