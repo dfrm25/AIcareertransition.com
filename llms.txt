@@ -29,9 +29,6 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/personas/analytics.html
 - https://aicareertransition.com/personas/data-science.html
 - https://aicareertransition.com/personas/copywriting.html
-- https://aicareertransition.com/personas/email-marketing.html
-- https://aicareertransition.com/personas/customer-journey.html
-- https://aicareertransition.com/personas/database-marketing.html
 
 ## Current AI Workflow Updates
 - https://aicareertransition.com/blog/weekly-ai-brief-2026-08-29.html

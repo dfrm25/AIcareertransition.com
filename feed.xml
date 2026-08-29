@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AI Career Transition — This Week in AI</title>
+    <title>AI Career Transition: This Week in AI</title>
     <link>https://aicareertransition.com/this-week.html</link>
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
