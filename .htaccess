@@ -1,6 +1,8 @@
 # AI Career Transition — caching & compression (Apache / cPanel)
 # Improves PageSpeed "efficient cache" for css, js, images.
 
+DirectoryIndex index.html index.htm
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -9,7 +11,8 @@
   RewriteCond %{HTTP_HOST} ^www\.aicareertransition\.com$ [NC]
   RewriteRule ^(.*)$ https://aicareertransition.com/$1 [R=301,L]
 
-  # Consolidate /index.html variants to the directory root.
+  # One URL per directory. /index.html and /guides/index.html 301 to the slash form.
+  # These hops showed up as GSC "Redirect" after 9 Jun 2026; keep the 301s, stop linking the .html form.
   RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
   RewriteRule ^(.*/)?index\.html$ https://aicareertransition.com/$1 [R=301,L]
 </IfModule>

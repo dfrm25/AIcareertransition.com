@@ -129,12 +129,33 @@ def check_hub_markers() -> None:
 
 
 def check_meta(files: list[Path]) -> None:
+    titles: dict[str, str] = {}
     for p in files:
         text = p.read_text(encoding="utf-8", errors="ignore")
         if not TITLE_RE.search(text):
             warnings.append(f"[meta] {p.relative_to(ROOT)} has no <title>")
         if not DESC_RE.search(text):
             warnings.append(f"[meta] {p.relative_to(ROOT)} has no meta description")
+        m = TITLE_RE.search(text)
+        if not m:
+            continue
+        title = re.sub(r"\s+", " ", m.group(0)).strip().lower()
+        title = re.sub(r"</?title>", "", title)
+        if title in titles:
+            errors.append(
+                f"[duplicate-title] {p.relative_to(ROOT)} and {titles[title]} share title {title!r}"
+            )
+        else:
+            titles[title] = str(p.relative_to(ROOT))
+
+
+def check_sitemap_locs() -> None:
+    path = ROOT / "sitemap.xml"
+    if not path.exists():
+        return
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    if "index.html" in text:
+        errors.append("[sitemap] sitemap.xml still lists an index.html URL")
 
 
 def main() -> int:
@@ -144,6 +165,7 @@ def main() -> int:
     check_internal_links(files)
     check_hub_markers()
     check_meta(files)
+    check_sitemap_locs()
 
     if warnings:
         print(f"WARNINGS ({len(warnings)}):")

@@ -54,11 +54,11 @@ After verification:
 2. Enter your homepage URL: `https://aicareertransition.com`
 3. Click **"Test Live URL"**
 4. If it says "URL is not on Google", click **"Request Indexing"**
-5. Repeat for key pages:
-   - `https://aicareertransition.com/index.html`
+5. Repeat for **canonical** URLs only. Do not inspect `/index.html`, `/guides/index.html`, or `/personas/index.html` — those 301 to the slash form and create GSC Redirect / Duplicate rows.
+   - `https://aicareertransition.com/`
+   - `https://aicareertransition.com/this-week.html`
+   - `https://aicareertransition.com/career.html`
    - `https://aicareertransition.com/101.html`
-   - `https://aicareertransition.com/201.html`
-   - `https://aicareertransition.com/blog.html`
 
 ---
 

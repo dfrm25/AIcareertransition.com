@@ -79,8 +79,11 @@ def main() -> None:
         if is_noindex(p):
             continue
         rel = p.relative_to(ROOT).as_posix()
+        loc = loc_for(rel)
+        if loc.endswith("/index.html") or loc.endswith("index.html"):
+            raise SystemExit(f"sitemap loc must not include index.html: {loc}")
         url_el = ET.SubElement(urlset, "url")
-        ET.SubElement(url_el, "loc").text = loc_for(rel)
+        ET.SubElement(url_el, "loc").text = loc
         mtime = datetime.datetime.fromtimestamp(p.stat().st_mtime, tz=_UTC).strftime("%Y-%m-%d")
         ET.SubElement(url_el, "lastmod").text = mtime
         ET.SubElement(url_el, "changefreq").text = changefreq_for(rel)

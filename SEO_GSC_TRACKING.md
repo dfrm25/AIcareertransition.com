@@ -15,8 +15,8 @@ Use this every week after deployment and sitemap submission.
 
 ## Priority Pages
 
-- `https://aicareertransition.com/career.html`
-- `https://aicareertransition.com/blog/ai-career-transition-roadmap.html`
+- `https://aicareertransition.com/career.html` (pillar; do not also push the old `/blog/ai-career-transition-roadmap.html` URL)
+- `https://aicareertransition.com/this-week.html`
 - `https://aicareertransition.com/blog/ai-career-transition-portfolio-examples.html`
 - `https://aicareertransition.com/blog/ai-career-transition-timeline.html`
 - `https://aicareertransition.com/blog/ai-career-transition-no-code.html`
