@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AI Career Transition: This Week in AI</title>
+    <title>AI Career Transition — This Week in AI</title>
     <link>https://aicareertransition.com/this-week.html</link>
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>A milestone in expanding access to AI</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-31.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-08-31.html</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      <description>What shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
+    </item>
     <item>
       <title>Verify before you ship</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-08-29.html</link>
