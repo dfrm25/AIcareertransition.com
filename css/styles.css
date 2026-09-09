@@ -2960,6 +2960,19 @@ p {
   max-width: 100%;
 }
 
+.uc-frame-career {
+  grid-template-areas:
+    "case how"
+    "actions how";
+}
+
+.uc-frame-career .uc-case { grid-area: case; }
+.uc-frame-career .uc-how { grid-area: how; }
+.uc-frame-career .uc-actions-bar {
+  grid-area: actions;
+  align-self: end;
+}
+
 .uc-frame + .uc-frame {
   margin-top: 1.25rem;
 }
@@ -3426,6 +3439,13 @@ p {
     grid-template-columns: 1fr;
     gap: 1.35rem;
     padding: 1.25rem 1rem 1.35rem;
+  }
+
+  .uc-frame-career {
+    grid-template-areas:
+      "case"
+      "how"
+      "actions";
   }
 
   .uc-steps {
