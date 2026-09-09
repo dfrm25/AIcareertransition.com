@@ -855,6 +855,17 @@ function initCopyButtons() {
       }).catch(function () {});
     });
   });
+
+  document.querySelectorAll('[data-uc-approve]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var on = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', on ? 'false' : 'true');
+      var idle = btn.getAttribute('data-idle-label') || (btn.textContent.trim() === 'Approved' || btn.textContent.trim() === 'Confirmed' ? 'Approve' : btn.textContent.trim());
+      if (!btn.getAttribute('data-idle-label')) btn.setAttribute('data-idle-label', idle);
+      var done = /confirm/i.test(idle) ? 'Confirmed' : 'Approved';
+      btn.textContent = on ? btn.getAttribute('data-idle-label') : done;
+    });
+  });
 }
 
 function initGuideMatrix() {

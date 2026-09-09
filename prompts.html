@@ -34,7 +34,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260816">
+  <link rel="stylesheet" href="css/styles.css?v=20260909uc">
   
   <title>Prompt Library for Work: Agents, Review Loops, Career</title>
   
@@ -188,6 +188,81 @@
     <!-- Agentic Prompts -->
     <section id="agentic" class="section prompt-section">
       <div class="container">
+        <p class="uc-kicker">Team lead · Monday decision</p>
+        <div class="uc-frame" style="margin-bottom: var(--space-2xl);">
+          <div class="uc-col">
+            <p class="uc-label">Use case <span>/ one slide, not a dump</span></p>
+            <h2 class="uc-title" style="font-size: clamp(1.45rem, 3.6vw, 2rem);">Agent brief recipe</h2>
+            <p class="uc-insight">The brief is the skill. Six fields. Then a three-row decision — Risk, Impact, Ask, Owner.</p>
+            <p class="uc-note">Do not invent status. If a fact is missing, mark it Unknown. A lead approves every fact and owner before anyone sends.</p>
+            <dl class="uc-recipe">
+              <div class="uc-recipe-row">
+                <dt>Goal</dt>
+                <dd>One decision slide for Monday — three rows, no narrative dump.</dd>
+              </div>
+              <div class="uc-recipe-row">
+                <dt>Context</dt>
+                <dd>Last week’s notes and the owner list (attached). No extra hunting.</dd>
+              </div>
+              <div class="uc-recipe-row">
+                <dt>Tools</dt>
+                <dd>Read files. Draft the table. Do not send.</dd>
+              </div>
+              <div class="uc-recipe-row is-warn">
+                <dt>Constraints</dt>
+                <dd>Do not invent status. If a source is missing, write Unknown — never fill a cell to look complete.</dd>
+              </div>
+              <div class="uc-recipe-row">
+                <dt>Approval gate</dt>
+                <dd>Lead approves every fact and owner before send.</dd>
+              </div>
+              <div class="uc-recipe-row">
+                <dt>Return format</dt>
+                <dd>Table: Risk · Impact · Ask · Owner. Maximum three rows.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="uc-col">
+            <p class="uc-label">How <span>/ decision preview</span></p>
+            <span class="uc-example-tag">Example · 3 rows</span>
+            <div class="uc-decision-wrap">
+              <table class="uc-decision">
+                <thead>
+                  <tr>
+                    <th scope="col">Risk</th>
+                    <th scope="col">Impact</th>
+                    <th scope="col">Ask</th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vendor slip on the Friday extract</td>
+                    <td>Close pack late by one day</td>
+                    <td>Hold the 10:00 review?</td>
+                    <td>Jordan</td>
+                  </tr>
+                  <tr>
+                    <td>License true-up unconfirmed</td>
+                    <td>$6k swing vs plan</td>
+                    <td>Confirm the source tab</td>
+                    <td>Priya</td>
+                  </tr>
+                  <tr>
+                    <td>Overtime coding incomplete</td>
+                    <td>Driver may be overstated</td>
+                    <td>Re-cut after payroll</td>
+                    <td>Unknown</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="uc-gate">
+              <p><strong>Human gate</strong> Lead approves every fact/owner before send.</p>
+              <button type="button" class="uc-cta" data-uc-approve aria-pressed="false">Approve</button>
+            </div>
+          </div>
+        </div>
         <div class="section-header">
           <h2>Agentic prompts</h2>
           <p>Use these in ChatGPT with tools, Claude with computer use, Copilot agents, Cursor, or Claude Code. The brief is the skill.</p>
@@ -1449,6 +1524,6 @@
   </footer>
   
   <!-- Scripts -->
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260909uc" defer></script>
 </body>
 </html>

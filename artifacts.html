@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="AI career artifacts you can build: resume proof bullets, portfolio case studies, workflow audits, QA checklists, and role-specific templates.">
+  <meta name="description" content="Verify before you ship: an ops/finance variance you can defend. Brief, model output, one check, and a human gate on the source sheet.">
   <meta name="keywords" content="AI portfolio examples, AI career artifacts, AI skills resume, AI workflow audit, AI proof of work, AI portfolio template">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aicareertransition.com/artifacts.html">
@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=20260816">
+  <link rel="stylesheet" href="css/styles.css?v=20260909uc">
   <title>AI Career Artifacts | AI Career Transition</title>
   <script>window.addEventListener("load",function(){var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);});</script>
   <link rel="alternate" type="application/rss+xml" title="AI Career Transition — This Week in AI" href="/feed.xml">
@@ -66,7 +66,7 @@
         <a href="this-week.html" class="navbar-link">This Week</a>
         <a href="101.html" class="navbar-link">Learn</a>
         <a href="prompts.html" class="navbar-link">Prompts</a>
-        <a href="career.html" class="navbar-link active">Career</a>
+        <a href="career.html" class="navbar-link">Career</a>
         <a href="blog.html" class="navbar-link">Blog</a>
       </div>
       <div class="navbar-actions">
@@ -77,22 +77,81 @@
   </nav>
 
   <main id="main-content">
-    <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
-      <div class="container">
-        <div class="hero-content animate-on-scroll">
-          <div class="hero-badge">Career proof-of-work</div>
-          <h1 class="hero-title">Build AI Artifacts You Can <span class="text-gradient">Actually Show</span></h1>
-          <p class="hero-description">Certificates and tool names help. Proof helps more. Use these templates to turn AI-assisted work into resume bullets, interview stories, portfolio examples, and safer workplace outputs.</p>
-          <div class="hero-actions">
-            <a href="#portfolio-case-study" class="btn btn-primary btn-lg">Start with a case study</a>
-            <a href="blog/ai-skills-resume-without-sounding-fake.html" class="btn btn-secondary btn-lg">Fix resume wording</a>
+    <section class="hero uc-hero" aria-labelledby="artifacts-usecase-title">
+      <div class="container" style="max-width: 1080px;">
+        <p class="uc-kicker">Ops / finance · close week</p>
+        <div class="uc-frame">
+          <div class="uc-col">
+            <p class="uc-label">Use case <span>/ verify before you ship</span></p>
+            <h1 class="uc-title" id="artifacts-usecase-title">Verify before you ship.</h1>
+            <p class="uc-insight">A variance you can defend: two or three drivers, then one check against the source sheet. The model drafts. You confirm.</p>
+            <p class="uc-note">Proof is the PNG, the tab name, and the date — not a template gallery.</p>
+            <ul class="uc-flow" aria-label="Work line">
+              <li>Brief</li>
+              <li aria-hidden="true">→</li>
+              <li>Model output</li>
+              <li aria-hidden="true">→</li>
+              <li>One check</li>
+            </ul>
+            <div class="uc-gate">
+              <p><strong>Human gate</strong> Totals match source sheet? Confirm before share.</p>
+              <button type="button" class="uc-cta" data-uc-approve aria-pressed="false">Confirm</button>
+            </div>
+            <ul class="uc-proof" aria-label="Proof log fields">
+              <li>PNG</li>
+              <li>source tab</li>
+              <li>date</li>
+            </ul>
+            <div class="uc-actions">
+              <a href="blog/ai-excel-analysis-mistakes.html" class="uc-text-link">What AI gets wrong in Excel</a>
+            </div>
+          </div>
+          <div class="uc-col">
+            <p class="uc-label">How <span>/ variance you can point at</span></p>
+            <span class="uc-example-tag">Example data</span>
+            <svg class="uc-chart" viewBox="0 0 560 268" role="img" aria-labelledby="var-title var-desc">
+              <title id="var-title">Example weekly cost variance waterfall</title>
+              <desc id="var-desc">Plan $80k, overtime plus $18k, unused licenses minus $6k, actual $92k. Illustrative only.</desc>
+              <rect width="560" height="268" fill="#ffffff"/>
+              <text x="548" y="22" text-anchor="end" fill="#5c6b7a" font-size="10" font-family="Outfit, sans-serif" letter-spacing="1.6">EXAMPLE</text>
+              <line x1="56" y1="36" x2="56" y2="214" stroke="#d5dbe3" stroke-width="1"/>
+              <line x1="56" y1="214" x2="536" y2="214" stroke="#d5dbe3" stroke-width="1"/>
+              <text x="48" y="42" text-anchor="end" fill="#5c6b7a" font-size="10" font-family="DM Sans, sans-serif">110</text>
+              <text x="48" y="92" text-anchor="end" fill="#5c6b7a" font-size="10" font-family="DM Sans, sans-serif">100</text>
+              <text x="48" y="142" text-anchor="end" fill="#5c6b7a" font-size="10" font-family="DM Sans, sans-serif">90</text>
+              <text x="48" y="192" text-anchor="end" fill="#5c6b7a" font-size="10" font-family="DM Sans, sans-serif">80</text>
+              <text x="48" y="218" text-anchor="end" fill="#5c6b7a" font-size="10" font-family="DM Sans, sans-serif">70</text>
+              <!-- y = 214 - (v-70)*3.6 -->
+              <!-- Plan 80: y=178, h=36 -->
+              <rect x="78" y="178" width="72" height="36" fill="#0b1f3a"/>
+              <text x="114" y="172" text-anchor="middle" fill="#0b1f3a" font-size="11" font-family="Outfit, sans-serif" font-weight="700">$80k</text>
+              <text x="114" y="232" text-anchor="middle" fill="#0b1f3a" font-size="11" font-family="Outfit, sans-serif">Plan</text>
+              <!-- connector to OT start 80 -->
+              <line x1="150" y1="178" x2="186" y2="178" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+              <!-- OT 80→98: y=113.2, h=64.8 -->
+              <rect x="186" y="113" width="72" height="65" fill="#0e7490"/>
+              <text x="222" y="107" text-anchor="middle" fill="#0e7490" font-size="11" font-family="Outfit, sans-serif" font-weight="700">+$18k</text>
+              <text x="222" y="232" text-anchor="middle" fill="#0b1f3a" font-size="11" font-family="Outfit, sans-serif">Overtime</text>
+              <line x1="258" y1="113" x2="294" y2="113" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+              <!-- Licenses 98→92: y=113, h=21.6 -->
+              <rect x="294" y="113" width="72" height="22" fill="#64748b"/>
+              <text x="330" y="107" text-anchor="middle" fill="#475569" font-size="11" font-family="Outfit, sans-serif" font-weight="700">−$6k</text>
+              <text x="330" y="232" text-anchor="middle" fill="#0b1f3a" font-size="11" font-family="Outfit, sans-serif">Licenses</text>
+              <line x1="366" y1="135" x2="402" y2="135" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+              <!-- Actual 92: y=135.2, h=78.8 -->
+              <rect x="402" y="135" width="72" height="79" fill="#0b1f3a"/>
+              <text x="438" y="129" text-anchor="middle" fill="#0b1f3a" font-size="11" font-family="Outfit, sans-serif" font-weight="700">$92k</text>
+              <text x="438" y="232" text-anchor="middle" fill="#0b1f3a" font-size="11" font-family="Outfit, sans-serif">Actual</text>
+              <text x="56" y="258" fill="#5c6b7a" font-size="10" font-family="DM Sans, sans-serif">Illustrative weekly cost. Two drivers. Not a client file.</text>
+            </svg>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section uc-buried" style="padding-top: 0;">
       <div class="container">
+        <p class="uc-kicker" style="margin-bottom: 0.75rem;">Templates below this card</p>
         <div class="grid grid-3 animate-on-scroll">
           <a href="#resume-proof" class="card" style="text-decoration:none;"><h2 class="card-title">Resume Proof Bullet</h2><p class="card-description">Convert vague AI claims into honest, specific achievement bullets.</p></a>
           <a href="#portfolio-case-study" class="card" style="text-decoration:none;"><h2 class="card-title">Portfolio Case Study</h2><p class="card-description">Document one workflow with inputs, prompts, output, and human review.</p></a>
@@ -231,6 +290,6 @@
       <div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p></div>
     </div>
   </footer>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260909uc" defer></script>
 </body>
 </html>
