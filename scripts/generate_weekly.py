@@ -414,16 +414,18 @@ def update_hub(payload: dict) -> None:
     wd = payload["week_date"]
     reviewed = datetime.date.fromisoformat(wd)
     nxt = next_monday(reviewed)
-    date_block = (
+    text = re.sub(
+        r'<time id="hub-updated" datetime="[^"]*"[^>]*><!-- WEEKLY:DATE -->[^<]*</time>',
         f'<time id="hub-updated" datetime="{wd}"><!-- WEEKLY:DATE -->'
-        f"{human_date(reviewed)}</time>"
-        f' · Next update <time datetime="{nxt.isoformat()}">{nxt.strftime("%A, %B %-d, %Y")}</time>'
+        f"{human_date(reviewed)}</time>",
+        text,
+        count=1,
     )
     text = re.sub(
-        r'<time id="hub-updated" datetime="[^"]*"[^>]*><!-- WEEKLY:DATE -->[^<]*</time>'
-        r'(?:\s*·\s*Next update <time datetime="[^"]*">[^<]*</time>)?',
-        date_block,
+        r'(<span class="hero-badge-line">Next update <time datetime=")[^"]+("[^>]*>)[^<]*(</time></span>)',
+        rf'\g<1>{nxt.isoformat()}\2{nxt.strftime("%A, %B %-d, %Y")}\3',
         text,
+        count=1,
     )
     text = replace_block(
         text, "<!-- WEEKLY:UPDATES:START -->", "<!-- WEEKLY:UPDATES:END -->",
@@ -450,11 +452,7 @@ def update_home(payload: dict) -> None:
     if not home.exists():
         return
     first = payload["updates"][0]
-    wd = payload["week_date"]
-    reviewed = datetime.date.fromisoformat(wd)
-    nxt = next_monday(reviewed)
     inner = f'''        <div class="card" style="padding: var(--space-xl);">
-          <p class="proof-meta" style="margin-bottom: var(--space-sm);">This week · Reviewed <time datetime="{wd}">{human_date(reviewed)}</time> · Next update <time datetime="{nxt.isoformat()}">{nxt.strftime("%A, %B %-d, %Y")}</time></p>
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-sm);">{esc(first["title"])}</h2>
           <p style="line-height: 1.75; margin-bottom: var(--space-md);">{esc(first["body"])}</p>
           <a href="this-week.html" class="btn btn-primary">Read the brief</a>
