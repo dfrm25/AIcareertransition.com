@@ -6,15 +6,22 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>How Fyxer built an AI executive assistant people trust</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-09-14.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-09-14.html</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+      <description>What shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it.</description>
+    </item>
     <item>
       <title>In-role proof</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-09-07.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-09-07.html</guid>
       <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <description>September 7, 2026 weekly AI brief: Claude Fable 5.1, Gemini 3.8 Flash, GPT-6 Astra, and Microsoft Copilot plus Foundry. One in-role action each.</description>
+      <description>September 7, 2026 weekly AI brief: Claude Fable 5.1, Gemini 3.8 Flash, GPT-6 Astra, and Microsoft Copilot plus Foundry.</description>
     </item>
     <item>
       <title>A milestone in expanding access to AI</title>
