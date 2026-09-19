@@ -1,5 +1,5 @@
 # AI Career Transition - LLM content map
-# Last updated: 2026-09-19
+# Last updated: 2026-09-14
 
 site: https://aicareertransition.com
 name: AI Career Transition
@@ -46,7 +46,6 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/blog/ai-workflow-evals-human-review.html
 - https://aicareertransition.com/blog/ai-video-generation-career-skills.html
 ## Career Proof and Evergreen Guides
-- https://aicareertransition.com/blog/next-best-action-travel.html
 - https://aicareertransition.com/blog/ai-excel-analysis-mistakes.html
 - https://aicareertransition.com/blog/ai-skills-resume-without-sounding-fake.html
 - https://aicareertransition.com/blog/ai-career-transition-portfolio-examples.html
