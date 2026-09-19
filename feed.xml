@@ -6,9 +6,16 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>Next Best Action in Travel: One Guest, One Move, One Proof</title>
+      <link>https://aicareertransition.com/blog/next-best-action-travel.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/next-best-action-travel.html</guid>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A stay-in-job travel next-best-action loop: one guest, one ranked move, a human gate, and the proof pack you can show a manager.</description>
+    </item>
     <item>
       <title>How Fyxer built an AI executive assistant people trust</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-09-14.html</link>
