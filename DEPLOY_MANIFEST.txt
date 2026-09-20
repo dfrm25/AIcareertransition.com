@@ -51,6 +51,7 @@ blog/
   ai-skills-resume-without-sounding-fake.html
   chatgpt-monday-reports.html
   copilot-better-model-than-auto.html
+  copilot-work-iq-on-off.html
   geo-basics-chatgpt-perplexity-citations.html
   how-to-change-ai-model.html
   reasoning-models-o1-vs-chatgpt.html
@@ -73,6 +74,7 @@ images/
   copilot-logo.ico
   blog/.gitkeep
   blog/copilot-model-picker.png
+  blog/copilot-work-iq-menu.png
   blog/chrome-mobile-ai-step-1.png
   blog/chrome-mobile-ai-step-2.png
   blog/chrome-mobile-ai-step-3.png
