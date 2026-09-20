@@ -6,9 +6,16 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 00:00:00 +0000</lastBuildDate>
     <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)</title>
+      <link>https://aicareertransition.com/blog/copilot-work-iq-on-off.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/copilot-work-iq-on-off.html</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Work IQ is the work-context switch in Copilot’s model menu. Leave it on for your mail and files; turn it off for a clean outside answer.</description>
+    </item>
     <item>
       <title>How Fyxer built an AI executive assistant people trust</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-09-14.html</link>
