@@ -52,6 +52,8 @@ description: Practical AI education for professionals focused on career outcomes
 - https://aicareertransition.com/blog/ai-career-transition-interview-prep.html
 - https://aicareertransition.com/blog/chatgpt-monday-reports.html
 - https://aicareertransition.com/blog/how-to-change-ai-model.html
+- https://aicareertransition.com/blog/copilot-better-model-than-auto.html
+- https://aicareertransition.com/blog/copilot-work-iq-on-off.html
 - https://aicareertransition.com/blog/reasoning-models-o1-vs-chatgpt.html
 
 ## Trust and Policy
