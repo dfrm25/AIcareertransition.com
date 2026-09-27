@@ -40,7 +40,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260829"
+CSS_VER = "20260927ui"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -164,9 +164,10 @@ def fetch_feed_updates(monday: datetime.date) -> list[dict]:
                     "source_url": url,
                     "action": "Read the source, then apply it to one task you already own this week.",
                     "action_link": "prompts.html",
+                    "date": item["date"].isoformat() if item.get("date") else "",
                 }
             )
-            if len(picked) >= 4:
+            if len(picked) >= 5:
                 return picked
     return picked
 
@@ -188,7 +189,7 @@ def payload_from_updates(updates: list[dict], week_label: str, week_date: str) -
     return {
         "week_label": week_label,
         "week_date": week_date,
-        "updates": updates[:4],
+        "updates": updates[:5],
         "prompt_of_week": AGENT_PROMPT_DEFAULT,
         "post": {
             "slug": f"weekly-ai-brief-{week_date}",
@@ -237,7 +238,7 @@ Return ONLY a single JSON object (no prose, no markdown fences) with this exact 
 }}
 
 HARD RULES (violating any means your output is rejected):
-- 2 to 4 updates. Each source_url MUST be on one of these official domains ONLY: {", ".join(OFFICIAL_DOMAINS)}.
+- 2 to 5 updates. Each source_url MUST be on one of these official domains ONLY: {", ".join(OFFICIAL_DOMAINS)}.
 - Do NOT name specific stale/retired models (no "Gemini 2.0 Flash", "GPT-3.5", "Claude 2", "Bard", "Gemini 1.5", etc.). Refer to current families generally (e.g. "GPT-5 family", "Gemini with Deep Think", "Claude with extended thinking") and link the vendor's live model page for exact versions.
 - post.body_html MUST contain at least two links to official domains above.
 - Keep everything factual and conservative; if unsure about a claim, describe the capability generally and link the official docs.
@@ -306,8 +307,8 @@ def extract_json(text: str) -> dict:
 def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[str]:
     errs: list[str] = []
     updates = payload.get("updates")
-    if not isinstance(updates, list) or not (2 <= len(updates) <= 4):
-        errs.append("updates must be a list of 2-4 items")
+    if not isinstance(updates, list) or not (2 <= len(updates) <= 5):
+        errs.append("updates must be a list of 2-5 items")
         updates = updates if isinstance(updates, list) else []
     for i, u in enumerate(updates):
         for f in ("category", "title", "body", "source_url", "action", "action_link"):
@@ -359,18 +360,55 @@ def esc(s: str) -> str:
     )
 
 
+def _vendor(url: str) -> tuple[str, str]:
+    host = url.lower()
+    if "anthropic.com" in host or "claude.com" in host:
+        return "anthropic", "Anthropic"
+    if "google" in host:
+        return "google", "Google"
+    if "microsoft.com" in host:
+        return "microsoft", "Microsoft"
+    if "openai.com" in host:
+        return "openai", "OpenAI"
+    return "other", "Source"
+
+
+def _card_date(value) -> str:
+    if not value:
+        return ""
+    if hasattr(value, "isoformat"):
+        iso = value.isoformat()
+        label = value.strftime("%b %-d, %Y")
+    else:
+        iso = str(value)[:10]
+        try:
+            day = datetime.date.fromisoformat(iso)
+            label = day.strftime("%b %-d, %Y")
+        except ValueError:
+            label = esc(str(value))
+            iso = ""
+    if not iso:
+        return f"<p class=\"ax-wcard__when\">{label}</p>"
+    return f'<p class="ax-wcard__when"><time datetime="{esc(iso)}">{label}</time></p>'
+
+
 def render_updates(updates: list[dict]) -> str:
     out = []
     for u in updates:
         internal = u["action_link"]
+        vendor, vendor_label = _vendor(u.get("source_url", ""))
+        when = _card_date(u.get("date"))
         out.append(
-            f'''        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">{esc(u["title"])}</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">{esc(u["body"])} <a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Do this:</strong> {esc(u["action"])} <a href="{esc(internal)}">Go</a></p>
+            f'''        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="{vendor}">{vendor_label}</span></div>
+          {when}
+          <h3 class="ax-wcard__title">{esc(u["title"])}</h3>
+          <p class="ax-wcard__why">{esc(u["body"])} <a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this</span><p>{esc(u["action"])} <a href="{esc(internal)}">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a><a class="ax-link" href="{esc(internal)}">Go</a></div>
         </article>'''
         )
-    return "\n".join(out)
+    return "<div class=\"ax-weeklyblock\"><div class=\"ax-weekly\">\n" + "\n".join(out) + "\n</div></div>"
 
 
 def render_latest(limit: int = 3) -> str:
@@ -494,11 +532,11 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="/" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu"><a href="../this-week.html" class="navbar-link">This Week</a><a href="../101.html" class="navbar-link">Learn</a><a href="../prompts.html" class="navbar-link">Prompts</a><a href="../career.html" class="navbar-link">Career</a><a href="../blog.html" class="navbar-link active">Blog</a></div><div class="navbar-actions"><a href="../career.html" class="btn btn-primary">Start</a></div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
+  <nav class="navbar" role="navigation" aria-label="Main navigation"><div class="navbar-container"><a href="/" class="navbar-logo" aria-label="AI Career Transition Home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="url(#logo-gradient)"/><path d="M18 8L26 24H10L18 8Z" fill="white" fill-opacity="0.9"/><circle cx="18" cy="22" r="3" fill="white"/><defs><linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg><span>AI Career Transition</span></a><div class="navbar-menu"><a href="../this-week.html" class="navbar-link">This Week</a><a href="../101.html" class="navbar-link">Learn</a><a href="../prompts.html" class="navbar-link">Prompts</a><a href="../career.html" class="navbar-link">Career</a><a href="../use-cases.html" class="navbar-link">Use cases</a><a href="../blog.html" class="navbar-link active">Blog</a></div><div class="navbar-actions"><a href="../career.html" class="btn btn-primary">Start</a></div><button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
   <main id="main-content"><article class="section" style="padding-top: 120px;"><div class="container" style="max-width: 760px;">
     <header style="margin-bottom: var(--space-2xl);">
-      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a> · Reviewed <time datetime="{date}">{date_human}</time></p>
-      <h1 style="font-size: clamp(1.75rem, 4vw, 2.4rem); line-height: 1.2; margin-bottom: var(--space-lg);">{title}</h1>
+      <p style="font-size:15px; color: var(--color-text-muted); margin-bottom: var(--space-md);"><a href="../this-week.html">This Week in AI</a> · Reviewed <time datetime="{date}">{date_human}</time></p>
+      <h1 class="ax-h1 ax-h1--post" style="margin-bottom: var(--space-lg);">{title}</h1>
       <p style="font-size: 1.0625rem; line-height: 1.75; color: var(--color-text-secondary);">{desc}</p>
       <p class="proof-meta" style="margin-top: var(--space-md);">Official vendor sources only. This is a career brief, not a news dump and not a university catalog.</p>
     </header>

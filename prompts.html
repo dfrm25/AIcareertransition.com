@@ -34,7 +34,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260909uc">
+  <link rel="stylesheet" href="css/styles.css?v=20260927ui">
   
   <title>Prompt Library for Work: Agents, Review Loops, Career</title>
   
@@ -122,11 +122,11 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
+    <section class="hero ax-hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
       <div class="container">
         <div class="hero-content animate-on-scroll">
-          <h1 class="hero-title">Prompts that brief agents, not chatbots</h1>
-          <p class="hero-description">
+          <h1 class="hero-title ax-h1">Prompts that brief agents, not chatbots</h1>
+          <p class="hero-description ax-lede">
             Copy, paste, then add your files and stop conditions. Start with Agentic if you use ChatGPT, Claude, Gemini, Copilot, Cursor, or Claude Code.
           </p>
         </div>
@@ -141,7 +141,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Prompt of the Day
           </div>
-          <p style="font-size: 0.875rem; color: var(--color-text-muted);">A different prompt every day. Copy, paste, and put it to work.</p>
+          <p style="font-size:15px; color: var(--color-text-muted);">A different prompt every day. Copy, paste, and put it to work.</p>
         </div>
         <div id="prompt-of-day" class="animate-on-scroll"></div>
       </div>
@@ -157,8 +157,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
-        <div id="prompt-no-results" style="display:none; text-align:center; color: var(--color-text-muted); padding: var(--space-xl) 0; font-size: 0.9375rem;">No prompts match that search. Try a different keyword.</div>
-        <div class="animate-on-scroll" style="display: flex; align-items: center; justify-content: flex-end; margin-top: var(--space-sm); gap: var(--space-xs); font-size: 0.875rem; color: var(--color-text-muted);">
+        <div id="prompt-no-results" style="display:none; text-align:center; color: var(--color-text-muted); padding: var(--space-xl) 0; font-size:15px;">No prompts match that search. Try a different keyword.</div>
+        <div class="animate-on-scroll" style="display: flex; align-items: center; justify-content: flex-end; margin-top: var(--space-sm); gap: var(--space-xs); font-size:15px; color: var(--color-text-muted);">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           Saved prompts: <span id="saved-count">0</span>
         </div>
@@ -204,7 +204,7 @@
             <h4 class="prompt-card-title">P1. Status update from notes</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> Weekly update due, notes are messy.</p>
             <div class="prompt-card-text">Turn these notes into a status update for [AUDIENCE]. Format: 3 bullets (done, next, blocked) and one ask. Under 120 words. Use only what is in the notes. Mark anything unclear with [CHECK]. Notes: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Every date, name, and number matches your notes.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Every date, name, and number matches your notes.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -216,7 +216,7 @@
             <h4 class="prompt-card-title">P2. Variance explanation</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> A number moved and someone will ask why.</p>
             <div class="prompt-card-text">Here is plan vs actual for [METRIC]. Explain the variance in plain language. Give the top 3 drivers with the amount each contributes, and label each driver as confirmed from the data or a hypothesis. Do not invent drivers. Data: [PASTE OR ATTACH]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Drivers add up to the total variance in the source.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Drivers add up to the total variance in the source.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -228,7 +228,7 @@
             <h4 class="prompt-card-title">P3. Meeting prep from email</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> A meeting is coming and the context is spread across threads. (Copilot: Work IQ on.)</p>
             <div class="prompt-card-text">Prep me for [MEETING] with [PEOPLE]. From my recent emails and files, list: what was decided, open questions, what they will likely ask me, and 3 points I should make. Link each item to its source.</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Open the linked sources; drop anything stale or from the wrong project.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Open the linked sources; drop anything stale or from the wrong project.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -240,7 +240,7 @@
             <h4 class="prompt-card-title">P4. Meeting recap to actions</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> Right after a meeting.</p>
             <div class="prompt-card-text">From this transcript or notes, list decisions, action items (owner, due date), and open questions. If an owner or date was not stated, write 'not stated.' Notes: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Each owner agreed to their item in the meeting.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Each owner agreed to their item in the meeting.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -252,7 +252,7 @@
             <h4 class="prompt-card-title">P5. Long thread to reply</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> A long thread needs your answer.</p>
             <div class="prompt-card-text">Summarize this thread in 3 lines, then draft my reply. Tone: [DIRECT / WARM]. Answer only what was asked of me. Keep it under 100 words. Thread: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> The reply commits to nothing you have not approved.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> The reply commits to nothing you have not approved.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -264,7 +264,7 @@
             <h4 class="prompt-card-title">P6. One-page decision memo</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> You need a decision from someone senior.</p>
             <div class="prompt-card-text">Write a one-page decision memo. Sections: decision needed, options (2-3), trade-offs, recommendation, risks, deadline. Use only these facts: [PASTE]. Flag any missing fact instead of guessing.</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> The recommendation is yours, and every fact has a source.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> The recommendation is yours, and every fact has a source.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -276,7 +276,7 @@
             <h4 class="prompt-card-title">P7. Explain this spreadsheet</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> You inherited a workbook or a formula looks wrong.</p>
             <div class="prompt-card-text">Explain what this sheet does, tab by tab. List every formula that references another tab or file. Flag hard-coded numbers inside formulas and any tabs you could not read. [ATTACH]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Spot-check two totals by hand.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Spot-check two totals by hand.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -288,7 +288,7 @@
             <h4 class="prompt-card-title">P8. Rewrite for a senior reader</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> Your draft is too long for the reader.</p>
             <div class="prompt-card-text">Rewrite this for [ROLE] who has 60 seconds. Lead with the answer, then 3 supporting points, then the ask. Keep all numbers exactly as written. Draft: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> No number or claim changed meaning.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> No number or claim changed meaning.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -300,7 +300,7 @@
             <h4 class="prompt-card-title">P9. What did I miss?</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> Back from time off or a busy week. (Copilot: Work IQ on.)</p>
             <div class="prompt-card-text">From my mail, chats, and meetings in the last [N] days, list what needs my reply or decision, sorted by urgency. For each: who, what they need, by when, and a link.</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Open the top three items yourself before acting.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Open the top three items yourself before acting.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -312,7 +312,7 @@
             <h4 class="prompt-card-title">P10. Process to checklist</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> You explain the same process repeatedly.</p>
             <div class="prompt-card-text">Turn this process description into a numbered checklist. Add who does each step, what 'done' looks like, and where a human must approve. Mark unclear steps [ASK]. Process: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Walk through it once with someone who does the task.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Walk through it once with someone who does the task.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -324,7 +324,7 @@
             <h4 class="prompt-card-title">P11. Critique my draft</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> Before an important doc goes out.</p>
             <div class="prompt-card-text">Act as a skeptical reviewer. List the 5 weakest points in this draft: unsupported claims, missing data, unclear asks. For each, suggest a fix. Do not rewrite the whole thing. Draft: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> You decide which critiques to accept.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> You decide which critiques to accept.</p>
           </div>
           <div class="prompt-card">
             <div class="prompt-card-header">
@@ -336,7 +336,7 @@
             <h4 class="prompt-card-title">P12. Proof receipt</h4>
             <p class="proof-meta" style="margin: 0 0 var(--space-sm);"><strong>When:</strong> You have used AI on the same task a few times.</p>
             <div class="prompt-card-text">Turn this log into a proof receipt: task, tool, before, after, human check, outcome. Then write one resume line and three talking points for my manager. Use only numbers in the log and label each as measured or estimated. Log: [PASTE]</div>
-            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size: 0.9375rem;"><strong>Check before sharing:</strong> Every number traces to your log.</p>
+            <p style="margin: var(--space-sm) 0 0; line-height: 1.6; color: var(--color-text-secondary); font-size:15px;"><strong>Check before sharing:</strong> Every number traces to your log.</p>
           </div>
         </div>
       </div>
@@ -1383,7 +1383,7 @@
           <p>Prompts designed for reasoning / Thinking models and advanced chain-of-thought workflows. Use these when accuracy matters more than speed.</p>
         </div>
         <div class="card animate-on-scroll" style="max-width: 760px; margin: 0 auto var(--space-xl); background: rgba(16,185,129,0.06); padding: var(--space-lg);">
-          <p style="font-size: 0.9375rem; color: var(--color-text-secondary); margin: 0;"><strong>When to use these:</strong> These prompts are optimized for ChatGPT's Thinking mode, Claude's extended thinking, or any reasoning-capable model when doing complex analysis, logic, or multi-step tasks. For faster tasks, regular chat models (ChatGPT, Gemini) work fine. See our <a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">reasoning model guide →</a></p>
+          <p style="font-size:15px; color: var(--color-text-secondary); margin: 0;"><strong>When to use these:</strong> These prompts are optimized for ChatGPT's Thinking mode, Claude's extended thinking, or any reasoning-capable model when doing complex analysis, logic, or multi-step tasks. For faster tasks, regular chat models (ChatGPT, Gemini) work fine. See our <a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">reasoning model guide →</a></p>
         </div>
         <div class="grid grid-2 animate-on-scroll">
           <div class="prompt-card">
