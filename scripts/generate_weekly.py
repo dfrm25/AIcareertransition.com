@@ -483,6 +483,34 @@ def update_hub(payload: dict) -> None:
     )
     hub.write_text(text, encoding="utf-8")
     update_home(payload)
+    update_receipt_stamp(wd)
+
+
+def update_receipt_stamp(week_date: str) -> None:
+    """Keep the home hero receipt date on the This Week reviewed date."""
+    home = ROOT / "index.html"
+    if not home.exists():
+        return
+    reviewed = datetime.date.fromisoformat(week_date)
+    long = reviewed.strftime("%b %-d, %Y")
+    short = reviewed.strftime("%b %-d")
+    text = home.read_text(encoding="utf-8")
+    text2, n_long = re.subn(
+        r"<!-- WEEKLY:RECEIPT -->.*?<!-- /WEEKLY:RECEIPT -->",
+        f"<!-- WEEKLY:RECEIPT -->{long}<!-- /WEEKLY:RECEIPT -->",
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    text2, n_short = re.subn(
+        r"<!-- WEEKLY:STAMP -->.*?<!-- /WEEKLY:STAMP -->",
+        f"<!-- WEEKLY:STAMP -->{short}<!-- /WEEKLY:STAMP -->",
+        text2,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if n_long and n_short and text2 != text:
+        home.write_text(text2, encoding="utf-8")
 
 
 def update_home(payload: dict) -> None:

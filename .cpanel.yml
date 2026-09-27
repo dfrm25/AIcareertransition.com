@@ -7,7 +7,8 @@ deployment:
     # Target: your account's web root ($HOME = /home/your_cpanel_user on cPanel)
     - export DEPLOYPATH=${HOME}/public_html/
     # Sync repo contents to live site (exclude version control and dev files)
-    - /bin/rsync -av --delete --exclude '.git' --exclude '.cpanel.yml' --exclude '.gitignore' --exclude '.DS_Store' --exclude '*.md' --exclude 'scripts/' --exclude '.github/' --exclude 'google-apps-script.js' --exclude 'google-apps-script-feedback.js' --exclude 'requirements-automation.txt' ./ ${DEPLOYPATH}
+    # Do not add --delete-excluded. The clone and public_html may be the same directory, and that flag would also delete .git, .cpanel.yml, and .gitignore.
+    - /bin/rsync -av --delete --exclude '.git' --exclude '.cpanel.yml' --exclude '.gitignore' --exclude '.DS_Store' --exclude '*.md' --exclude 'scripts/' --exclude '.github/' --exclude 'google-apps-script.js' --exclude 'google-apps-script-feedback.js' --exclude 'requirements-automation.txt' --exclude 'test_videos.py' --exclude 'video_source_mapping.txt' --exclude 'DEPLOY_MANIFEST.txt' --exclude 'FILES_TO_UPLOAD.txt' ./ ${DEPLOYPATH}
     # Sensible permissions: dirs 755, files 644
     - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 {} \;
     - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 {} \;
