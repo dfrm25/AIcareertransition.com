@@ -46,7 +46,7 @@
     "description": "Agents, automation, and a small app you can explain. For working professionals, not a computer-science catalog.",
     "url": "https://aicareertransition.com/201.html",
     "isPartOf": {"@type": "WebSite", "name": "AI Career Transition", "url": "https://aicareertransition.com"},
-    "publisher": {"@type": "Organization", "name": "Design Forge"}
+    "publisher": {"@type": "Organization", "name": "AI Career Transition"}
   }
   </script>
   
@@ -99,6 +99,7 @@
         <a href="101.html" class="navbar-link active">Learn</a>
         <a href="prompts.html" class="navbar-link">Prompts</a>
         <a href="career.html" class="navbar-link">Career</a>
+        <a href="use-cases.html" class="navbar-link">Use cases</a>
         <a href="blog.html" class="navbar-link">Blog</a>
       </div>
       <div class="navbar-actions">
@@ -137,11 +138,18 @@
         </div>
       </div>
     </section>
-    
+
+    <section class="section" style="padding-top: 0; padding-bottom: 0;">
+      <div class="container">
+        <p class="proof-meta" style="text-align: center; margin: 0;"><a href="career.html#roadmap">Your path: 101 → 201 → proof</a></p>
+      </div>
+    </section>
+
     <!-- Quick Navigation -->
     <section class="section" style="padding-top: 0; padding-bottom: var(--space-2xl);">
       <div class="container">
         <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+          <a href="#copilot-201" class="btn btn-secondary" style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.3); color:var(--color-accent-primary);">Copilot 201</a>
           <a href="#agi-context" class="btn btn-secondary" style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.3); color:var(--color-accent-primary);">Workflow Shift</a>
           <a href="#advanced-tools" class="btn btn-secondary">Advanced Tools</a>
           <a href="#ai-assistant" class="btn btn-secondary">Career Workflow Prompts</a>
@@ -151,6 +159,53 @@
       </div>
     </section>
     
+    <section id="copilot-201" class="section" style="padding-top: var(--space-xl);">
+      <div class="container" style="max-width: 960px;">
+        <div class="section-header animate-on-scroll" style="margin-bottom: var(--space-lg);">
+          <h2>Copilot 201</h2>
+          <p>Six modules for people already using AI weekly. Features change. Check your own app and license.</p>
+        </div>
+        <div class="grid grid-2 animate-on-scroll">
+          <article class="card" style="padding: var(--space-xl);">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.1 Work IQ vs Auto: two different switches</h3>
+            <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Work IQ decides whose world Copilot reads: on uses your mail, files, chats, and meetings; off uses the web and what you attach. The model menu decides how hard it thinks: Auto picks a model for each request, or you choose a deeper option for hard work.</p>
+            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><img src="images/blog/copilot-work-iq-menu.png" alt="Copilot model menu with the Work IQ switch. UI may vary by app and license." loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);"></figure>
+            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><img src="images/blog/copilot-model-picker.png" alt="Microsoft Copilot model dropdown showing Auto, Quick response, Think deeper, and more model options" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);"></figure>
+            <p style="line-height:1.75;margin-top:var(--space-md);"><strong>Do this today:</strong> On one hard task, set Work IQ on purpose, then run it once on Auto and once on a deeper option. Keep the better one and note why.</p>
+            <p style="margin-top:var(--space-md);">Sources: <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-information-does-copilot-use-to-answer-my-prompt" target="_blank" rel="noopener noreferrer">support.microsoft.com (What information does Copilot use)</a>, <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">blogs.microsoft.com Sep 25, 2026 (Auto routing)</a></p>
+          </article>
+          <article class="card" style="padding: var(--space-xl);">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.2 Ground on the right source</h3>
+            <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Work IQ on for "what did we decide" and "prep me from my threads." For a clean answer, attach one file and say "Use this file only." Ask it to confirm the publish date and show the exact section.</p>
+            <p style="line-height:1.75;margin:0;"><strong>Do this today:</strong> Redo one past answer with a single attached file and "Use this file only." Compare citations.</p>
+            <p style="margin-top:var(--space-md);"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-information-does-copilot-use-to-answer-my-prompt" target="_blank" rel="noopener noreferrer">Source</a></p>
+          </article>
+          <article class="card" style="padding: var(--space-xl);">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.3 Delegate multi-step work, keep a human gate</h3>
+            <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Cowork runs a task you define end to end. Ready-made agents like Researcher and Analyst handle deeper research and data work. Cowork and other agentic runs draw on Copilot Credits, so check your org allows them. Longer runs need clear stop points: before anything is sent, and before any number leaves your team.</p>
+            <p style="line-height:1.75;margin:0;"><strong>Do this today:</strong> Write a five-line brief: goal, sources, output, "stop and ask if a source is missing," and "I approve before sending."</p>
+            <p style="margin-top:var(--space-md);">Sources: <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">blogs.microsoft.com Sep 25, 2026 (Cowork)</a>; microsoft.com/en-us/copilot/blog Sep 23, 2026 (Researcher, Analyst, Copilot Credits). Availability varies by license.</p>
+          </article>
+          <article class="card" style="padding: var(--space-xl);">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.4 Build one reusable prompt or agent</h3>
+            <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">If you type the same instructions weekly, save them. In the Microsoft Copilot app, go to Agents, select New Agent, and describe the job. Use Configure to tighten instructions and knowledge. One agent, one job.</p>
+            <p style="line-height:1.75;margin:0;"><strong>Do this today:</strong> Turn your most-used prompt into a saved prompt or a one-job agent. Test it on last week's input.</p>
+            <p style="margin-top:var(--space-md);"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/build-your-own-agent-with-microsoft-365-copilot" target="_blank" rel="noopener noreferrer">Source</a></p>
+          </article>
+          <article class="card" style="padding: var(--space-xl);">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.5 Measure time saved honestly</h3>
+            <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Time three runs by hand and three with AI. Include review and fix time in the AI runs. Count the fixes. Label every number as measured or estimated.</p>
+            <p style="line-height:1.75;margin:0;"><strong>Do this today:</strong> Start a simple log: date, task, minutes by hand, minutes with AI plus review, fixes needed.</p>
+          </article>
+          <article class="card" style="padding: var(--space-xl);">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.6 Turn proof into a resume line and a manager conversation</h3>
+            <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Resume line: tool, task, measured change, check. Manager talk: what you did, what it saved, what you checked, what is next. Keep it to three minutes.</p>
+            <p style="line-height:1.75;margin:0;"><strong>Do this today:</strong> Draft: "Used [tool] to [task]; cut time from [X] to [Y] minutes over [N] runs, with [check] before sharing."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Workflow Context Section -->
     <section id="agi-context" class="section" style="background: linear-gradient(145deg, rgba(16,185,129,0.06) 0%, rgba(37,99,235,0.04) 100%);">
       <div class="container">
@@ -884,6 +939,7 @@
             <a href="201.html">AI 201 - Advanced</a>
             <a href="prompts.html">Prompt Library</a>
             <a href="career.html">Career</a>
+        <a href="use-cases.html">Use cases</a>
             <a href="blog.html">Blog & Tips</a>
           </div>
         </div>
