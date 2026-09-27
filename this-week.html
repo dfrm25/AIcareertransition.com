@@ -56,7 +56,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260921">
+  <link rel="stylesheet" href="css/styles.css?v=20260927ui">
 
   <title>This Week in AI, Sep 27, 2026: Work IQ reads business data</title>
 </head>
@@ -107,7 +107,7 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero -->
-    <section class="hero" style="min-height: auto; padding-bottom: var(--space-xl);">
+    <section class="hero ax-hero" style="min-height: auto; padding-bottom: var(--space-xl);">
       <div class="container">
         <div class="hero-content animate-on-scroll">
           <div class="hero-badge">
@@ -118,7 +118,7 @@
             <span class="hero-badge-line">Next update <time datetime="2026-10-05">Monday, October 5, 2026</time></span>
           </div>
 
-          <h1 class="hero-title">
+          <h1 class="hero-title ax-h1">
             This Week in <span class="text-gradient">AI</span>
           </h1>
           <p class="hero-description" style="margin-bottom: var(--space-sm); max-width: 720px; font-weight: 600;">Copilot gets business context</p>
@@ -163,49 +163,73 @@
     <!-- This week's updates (auto-updated section) -->
     <section class="section" id="updates" style="padding-top: 0; padding-bottom: var(--space-xl);">
       <div class="container" style="max-width: 900px;">
-        <div class="section-header animate-on-scroll" style="margin-bottom: var(--space-lg);">
+        <div class="ax-weeklyblock">
+        <ol class="ax-strip" aria-label="Weekly briefs">
+          <li class="ax-strip__wk ax-strip__wk--past"><a href="blog/weekly-ai-brief-2026-09-07.html"><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 7</span></a></li>
+          <li class="ax-strip__wk ax-strip__wk--past"><a href="blog/weekly-ai-brief-2026-09-14.html"><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 14</span></a></li>
+          <li class="ax-strip__wk"><div><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 21</span></div></li>
+          <li class="ax-strip__wk ax-strip__wk--current"><div><span class="ax-strip__k">Reviewed</span><span class="ax-strip__d">Sep 27</span></div></li>
+          <li class="ax-strip__wk ax-strip__wk--next"><div><span class="ax-strip__k">Next</span><span class="ax-strip__d">Oct 5</span></div></li>
+        </ol>
+        </div>
+        <div class="section-header ax-align-start animate-on-scroll" style="margin-bottom: var(--space-lg);">
+          <span class="ax-kicker">Since Sep 21</span>
           <h2>What changed (since September 21)</h2>
           <p>Copilot is getting business context and more model choice. Work IQ adds Dynamics 365 and Power Platform data. The Copilot app gets Home, Code, and Autopilot. Claude Opus 5.5 and GPT-6 Sol ship and start rolling into Copilot. Pick one. You stay the check.</p>
         </div>
 
         <div class="animate-on-scroll">
                 <!-- WEEKLY:UPDATES:START -->
-        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <p style="font-size:0.8125rem;font-weight:600;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:var(--space-sm);">Microsoft · Sep 25, 2026 (preview starts Sep 30)</p>
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">Work IQ now reads your business data</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Work IQ grounds Copilot and agents in Dynamics 365 and Power Platform data alongside your Microsoft 365 context, in public preview starting September 30, 2026, with rollout continuing through October. <a href="https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/" target="_blank" rel="noopener noreferrer">Source</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Try this:</strong> Write down one question you answer every week by stitching two systems together, such as CRM plus email, and save it as your test prompt for when the preview reaches your org. <a href="blog/copilot-work-iq-on-off.html">Go</a></p>
+        <div class="ax-weeklyblock"><div class="ax-weekly">
+        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="microsoft">Microsoft</span></div>
+          <p class="ax-wcard__when">Microsoft · <time datetime="2026-09-25">Sep 25, 2026</time> (preview starts Sep 30)</p>
+          <h3 class="ax-wcard__title">Work IQ now reads your business data</h3>
+          <p class="ax-wcard__why">Work IQ grounds Copilot and agents in Dynamics 365 and Power Platform data alongside your Microsoft 365 context, in public preview starting September 30, 2026, with rollout continuing through October. <a href="https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>Write down one question you answer every week by stitching two systems together, such as CRM plus email, and save it as your test prompt for when the preview reaches your org. <a href="blog/copilot-work-iq-on-off.html">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/" target="_blank" rel="noopener noreferrer">Source <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="blog/copilot-work-iq-on-off.html">Go <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
         </article>
-        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <p style="font-size:0.8125rem;font-weight:600;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:var(--space-sm);">Microsoft · Sep 25, 2026</p>
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">New Copilot app: Home, Code, Autopilot</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Microsoft introduced a new Copilot app where Home joins Chat and Cowork, Code builds small apps and trackers from plain language, and Autopilot is a persistent agent. Home and Code roll out to the Frontier program in the coming weeks; Autopilot expands to private preview at the end of September. <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">Source</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Try this:</strong> List one tracker or checklist you still update by hand each week; that is your first build candidate when Code reaches your tenant. <a href="career.html">Go</a></p>
+        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="microsoft">Microsoft</span></div>
+          <p class="ax-wcard__when">Microsoft · <time datetime="2026-09-25">Sep 25, 2026</time></p>
+          <h3 class="ax-wcard__title">New Copilot app: Home, Code, Autopilot</h3>
+          <p class="ax-wcard__why">Microsoft introduced a new Copilot app where Home joins Chat and Cowork, Code builds small apps and trackers from plain language, and Autopilot is a persistent agent. Home and Code roll out to the Frontier program in the coming weeks; Autopilot expands to private preview at the end of September. <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>List one tracker or checklist you still update by hand each week; that is your first build candidate when Code reaches your tenant. <a href="career.html">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">Source <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="career.html">Go <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
         </article>
-        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <p style="font-size:0.8125rem;font-weight:600;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:var(--space-sm);">Anthropic · Sep 22, 2026</p>
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">Claude Opus 5.5: clearer writing, lower cost</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Anthropic released Claude Opus 5.5, which it says performs at Claude Fable 5.1 level on most work, writes more clearly, and costs 40% less to run than Opus 5. Microsoft began rolling it out in Copilot the same day. <a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener noreferrer">Source</a> · <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035" target="_blank" rel="noopener noreferrer">Copilot rollout</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Try this:</strong> Run one draft you own through your usual model and through Opus 5.5 (in Claude, or the Copilot model menu if it appears), then keep the version that needed fewer fixes. <a href="blog/copilot-better-model-than-auto.html">Go</a></p>
+        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="anthropic">Anthropic</span></div>
+          <p class="ax-wcard__when">Anthropic · <time datetime="2026-09-22">Sep 22, 2026</time></p>
+          <h3 class="ax-wcard__title">Claude Opus 5.5: clearer writing, lower cost</h3>
+          <p class="ax-wcard__why">Anthropic released Claude Opus 5.5, which it says performs at Claude Fable 5.1 level on most work, writes more clearly, and costs 40% less to run than Opus 5. Microsoft began rolling it out in Copilot the same day. <a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener noreferrer">Source</a> · <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035" target="_blank" rel="noopener noreferrer">Copilot rollout</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>Run one draft you own through your usual model and through Opus 5.5 (in Claude, or the Copilot model menu if it appears), then keep the version that needed fewer fixes. <a href="blog/copilot-better-model-than-auto.html">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener noreferrer">Source <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035" target="_blank" rel="noopener noreferrer">Copilot rollout <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="blog/copilot-better-model-than-auto.html">Go <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
         </article>
-        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <p style="font-size:0.8125rem;font-weight:600;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:var(--space-sm);">OpenAI · Sep 22, 2026</p>
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">GPT-6 Sol and Luna reach ChatGPT Work</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">OpenAI released GPT-6 Sol for complex work and GPT-6 Luna for high-volume tasks in ChatGPT Work and Codex for Plus, Pro, Business, Enterprise, and Edu users, with API prices 50% lower than GPT-5.6. GPT-6 Sol is also rolling out in Microsoft Copilot. <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener noreferrer">Source</a> · <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035" target="_blank" rel="noopener noreferrer">Copilot rollout</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Try this:</strong> Give the same file to the lighter model for a summary and the stronger model for an analysis, and note which task actually needed the stronger one. <a href="blog/how-to-change-ai-model.html">Go</a></p>
+        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="openai">OpenAI</span></div>
+          <p class="ax-wcard__when">OpenAI · <time datetime="2026-09-22">Sep 22, 2026</time></p>
+          <h3 class="ax-wcard__title">GPT-6 Sol and Luna reach ChatGPT Work</h3>
+          <p class="ax-wcard__why">OpenAI released GPT-6 Sol for complex work and GPT-6 Luna for high-volume tasks in ChatGPT Work and Codex for Plus, Pro, Business, Enterprise, and Edu users, with API prices 50% lower than GPT-5.6. GPT-6 Sol is also rolling out in Microsoft Copilot. <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener noreferrer">Source</a> · <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035" target="_blank" rel="noopener noreferrer">Copilot rollout</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>Give the same file to the lighter model for a summary and the stronger model for an analysis, and note which task actually needed the stronger one. <a href="blog/how-to-change-ai-model.html">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener noreferrer">Source <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/more-models-one-copilot/4559035" target="_blank" rel="noopener noreferrer">Copilot rollout <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="blog/how-to-change-ai-model.html">Go <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
         </article>
-        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <p style="font-size:0.8125rem;font-weight:600;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:var(--space-sm);">Google · Sep 22, 2026</p>
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">Gemini study notebooks come to work accounts</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Gemini study notebooks, which turn sources you upload into short lessons, quizzes, and a progress dashboard, are now available on work and school Google accounts when an admin has the Gemini app and Gemini Notebook turned on. <a href="https://workspaceupdates.googleblog.com/2026/09/study-notebooks-in-gemini-are-now-available-for-Google-Workspace-accounts.html" target="_blank" rel="noopener noreferrer">Source</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Try this:</strong> On an approved work account, upload one guide you need to learn and ask for a five-question quiz, then check every answer against the source. <a href="101.html">Go</a></p>
+        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="google">Google</span></div>
+          <p class="ax-wcard__when">Google · <time datetime="2026-09-22">Sep 22, 2026</time></p>
+          <h3 class="ax-wcard__title">Gemini study notebooks come to work accounts</h3>
+          <p class="ax-wcard__why">Gemini study notebooks, which turn sources you upload into short lessons, quizzes, and a progress dashboard, are now available on work and school Google accounts when an admin has the Gemini app and Gemini Notebook turned on. <a href="https://workspaceupdates.googleblog.com/2026/09/study-notebooks-in-gemini-are-now-available-for-Google-Workspace-accounts.html" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>On an approved work account, upload one guide you need to learn and ask for a five-question quiz, then check every answer against the source. <a href="101.html">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="https://workspaceupdates.googleblog.com/2026/09/study-notebooks-in-gemini-are-now-available-for-Google-Workspace-accounts.html" target="_blank" rel="noopener noreferrer">Source <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="ax-link" href="101.html">Go <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
         </article>
-        <article class="card" style="padding: var(--space-xl); margin-bottom: var(--space-lg);">
-          <p style="font-size:0.8125rem;font-weight:600;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:var(--space-sm);">Meta · Sep 23, 2026</p>
-          <h3 style="margin-bottom:var(--space-sm);font-size:1.15rem;line-height:1.4;">Muse for Mac can now run your apps</h3>
-          <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">With your permission, Meta's Muse agent can now operate any app on a Mac and keep working while you step away. Muse on Meta's AI glasses is coming in the next few months. <a href="https://www.meta.com/blog/meta-connect-2026-everything-we-announced/" target="_blank" rel="noopener noreferrer">Source</a></p>
-          <p style="line-height:1.75;font-size:0.95rem;"><strong>Try this:</strong> Before letting any agent click through work apps, check your company's AI policy, and test it on a low-stakes personal task first.</p>
+        <article class="ax-wcard">
+          <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="other">Meta</span></div>
+          <p class="ax-wcard__when">Meta · <time datetime="2026-09-23">Sep 23, 2026</time></p>
+          <h3 class="ax-wcard__title">Muse for Mac can now run your apps</h3>
+          <p class="ax-wcard__why">With your permission, Meta's Muse agent can now operate any app on a Mac and keep working while you step away. Muse on Meta's AI glasses is coming in the next few months. <a href="https://www.meta.com/blog/meta-connect-2026-everything-we-announced/" target="_blank" rel="noopener noreferrer">Source</a></p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>Before letting any agent click through work apps, check your company's AI policy, and test it on a low-stakes personal task first.</p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="https://www.meta.com/blog/meta-connect-2026-everything-we-announced/" target="_blank" rel="noopener noreferrer">Source <svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
         </article>
+        </div></div>
         <!-- WEEKLY:UPDATES:END -->
         </div>
       </div>
@@ -215,13 +239,13 @@
       <div class="container" style="max-width: 900px;">
         <div class="grid grid-2">
           <div class="card" style="padding: var(--space-xl);">
-            <p style="font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-accent-primary);margin-bottom:var(--space-sm);">Tip</p>
+            <p style="font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-accent-primary);margin-bottom:var(--space-sm);">Tip</p>
             <h3 style="font-size:1.15rem;margin-bottom:var(--space-sm);">Auto picks the model. Work IQ picks the context.</h3>
             <p style="line-height:1.75;color:var(--color-text-secondary);">Microsoft says Auto weighs accuracy, speed, and cost on each request to choose a model. Work IQ is a separate on/off switch for whether Copilot reads your work data. Set both on purpose before a hard task.</p>
             <p style="margin-top:var(--space-md);"><a href="blog/copilot-work-iq-on-off.html" style="color:var(--color-accent-primary);font-weight:600;">Work IQ on or off</a></p>
           </div>
           <div class="card" style="padding: var(--space-xl);">
-            <p style="font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-accent-primary);margin-bottom:var(--space-sm);">Proof move</p>
+            <p style="font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-accent-primary);margin-bottom:var(--space-sm);">Proof move</p>
             <h3 style="font-size:1.15rem;margin-bottom:var(--space-sm);">One cross-system question</h3>
             <p style="line-height:1.75;color:var(--color-text-secondary);">Pick one question that needs two sources you already use. Answer it by hand once and time it. That becomes your baseline when Work IQ business data reaches you.</p>
             <p style="margin-top:var(--space-md);"><a href="artifacts.html" style="color:var(--color-accent-primary);font-weight:600;">Artifact templates</a></p>
@@ -239,7 +263,7 @@
         </div>
         <div class="card animate-on-scroll" style="padding: var(--space-lg); overflow-x:auto;">
                 <!-- WEEKLY:TRACKER:START -->
-          <table style="width:100%; border-collapse:collapse; font-size:0.9375rem; min-width:640px;">
+          <table style="width:100%; border-collapse:collapse; font-size:15px; min-width:640px;">
             <thead>
               <tr style="text-align:left; border-bottom:2px solid var(--color-border);">
                 <th style="padding:10px 12px;">Vendor</th>
@@ -272,7 +296,7 @@
           </table>
         <!-- WEEKLY:TRACKER:END -->
         </div>
-        <p style="font-size:0.8125rem;color:var(--color-text-muted);margin-top:var(--space-sm);"><a href="tools-comparison.html">Compare tools</a></p>
+        <p style="font-size:15px;color:var(--color-text-muted);margin-top:var(--space-sm);"><a href="tools-comparison.html">Compare tools</a></p>
       </div>
     </section>
 
@@ -286,11 +310,11 @@
                 <!-- WEEKLY:LATEST:START -->
           <article class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
             <h3 style="margin:6px 0;font-size:1.1rem;"><a href="blog/copilot-work-iq-on-off.html" style="color:var(--color-text-primary);text-decoration:none;">Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)</a></h3>
-            <a href="blog/copilot-work-iq-on-off.html" style="color:var(--color-accent-primary);font-weight:600;font-size:0.9rem;">Read</a>
+            <a href="blog/copilot-work-iq-on-off.html" style="color:var(--color-accent-primary);font-weight:600;font-size:15px;">Read</a>
           </article>
           <article class="card" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
             <h3 style="margin:6px 0;font-size:1.1rem;"><a href="blog/weekly-ai-brief-2026-09-14.html" style="color:var(--color-text-primary);text-decoration:none;">How Fyxer built an AI executive assistant people trust</a></h3>
-            <a href="blog/weekly-ai-brief-2026-09-14.html" style="color:var(--color-accent-primary);font-weight:600;font-size:0.9rem;">Read</a>
+            <a href="blog/weekly-ai-brief-2026-09-14.html" style="color:var(--color-accent-primary);font-weight:600;font-size:15px;">Read</a>
           </article>
         <!-- WEEKLY:LATEST:END -->
         </div>
@@ -301,9 +325,9 @@
     <section class="section" style="padding-top: 0; padding-bottom: var(--space-xl);">
       <div class="container" style="max-width: 820px;">
         <div class="card animate-on-scroll" style="padding: var(--space-xl);">
-          <p style="font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-accent-primary);margin-bottom:var(--space-sm);">Prompt of the week</p>
+          <p style="font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-accent-primary);margin-bottom:var(--space-sm);">Prompt of the week</p>
                     <!-- WEEKLY:PROMPT:START -->
-          <p style="line-height:1.8;color:var(--color-text-secondary);font-family:var(--font-mono, monospace);font-size:0.95rem;">"Using my work context, answer: [QUESTION THAT SPANS TWO SOURCES]. List each source you used with a link. Flag anything older than 30 days. Do not guess numbers. End with what I must verify before I share this."</p>
+          <p style="line-height:1.8;color:var(--color-text-secondary);font-family:var(--font-mono, monospace);font-size:15px;">"Using my work context, answer: [QUESTION THAT SPANS TWO SOURCES]. List each source you used with a link. Flag anything older than 30 days. Do not guess numbers. End with what I must verify before I share this."</p>
         <!-- WEEKLY:PROMPT:END -->
           <p style="margin-top:var(--space-md);"><a href="prompts.html" style="color:var(--color-accent-primary);font-weight:600;">Browse the full Prompt Library →</a></p>
         </div>
@@ -327,7 +351,7 @@
             <input type="email" id="subscribe-email" class="form-input" placeholder="Enter your email" style="flex: 1; min-width: 250px;" required>
             <button type="submit" id="subscribe-btn" class="btn btn-primary">Subscribe</button>
           </form>
-          <p id="subscribe-msg" style="margin-top: var(--space-md); font-size: 0.9375rem; display: none;"></p>
+          <p id="subscribe-msg" style="margin-top: var(--space-md); font-size:15px; display: none;"></p>
         </div>
       </div>
     </section>

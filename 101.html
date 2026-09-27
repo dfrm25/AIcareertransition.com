@@ -33,7 +33,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260816">
+  <link rel="stylesheet" href="css/styles.css?v=20260927ui">
   
   <title>AI 101 for People Who Already Have a Job</title>
   
@@ -134,7 +134,7 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
+    <section class="hero ax-hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
       <div class="container">
         <div class="hero-content animate-on-scroll">
           <div class="hero-badge">
@@ -142,12 +142,12 @@
             Foundational Learning
           </div>
           
-          <h1 class="hero-title">
+          <h1 class="hero-title ax-h1">
             AI 101<br>
             <span class="text-gradient">Fundamentals</span>
           </h1>
           
-          <p class="hero-description">
+          <p class="hero-description ax-lede">
             Start your AI journey with essential tools, basic prompt engineering, and foundational concepts. Includes reasoning / Thinking models and how supervised AI workflows change daily work.
           </p>
         </div>
@@ -194,7 +194,7 @@
           <article class="card" style="padding: var(--space-xl);">
             <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">101.3 Know where the answer comes from</h3>
             <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">An answer can come from three places: your work data, the public web, or what you attach. In Microsoft 365 Copilot, the Work IQ button controls whether it can read your work data. With it off, Copilot uses the web and what you attach.</p>
-            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><img src="images/blog/copilot-work-iq-menu.png" alt="Copilot model menu with the Work IQ switch. UI may vary by app and license." loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);" width="800" height="1240"></figure>
+            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><div class="ax-window" style="--ax-shot-w:280px"><div class="ax-window__bar"><span class="ax-window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ax-window__title">Copilot · real screenshot</span></div><div class="ax-window__body"><div class="ax-shot__stage"><img src="images/blog/copilot-work-iq-menu.png" alt="Copilot model menu with the Work IQ switch. UI may vary by app and license." loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);" width="800" height="1240"></div></div></div></figure>
             <p style="line-height:1.75;margin-top:var(--space-md);"><strong>Do this today:</strong> Before your next question, decide: my work, the web, or this file? Set Work IQ to match.</p>
             <p style="margin-top:var(--space-md);"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-information-does-copilot-use-to-answer-my-prompt" target="_blank" rel="noopener noreferrer">Source</a></p>
           </article>
@@ -267,7 +267,7 @@
             <div class="tool-card-category">Microsoft • Productivity AI</div>
           </a>
         </div>
-        <p style="max-width: 700px; margin: -1.5rem 0 2rem 0; font-size: 0.9375rem; color: var(--color-text-muted);">These tools now support agent-style workflows: multi-step tasks, web search, and file analysis. ChatGPT, Gemini, and Claude can research, summarize, and iterate for you.</p>
+        <p style="max-width: 700px; margin: -1.5rem 0 2rem 0; font-size:15px; color: var(--color-text-muted);">These tools now support agent-style workflows: multi-step tasks, web search, and file analysis. ChatGPT, Gemini, and Claude can research, summarize, and iterate for you.</p>
         
         <!-- Search & Research -->
         <h3 class="mb-xl" style="font-size: 1.25rem; color: var(--color-text-secondary);">AI Search & Research</h3>
@@ -367,9 +367,9 @@
         <div class="grid grid-2 animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl);">
           <div class="card" style=" padding: var(--space-xl);">
             <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color: var(--color-accent-primary);">Chat Models</h3>
-            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT (standard), Claude Sonnet, Gemini</p>
+            <p style="font-size:15px; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT (standard), Claude Sonnet, Gemini</p>
             <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Optimized for fast, conversational back-and-forth. Great for drafting, brainstorming, quick summaries, and iterating on copy.</p>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.9375rem; color: var(--color-text-secondary);">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size:15px; color: var(--color-text-secondary);">
               <li>✓ Fast responses</li>
               <li>✓ Great for iteration</li>
               <li>✓ Best for creative & writing tasks</li>
@@ -378,9 +378,9 @@
           </div>
           <div class="card" style=" padding: var(--space-xl);">
             <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm); color:var(--color-accent-primary);">Reasoning / Thinking Models</h3>
-            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT Thinking mode, Claude extended thinking</p>
+            <p style="font-size:15px; color: var(--color-text-muted); margin-bottom: var(--space-md);">ChatGPT Thinking mode, Claude extended thinking</p>
             <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Think step-by-step before answering. Take longer but handle complex analysis, logic, and math much more accurately.</p>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.9375rem; color: var(--color-text-secondary);">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); font-size:15px; color: var(--color-text-secondary);">
               <li>✓ Better for complex analysis</li>
               <li>✓ Fewer logic errors</li>
               <li>✓ Best for code review, math, decisions</li>
@@ -392,7 +392,7 @@
         <div class="card animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl); padding: var(--space-xl);">
           <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-md);">Quick Reference: Which to Use?</h3>
           <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.9375rem;">
+            <table style="width: 100%; border-collapse: collapse; font-size:15px;">
               <thead>
                 <tr style="border-bottom: 2px solid var(--border-color);">
                   <th style="text-align: left; padding: var(--space-sm) var(--space-md); color: var(--color-text-secondary);">Task</th>
@@ -434,9 +434,9 @@
               </tbody>
             </table>
           </div>
-          <p style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--color-text-muted);"><a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">Read the full reasoning model guide →</a></p>
+          <p style="margin-top: var(--space-md); font-size:15px; color: var(--color-text-muted);"><a href="blog/reasoning-models-o1-vs-chatgpt.html" style="color: var(--color-accent-primary);">Read the full reasoning model guide →</a></p>
           <div style="margin-top: var(--space-md); background: rgba(59,130,246,0.06); padding: var(--space-sm) var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
-            <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0;">Use fast chat for drafts. Switch to Think / extended thinking for analysis you would send. Use an agent when the job needs files, tools, or multiple steps.</p>
+            <p style="font-size:15px; color: var(--color-text-muted); margin: 0;">Use fast chat for drafts. Switch to Think / extended thinking for analysis you would send. Use an agent when the job needs files, tools, or multiple steps.</p>
           </div>
         </div>
 

@@ -33,7 +33,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260816">
+  <link rel="stylesheet" href="css/styles.css?v=20260927ui">
   
   <title>AI 201: Agents and Automation After the Basics</title>
   
@@ -108,7 +108,7 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
+    <section class="hero ax-hero" style="min-height: auto; padding-top: 120px; padding-bottom: var(--space-3xl);">
       <div class="container">
         <div class="hero-content animate-on-scroll">
           <div class="hero-badge" style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); color:var(--color-accent-primary);">
@@ -116,12 +116,12 @@
             Advanced Learning
           </div>
           
-          <h1 class="hero-title">
+          <h1 class="hero-title ax-h1">
             AI 201<br>
             <span class="text-gradient-forest">Advanced Skills</span>
           </h1>
           
-          <p class="hero-description">
+          <p class="hero-description ax-lede">
             Go beyond the basics. Design supervised AI workflows, connect tools safely, build small internal apps, and review AI output like an operator. The goal is not hype - it is credible proof that you can direct and audit AI work.
           </p>
         </div>
@@ -158,8 +158,8 @@
           <article class="card" style="padding: var(--space-xl);">
             <h3 style="font-size: 1.15rem; margin-bottom: var(--space-sm); line-height: 1.4;">201.1 Work IQ vs Auto: two different switches</h3>
             <p style="line-height:1.75;color:var(--color-text-secondary);margin-bottom:var(--space-md);">Work IQ decides whose world Copilot reads: on uses your mail, files, chats, and meetings; off uses the web and what you attach. The model menu decides how hard it thinks: Auto picks a model for each request, or you choose a deeper option for hard work.</p>
-            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><img src="images/blog/copilot-work-iq-menu.png" alt="Copilot model menu with the Work IQ switch. UI may vary by app and license." loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);" width="800" height="1240"></figure>
-            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><img src="images/blog/copilot-model-picker.png" alt="Microsoft Copilot model dropdown showing Auto, Quick response, Think deeper, and more model options" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);" width="460" height="474"></figure>
+            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><div class="ax-window" style="--ax-shot-w:280px"><div class="ax-window__bar"><span class="ax-window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ax-window__title">Copilot · real screenshot</span></div><div class="ax-window__body"><div class="ax-shot__stage"><img src="images/blog/copilot-work-iq-menu.png" alt="Copilot model menu with the Work IQ switch. UI may vary by app and license." loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);" width="800" height="1240"></div></div></div></figure>
+            <figure style="margin: var(--space-md) 0 0; max-width: 100%;"><div class="ax-window" style="--ax-shot-w:220px"><div class="ax-window__bar"><span class="ax-window__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ax-window__title">Copilot · real screenshot</span></div><div class="ax-window__body"><div class="ax-shot__stage"><img src="images/blog/copilot-model-picker.png" alt="Microsoft Copilot model dropdown showing Auto, Quick response, Think deeper, and more model options" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--color-border, #e5e7eb); box-shadow: 0 4px 24px rgba(0,0,0,0.06);" width="460" height="474"></div></div></div></figure>
             <p style="line-height:1.75;margin-top:var(--space-md);"><strong>Do this today:</strong> On one hard task, set Work IQ on purpose, then run it once on Auto and once on a deeper option. Keep the better one and note why.</p>
             <p style="margin-top:var(--space-md);">Sources: <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-information-does-copilot-use-to-answer-my-prompt" target="_blank" rel="noopener noreferrer">support.microsoft.com (What information does Copilot use)</a>, <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">blogs.microsoft.com Sep 25, 2026 (Auto routing)</a></p>
           </article>
@@ -207,7 +207,7 @@
         <div class="grid grid-2 animate-on-scroll" style="max-width: 960px; margin: 0 auto var(--space-xl);">
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-md);">What's changed in 2025–2026</h3>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.7;">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); color: var(--color-text-secondary); font-size:15px; line-height: 1.7;">
               <li>→ Reasoning and effort-control modes help with complex tasks, but still require source checks and human review</li>
               <li>→ Agents can browse the web, write and execute code, and complete tasks autonomously</li>
               <li>→ MCP (Model Context Protocol) lets AI tools connect to your existing software</li>
@@ -217,7 +217,7 @@
           </div>
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-md);">What AI 201 equips you for</h3>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.7;">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); color: var(--color-text-secondary); font-size:15px; line-height: 1.7;">
               <li>→ Orchestrate AI agents to do research, write reports, and take actions on your behalf</li>
               <li>→ Build apps and automations without a traditional engineering team</li>
               <li>→ Connect AI to your data and workflows via APIs and MCP</li>
@@ -228,7 +228,7 @@
         </div>
 
         <div class="card animate-on-scroll" style="max-width: 760px; margin: 0 auto; background: rgba(37,99,235,0.06); padding: var(--space-lg);">
-          <p style="font-size: 0.9375rem; color: var(--color-text-secondary); margin: 0;"><strong>The honest framing:</strong> AI 201 isn't just about being more productive. It's about understanding where AI can help, where it fails, and how to design reviewable systems that make work safer and faster.</p>
+          <p style="font-size:15px; color: var(--color-text-secondary); margin: 0;"><strong>The honest framing:</strong> AI 201 isn't just about being more productive. It's about understanding where AI can help, where it fails, and how to design reviewable systems that make work safer and faster.</p>
         </div>
       </div>
     </section>
@@ -277,7 +277,7 @@
         
         <!-- AI Agents (ChatGPT, Gemini, Claude) -->
         <h3 class="mb-lg" style="font-size: 1.125rem; color: var(--color-text-secondary); font-weight: 600;">AI Agents — Research & Multi-Step Workflows</h3>
-        <p style="max-width: 700px; margin-bottom: var(--space-lg); font-size: 0.9375rem; color: var(--color-text-secondary);">Agents can search the web, run tools, and complete multi-step tasks. Use them for research, reports, and automation without coding.</p>
+        <p style="max-width: 700px; margin-bottom: var(--space-lg); font-size:15px; color: var(--color-text-secondary);">Agents can search the web, run tools, and complete multi-step tasks. Use them for research, reports, and automation without coding.</p>
         <div class="grid grid-4 mb-xl animate-on-scroll">
           <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" class="tool-card-logo" style="background: #fff; padding: 12px;" width="2406" height="2406">
@@ -334,7 +334,7 @@
         </div>
         <div class="card animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl); background: rgba(124,58,237,0.06); padding: var(--space-lg);">
           <h4 style="margin-bottom: var(--space-sm); color:var(--color-accent-primary);">What is MCP (Model Context Protocol)?</h4>
-          <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.7; margin: 0;">MCP is an open standard that lets AI assistants connect to external tools, databases, and services — think of it as a USB-C port for AI. Instead of copying data into ChatGPT manually, MCP lets Claude or Cursor directly query your Notion, GitHub, Postgres database, or any connected app. In 2026, this is becoming the backbone of serious AI workflows. <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-primary);">Learn more about MCP →</a></p>
+          <p style="font-size:15px; color: var(--color-text-secondary); line-height: 1.7; margin: 0;">MCP is an open standard that lets AI assistants connect to external tools, databases, and services — think of it as a USB-C port for AI. Instead of copying data into ChatGPT manually, MCP lets Claude or Cursor directly query your Notion, GitHub, Postgres database, or any connected app. In 2026, this is becoming the backbone of serious AI workflows. <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-primary);">Learn more about MCP →</a></p>
         </div>
         
         <!-- AI Development -->
@@ -792,7 +792,7 @@
         <div class="grid grid-2 animate-on-scroll" style="gap: var(--space-lg); max-width: 1100px; margin: 0 auto;">
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Email Campaign Creator</h3>
-            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size:15px; line-height: 1.6; margin-bottom: var(--space-md);">
               "Create a 5-email onboarding sequence for [product/service] targeting [audience]. Each email should:<br>
               • Focus on a specific stage of the customer journey<br>
               • Include a clear CTA<br>
@@ -800,12 +800,12 @@
               • Use [tone/style]<br>
               Generate subject lines and preview text for each."
             </div>
-            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude, Jasper</p>
+            <p style="font-size:15px; color: var(--color-text-secondary);">Use with: ChatGPT, Claude, Jasper</p>
           </div>
           
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Data Analysis Report</h3>
-            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size:15px; line-height: 1.6; margin-bottom: var(--space-md);">
               "Analyze this [dataset/metrics]. Provide:<br>
               • Key insights and patterns<br>
               • Anomalies or outliers worth investigating<br>
@@ -813,12 +813,12 @@
               • Executive summary (2 paragraphs)<br>
               • Detailed analysis with supporting data points"
             </div>
-            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: Claude (can upload files), ChatGPT, NotebookLM</p>
+            <p style="font-size:15px; color: var(--color-text-secondary);">Use with: Claude (can upload files), ChatGPT, NotebookLM</p>
           </div>
           
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Customer Journey Mapping</h3>
-            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size:15px; line-height: 1.6; margin-bottom: var(--space-md);">
               "Design a comprehensive customer journey for [industry/company] from awareness to post-purchase. Include:<br>
               • Touchpoints at each stage<br>
               • Pain points and opportunities<br>
@@ -826,12 +826,12 @@
               • Specific tools and tactics<br>
               • Measurement KPIs"
             </div>
-            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude</p>
+            <p style="font-size:15px; color: var(--color-text-secondary);">Use with: ChatGPT, Claude</p>
           </div>
           
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">Content Strategy Generator</h3>
-            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size:15px; line-height: 1.6; margin-bottom: var(--space-md);">
               "Create a 30-day content calendar for [topic/industry] including:<br>
               • Blog post titles (SEO-optimized)<br>
               • Social media post ideas<br>
@@ -839,12 +839,12 @@
               • Video content concepts<br>
               • Content themes and messaging"
             </div>
-            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude, Jasper</p>
+            <p style="font-size:15px; color: var(--color-text-secondary);">Use with: ChatGPT, Claude, Jasper</p>
           </div>
           
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">User Research Synthesis</h3>
-            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size:15px; line-height: 1.6; margin-bottom: var(--space-md);">
               "Analyze these [interview transcripts/survey responses]. Extract:<br>
               • Common themes and patterns<br>
               • Pain points prioritized by frequency<br>
@@ -852,12 +852,12 @@
               • Feature requests and priorities<br>
               • Quotes that support insights"
             </div>
-            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: Claude (best for analysis), ChatGPT</p>
+            <p style="font-size:15px; color: var(--color-text-secondary);">Use with: Claude (best for analysis), ChatGPT</p>
           </div>
           
           <div class="card" style="padding: var(--space-xl);">
             <h3 style="margin-bottom: var(--space-sm); color: var(--color-accent-primary); font-size: 1rem;">PRD Generator</h3>
-            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            <div style="background: var(--color-bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size:15px; line-height: 1.6; margin-bottom: var(--space-md);">
               "Create a Product Requirements Document for [feature/product] including:<br>
               • Problem statement and user needs<br>
               • Success metrics and KPIs<br>
@@ -866,7 +866,7 @@
               • Technical considerations<br>
               • Go-to-market plan"
             </div>
-            <p style="font-size: 0.875rem; color: var(--color-text-secondary);">Use with: ChatGPT, Claude</p>
+            <p style="font-size:15px; color: var(--color-text-secondary);">Use with: ChatGPT, Claude</p>
           </div>
         </div>
         
