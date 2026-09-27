@@ -40,7 +40,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260927ui"
+CSS_VER = "20260927mf"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -392,23 +392,82 @@ def _card_date(value) -> str:
     return f'<p class="ax-wcard__when"><time datetime="{esc(iso)}">{label}</time></p>'
 
 
+_ICON_EXT = (
+    '<svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>'
+)
+_ICON_GO = (
+    '<svg class="ax-ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>'
+)
+_MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+RETIRED_BRIEFS = {"weekly-ai-brief-2026-09-21.html"}
+
+
+def short_date(day: datetime.date) -> str:
+    return f"{_MONTHS[day.month - 1]} {day.day}"
+
+
 def render_updates(updates: list[dict]) -> str:
     out = []
     for u in updates:
         internal = u["action_link"]
         vendor, vendor_label = _vendor(u.get("source_url", ""))
         when = _card_date(u.get("date"))
+        source = esc(u["source_url"])
         out.append(
             f'''        <article class="ax-wcard">
           <div class="ax-wcard__top"><span class="ax-chip ax-chip--vendor" data-vendor="{vendor}">{vendor_label}</span></div>
           {when}
           <h3 class="ax-wcard__title">{esc(u["title"])}</h3>
-          <p class="ax-wcard__why">{esc(u["body"])} <a href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a></p>
-          <div class="ax-try"><span class="ax-try__k">Try this</span><p>{esc(u["action"])} <a href="{esc(internal)}">Go</a></p></div>
-          <div class="ax-wcard__foot"><a class="ax-link" href="{esc(u["source_url"])}" target="_blank" rel="noopener noreferrer">Source</a><a class="ax-link" href="{esc(internal)}">Go</a></div>
+          <p class="ax-wcard__why">{esc(u["body"])}</p>
+          <div class="ax-try"><span class="ax-try__k">Try this:</span><p>{esc(u["action"])} <a href="{esc(internal)}">Go</a></p></div>
+          <div class="ax-wcard__foot"><a class="ax-link" href="{source}" target="_blank" rel="noopener noreferrer">Source {_ICON_EXT}</a><a class="ax-link" href="{esc(internal)}">Go {_ICON_GO}</a></div>
         </article>'''
         )
     return "<div class=\"ax-weeklyblock\"><div class=\"ax-weekly\">\n" + "\n".join(out) + "\n</div></div>"
+
+
+def render_strip(reviewed: datetime.date) -> str:
+    """Week strip. A past brief is linked only when its file exists and is indexable."""
+    nxt = next_monday(reviewed)
+    past = []
+    for path in sorted((ROOT / "blog").glob("weekly-ai-brief-*.html")):
+        match = re.search(r"(20\d{2}-\d{2}-\d{2})", path.name)
+        if not match:
+            continue
+        day = datetime.date.fromisoformat(match.group(1))
+        if day >= reviewed:
+            continue
+        head = path.read_text(encoding="utf-8", errors="ignore")[:6000].lower()
+        linked = path.name not in RETIRED_BRIEFS and "noindex" not in head
+        past.append((day, linked, f"blog/{path.name}"))
+    cells = []
+    for day, linked, href in past[-3:]:
+        label = (
+            f'<span class="ax-strip__k">Brief</span>'
+            f'<span class="ax-strip__d">{short_date(day)}</span>'
+        )
+        inner = f'<a href="{href}">{label}</a>' if linked else f"<div>{label}</div>"
+        cells.append(f'          <li class="ax-strip__wk ax-strip__wk--past">{inner}</li>')
+    cells.append(
+        '          <li class="ax-strip__wk ax-strip__wk--current"><div>'
+        '<span class="ax-strip__k">Reviewed</span>'
+        f'<span class="ax-strip__d"><time id="hub-updated" datetime="{reviewed.isoformat()}">'
+        f'<!-- WEEKLY:DATE -->{short_date(reviewed)}</time></span></div></li>'
+    )
+    cells.append(
+        '          <li class="ax-strip__wk ax-strip__wk--next"><div>'
+        '<span class="ax-strip__k">Next</span>'
+        f'<span class="ax-strip__d">{short_date(nxt)}</span></div></li>'
+    )
+    return (
+        '<ol class="ax-strip" aria-label="Weekly briefs">\n'
+        + "\n".join(cells)
+        + "\n        </ol>"
+    )
 
 
 def render_latest(limit: int = 3) -> str:
@@ -451,17 +510,15 @@ def update_hub(payload: dict) -> None:
     text = hub.read_text(encoding="utf-8")
     wd = payload["week_date"]
     reviewed = datetime.date.fromisoformat(wd)
-    nxt = next_monday(reviewed)
-    text = re.sub(
-        r'<time id="hub-updated" datetime="[^"]*"[^>]*><!-- WEEKLY:DATE -->[^<]*</time>',
-        f'<time id="hub-updated" datetime="{wd}"><!-- WEEKLY:DATE -->'
-        f"{human_date(reviewed)}</time>",
-        text,
-        count=1,
+    previous = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
+    since = datetime.date.fromisoformat(previous.group(1)) if previous else reviewed
+    text = replace_block(
+        text, "<!-- WEEKLY:STRIP:START -->", "<!-- WEEKLY:STRIP:END -->",
+        render_strip(reviewed),
     )
     text = re.sub(
-        r'(<span class="hero-badge-line">Next update <time datetime=")[^"]+("[^>]*>)[^<]*(</time></span>)',
-        rf'\g<1>{nxt.isoformat()}\2{nxt.strftime("%A, %B %-d, %Y")}\3',
+        r'(<span class="ax-kicker">)Since [^<]*(</span>)',
+        rf"\g<1>Since {short_date(since)}\2",
         text,
         count=1,
     )
@@ -550,10 +607,6 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
   {{"@context":"https://schema.org","@type":"BlogPosting","headline":"{title}","description":"{desc}","datePublished":"{date}","dateModified":"{date}","author":{{"@type":"Person","name":"AI Career Transition Editorial Team"}},"publisher":{{"@type":"Organization","name":"AI Career Transition","logo":{{"@type":"ImageObject","url":"https://aicareertransition.com/images/og-image.png"}}}},"image":"https://aicareertransition.com/images/og-image.png","mainEntityOfPage":{{"@type":"WebPage","@id":"https://aicareertransition.com/blog/{slug}.html"}}}}
   </script>
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="../css/styles.css?v={css_ver}">
   <title>{title} | AI Career Transition</title>
   <script>window.addEventListener("load",function(){{var e=document.createElement("script");e.src="/js/load-third-party.js";e.async=true;document.head.appendChild(e);}});</script>

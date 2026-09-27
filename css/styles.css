@@ -25,7 +25,7 @@
   /* Text Colors */
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
-  --color-text-muted: #94a3b8;
+  --color-text-muted: #64748B;
   --color-text-inverse: #ffffff;
   
   /* Gradient Combinations */
@@ -52,9 +52,9 @@
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   
   /* Typography */
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   
   /* Spacing */
   --space-xs: 0.25rem;
@@ -3844,8 +3844,51 @@ a.card {
   align-items: flex-start;
   width: 100%;
 }
-main :is(p, li, dd, figcaption, h1, h2, h3, td, th) a {
+main :is(p, li, dd, figcaption, h1, h2, td, th) a {
   display: inline;
   min-height: 0;
   min-width: 0;
+}
+.footer-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+main [id] {
+  scroll-margin-top: 88px;
+}
+h1.uc-title,
+h1.ax-h1,
+h1.ax-h1--post,
+h1.hero-title {
+  font-family: var(--ax-display);
+  font-size: clamp(36px, 8.4vw, 60px) !important;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 860px) {
+  h1.uc-title { font-size: clamp(36px, 8.4vw, 60px); }
+}
+@media (max-width: 599px) {
+  #roadmap.card,
+  #lanes.card { padding: var(--space-md) !important; }
+  #roadmap .ax-receipt__rows--fields .ax-receipt__row,
+  .ax-receipts--4 .ax-receipt__rows--fields .ax-receipt__row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  #roadmap .ax-receipt__rows--fields .ax-receipt__row dd {
+    line-height: 1.3;
+  }
+  #lanes .ax-lanes { grid-template-columns: 1fr; }
+}
+@media (min-width: 1200px) {
+  .ax-receipts--4 .ax-receipt__rows--fields .ax-receipt__row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
 }

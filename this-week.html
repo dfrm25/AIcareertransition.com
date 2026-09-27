@@ -49,14 +49,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css?v=20260927ui">
+  <link rel="stylesheet" href="css/styles.css?v=20260927mf">
 
   <title>This Week in AI, Sep 27, 2026: Work IQ reads business data</title>
 </head>
@@ -110,14 +106,6 @@
     <section class="hero ax-hero" style="min-height: auto; padding-bottom: var(--space-xl);">
       <div class="container">
         <div class="hero-content animate-on-scroll">
-          <div class="hero-badge">
-            <span class="hero-badge-line">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Reviewed <time id="hub-updated" datetime="2026-09-27"><!-- WEEKLY:DATE -->September 27, 2026</time>
-            </span>
-            <span class="hero-badge-line">Next update <time datetime="2026-10-05">Monday, October 5, 2026</time></span>
-          </div>
-
           <h1 class="hero-title ax-h1">
             This Week in <span class="text-gradient">AI</span>
           </h1>
@@ -127,6 +115,16 @@
             Work IQ adds Dynamics 365 data, a new Copilot app, and three new models. Official sources, one try-this each.
           </p>
 
+          <!-- WEEKLY:STRIP:START -->
+        <ol class="ax-strip" aria-label="Weekly briefs">
+          <li class="ax-strip__wk ax-strip__wk--past"><a href="blog/weekly-ai-brief-2026-09-07.html"><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 7</span></a></li>
+          <li class="ax-strip__wk ax-strip__wk--past"><a href="blog/weekly-ai-brief-2026-09-14.html"><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 14</span></a></li>
+          <li class="ax-strip__wk"><div><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 21</span></div></li>
+          <li class="ax-strip__wk ax-strip__wk--current"><div><span class="ax-strip__k">Reviewed</span><span class="ax-strip__d"><time id="hub-updated" datetime="2026-09-27"><!-- WEEKLY:DATE -->Sep 27</time></span></div></li>
+          <li class="ax-strip__wk ax-strip__wk--next"><div><span class="ax-strip__k">Next</span><span class="ax-strip__d">Oct 5</span></div></li>
+        </ol>
+          <!-- WEEKLY:STRIP:END -->
+
           <a href="#updates" class="btn btn-primary">This week's updates</a>
           <p class="proof-meta" style="margin-top: var(--space-md);">This site is for people who already have a job. Goal: dated proof of work you can show a manager in 30–90 days. Not a job board. Not a degree catalog.</p>
         </div>
@@ -134,49 +132,16 @@
     </section>
 
 
-    <section class="section" style="padding-top: 0; padding-bottom: var(--space-xl);">
-      <div class="container" style="max-width: 900px;">
-        <div class="card" style="padding: var(--space-xl);">
-          <h2 style="font-size: 1.2rem; margin-bottom: var(--space-md);">What this brief is, and what it is not</h2>
-          <div class="scope-grid">
-            <div class="scope-box">
-              <h3>This is</h3>
-              <ul>
-                <li>A dated reading of official OpenAI, Google, Anthropic, and Microsoft posts</li>
-                <li>One concrete work action per item, with an internal page to do it</li>
-                <li>A model table you should re-check on the vendor page</li>
-              </ul>
-            </div>
-            <div class="scope-box">
-              <h3>This is not</h3>
-              <ul>
-                <li>A rewrite of vendor press releases or a rumor roundup</li>
-                <li>A paid research product or a 6-hour news crawl</li>
-                <li>Advice for students hunting a degree. This site is for people who already have a job.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- This week's updates (auto-updated section) -->
     <section class="section" id="updates" style="padding-top: 0; padding-bottom: var(--space-xl);">
       <div class="container" style="max-width: 900px;">
-        <div class="ax-weeklyblock">
-        <ol class="ax-strip" aria-label="Weekly briefs">
-          <li class="ax-strip__wk ax-strip__wk--past"><a href="blog/weekly-ai-brief-2026-09-07.html"><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 7</span></a></li>
-          <li class="ax-strip__wk ax-strip__wk--past"><a href="blog/weekly-ai-brief-2026-09-14.html"><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 14</span></a></li>
-          <li class="ax-strip__wk"><div><span class="ax-strip__k">Brief</span><span class="ax-strip__d">Sep 21</span></div></li>
-          <li class="ax-strip__wk ax-strip__wk--current"><div><span class="ax-strip__k">Reviewed</span><span class="ax-strip__d">Sep 27</span></div></li>
-          <li class="ax-strip__wk ax-strip__wk--next"><div><span class="ax-strip__k">Next</span><span class="ax-strip__d">Oct 5</span></div></li>
-        </ol>
-        </div>
+        <!-- WEEKLY:SUMMARY:START -->
         <div class="section-header ax-align-start animate-on-scroll" style="margin-bottom: var(--space-lg);">
           <span class="ax-kicker">Since Sep 21</span>
-          <h2>What changed (since September 21)</h2>
+          <h2>What changed</h2>
           <p>Copilot is getting business context and more model choice. Work IQ adds Dynamics 365 and Power Platform data. The Copilot app gets Home, Code, and Autopilot. Claude Opus 5.5 and GPT-6 Sol ship and start rolling into Copilot. Pick one. You stay the check.</p>
         </div>
+        <!-- WEEKLY:SUMMARY:END -->
 
         <div class="animate-on-scroll">
                 <!-- WEEKLY:UPDATES:START -->
@@ -231,6 +196,32 @@
         </article>
         </div></div>
         <!-- WEEKLY:UPDATES:END -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0; padding-bottom: var(--space-xl);">
+      <div class="container" style="max-width: 900px;">
+        <div class="card" style="padding: var(--space-xl);">
+          <h2 style="font-size: 1.2rem; margin-bottom: var(--space-md);">What this brief is, and what it is not</h2>
+          <div class="scope-grid">
+            <div class="scope-box">
+              <h3>This is</h3>
+              <ul>
+                <li>A dated reading of official OpenAI, Google, Anthropic, and Microsoft posts</li>
+                <li>One concrete work action per item, with an internal page to do it</li>
+                <li>A model table you should re-check on the vendor page</li>
+              </ul>
+            </div>
+            <div class="scope-box">
+              <h3>This is not</h3>
+              <ul>
+                <li>A rewrite of vendor press releases or a rumor roundup</li>
+                <li>A paid research product or a 6-hour news crawl</li>
+                <li>Advice for students hunting a degree. This site is for people who already have a job.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

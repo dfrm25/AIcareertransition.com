@@ -115,6 +115,10 @@ def check_hub_markers() -> None:
     text = hub.read_text(encoding="utf-8", errors="ignore")
     for marker in (
         "<!-- WEEKLY:DATE -->",
+        "<!-- WEEKLY:STRIP:START -->",
+        "<!-- WEEKLY:STRIP:END -->",
+        "<!-- WEEKLY:SUMMARY:START -->",
+        "<!-- WEEKLY:SUMMARY:END -->",
         "<!-- WEEKLY:UPDATES:START -->",
         "<!-- WEEKLY:UPDATES:END -->",
         "<!-- WEEKLY:TRACKER:START -->",
@@ -124,8 +128,19 @@ def check_hub_markers() -> None:
             errors.append(f"[hub] missing marker {marker} in this-week.html")
     if re.search(r'<time id="hub-updated"[^>]*\bhidden\b', text):
         errors.append("[hub] last-reviewed date on this-week.html is hidden")
-    if not re.search(r'<time id="hub-updated" datetime="\d{4}-\d{2}-\d{2}"', text):
+    hub_date = re.search(r'<time id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
+    if not hub_date:
         errors.append("[hub] this-week.html is missing a dated hub-updated time")
+    else:
+        strip = re.search(
+            r"<!-- WEEKLY:STRIP:START -->(.*)<!-- WEEKLY:STRIP:END -->",
+            text,
+            re.DOTALL,
+        )
+        if strip and f'datetime="{hub_date.group(1)}"' not in strip.group(1):
+            errors.append("[hub] week strip reviewed date does not match hub-updated")
+        if "hero-badge" in text:
+            errors.append("[hub] this-week.html still has a hero-badge date")
 
 
 def check_meta(files: list[Path]) -> None:

@@ -1,0 +1,339 @@
+{
+  "101": {
+    "390": {
+      "h1": "AI 101 Fundamentals",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "AI 101 Fundamentals",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "AI 101 Fundamentals",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "201": {
+    "390": {
+      "h1": "AI 201 Advanced Skills",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "AI 201 Advanced Skills",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "AI 201 Advanced Skills",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "home": {
+    "390": {
+      "h1": "Show what you can do with AI",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "Show what you can do with AI",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "Show what you can do with AI",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "this-week": {
+    "390": {
+      "h1": "This Week in AI",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "This Week in AI",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "This Week in AI",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "career": {
+    "390": {
+      "h1": "Prove AI work in the role you already have",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "Prove AI work in the role you already have",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "Prove AI work in the role you already have",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "prompts": {
+    "390": {
+      "h1": "Prompts that brief agents, not chatbots",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "Prompts that brief agents, not chatbots",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "Prompts that brief agents, not chatbots",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "use-cases": {
+    "390": {
+      "h1": "AI use cases at work: example proof receipts",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "AI use cases at work: example proof receipts",
+      "h1Count": 1,
+      "h1Size": 36.12,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "AI use cases at work: example proof receipts",
+      "h1Count": 1,
+      "h1Size": 60,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "blog-auto": {
+    "390": {
+      "h1": "Microsoft Copilot: You're Probably on \"Auto\" — Stronger Models Are in the Menu",
+      "h1Count": 1,
+      "h1Size": 26.25,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "Microsoft Copilot: You're Probably on \"Auto\" — Stronger Models Are in the Menu",
+      "h1Count": 1,
+      "h1Size": 26.25,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "Microsoft Copilot: You're Probably on \"Auto\" — Stronger Models Are in the Menu",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "blog-work-iq": {
+    "390": {
+      "h1": "Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)",
+      "h1Count": 1,
+      "h1Size": 26.25,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "430": {
+      "h1": "Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)",
+      "h1Count": 1,
+      "h1Size": 26.25,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    },
+    "1280": {
+      "h1": "Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)",
+      "h1Count": 1,
+      "h1Size": 36,
+      "h1Family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "overflow": false,
+      "googleFonts": []
+    }
+  },
+  "stripTop390": {
+    "x": 15,
+    "y": -207.0625,
+    "width": 360,
+    "height": 76
+  },
+  "metrics": {
+    "career390": {
+      "rows": [
+        {
+          "h": 138,
+          "value": 296
+        },
+        {
+          "h": 159,
+          "value": 296
+        },
+        {
+          "h": 159,
+          "value": 296
+        }
+      ],
+      "lanes": [
+        328,
+        328,
+        328,
+        328
+      ],
+      "h1": 36,
+      "family": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif"
+    },
+    "usecases1280": {
+      "rows": [
+        {
+          "h": 96,
+          "value": 184,
+          "text": "Weekly performance recap for the team ch"
+        },
+        {
+          "h": 96,
+          "value": 184,
+          "text": "Microsoft 365 Copilot in Excel and Chat "
+        },
+        {
+          "h": 96,
+          "value": 184,
+          "text": "Example: 90 minutes pulling numbers and "
+        },
+        {
+          "h": 75,
+          "value": 184,
+          "text": "Example: 35 minutes including review."
+        }
+      ]
+    },
+    "thisweek390": {
+      "stripTop": 280,
+      "h1Top": 112,
+      "badge": false,
+      "footerH": 44,
+      "latestH": 62,
+      "briefAfterCards": true,
+      "h1": "This Week in AI",
+      "h1Size": 36
+    },
+    "pins390": {
+      "imgW": 280,
+      "pins": [
+        {
+          "t": "1",
+          "x": 65,
+          "y": 12
+        },
+        {
+          "t": "2",
+          "x": 24,
+          "y": 64
+        },
+        {
+          "t": "3",
+          "x": 44,
+          "y": 78.5
+        }
+      ],
+      "captions": 3
+    },
+    "footer": {
+      "stripTop": 280,
+      "h1Top": 112,
+      "badge": false,
+      "footerH": 44,
+      "latestH": 62,
+      "briefAfterCards": true,
+      "h1": "This Week in AI",
+      "h1Size": 36
+    },
+    "quiz": {
+      "headingTop": 811,
+      "navBottom": 73,
+      "clear": true
+    },
+    "muted": "rgb(100, 116, 139)"
+  }
+}
