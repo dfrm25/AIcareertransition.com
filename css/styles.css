@@ -3632,7 +3632,7 @@ p {
 .ax-strip__wk > a, .ax-strip__wk > div { height: 100%; min-height: 64px; display: flex; flex-direction: column; justify-content: center; gap: 5px; padding: 8px 10px;
   border-radius: inherit; text-decoration: none; color: var(--ax-ink-2); }
 .ax-strip__k { white-space: nowrap; overflow-wrap: normal; font: 600 11px/1 var(--ax-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ax-mute); }
-.ax-strip__d { font: 600 var(--ax-t-sm)/1.1 var(--ax-display); color: var(--ax-ink); white-space: nowrap; }
+.ax-strip__d { font: 600 var(--ax-t-sm)/1.15 var(--ax-display); color: var(--ax-ink); white-space: normal; }
 .ax-strip__wk--past > a:hover { background: var(--ax-paper); }
 .ax-strip__wk--current > div { background: linear-gradient(180deg, #0E4585, var(--ax-navy)); box-shadow: 0 1px 2px rgba(11,58,110,.3), 0 10px 22px -10px rgba(11,58,110,.6); }
 .ax-strip__wk--current .ax-strip__k { color: #BFDBFE; }
@@ -3641,7 +3641,11 @@ p {
 .ax-strip__wk--next .ax-strip__k { color: var(--ax-blue-7); }
 @media (min-width: 768px) { .ax-strip { max-width: 720px; } }
 .ax-weeklyblock { container-type: inline-size; }
-@container (max-width: 520px) { .ax-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); } .ax-strip__wk:first-child { display: none; } }
+@container (max-width: 520px) {
+  .ax-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ax-strip__wk:first-child { display: none; }
+  .ax-strip__wk > a, .ax-strip__wk > div { padding: 8px 6px; }
+}
 
 /* ---------- weekly update card ---------- */
 .ax-weekly { display: grid; gap: var(--ax-s3); counter-reset: ax-w; }
@@ -3794,7 +3798,8 @@ main:has(> .ax-cta) { padding-bottom: calc(80px + env(safe-area-inset-bottom)); 
 main figcaption { font-size: 15px; line-height: 1.45; }
 .ax-wcard__when { font: 500 15px/1.45 var(--ax-body); color: var(--ax-ink-2); margin: 10px 0 0; }
 .ax-receipt__rows--fields .ax-receipt__row { grid-template-columns: 112px minmax(0, 1fr); }
-.ax-strip__k, .ax-strip__d { overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.ax-strip__k { overflow: hidden; text-overflow: clip; max-width: 100%; }
+.ax-strip__d { overflow: visible; text-overflow: clip; max-width: 100%; }
 .section-header.ax-align-start { text-align: left; }
 #lanes { grid-column: 1 / -1; }
 .ax-link { min-width: 44px; }
@@ -3866,11 +3871,19 @@ h1.hero-title {
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
+h1.ax-h1.ax-h1--post { font-size: clamp(36px, 4.2vw, 44px) !important; }
 @media (max-width: 860px) {
   h1.uc-title { font-size: clamp(36px, 8.4vw, 60px); }
 }
 @media (max-width: 599px) {
   #roadmap.card,
+  #roadmap.card:hover {
+    padding: 0 !important;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    transform: none;
+  }
   #lanes.card { padding: var(--space-md) !important; }
   #roadmap .ax-receipt__rows--fields .ax-receipt__row,
   .ax-receipts--4 .ax-receipt__rows--fields .ax-receipt__row {

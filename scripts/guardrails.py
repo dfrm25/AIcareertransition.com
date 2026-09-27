@@ -115,6 +115,8 @@ def check_hub_markers() -> None:
     text = hub.read_text(encoding="utf-8", errors="ignore")
     for marker in (
         "<!-- WEEKLY:DATE -->",
+        "<!-- WEEKLY:LEDE:START -->",
+        "<!-- WEEKLY:LEDE:END -->",
         "<!-- WEEKLY:STRIP:START -->",
         "<!-- WEEKLY:STRIP:END -->",
         "<!-- WEEKLY:SUMMARY:START -->",

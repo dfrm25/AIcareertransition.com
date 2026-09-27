@@ -1,0 +1,568 @@
+{
+  "201": {
+    "390": {
+      "h1": "AI 201 Advanced Skills",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 25892,
+      "roadmap": null,
+      "pngHeight": 25892,
+      "file": "/workspace/review/2026-09-27/201-390.png"
+    },
+    "430": {
+      "h1": "AI 201 Advanced Skills",
+      "h1Size": 36.12,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 24561,
+      "roadmap": null,
+      "pngHeight": 24561,
+      "file": "/workspace/review/2026-09-27/201-430.png"
+    },
+    "1280": {
+      "h1": "AI 201 Advanced Skills",
+      "h1Size": 60,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 14923,
+      "roadmap": null,
+      "pngHeight": 14923,
+      "file": "/workspace/review/2026-09-27/201-1280.png"
+    }
+  },
+  "this-week": {
+    "390": {
+      "h1": "This Week in AI",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 8880,
+      "roadmap": null,
+      "cells": [
+        {
+          "hidden": true,
+          "text": "BriefSep 7",
+          "w": 0,
+          "k": {
+            "text": "Brief",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 7",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 14",
+          "w": 83,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 14",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 21",
+          "w": 83,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 21",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "REVIEWED Sep 27, 2026",
+          "w": 83,
+          "k": {
+            "text": "REVIEWED",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 27, 2026",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "NEXT Oct 5",
+          "w": 83,
+          "k": {
+            "text": "NEXT",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Oct 5",
+            "scrollCut": false,
+            "outside": false
+          }
+        }
+      ],
+      "pngHeight": 8880,
+      "file": "/workspace/review/2026-09-27/this-week-390.png"
+    },
+    "430": {
+      "h1": "This Week in AI",
+      "h1Size": 36.12,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 8583,
+      "roadmap": null,
+      "cells": [
+        {
+          "hidden": true,
+          "text": "BriefSep 7",
+          "w": 0,
+          "k": {
+            "text": "Brief",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 7",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 14",
+          "w": 93,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 14",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 21",
+          "w": 93,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 21",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "REVIEWED Sep 27, 2026",
+          "w": 93,
+          "k": {
+            "text": "REVIEWED",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 27, 2026",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "NEXT Oct 5",
+          "w": 93,
+          "k": {
+            "text": "NEXT",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Oct 5",
+            "scrollCut": false,
+            "outside": false
+          }
+        }
+      ],
+      "pngHeight": 8583,
+      "file": "/workspace/review/2026-09-27/this-week-430.png"
+    },
+    "1280": {
+      "h1": "This Week in AI",
+      "h1Size": 60,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 5367,
+      "roadmap": null,
+      "cells": [
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 7",
+          "w": 137,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 7",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 14",
+          "w": 137,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 14",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "BRIEF Sep 21",
+          "w": 137,
+          "k": {
+            "text": "BRIEF",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 21",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "REVIEWED Sep 27, 2026",
+          "w": 137,
+          "k": {
+            "text": "REVIEWED",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Sep 27, 2026",
+            "scrollCut": false,
+            "outside": false
+          }
+        },
+        {
+          "hidden": false,
+          "text": "NEXT Oct 5",
+          "w": 137,
+          "k": {
+            "text": "NEXT",
+            "scrollCut": false,
+            "outside": false
+          },
+          "d": {
+            "text": "Oct 5",
+            "scrollCut": false,
+            "outside": false
+          }
+        }
+      ],
+      "pngHeight": 5367,
+      "file": "/workspace/review/2026-09-27/this-week-1280.png"
+    }
+  },
+  "career": {
+    "390": {
+      "h1": "Prove AI work in the role you already have",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 9327,
+      "roadmap": {
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      "pngHeight": 9327,
+      "file": "/workspace/review/2026-09-27/career-390.png"
+    },
+    "430": {
+      "h1": "Prove AI work in the role you already have",
+      "h1Size": 36.12,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 8752,
+      "roadmap": {
+        "padding": "0px",
+        "borderTopWidth": "0px",
+        "boxShadow": "none",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      "pngHeight": 8752,
+      "file": "/workspace/review/2026-09-27/career-430.png"
+    },
+    "1280": {
+      "h1": "Prove AI work in the role you already have",
+      "h1Size": 60,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 5711,
+      "roadmap": {
+        "padding": "48px",
+        "borderTopWidth": "1px",
+        "boxShadow": "rgba(0, 0, 0, 0.08) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+        "background": "rgb(255, 255, 255)"
+      },
+      "pngHeight": 5711,
+      "file": "/workspace/review/2026-09-27/career-1280.png"
+    }
+  },
+  "blog-auto": {
+    "390": {
+      "h1": "Microsoft Copilot: You're Probably on \"Auto\" — Stronger Models Are in the Menu",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 3845,
+      "roadmap": null,
+      "pngHeight": 3845,
+      "file": "/workspace/review/2026-09-27/blog-auto-390.png"
+    },
+    "430": {
+      "h1": "Microsoft Copilot: You're Probably on \"Auto\" — Stronger Models Are in the Menu",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 3675,
+      "roadmap": null,
+      "pngHeight": 3675,
+      "file": "/workspace/review/2026-09-27/blog-auto-430.png"
+    },
+    "1280": {
+      "h1": "Microsoft Copilot: You're Probably on \"Auto\" — Stronger Models Are in the Menu",
+      "h1Size": 44,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 2523,
+      "roadmap": null,
+      "pngHeight": 2523,
+      "file": "/workspace/review/2026-09-27/blog-auto-1280.png"
+    }
+  },
+  "blog-work-iq": {
+    "390": {
+      "h1": "Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 4361,
+      "roadmap": null,
+      "pngHeight": 4361,
+      "file": "/workspace/review/2026-09-27/blog-work-iq-390.png"
+    },
+    "430": {
+      "h1": "Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)",
+      "h1Size": 36,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 4167,
+      "roadmap": null,
+      "pngHeight": 4167,
+      "file": "/workspace/review/2026-09-27/blog-work-iq-430.png"
+    },
+    "1280": {
+      "h1": "Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)",
+      "h1Size": 44,
+      "h1Count": 1,
+      "overflow": false,
+      "scrollHeight": 3024,
+      "roadmap": null,
+      "pngHeight": 3024,
+      "file": "/workspace/review/2026-09-27/blog-work-iq-1280.png"
+    }
+  },
+  "oct5-390": {
+    "cells": [
+      {
+        "hidden": true,
+        "text": "BriefSep 14",
+        "w": 0,
+        "k": {
+          "text": "Brief",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Sep 14",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "BRIEF Sep 21",
+        "w": 83,
+        "k": {
+          "text": "BRIEF",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Sep 21",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "BRIEF Sep 27",
+        "w": 83,
+        "k": {
+          "text": "BRIEF",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Sep 27",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "REVIEWED Oct 5, 2026",
+        "w": 83,
+        "k": {
+          "text": "REVIEWED",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Oct 5, 2026",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "NEXT Oct 12",
+        "w": 83,
+        "k": {
+          "text": "NEXT",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Oct 12",
+          "scrollCut": false,
+          "outside": false
+        }
+      }
+    ],
+    "file": "/workspace/review/2026-09-27/crops/oct5-strip-390.png"
+  },
+  "oct5-430": {
+    "cells": [
+      {
+        "hidden": true,
+        "text": "BriefSep 14",
+        "w": 0,
+        "k": {
+          "text": "Brief",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Sep 14",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "BRIEF Sep 21",
+        "w": 93,
+        "k": {
+          "text": "BRIEF",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Sep 21",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "BRIEF Sep 27",
+        "w": 93,
+        "k": {
+          "text": "BRIEF",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Sep 27",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "REVIEWED Oct 5, 2026",
+        "w": 93,
+        "k": {
+          "text": "REVIEWED",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Oct 5, 2026",
+          "scrollCut": false,
+          "outside": false
+        }
+      },
+      {
+        "hidden": false,
+        "text": "NEXT Oct 12",
+        "w": 93,
+        "k": {
+          "text": "NEXT",
+          "scrollCut": false,
+          "outside": false
+        },
+        "d": {
+          "text": "Oct 12",
+          "scrollCut": false,
+          "outside": false
+        }
+      }
+    ],
+    "file": "/workspace/review/2026-09-27/crops/oct5-strip-430.png"
+  }
+}

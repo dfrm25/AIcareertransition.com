@@ -186,9 +186,15 @@ def payload_from_updates(updates: list[dict], week_label: str, week_date: str) -
         )
     title = updates[0]["title"][:80]
     desc = "What shipped from OpenAI, Anthropic, Google, and Microsoft, and one thing to do with it."
+    reviewed = datetime.date.fromisoformat(week_date)
     return {
         "week_label": week_label,
         "week_date": week_date,
+        "headline": title,
+        "lede": updates[0]["body"],
+        "summary": " ".join(u["title"].rstrip(".") for u in updates[:3]) + ".",
+        "page_title": f"This Week in AI, {short_date(reviewed)}, {reviewed.year}",
+        "meta_description": desc[:160],
         "updates": updates[:5],
         "prompt_of_week": AGENT_PROMPT_DEFAULT,
         "post": {
@@ -228,6 +234,11 @@ Return ONLY a single JSON object (no prose, no markdown fences) with this exact 
     }}
   ],
   "prompt_of_week": "a genuinely useful prompt a professional can paste, plain text",
+  "headline": "hero headline, plain text, <= 80 chars",
+  "lede": "one or two sentences under the headline, plain text, no HTML",
+  "summary": "one paragraph for the What changed section, plain text, no HTML",
+  "page_title": "document title, <= 60 chars, include the week date and year",
+  "meta_description": "meta description, 1 sentence, <= 160 chars",
   "post": {{
     "slug": "weekly-ai-brief-{week_date}",
     "title": "blog post title, <= 90 chars",
@@ -347,6 +358,11 @@ def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[s
 
     if not payload.get("prompt_of_week"):
         errs.append("missing prompt_of_week")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(payload.get("week_date") or "")):
+        errs.append("week_date missing or not YYYY-MM-DD")
+    for field in ("headline", "lede", "summary", "page_title", "meta_description"):
+        if not str(payload.get(field) or "").strip():
+            errs.append(f"missing {field}")
     return errs
 
 
@@ -430,10 +446,15 @@ def render_updates(updates: list[dict]) -> str:
     return "<div class=\"ax-weeklyblock\"><div class=\"ax-weekly\">\n" + "\n".join(out) + "\n</div></div>"
 
 
-def render_strip(reviewed: datetime.date) -> str:
-    """Week strip. A past brief is linked only when its file exists and is indexable."""
+def render_strip(reviewed: datetime.date, carried: list[datetime.date] | None = None) -> str:
+    """Week strip. Link a past week only when an indexable archive file exists.
+
+    Weeks that were reviewed on the hub but never got an archive file stay in
+    the strip as unlinked cells. The strip keeps the three most recent of
+    those weeks so five cells still fit. On Oct 5 that includes Sep 27.
+    """
     nxt = next_monday(reviewed)
-    past = []
+    by_day: dict[datetime.date, tuple[bool, str | None]] = {}
     for path in sorted((ROOT / "blog").glob("weekly-ai-brief-*.html")):
         match = re.search(r"(20\d{2}-\d{2}-\d{2})", path.name)
         if not match:
@@ -443,30 +464,37 @@ def render_strip(reviewed: datetime.date) -> str:
             continue
         head = path.read_text(encoding="utf-8", errors="ignore")[:6000].lower()
         linked = path.name not in RETIRED_BRIEFS and "noindex" not in head
-        past.append((day, linked, f"blog/{path.name}"))
+        by_day[day] = (linked, f"blog/{path.name}")
+    for day in carried or []:
+        if day < reviewed and day not in by_day:
+            by_day[day] = (False, None)
     cells = []
-    for day, linked, href in past[-3:]:
+    for day in sorted(by_day)[-3:]:
+        linked, href = by_day[day]
         label = (
             f'<span class="ax-strip__k">Brief</span>'
-            f'<span class="ax-strip__d">{short_date(day)}</span>'
+            f'<span class="ax-strip__d"><time datetime="{day.isoformat()}">{short_date(day)}</time></span>'
         )
-        inner = f'<a href="{href}">{label}</a>' if linked else f"<div>{label}</div>"
+        inner = f'<a href="{href}">{label}</a>' if linked and href else f"<div>{label}</div>"
         cells.append(f'          <li class="ax-strip__wk ax-strip__wk--past">{inner}</li>')
     cells.append(
         '          <li class="ax-strip__wk ax-strip__wk--current"><div>'
         '<span class="ax-strip__k">Reviewed</span>'
         f'<span class="ax-strip__d"><time id="hub-updated" datetime="{reviewed.isoformat()}">'
-        f'<!-- WEEKLY:DATE -->{short_date(reviewed)}</time></span></div></li>'
+        f'<!-- WEEKLY:DATE -->{short_date(reviewed)}, {reviewed.year}</time></span></div></li>'
     )
     cells.append(
         '          <li class="ax-strip__wk ax-strip__wk--next"><div>'
         '<span class="ax-strip__k">Next</span>'
-        f'<span class="ax-strip__d">{short_date(nxt)}</span></div></li>'
+        f'<span class="ax-strip__d"><time datetime="{nxt.isoformat()}">{short_date(nxt)}</time>'
+        '</span></div></li>'
     )
     return (
-        '<ol class="ax-strip" aria-label="Weekly briefs">\n'
+        '<div class="ax-weeklyblock">\n'
+        '        <ol class="ax-strip" aria-label="Weekly briefs">\n'
         + "\n".join(cells)
-        + "\n        </ol>"
+        + "\n        </ol>\n"
+        "          </div>"
     )
 
 
@@ -489,9 +517,177 @@ def render_latest(limit: int = 3) -> str:
     return "\n".join(out)
 
 
-def replace_block(text: str, start: str, end: str, new_inner: str) -> str:
+class HubRewriteError(RuntimeError):
+    """The hub is missing a field the weekly run has to rewrite."""
+
+
+def replace_block(text: str, start: str, end: str, new_inner: str, required: bool = False) -> str:
     pattern = re.compile(re.escape(start) + r".*?" + re.escape(end), re.DOTALL)
-    return pattern.sub(f"{start}\n{new_inner}\n        {end}", text, count=1)
+    new, n = pattern.subn(f"{start}\n{new_inner}\n        {end}", text, count=1)
+    if n != 1:
+        if required:
+            raise HubRewriteError(f"missing {start}")
+        return text
+    return new
+
+
+def _must_sub(text: str, pattern: str, repl: str, label: str, flags: int = 0) -> str:
+    new, n = re.subn(pattern, repl, text, count=1, flags=flags)
+    if n != 1:
+        raise HubRewriteError(f"missing {label}")
+    return new
+
+
+def carried_week_dates(text: str, reviewed: datetime.date) -> list[datetime.date]:
+    """Prior hub weeks to keep when no archive file exists for them."""
+    found: list[datetime.date] = []
+    prev = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
+    if prev:
+        found.append(datetime.date.fromisoformat(prev.group(1)))
+    block = re.search(
+        r"<!-- WEEKLY:STRIP:START -->(.*)<!-- WEEKLY:STRIP:END -->",
+        text,
+        re.DOTALL,
+    )
+    if block:
+        for match in re.finditer(r'datetime="(\d{4}-\d{2}-\d{2})"', block.group(1)):
+            found.append(datetime.date.fromisoformat(match.group(1)))
+    return [day for day in found if day < reviewed]
+
+
+def render_lede(headline: str, lede: str) -> str:
+    return (
+        f'<p class="hero-description" style="margin-bottom: var(--space-sm); max-width: 720px; font-weight: 600;">{esc(headline)}</p>\n'
+        f'          <p class="hero-description" style="margin-bottom: var(--space-md); max-width: 720px;">\n'
+        f'            {esc(lede)}\n'
+        f'          </p>'
+    )
+
+
+_HUB_FIELDS = (
+    "week_date",
+    "headline",
+    "lede",
+    "summary",
+    "page_title",
+    "meta_description",
+    "updates",
+    "prompt_of_week",
+)
+
+
+def rewrite_hub(text: str, payload: dict) -> str:
+    """Rewrite the weekly hub in memory. Raises if a required field is missing."""
+    missing = [field for field in _HUB_FIELDS if not payload.get(field)]
+    if missing:
+        raise HubRewriteError("payload missing " + ", ".join(missing))
+    reviewed = datetime.date.fromisoformat(payload["week_date"])
+    previous = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
+    since = datetime.date.fromisoformat(previous.group(1)) if previous else reviewed
+    title = esc(str(payload["page_title"]).strip())
+    desc = esc(str(payload["meta_description"]).strip())
+    text = replace_block(
+        text, "<!-- WEEKLY:LEDE:START -->", "<!-- WEEKLY:LEDE:END -->",
+        render_lede(str(payload["headline"]).strip(), str(payload["lede"]).strip()),
+        required=True,
+    )
+    text = replace_block(
+        text, "<!-- WEEKLY:STRIP:START -->", "<!-- WEEKLY:STRIP:END -->",
+        render_strip(reviewed, carried_week_dates(text, reviewed)),
+        required=True,
+    )
+    text = _must_sub(
+        text,
+        r'(<span class="ax-kicker">)Since [^<]*(</span>)',
+        rf"\g<1>Since {short_date(since)}\2",
+        "summary kicker",
+    )
+
+    def _summary(match: re.Match) -> str:
+        inner, n = re.subn(
+            r"<p>.*?</p>",
+            f"<p>{esc(str(payload['summary']).strip())}</p>",
+            match.group(1),
+            count=1,
+            flags=re.DOTALL,
+        )
+        if n != 1:
+            raise HubRewriteError("missing WEEKLY:SUMMARY paragraph")
+        return f"<!-- WEEKLY:SUMMARY:START -->{inner}<!-- WEEKLY:SUMMARY:END -->"
+
+    text, n_summary = re.subn(
+        r"<!-- WEEKLY:SUMMARY:START -->(.*?)<!-- WEEKLY:SUMMARY:END -->",
+        _summary,
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if n_summary != 1:
+        raise HubRewriteError("missing WEEKLY:SUMMARY block")
+    text = replace_block(
+        text, "<!-- WEEKLY:UPDATES:START -->", "<!-- WEEKLY:UPDATES:END -->",
+        render_updates(payload["updates"]),
+        required=True,
+    )
+    text = replace_block(
+        text, "<!-- WEEKLY:LATEST:START -->", "<!-- WEEKLY:LATEST:END -->",
+        render_latest(),
+        required=True,
+    )
+    prompt_html = (
+        f'          <p style="line-height:1.8;color:var(--color-text-secondary);'
+        f'font-family:var(--font-mono, monospace);font-size:0.95rem;">'
+        f'"{esc(payload["prompt_of_week"])}"</p>'
+    )
+    text = replace_block(
+        text, "<!-- WEEKLY:PROMPT:START -->", "<!-- WEEKLY:PROMPT:END -->",
+        prompt_html,
+        required=True,
+    )
+    text = _must_sub(text, r"<title>.*?</title>", f"<title>{title}</title>", "title", flags=re.DOTALL)
+    text = _must_sub(
+        text,
+        r'(<meta\s+property="og:title"\s+content=")[^"]*(")',
+        rf"\g<1>{title}\g<2>",
+        "og:title",
+    )
+    text = _must_sub(
+        text,
+        r'(<meta\s+name="twitter:title"\s+content=")[^"]*(")',
+        rf"\g<1>{title}\g<2>",
+        "twitter:title",
+    )
+    text = _must_sub(
+        text,
+        r'(<meta\s+name="description"\s+content=")[^"]*(")',
+        rf"\g<1>{desc}\g<2>",
+        "meta description",
+    )
+    text = _must_sub(
+        text,
+        r'(<meta\s+property="og:description"\s+content=")[^"]*(")',
+        rf"\g<1>{desc}\g<2>",
+        "og:description",
+    )
+    text = _must_sub(
+        text,
+        r'(<meta\s+name="twitter:description"\s+content=")[^"]*(")',
+        rf"\g<1>{desc}\g<2>",
+        "twitter:description",
+    )
+    text = _must_sub(
+        text,
+        r'("description":\s*")[^"]*(")',
+        rf"\g<1>{desc}\g<2>",
+        "JSON-LD description",
+    )
+    text = _must_sub(
+        text,
+        r'("dateModified":\s*")[^"]*(")',
+        rf"\g<1>{reviewed.isoformat()}\g<2>",
+        "JSON-LD dateModified",
+    )
+    return text
 
 
 def next_monday(day: datetime.date) -> datetime.date:
@@ -507,40 +703,10 @@ def human_date(day: datetime.date) -> str:
 
 def update_hub(payload: dict) -> None:
     hub = ROOT / "this-week.html"
-    text = hub.read_text(encoding="utf-8")
-    wd = payload["week_date"]
-    reviewed = datetime.date.fromisoformat(wd)
-    previous = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
-    since = datetime.date.fromisoformat(previous.group(1)) if previous else reviewed
-    text = replace_block(
-        text, "<!-- WEEKLY:STRIP:START -->", "<!-- WEEKLY:STRIP:END -->",
-        render_strip(reviewed),
-    )
-    text = re.sub(
-        r'(<span class="ax-kicker">)Since [^<]*(</span>)',
-        rf"\g<1>Since {short_date(since)}\2",
-        text,
-        count=1,
-    )
-    text = replace_block(
-        text, "<!-- WEEKLY:UPDATES:START -->", "<!-- WEEKLY:UPDATES:END -->",
-        render_updates(payload["updates"]),
-    )
-    text = replace_block(
-        text, "<!-- WEEKLY:LATEST:START -->", "<!-- WEEKLY:LATEST:END -->",
-        render_latest(),
-    )
-    prompt_html = (
-        f'          <p style="line-height:1.8;color:var(--color-text-secondary);'
-        f'font-family:var(--font-mono, monospace);font-size:0.95rem;">'
-        f'"{esc(payload["prompt_of_week"])}"</p>'
-    )
-    text = replace_block(
-        text, "<!-- WEEKLY:PROMPT:START -->", "<!-- WEEKLY:PROMPT:END -->", prompt_html
-    )
+    text = rewrite_hub(hub.read_text(encoding="utf-8"), payload)
     hub.write_text(text, encoding="utf-8")
     update_home(payload)
-    update_receipt_stamp(wd)
+    update_receipt_stamp(payload["week_date"])
 
 
 def update_receipt_stamp(week_date: str) -> None:
@@ -788,6 +954,11 @@ def main() -> int:
 
     date_human = today.strftime("%B %-d, %Y")
     post = payload["post"]
+    try:
+        rewrite_hub((ROOT / "this-week.html").read_text(encoding="utf-8"), payload)
+    except HubRewriteError as err:
+        print(f"[fatal] hub rewrite failed: {err}", file=sys.stderr)
+        return 1
     write_post(post, week_date, date_human)
     prepend_blog_card(post, week_date, date_human)
     update_hub(payload)

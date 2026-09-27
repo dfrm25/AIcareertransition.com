@@ -7,6 +7,16 @@ Options -Indexes
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Old dev files are not the public site. 404 them if a copy is still on disk.
+  # These rules run before the extensionless rewrite so README.md cannot become README.html.
+  # They do not match robots.txt, llms.txt, ads.txt, sitemap.xml, feed.xml, HTML, CSS, JS, or images.
+  RewriteRule ^\.git(/|$) - [R=404,L]
+  RewriteRule ^\.github(/|$) - [R=404,L]
+  RewriteRule ^scripts(/|$) - [R=404,L]
+  RewriteRule ^review(/|$) - [R=404,L]
+  RewriteRule \.md$ - [R=404,L]
+  RewriteRule ^(google-apps-script\.js|google-apps-script-feedback\.js|test_videos\.py|video_source_mapping\.txt|DEPLOY_MANIFEST\.txt|FILES_TO_UPLOAD\.txt|requirements-automation\.txt|\.cpanel\.yml|\.gitignore)$ - [R=404,L]
+
   # Canonical SEO host: force HTTPS and non-www.
   RewriteCond %{HTTPS} !=on [OR]
   RewriteCond %{HTTP_HOST} ^www\.aicareertransition\.com$ [NC]

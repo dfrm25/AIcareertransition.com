@@ -100,6 +100,30 @@ def rfc822(dt: datetime.datetime) -> str:
     return dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
 
 
+def extract_hub() -> dict | None:
+    """The This Week page is the current brief. It is not a blog post file."""
+    path = ROOT / "this-week.html"
+    if not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    title_m = _TITLE_RE.search(text)
+    desc_m = _DESC_RE.search(text)
+    date_m = re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"', text)
+    if not (title_m and desc_m and date_m):
+        return None
+    try:
+        dt = datetime.datetime.strptime(date_m.group(1), "%Y-%m-%d").replace(tzinfo=_UTC)
+    except ValueError:
+        return None
+    title = re.sub(r"\s+", " ", html.unescape(title_m.group(1))).strip()
+    return {
+        "title": title,
+        "description": html.unescape(desc_m.group(1)).strip(),
+        "url": f"{BASE}/this-week.html",
+        "date": dt,
+    }
+
+
 def main() -> None:
     blog_dir = ROOT / "blog"
     posts: list[dict] = []
@@ -107,6 +131,11 @@ def main() -> None:
         item = extract_post(p)
         if item and item["title"]:
             posts.append(item)
+
+    hub = extract_hub()
+    if hub:
+        posts = [item for item in posts if item["url"] != hub["url"]]
+        posts.append(hub)
 
     posts.sort(key=lambda x: x["date"], reverse=True)
 
