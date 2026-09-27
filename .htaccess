@@ -23,6 +23,9 @@ Options -Indexes
   # /blog is a folder with no index, so Apache returns 403. Send that to the listing.
   RewriteRule ^blog/?$ https://aicareertransition.com/blog.html [R=301,L]
 
+  # Keep the retired September 21 brief URL. It moved to the current This Week page.
+  RewriteRule ^blog/weekly-ai-brief-2026-09-21\.html$ https://aicareertransition.com/this-week.html [R=301,L]
+
   # Extensionless URLs: /this-week → /this-week.html when that file exists.
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
