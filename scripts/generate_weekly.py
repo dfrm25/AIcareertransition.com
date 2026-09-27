@@ -544,7 +544,7 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
     <p style="margin-top: var(--space-xl);"><a href="../this-week.html" class="btn btn-primary">This Week in AI</a></p>
   </div></article></main>
   <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p></div></div></footer>
-  <script src="../js/main.js" defer></script>
+  <script src="../js/main.js?v=20260927" defer></script>
 </body>
 </html>
 '''

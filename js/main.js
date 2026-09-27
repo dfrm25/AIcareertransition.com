@@ -553,7 +553,7 @@ var TRANSITION_MATRICES = {
     L4: {
       title: 'L4 → L5: route three jobs, fail closed',
       weeks: [
-        ['1', 'Split the desk: discovery, spec review, launch note.', 'Three-job DAG', 'Handoff errors'],
+        ['1', 'Split the work: discovery, spec review, launch note.', 'Three-job DAG', 'Handoff errors'],
         ['2', 'Connect only approved tickets/docs. No shadow IT.', 'Permission matrix', 'Data classes the agent cannot read'],
         ['3', 'Golden set of 15 packets. Fail closed on P0 schema gaps.', 'Golden set + harness', 'Rubric ≥ 12/16'],
         ['4', 'Org playbook and office hours. Stop being the bottleneck.', 'L5 case study', '≥3 PMs on the SOP']
@@ -587,7 +587,7 @@ var TRANSITION_MATRICES = {
         ['1', 'Map three jobs and handoffs.', 'Workflow DAG', 'Handoff errors'],
         ['2', 'Approved sources only.', 'Source allowlist', 'Off-list URLs blocked'],
         ['3', 'Golden briefs.', 'Golden set', 'Rubric threshold'],
-        ['4', 'Team adoption.', 'Desk playbook', '≥3 marketers on SOP']
+        ['4', 'Team adoption.', 'Team playbook', '≥3 marketers on SOP']
       ]
     }
   },
@@ -699,7 +699,7 @@ function showResults() {
   } else {
     level = '201';
     title = 'AI Power User · start at L4';
-    description = "You already ship with AI. The gap is routing, permissions, and a golden set — so the desk still works when you are on leave.";
+    description = "You already ship with AI. The gap is routing, permissions, and a golden set — so the workflow still runs when you are on leave.";
     recommendation = "Use the L4 matrix (three-job DAG). AI 201 supports agents only after the eval harness exists.";
     ctaLink = 'guides/product-manager-ai-transition.html?level=L4#thirty-day';
     ctaText = 'Open the L4 30-day plan';
