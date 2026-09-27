@@ -1,8 +1,8 @@
 name: Weekly AI content update + deploy
 
+# Schedule removed 2026-09-27. The Monday cron rewrote this-week.html with filler.
+# Run by hand with workflow_dispatch only.
 on:
-  schedule:
-    - cron: "0 14 * * 1"
   workflow_dispatch:
 
 permissions:

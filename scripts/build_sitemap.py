@@ -26,7 +26,7 @@ def priority_for(rel_posix: str) -> str:
         return "0.86"
     if rel_posix.startswith("personas/"):
         return "0.82"
-    if rel_posix == "career.html":
+    if rel_posix in ("career.html", "use-cases.html"):
         return "0.88"
     if rel_posix == "blog.html":
         return "0.8"
