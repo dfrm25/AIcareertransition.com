@@ -54,6 +54,44 @@ def is_noindex(path: Path) -> bool:
     return bool(NOINDEX_RE.search(head))
 
 
+# Content that changed on 2026-09-27. Nav-only edits keep the prior sitemap date
+# (2026-09-21) so lastmod is not stamped on every URL.
+CHANGED_ON_2026_09_27 = {
+    "index.html",
+    "this-week.html",
+    "career.html",
+    "101.html",
+    "201.html",
+    "prompts.html",
+    "use-cases.html",
+    "artifacts.html",
+    "guides/product-manager-ai-transition.html",
+    "personas/marketing.html",
+    "personas/analytics.html",
+    "personas/product.html",
+    "personas/copywriting.html",
+    "personas/data-science.html",
+    "blog/ai-lab-updates-career-actions-apr-2026.html",
+    "blog/ai-career-transition-salary-outlook.html",
+    "blog/ai-career-transition-no-code.html",
+    "blog/ai-skills-resume-without-sounding-fake.html",
+    "blog/ai-career-transition-timeline.html",
+    "blog/ai-career-transition-portfolio-examples.html",
+    "blog/ai-career-transition-roadmap.html",
+    "blog/ai-career-transition-interview-prep.html",
+    "blog/chrome-mobile-ai-mode-any-website.html",
+    "blog/copilot-better-model-than-auto.html",
+    "blog/copilot-work-iq-on-off.html",
+}
+PRIOR_LASTMOD = "2026-09-21"
+
+
+def lastmod_for(rel_posix: str) -> str:
+    if rel_posix in CHANGED_ON_2026_09_27:
+        return "2026-09-27"
+    return PRIOR_LASTMOD
+
+
 def loc_for(rel_posix: str) -> str:
     if rel_posix == "index.html":
         return f"{BASE}/"
@@ -84,8 +122,7 @@ def main() -> None:
             raise SystemExit(f"sitemap loc must not include index.html: {loc}")
         url_el = ET.SubElement(urlset, "url")
         ET.SubElement(url_el, "loc").text = loc
-        mtime = datetime.datetime.fromtimestamp(p.stat().st_mtime, tz=_UTC).strftime("%Y-%m-%d")
-        ET.SubElement(url_el, "lastmod").text = mtime
+        ET.SubElement(url_el, "lastmod").text = lastmod_for(rel)
         ET.SubElement(url_el, "changefreq").text = changefreq_for(rel)
         ET.SubElement(url_el, "priority").text = priority_for(rel)
         included += 1
