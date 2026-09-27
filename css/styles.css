@@ -3802,3 +3802,50 @@ main figcaption { font-size: 15px; line-height: 1.45; }
   .hero-description { font-size: 15px; }
   .hero-badge-line { white-space: normal; }
 }
+/* Body copy stays at least 15px. Larger existing sizes stay larger. */
+.section-header p { font-size: max(15px, 1.125rem); }
+.card-description,
+.uc-kicker,
+.uc-label,
+.uc-note,
+.uc-mail,
+.uc-mail p,
+.uc-mail-meta,
+.uc-rubric,
+.uc-rubric li,
+.uc-recipe-row dd,
+.uc-gate,
+.uc-gate p,
+.chat-info,
+.chat-info p,
+.chat-message,
+.chat-message p,
+.chat-message li,
+main figcaption {
+  font-size: max(15px, 1em);
+}
+main p[style*=".75rem"],
+main p[style*="0.75rem"],
+main li[style*=".75rem"],
+main li[style*="0.75rem"] {
+  font-size: 15px !important;
+}
+main a,
+main button,
+main summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+a.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+main :is(p, li, dd, figcaption, h1, h2, h3, td, th) a {
+  display: inline;
+  min-height: 0;
+  min-width: 0;
+}
