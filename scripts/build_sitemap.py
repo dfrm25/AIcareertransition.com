@@ -54,8 +54,7 @@ def is_noindex(path: Path) -> bool:
     return bool(NOINDEX_RE.search(head))
 
 
-# Content that changed on 2026-09-27. Nav-only edits keep the prior sitemap date
-# (2026-09-21) so lastmod is not stamped on every URL.
+# Hub pages edited on 2026-09-27. Used only when a page has no JSON-LD dateModified.
 CHANGED_ON_2026_09_27 = {
     "index.html",
     "this-week.html",
@@ -64,29 +63,17 @@ CHANGED_ON_2026_09_27 = {
     "201.html",
     "prompts.html",
     "use-cases.html",
-    "artifacts.html",
-    "guides/product-manager-ai-transition.html",
-    "personas/marketing.html",
-    "personas/analytics.html",
-    "personas/product.html",
-    "personas/copywriting.html",
-    "personas/data-science.html",
-    "blog/ai-lab-updates-career-actions-apr-2026.html",
-    "blog/ai-career-transition-salary-outlook.html",
-    "blog/ai-career-transition-no-code.html",
-    "blog/ai-skills-resume-without-sounding-fake.html",
-    "blog/ai-career-transition-timeline.html",
-    "blog/ai-career-transition-portfolio-examples.html",
-    "blog/ai-career-transition-roadmap.html",
-    "blog/ai-career-transition-interview-prep.html",
-    "blog/chrome-mobile-ai-mode-any-website.html",
-    "blog/copilot-better-model-than-auto.html",
-    "blog/copilot-work-iq-on-off.html",
 }
-PRIOR_LASTMOD = "2026-09-21"
+PRIOR_LASTMOD = "2026-09-20"
+
+DATE_MODIFIED_RE = re.compile(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"')
 
 
-def lastmod_for(rel_posix: str) -> str:
+def lastmod_for(path: Path, rel_posix: str) -> str:
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    match = DATE_MODIFIED_RE.search(text)
+    if match:
+        return match.group(1)
     if rel_posix in CHANGED_ON_2026_09_27:
         return "2026-09-27"
     return PRIOR_LASTMOD
@@ -122,7 +109,7 @@ def main() -> None:
             raise SystemExit(f"sitemap loc must not include index.html: {loc}")
         url_el = ET.SubElement(urlset, "url")
         ET.SubElement(url_el, "loc").text = loc
-        ET.SubElement(url_el, "lastmod").text = lastmod_for(rel)
+        ET.SubElement(url_el, "lastmod").text = lastmod_for(p, rel)
         ET.SubElement(url_el, "changefreq").text = changefreq_for(rel)
         ET.SubElement(url_el, "priority").text = priority_for(rel)
         included += 1
