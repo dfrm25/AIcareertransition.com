@@ -627,15 +627,31 @@ var TRANSITION_MATRICES = {
 TRANSITION_MATRICES.operations = TRANSITION_MATRICES.analytics;
 TRANSITION_MATRICES.other = TRANSITION_MATRICES.product;
 
+function quizPlain(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function matrixTableHTML(roleKey, levelKey) {
   var pack = TRANSITION_MATRICES[roleKey] || TRANSITION_MATRICES.product;
   var plan = pack[levelKey] || pack.L3;
   var rows = plan.weeks.map(function (w) {
-    return '<tr><td>' + w[0] + '</td><td>' + w[1] + '</td><td>' + w[2] + '</td><td>' + w[3] + '</td></tr>';
+    return '<tr><td>' + quizPlain(w[0]) + '</td><td>' + quizPlain(w[1]) + '</td><td>' + quizPlain(w[2]) + '</td><td>' + quizPlain(w[3]) + '</td></tr>';
   }).join('');
-  return '<h4>' + plan.title + '</h4>' +
+  var cards = plan.weeks.map(function (w) {
+    return '<article class="quiz-week-card">' +
+      '<p><span>Week</span> ' + quizPlain(w[0]) + '</p>' +
+      '<p><span>Workplace SOP</span> ' + quizPlain(w[1]) + '</p>' +
+      '<p><span>Proof artifact</span> ' + quizPlain(w[2]) + '</p>' +
+      '<p><span>Manager-visible metric</span> ' + quizPlain(w[3]) + '</p>' +
+      '</article>';
+  }).join('');
+  return '<h4>' + quizPlain(plan.title) + '</h4>' +
     '<div class="data-table-wrap"><table class="data-table"><thead><tr><th>Week</th><th>Workplace SOP</th><th>Proof artifact</th><th>Manager-visible metric</th></tr></thead><tbody>' +
-    rows + '</tbody></table></div>';
+    rows + '</tbody></table></div>' +
+    '<div class="quiz-week-cards">' + cards + '</div>';
 }
 
 function bindQuizMatrix(percentage, defaultLevel) {

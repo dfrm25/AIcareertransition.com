@@ -40,7 +40,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260927mf"
+CSS_VER = "20260928r2"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -710,14 +710,20 @@ def update_hub(payload: dict) -> None:
 
 
 def update_receipt_stamp(week_date: str) -> None:
-    """Keep the home hero receipt date on the This Week reviewed date."""
+    """Refresh home receipt markers only when they are already on the page.
+
+    The home hero no longer includes WEEKLY:RECEIPT or WEEKLY:STAMP.
+    Missing markers are a no-op: the run does not fail and does not insert them.
+    """
     home = ROOT / "index.html"
     if not home.exists():
+        return
+    text = home.read_text(encoding="utf-8")
+    if "<!-- WEEKLY:RECEIPT -->" not in text and "<!-- WEEKLY:STAMP -->" not in text:
         return
     reviewed = datetime.date.fromisoformat(week_date)
     long = reviewed.strftime("%b %-d, %Y")
     short = reviewed.strftime("%b %-d")
-    text = home.read_text(encoding="utf-8")
     text2, n_long = re.subn(
         r"<!-- WEEKLY:RECEIPT -->.*?<!-- /WEEKLY:RECEIPT -->",
         f"<!-- WEEKLY:RECEIPT -->{long}<!-- /WEEKLY:RECEIPT -->",
@@ -791,7 +797,7 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
     <p style="margin-top: var(--space-xl);"><a href="../this-week.html" class="btn btn-primary">This Week in AI</a></p>
   </div></article></main>
   <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p></div></div></footer>
-  <script src="../js/main.js?v=20260927" defer></script>
+  <script src="../js/main.js?v=20260928r2" defer></script>
 </body>
 </html>
 '''
