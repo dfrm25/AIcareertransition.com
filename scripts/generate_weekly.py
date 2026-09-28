@@ -40,7 +40,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260928q"
+CSS_VER = "20260928r2"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -797,7 +797,7 @@ BLOG_TEMPLATE = '''<!DOCTYPE html>
     <p style="margin-top: var(--space-xl);"><a href="../this-week.html" class="btn btn-primary">This Week in AI</a></p>
   </div></article></main>
   <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 AI Career Transition. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p></div></div></footer>
-  <script src="../js/main.js?v=20260928q" defer></script>
+  <script src="../js/main.js?v=20260928r2" defer></script>
 </body>
 </html>
 '''
