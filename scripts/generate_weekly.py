@@ -556,6 +556,18 @@ def carried_week_dates(text: str, reviewed: datetime.date) -> list[datetime.date
     return [day for day in found if day < reviewed]
 
 
+def previous_brief_date(text: str, reviewed: datetime.date) -> datetime.date:
+    """Date the Since label should name: the outgoing brief, not the new one.
+
+    hub-updated already equals the new Reviewed date on a second run. The
+    label still has to name the week that just closed.
+    """
+    prior = carried_week_dates(text, reviewed)
+    if not prior:
+        raise HubRewriteError("no previous brief date for the Since label")
+    return max(prior)
+
+
 def render_lede(headline: str, lede: str) -> str:
     return (
         f'<p class="hero-description" style="margin-bottom: var(--space-sm); max-width: 720px; font-weight: 600;">{esc(headline)}</p>\n'
@@ -583,8 +595,7 @@ def rewrite_hub(text: str, payload: dict) -> str:
     if missing:
         raise HubRewriteError("payload missing " + ", ".join(missing))
     reviewed = datetime.date.fromisoformat(payload["week_date"])
-    previous = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
-    since = datetime.date.fromisoformat(previous.group(1)) if previous else reviewed
+    since = previous_brief_date(text, reviewed)
     title = esc(str(payload["page_title"]).strip())
     desc = esc(str(payload["meta_description"]).strip())
     text = replace_block(
