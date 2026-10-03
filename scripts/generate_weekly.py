@@ -31,6 +31,7 @@ _UTC = getattr(datetime, "UTC", datetime.timezone.utc)
 OFFICIAL_DOMAINS = (
     "openai.com", "anthropic.com", "claude.com", "google.com", "blog.google",
     "ai.google.dev", "cloud.google.com", "deepmind.google", "microsoft.com",
+    "workspaceupdates.googleblog.com",
 )
 DEPRECATED_RE = re.compile(
     r"gemini\s*2\.0\s*flash|gemini\s*1\.5|gemini\s*1\.0|\bgpt-3\.5\b|\bgpt-3\b|"
@@ -40,7 +41,7 @@ DEPRECATED_RE = re.compile(
 )
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UPDATE_BORDER = "var(--color-border)"
-CSS_VER = "20260928r2"
+CSS_VER = "20261004a"
 
 FEEDS = (
     "https://openai.com/news/rss.xml",
@@ -318,8 +319,8 @@ def extract_json(text: str) -> dict:
 def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[str]:
     errs: list[str] = []
     updates = payload.get("updates")
-    if not isinstance(updates, list) or not (2 <= len(updates) <= 5):
-        errs.append("updates must be a list of 2-5 items")
+    if not isinstance(updates, list) or not (2 <= len(updates) <= 6):
+        errs.append("updates must be a list of 2-6 items")
         updates = updates if isinstance(updates, list) else []
     for i, u in enumerate(updates):
         for f in ("category", "title", "body", "source_url", "action", "action_link"):
@@ -453,7 +454,7 @@ def render_strip(reviewed: datetime.date, carried: list[datetime.date] | None = 
     the strip as unlinked cells. The strip keeps the three most recent of
     those weeks so five cells still fit. On Oct 5 that includes Sep 27.
     """
-    nxt = next_monday(reviewed)
+    nxt = following_review(reviewed)
     by_day: dict[datetime.date, tuple[bool, str | None]] = {}
     for path in sorted((ROOT / "blog").glob("weekly-ai-brief-*.html")):
         match = re.search(r"(20\d{2}-\d{2}-\d{2})", path.name)
@@ -555,6 +556,18 @@ def carried_week_dates(text: str, reviewed: datetime.date) -> list[datetime.date
     return [day for day in found if day < reviewed]
 
 
+def previous_brief_date(text: str, reviewed: datetime.date) -> datetime.date:
+    """Date the Since label should name: the outgoing brief, not the new one.
+
+    hub-updated already equals the new Reviewed date on a second run. The
+    label still has to name the week that just closed.
+    """
+    prior = carried_week_dates(text, reviewed)
+    if not prior:
+        raise HubRewriteError("no previous brief date for the Since label")
+    return max(prior)
+
+
 def render_lede(headline: str, lede: str) -> str:
     return (
         f'<p class="hero-description" style="margin-bottom: var(--space-sm); max-width: 720px; font-weight: 600;">{esc(headline)}</p>\n'
@@ -582,8 +595,7 @@ def rewrite_hub(text: str, payload: dict) -> str:
     if missing:
         raise HubRewriteError("payload missing " + ", ".join(missing))
     reviewed = datetime.date.fromisoformat(payload["week_date"])
-    previous = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
-    since = datetime.date.fromisoformat(previous.group(1)) if previous else reviewed
+    since = previous_brief_date(text, reviewed)
     title = esc(str(payload["page_title"]).strip())
     desc = esc(str(payload["meta_description"]).strip())
     text = replace_block(
@@ -697,11 +709,131 @@ def next_monday(day: datetime.date) -> datetime.date:
     return day + datetime.timedelta(days=days_ahead)
 
 
+def following_review(reviewed: datetime.date) -> datetime.date:
+    """Next cell on the strip. Keep at least seven days out.
+
+    A Sunday review would otherwise point at the next morning. Sep 27 then
+    shows Oct 5, and Oct 4 shows Oct 12.
+    """
+    nxt = next_monday(reviewed)
+    if (nxt - reviewed).days < 7:
+        nxt += datetime.timedelta(days=7)
+    return nxt
+
+
 def human_date(day: datetime.date) -> str:
     return day.strftime("%B %-d, %Y")
 
 
+def hub_date_label(day: datetime.date) -> str:
+    return f"{short_date(day)}, {day.year}"
+
+
+def apply_hub_metadata(payload: dict) -> None:
+    """Keep the hub title and description inside the search limits.
+
+    A bad title or description is replaced with the fallback. If the fallback
+    is still over the limit, raise and do not write the hub.
+    """
+    reviewed = datetime.date.fromisoformat(str(payload["week_date"]))
+    label = hub_date_label(reviewed)
+    updates = payload.get("updates") or []
+    titles = [str(u.get("title") or "").strip() for u in updates if str(u.get("title") or "").strip()]
+
+    def title_ok(value: str) -> bool:
+        return value.startswith("This Week in AI") and label in value and len(value) <= 60
+
+    def desc_ok(value: str) -> bool:
+        return len(value) <= 160 and f"Reviewed {label}" in value
+
+    title = str(payload.get("page_title") or "").strip()
+    if not title_ok(title):
+        hook = titles[0] if titles else "what changed"
+        title = f"This Week in AI, {label}: {hook}"
+        if not title_ok(title):
+            raise HubRewriteError(
+                f"title failed validation ({len(title)} chars, max 60, "
+                f"must start with 'This Week in AI' and include {label}): {title}"
+            )
+        payload["page_title"] = title
+
+    desc = str(payload.get("meta_description") or "").strip()
+    if not desc_ok(desc):
+        desc = f"Reviewed {label}: " + ". ".join(titles)
+        if not desc_ok(desc):
+            raise HubRewriteError(
+                f"description failed validation ({len(desc)} chars, max 160, "
+                f"must include 'Reviewed {label}'): {desc}"
+            )
+        payload["meta_description"] = desc
+
+
+def _shift_archive_hrefs(html: str) -> str:
+    def repl(match: re.Match) -> str:
+        href = match.group(1)
+        if href.startswith(("http://", "https://", "#", "/", "mailto:")):
+            return match.group(0)
+        return f'href="../{href}"'
+
+    return re.sub(r'href="([^"]+)"', repl, html)
+
+
+def archive_outgoing_hub(new_date: datetime.date) -> Path | None:
+    """Snapshot the live hub before a rollover. Idempotent.
+
+    A second run for the same new date finds the archive file and leaves it.
+    A run that does not move the reviewed date does not write an archive.
+    """
+    hub_path = ROOT / "this-week.html"
+    if not hub_path.exists():
+        return None
+    text = hub_path.read_text(encoding="utf-8")
+    current = re.search(r'id="hub-updated" datetime="(\d{4}-\d{2}-\d{2})"', text)
+    if not current:
+        return None
+    old = datetime.date.fromisoformat(current.group(1))
+    if old >= new_date:
+        return None
+    slug = f"weekly-ai-brief-{old.isoformat()}"
+    dest = ROOT / "blog" / f"{slug}.html"
+    if dest.exists():
+        return dest
+
+    title_m = re.search(r"<title>(.*?)</title>", text, re.DOTALL | re.IGNORECASE)
+    desc_m = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', text, re.IGNORECASE)
+    updates_m = re.search(
+        r"<!-- WEEKLY:UPDATES:START -->(.*)<!-- WEEKLY:UPDATES:END -->",
+        text,
+        re.DOTALL,
+    )
+    lede_m = re.search(
+        r"<!-- WEEKLY:LEDE:START -->(.*)<!-- WEEKLY:LEDE:END -->",
+        text,
+        re.DOTALL,
+    )
+    if not (title_m and desc_m and updates_m):
+        raise HubRewriteError("cannot archive the outgoing brief: title, description, or cards missing")
+    title = re.sub(r"\s+", " ", title_m.group(1)).strip()
+    title = re.sub(r"\s*\|\s*AI Career Transition\s*$", "", title)
+    description = desc_m.group(1).strip()
+    body = (lede_m.group(1) if lede_m else "") + "\n" + updates_m.group(1)
+    body = _shift_archive_hrefs(body)
+    post = {
+        "slug": slug,
+        "title": title,
+        "description": description,
+        "category": "Weekly Brief",
+        "body_html": body,
+    }
+    write_post(post, old.isoformat(), human_date(old))
+    prepend_blog_card(post, old.isoformat(), human_date(old))
+    update_llms(post, old.isoformat())
+    return dest
+
+
 def update_hub(payload: dict) -> None:
+    apply_hub_metadata(payload)
+    archive_outgoing_hub(datetime.date.fromisoformat(str(payload["week_date"])))
     hub = ROOT / "this-week.html"
     text = rewrite_hub(hub.read_text(encoding="utf-8"), payload)
     hub.write_text(text, encoding="utf-8")
@@ -746,18 +878,26 @@ def update_home(payload: dict) -> None:
     home = ROOT / "index.html"
     if not home.exists():
         return
+    text = home.read_text(encoding="utf-8")
+    reviewed = datetime.date.fromisoformat(str(payload["week_date"]))
+    if "<!-- WEEKLY:HOMESTRIP:START -->" in text:
+        hub_text = (ROOT / "this-week.html").read_text(encoding="utf-8")
+        text = replace_block(
+            text,
+            "<!-- WEEKLY:HOMESTRIP:START -->",
+            "<!-- WEEKLY:HOMESTRIP:END -->",
+            render_strip(reviewed, carried_week_dates(hub_text, reviewed)),
+            required=True,
+        )
     first = payload["updates"][0]
     inner = f'''        <div class="card" style="padding: var(--space-xl);">
           <h2 style="font-size: 1.35rem; margin-bottom: var(--space-sm);">{esc(first["title"])}</h2>
           <p style="line-height: 1.75; margin-bottom: var(--space-md);">{esc(first["body"])}</p>
           <a href="this-week.html" class="btn btn-primary">Read the brief</a>
         </div>'''
-    text = home.read_text(encoding="utf-8")
     if "<!-- WEEKLY:HOME:START -->" in text:
-        home.write_text(
-            replace_block(text, "<!-- WEEKLY:HOME:START -->", "<!-- WEEKLY:HOME:END -->", inner),
-            encoding="utf-8",
-        )
+        text = replace_block(text, "<!-- WEEKLY:HOME:START -->", "<!-- WEEKLY:HOME:END -->", inner)
+    home.write_text(text, encoding="utf-8")
 
 
 BLOG_TEMPLATE = '''<!DOCTYPE html>
@@ -961,14 +1101,22 @@ def main() -> int:
     date_human = today.strftime("%B %-d, %Y")
     post = payload["post"]
     try:
+        apply_hub_metadata(payload)
         rewrite_hub((ROOT / "this-week.html").read_text(encoding="utf-8"), payload)
     except HubRewriteError as err:
         print(f"[fatal] hub rewrite failed: {err}", file=sys.stderr)
         return 1
-    write_post(post, week_date, date_human)
-    prepend_blog_card(post, week_date, date_human)
-    update_hub(payload)
-    update_llms(post, week_date)
+    # The live brief stays on this-week.html. A weekly slug is not a second
+    # copy of the same week. The outgoing hub is archived inside update_hub.
+    if post.get("slug") and post["slug"] != week_slug:
+        write_post(post, week_date, date_human)
+        prepend_blog_card(post, week_date, date_human)
+        update_llms(post, week_date)
+    try:
+        update_hub(payload)
+    except HubRewriteError as err:
+        print(f"[fatal] hub rewrite failed: {err}", file=sys.stderr)
+        return 1
     # Keep visible last-reviewed dates. Do not strip calendar labels.
 
     import build_sitemap
