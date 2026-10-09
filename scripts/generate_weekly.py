@@ -319,8 +319,8 @@ def extract_json(text: str) -> dict:
 def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[str]:
     errs: list[str] = []
     updates = payload.get("updates")
-    if not isinstance(updates, list) or not (2 <= len(updates) <= 6):
-        errs.append("updates must be a list of 2-6 items")
+    if not isinstance(updates, list) or not (2 <= len(updates) <= 7):
+        errs.append("updates must be a list of 2-7 items")
         updates = updates if isinstance(updates, list) else []
     for i, u in enumerate(updates):
         for f in ("category", "title", "body", "source_url", "action", "action_link"):

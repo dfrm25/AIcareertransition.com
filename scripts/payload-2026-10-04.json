@@ -1,13 +1,30 @@
 {
   "week_label": "This week",
   "week_date": "2026-10-04",
-  "headline": "Limited access, and agents that keep going",
-  "lede": "Gemini 4 Argon is still limited to trusted defenders. Sonnet 5.5 is out for scoped work, Claude Code aliases on the Anthropic API now resolve to 5.5, ChatGPT dots keep working between chats, and Work IQ business data is in preview.",
-  "summary": "Gemini 4 Argon stays with a set of trusted defenders. Claude Sonnet 5.5 is the scoped-work model, and on the Anthropic API the Claude Code aliases opus and sonnet now resolve to 5.5. ChatGPT dots keep working between chats for eligible paid plans. Work IQ's business-data preview has started.",
-  "page_title": "This Week in AI, Oct 4, 2026: Argon stays limited",
-  "meta_description": "Reviewed Oct 4, 2026: Argon stays limited, Sonnet 5.5 is out, Claude Code aliases move to 5.5, ChatGPT dots keep going, and Work IQ business data is in preview.",
+  "headline": "Claude in the file, and a Gemini agent",
+  "lede": "Claude for Google Workspace is in public beta inside Docs, Sheets, and Slides, with beta connectors from chat. Google Cloud announced the Gemini agent on 8 October 2026 as a universal agent for work. Argon stays limited.",
+  "summary": "Claude for Google Workspace is in public beta in Docs, Sheets, and Slides, and beta connectors can edit those files from chat. Google Cloud's Gemini agent, announced 8 October 2026, plans work from one prompt box and brings finished work back. Argon stays limited, Sonnet 5.5 is out, and ChatGPT dots and Work IQ are still on this brief.",
+  "page_title": "This Week in AI, Oct 4, 2026: Gemini agent",
+  "meta_description": "Reviewed Oct 4, 2026: Claude works in Docs, Sheets, and Slides, and Google announces a Gemini agent for work.",
   "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
   "updates": [
+    {
+      "category": "Agents",
+      "date": "2026-10-08",
+      "title": "Gemini agent is a universal agent for work",
+      "body": "On 8 October 2026, Google Cloud announced the Gemini agent and called it a universal agent for work. One prompt box carries the organization's business context. It plans the work, uses skills and tools, and connects to Cloud customers' business systems. It brings finished work back inside documents, the inbox, and developer environments. It picks the best model for the job, with built-in cost controls and enterprise security, admin, and governance.",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/",
+      "action": "Write one outcome-shaped request for a recurring task you own (the goal, allowed sources, what done looks like, where you sign off), then run it by hand once and time it as your baseline.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Tools",
+      "title": "Claude works in Docs, Sheets, and Slides",
+      "body": "Claude for Google Workspace is in public beta on all paid Claude plans. Claude works inside Docs, Sheets, and Slides. Beta Docs, Sheets, and Slides connectors also let Claude create and edit those files from chat.",
+      "source_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+      "action": "Run your weekly Sheet cleanup once in the Claude sidebar and time it against your manual run.",
+      "action_link": "prompts.html"
+    },
     {
       "category": "Models",
       "date": "2026-09-30",
@@ -55,7 +72,7 @@
   "post": {
     "slug": "weekly-ai-brief-2026-10-04",
     "title": "Limited access, and agents that keep going",
-    "description": "Reviewed Oct 4, 2026: Argon stays limited, Sonnet 5.5 is out, Claude Code aliases move to 5.5, ChatGPT dots keep going, and Work IQ business data is in preview.",
+    "description": "Reviewed Oct 4, 2026: Claude works in Docs, Sheets, and Slides, and Google announces a Gemini agent for work.",
     "category": "Weekly Brief",
     "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is limited access. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
   }
