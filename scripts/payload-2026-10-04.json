@@ -1,0 +1,79 @@
+{
+  "week_label": "This week",
+  "week_date": "2026-10-04",
+  "headline": "Claude in the file, and a Gemini agent",
+  "lede": "Claude for Google Workspace is in public beta inside Docs, Sheets, and Slides, with beta connectors from chat. Google Cloud announced the Gemini agent on 8 October 2026 as a universal agent for work. Argon stays limited.",
+  "summary": "Claude for Google Workspace is in public beta in Docs, Sheets, and Slides, and beta connectors can edit those files from chat. Google Cloud's Gemini agent, announced 8 October 2026, plans work from one prompt box and brings finished work back. Argon stays limited, Sonnet 5.5 is out, and ChatGPT dots and Work IQ are still on this brief.",
+  "page_title": "This Week in AI, Oct 4, 2026: Gemini agent",
+  "meta_description": "Reviewed Oct 4, 2026: Claude works in Docs, Sheets, and Slides, and Google announces a Gemini agent for work.",
+  "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
+  "updates": [
+    {
+      "category": "Agents",
+      "date": "2026-10-08",
+      "title": "Gemini agent is a universal agent for work",
+      "body": "On 8 October 2026, Google Cloud announced the Gemini agent and called it a universal agent for work. One prompt box carries the organization's business context. It plans the work, uses skills and tools, and connects to Cloud customers' business systems. It brings finished work back inside documents, the inbox, and developer environments. It picks the best model for the job, with built-in cost controls and enterprise security, admin, and governance.",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/",
+      "action": "Write one outcome-shaped request for a recurring task you own (the goal, allowed sources, what done looks like, where you sign off), then run it by hand once and time it as your baseline.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Tools",
+      "title": "Claude works in Docs, Sheets, and Slides",
+      "body": "Claude for Google Workspace is in public beta on all paid Claude plans. Claude works inside Docs, Sheets, and Slides. Beta Docs, Sheets, and Slides connectors also let Claude create and edit those files from chat.",
+      "source_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+      "action": "Run your weekly Sheet cleanup once in the Claude sidebar and time it against your manual run.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Models",
+      "date": "2026-09-30",
+      "title": "Gemini 4 Argon is limited access",
+      "body": "Google announced Gemini 4 Argon on 30 September 2026 and is rolling it out to a set of trusted cyber defenders through the Fairwind Program, not as a general release. Broader access starts later with paid API customers and Google AI Ultra subscribers.",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "action": "Write down one complex workflow you would hand off, and the human check that still has to pass.",
+      "action_link": "career.html"
+    },
+    {
+      "category": "Models",
+      "date": "2026-09-28",
+      "title": "Claude Sonnet 5.5 is for scoped work",
+      "body": "Anthropic released Sonnet 5.5 on 28 September 2026 as a faster, lower-cost complement to Opus 5.5 for well-scoped tasks such as bugs, documents, slides, and spreadsheets. In Claude Code and Anthropic's apps, the default effort is Medium.",
+      "source_url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "action": "Move one well-scoped task you already own onto Sonnet 5.5 before you spend Opus on it.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Tools",
+      "title": "Claude Code aliases now point at 5.5",
+      "body": "On the Anthropic API, opus resolves to Opus 5.5 and sonnet resolves to Sonnet 5.5. Claude Platform on AWS still resolves sonnet to Sonnet 4.6. Bedrock and Google Cloud Agent Platform resolve it to Sonnet 4.5. Microsoft Foundry resolves opus to Opus 4.6 and sonnet to Sonnet 4.5. Sonnet 5.5 needs Claude Code v2.1.284 or later, and Opus 5.5 needs v2.1.280 or later.",
+      "source_url": "https://code.claude.com/docs/en/model-config",
+      "action": "Check which alias your session resolves. If a 5.5 request fails, update Claude Code before you brief a long task.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Agents",
+      "title": "ChatGPT dots keep working between chats",
+      "body": "OpenAI describes dots as always-on agents in ChatGPT that take ongoing work and keep going between conversations. You set a goal, connect the apps, and define what the dot may do on its own. Rollout is gradual for eligible Pro and Business Premium users aged 18 or older. Pro excludes the EEA, Switzerland, and the UK at launch, and Enterprise is a beta that is off by default.",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "action": "Write the brief before you create one: goal, inputs, allowed tools, and the stop condition.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Connected AI",
+      "date": "2026-09-25",
+      "title": "Work IQ business data is in preview",
+      "body": "Microsoft's 25 September 2026 post says Work IQ now grounds Copilot and agents in Dynamics 365 and Power Platform data, plus Microsoft 365 context. The preview started 30 September 2026 and continues through October. Governed actions stay inside the user's permissions and can require approval.",
+      "source_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "action": "Name one business question that needs your Dynamics or Power Platform data, then decide whether Work IQ should be on for that question.",
+      "action_link": "blog/copilot-work-iq-on-off.html"
+    }
+  ],
+  "post": {
+    "slug": "weekly-ai-brief-2026-10-04",
+    "title": "Limited access, and agents that keep going",
+    "description": "Reviewed Oct 4, 2026: Claude works in Docs, Sheets, and Slides, and Google announces a Gemini agent for work.",
+    "category": "Weekly Brief",
+    "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is limited access. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
+  }
+}
