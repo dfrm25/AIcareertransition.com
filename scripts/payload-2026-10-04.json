@@ -1,13 +1,22 @@
 {
   "week_label": "This week",
-  "week_date": "2026-10-04",
-  "headline": "Claude in the file, and a Gemini agent",
-  "lede": "Claude for Google Workspace is in public beta inside Docs, Sheets, and Slides, with beta connectors from chat. Google Cloud announced the Gemini agent on 8 October 2026 as a universal agent for work. Argon stays limited.",
-  "summary": "Claude for Google Workspace is in public beta in Docs, Sheets, and Slides, and beta connectors can edit those files from chat. Google Cloud's Gemini agent, announced 8 October 2026, plans work from one prompt box and brings finished work back. Argon stays limited, Sonnet 5.5 is out, and ChatGPT dots and Work IQ are still on this brief.",
-  "page_title": "This Week in AI, Oct 4, 2026: Gemini agent",
-  "meta_description": "Reviewed Oct 4, 2026: Claude works in Docs, Sheets, and Slides, and Google announces a Gemini agent for work.",
+  "week_date": "2026-10-12",
+  "headline": "Muse Wonder for agent tasks",
+  "lede": "Meta introduced Muse Wonder and Muse Wonder Full on 12 October 2026 for personal and professional agent tasks. Claude is still in Docs, Sheets, and Slides, and Google's Gemini agent is still on the brief.",
+  "summary": "Meta introduced Muse Wonder and Muse Wonder Full, with Active Memory and Active Focus. The earlier cards stay: Claude in Docs, Sheets, and Slides, the Gemini agent, limited Argon, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
+  "page_title": "This Week in AI, Oct 12, 2026: Muse Wonder",
+  "meta_description": "Reviewed Oct 12, 2026: Meta introduces Muse Wonder and Muse Wonder Full. Claude is in Docs and Sheets, and Google has a Gemini agent.",
   "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
   "updates": [
+    {
+      "category": "Models",
+      "date": "2026-10-12",
+      "title": "Muse Wonder is Meta's most capable pair",
+      "body": "On 12 October 2026 Meta introduced Muse Wonder and Muse Wonder Full, its most capable models, for personal and professional agent tasks. Active Memory carries context across conversations. Active Focus keeps working toward a goal and checks in before important actions. Muse Wonder is available now through the Meta Model API and Muse Code. Muse Wonder Full is for Muse Code subscribers. Muse Wonder will later power Muse, rolling out first to subscribers.",
+      "source_url": "https://research.meta.ai/blog/muse-wonder",
+      "action": "Before trusting any agent's memory at work, write down three facts it should carry over, then check in a second session whether it recalled them correctly. You stay the check, and follow your company's AI policy.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
     {
       "category": "Agents",
       "date": "2026-10-08",
@@ -72,7 +81,7 @@
   "post": {
     "slug": "weekly-ai-brief-2026-10-04",
     "title": "Limited access, and agents that keep going",
-    "description": "Reviewed Oct 4, 2026: Claude works in Docs, Sheets, and Slides, and Google announces a Gemini agent for work.",
+    "description": "Reviewed Oct 12, 2026: Meta introduces Muse Wonder and Muse Wonder Full. Claude is in Docs and Sheets, and Google has a Gemini agent.",
     "category": "Weekly Brief",
     "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is limited access. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
   }

@@ -52,6 +52,7 @@ OFFICIAL_DOMAINS = (
     "deepmind.google",
     "microsoft.com",
     "workspaceupdates.googleblog.com",
+    "research.meta.ai",
 )
 
 HREF_RE = re.compile(r'href="([^"#?]+\.html)(?:[#?][^"]*)?"')

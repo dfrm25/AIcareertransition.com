@@ -32,6 +32,7 @@ OFFICIAL_DOMAINS = (
     "openai.com", "anthropic.com", "claude.com", "google.com", "blog.google",
     "ai.google.dev", "cloud.google.com", "deepmind.google", "microsoft.com",
     "workspaceupdates.googleblog.com",
+    "research.meta.ai",
 )
 DEPRECATED_RE = re.compile(
     r"gemini\s*2\.0\s*flash|gemini\s*1\.5|gemini\s*1\.0|\bgpt-3\.5\b|\bgpt-3\b|"
@@ -319,8 +320,8 @@ def extract_json(text: str) -> dict:
 def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[str]:
     errs: list[str] = []
     updates = payload.get("updates")
-    if not isinstance(updates, list) or not (2 <= len(updates) <= 7):
-        errs.append("updates must be a list of 2-7 items")
+    if not isinstance(updates, list) or not (2 <= len(updates) <= 8):
+        errs.append("updates must be a list of 2-8 items")
         updates = updates if isinstance(updates, list) else []
     for i, u in enumerate(updates):
         for f in ("category", "title", "body", "source_url", "action", "action_link"):
@@ -387,6 +388,8 @@ def _vendor(url: str) -> tuple[str, str]:
         return "microsoft", "Microsoft"
     if "openai.com" in host:
         return "openai", "OpenAI"
+    if "meta.ai" in host or "meta.com" in host:
+        return "meta", "Meta"
     return "other", "Source"
 
 
