@@ -1,13 +1,22 @@
 {
   "week_label": "This week",
   "week_date": "2026-10-12",
-  "headline": "Muse Wonder for agent tasks",
-  "lede": "Meta introduced Muse Wonder and Muse Wonder Full on 12 October 2026 for personal and professional agent tasks. Claude is still in Docs, Sheets, and Slides, and Google's Gemini agent is still on the brief.",
-  "summary": "Meta introduced Muse Wonder and Muse Wonder Full, with Active Memory and Active Focus. The earlier cards stay: Claude in Docs, Sheets, and Slides, the Gemini agent, limited Argon, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
-  "page_title": "This Week in AI, Oct 12, 2026: Muse Wonder",
-  "meta_description": "Reviewed Oct 12, 2026: Meta introduces Muse Wonder and Muse Wonder Full. Claude is in Docs and Sheets, and Google has a Gemini agent.",
+  "headline": "Gemini 4 Argon is globally available",
+  "lede": "On 13 October 2026 Google made Gemini 4 Argon globally available for developers, enterprises, and Google AI Pro and Ultra subscribers. Muse Wonder and the Gemini agent stay on the brief.",
+  "summary": "Google made Gemini 4 Argon globally available on 13 October 2026. The earlier cards stay: Muse Wonder, the Gemini agent, Claude in Docs, Sheets, and Slides, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
+  "page_title": "This Week in AI, Oct 12, 2026: Argon is global",
+  "meta_description": "Reviewed Oct 12, 2026: Gemini 4 Argon is globally available for developers, enterprises, and Google AI Pro and Ultra subscribers.",
   "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
   "updates": [
+    {
+      "category": "Models",
+      "date": "2026-10-13",
+      "title": "Gemini 4 Argon is globally available",
+      "body": "On 13 October 2026 Google made Gemini 4 Argon globally available. Developers and enterprises get it through the API in AI Studio and the Gemini platform, and enterprises can use Gemini for business. Google AI Ultra subscribers get it in Google Antigravity. Google AI Pro and Ultra subscribers get it in the Gemini app and AI Mode. It is for complex work across software engineering, enterprise knowledge work such as legal and finance, cybersecurity, and science. The Gemini app adds a toggle from chat to tasks.",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "action": "Check the company AI policy first, then give one long-horizon task you own a clear goal, allowed sources, and a finish line, and review the result yourself.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
     {
       "category": "Models",
       "date": "2026-10-12",
@@ -33,15 +42,6 @@
       "source_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
       "action": "Run your weekly Sheet cleanup once in the Claude sidebar and time it against your manual run.",
       "action_link": "prompts.html"
-    },
-    {
-      "category": "Models",
-      "date": "2026-09-30",
-      "title": "Gemini 4 Argon is limited access",
-      "body": "Google announced Gemini 4 Argon on 30 September 2026 and is rolling it out to a set of trusted cyber defenders through the Fairwind Program, not as a general release. Broader access starts later with paid API customers and Google AI Ultra subscribers.",
-      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-      "action": "Write down one complex workflow you would hand off, and the human check that still has to pass.",
-      "action_link": "career.html"
     },
     {
       "category": "Models",
@@ -81,8 +81,8 @@
   "post": {
     "slug": "weekly-ai-brief-2026-10-04",
     "title": "Limited access, and agents that keep going",
-    "description": "Reviewed Oct 12, 2026: Meta introduces Muse Wonder and Muse Wonder Full. Claude is in Docs and Sheets, and Google has a Gemini agent.",
+    "description": "Reviewed Oct 12, 2026: Gemini 4 Argon is globally available for developers, enterprises, and Google AI Pro and Ultra subscribers.",
     "category": "Weekly Brief",
-    "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is limited access. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
+    "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is globally available. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
   }
 }
