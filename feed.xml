@@ -6,13 +6,20 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <item>
-      <title>This Week in AI, Oct 12, 2026: Argon is global</title>
+      <title>This Week in AI, Oct 15, 2026: Argon is global</title>
       <link>https://aicareertransition.com/this-week.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/this-week.html</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Reviewed Oct 15, 2026: Gemini 4 Argon is globally available for developers, enterprises, and Google AI Pro and Ultra subscribers.</description>
+    </item>
+    <item>
+      <title>This Week in AI, Oct 12, 2026: Argon is global</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-10-12.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-10-12.html</guid>
       <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
       <description>Reviewed Oct 12, 2026: Gemini 4 Argon is globally available for developers, enterprises, and Google AI Pro and Ultra subscribers.</description>
     </item>
