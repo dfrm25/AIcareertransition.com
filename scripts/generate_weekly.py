@@ -424,6 +424,13 @@ _ICON_GO = (
 )
 _MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 RETIRED_BRIEFS = {"weekly-ai-brief-2026-09-21.html"}
+# Reviewed dates that shipped as the live hub. A rollover archives one of
+# these only. Oct 12 was a date on this branch, not a published brief.
+PUBLISHED_HUBS = {
+    datetime.date(2026, 9, 27),
+    datetime.date(2026, 10, 4),
+    datetime.date(2026, 10, 15),
+}
 
 
 def short_date(day: datetime.date) -> str:
@@ -786,6 +793,7 @@ def archive_outgoing_hub(new_date: datetime.date) -> Path | None:
 
     A second run for the same new date finds the archive file and leaves it.
     A run that does not move the reviewed date does not write an archive.
+    A reviewed date that is not a published hub is not snapshotted.
     """
     hub_path = ROOT / "this-week.html"
     if not hub_path.exists():
@@ -801,6 +809,8 @@ def archive_outgoing_hub(new_date: datetime.date) -> Path | None:
     dest = ROOT / "blog" / f"{slug}.html"
     if dest.exists():
         return dest
+    if old not in PUBLISHED_HUBS:
+        return None
 
     title_m = re.search(r"<title>(.*?)</title>", text, re.DOTALL | re.IGNORECASE)
     desc_m = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', text, re.IGNORECASE)
