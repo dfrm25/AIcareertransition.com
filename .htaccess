@@ -14,7 +14,7 @@ Options -Indexes
   RewriteRule ^\.github(/|$) - [R=404,L]
   RewriteRule ^scripts(/|$) - [R=404,L]
   RewriteRule ^review(/|$) - [R=404,L]
-  RewriteRule \.md$ - [R=404,L]
+  RewriteRule \.md$ - [R=404,NC,L]
   RewriteRule ^(google-apps-script\.js|google-apps-script-feedback\.js|test_videos\.py|video_source_mapping\.txt|DEPLOY_MANIFEST\.txt|FILES_TO_UPLOAD\.txt|requirements-automation\.txt|\.cpanel\.yml|\.gitignore)$ - [R=404,L]
 
   # Canonical SEO host: force HTTPS and non-www.
