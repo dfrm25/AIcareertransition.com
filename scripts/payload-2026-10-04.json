@@ -3,11 +3,19 @@
   "week_date": "2026-10-15",
   "headline": "Gemini 4 Argon is globally available",
   "lede": "On 13 October 2026 Google made Gemini 4 Argon globally available for developers, enterprises, and Google AI Pro and Ultra subscribers. Muse Wonder and the Gemini agent stay on the brief.",
-  "summary": "Google made Gemini 4 Argon globally available on 13 October 2026. The earlier cards stay: Muse Wonder, the Gemini agent, Haiku 5.5, Claude in Docs, Sheets, and Slides, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
+  "summary": "OpenAI introduced GPT-6.1 Sol as an upgrade to GPT-6 Sol. The earlier cards stay: Gemini 4 Argon, Muse Wonder, the Gemini agent, Haiku 5.5, Claude in Docs, Sheets, and Slides, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
   "page_title": "This Week in AI, Oct 15, 2026: Argon is global",
   "meta_description": "Reviewed Oct 15, 2026: Gemini 4 Argon is globally available for developers, enterprises, and Google AI Pro and Ultra subscribers.",
   "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
   "updates": [
+    {
+      "category": "Models",
+      "title": "GPT-6.1 Sol is an upgrade to GPT-6 Sol",
+      "body": "OpenAI introduced GPT-6.1 Sol as an upgrade to GPT-6 Sol. OpenAI says it nearly matches GPT-6 Astra on agentic coding, computer use, and professional work. It is available to Plus, Pro, Business, Enterprise, and Edu users in ChatGPT Work and Codex, and it is not yet available in Chat. Developers get it in the API as gpt-6.1-sol.",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "action": "Check the company AI policy first, then rerun one multi-step task you already did on GPT-6 Sol and note which output needed fewer fixes.",
+      "action_link": "prompts.html"
+    },
     {
       "category": "Models",
       "date": "2026-10-13",
