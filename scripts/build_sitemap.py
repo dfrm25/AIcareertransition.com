@@ -64,6 +64,7 @@ CHANGED_ON_2026_09_27 = {
     "prompts.html",
     "use-cases.html",
 }
+CHANGED_ON_2026_10_24 = {"index.html"}
 PRIOR_LASTMOD = "2026-09-20"
 
 DATE_MODIFIED_RE = re.compile(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"')
@@ -74,6 +75,8 @@ def lastmod_for(path: Path, rel_posix: str) -> str:
     match = DATE_MODIFIED_RE.search(text)
     if match:
         return match.group(1)
+    if rel_posix in CHANGED_ON_2026_10_24:
+        return "2026-10-24"
     if rel_posix in CHANGED_ON_2026_09_27:
         return "2026-09-27"
     return PRIOR_LASTMOD

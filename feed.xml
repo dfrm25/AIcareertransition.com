@@ -6,15 +6,29 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <item>
-      <title>This Week in AI, Sep 27, 2026: Work IQ reads business data</title>
+      <title>AI Moved Into Your Files. Check Its Work There.</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-10-24.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-10-24.html</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Office inside Copilot, Claude inside Google Docs and Sheets, Gemini on full BigQuery tables, agents that keep working, and Gemini 4 Argon. What changed, who gets it, and how to check the work.</description>
+    </item>
+    <item>
+      <title>This Week in AI: AI Moved Into Your Files</title>
       <link>https://aicareertransition.com/this-week.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/this-week.html</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
+      <description>AI moved into your files: Office inside Copilot, Claude in Google Docs and Sheets, Gemini on full BigQuery tables, Claude Duet, Gemini 4 Argon, GPT-6.1 Sol. Who gets it and what to check.</description>
+    </item>
+    <item>
+      <title>Copilot gets business context</title>
+      <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-09-27.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-09-27.html</guid>
       <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Reviewed Sep 27, 2026: Copilot Work IQ adds Dynamics 365 data, a new Copilot app, Claude Opus 5.5, GPT-6 Sol and Luna, Gemini notebooks, Meta Muse for Mac.</description>
+      <description>Copilot Work IQ adds Dynamics 365 data, a new Copilot app with Home, Code, and Autopilot, Claude Opus 5.5, GPT-6 Sol and Luna, Gemini study notebooks for work accounts, and Meta Muse for Mac.</description>
     </item>
     <item>
       <title>Microsoft Copilot: Work IQ — When to Leave It On (and When It Picks Up Junk)</title>
@@ -94,11 +108,11 @@
       <description>How professionals coordinate multiple AI agents into supervised workflows: orchestration patterns, handoffs, A2A, and the proof artifact that shows the skill.</description>
     </item>
     <item>
-      <title>Agentic AI Workflows for Non-Engineers</title>
+      <title>Your First AI Agent: A Guide for Non-Engineers</title>
       <link>https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/agentic-ai-workflows-for-non-engineers.html</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
-      <description>A practical guide to using AI agents for research, reporting, planning, and operations without pretending to be a software engineer.</description>
+      <description>How to pick a safe first task for an AI agent, write the brief, limit its access, review what comes back, and turn it into proof. For Copilot, Claude, and Gemini users who do not code.</description>
     </item>
     <item>
       <title>May 2026 AI Career Brief: From Chatbots to Supervised Workflows</title>
@@ -115,25 +129,25 @@
       <description>What AI video and multimodal generation mean for career skills, review workflows, and proof artifacts in non-technical roles.</description>
     </item>
     <item>
-      <title>AI Workflow Evals and Human Review for Working Professionals</title>
+      <title>How to Check AI Work Before It Leaves Your Hands</title>
       <link>https://aicareertransition.com/blog/ai-workflow-evals-human-review.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/ai-workflow-evals-human-review.html</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
-      <description>A practical guide to evaluating AI outputs, building human review loops, and turning quality checks into proof-of-work.</description>
+      <description>A five-minute review for any AI draft, prompts that make AI help you check, what each role should hunt for, and a simple log that turns your checks into proof.</description>
     </item>
     <item>
-      <title>MCP and Connected AI Tools: A Career Guide</title>
+      <title>Connectors and MCP: What Changes When AI Can Reach Your Work Apps</title>
       <link>https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/mcp-and-connected-ai-tools-career-guide.html</guid>
       <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
-      <description>A plain-English guide to MCP, connected AI tools, and the career artifacts non-engineers can build to prove workflow fluency.</description>
+      <description>What connectors and MCP are in plain English, what Claude, Gemini, and Copilot can reach today, four questions to ask before you connect anything at work, and safe first tasks.</description>
     </item>
     <item>
       <title>AI Interview Prep for Career Changers</title>
       <link>https://aicareertransition.com/blog/ai-career-transition-interview-prep.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/ai-career-transition-interview-prep.html</guid>
       <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
-      <description>How to explain AI workflows, verification, mistakes, and business impact in interviews.</description>
+      <description>How to answer AI questions in interviews: a story structure with a full example, weak versus strong answers, the judgment questions to rehearse, live AI exercises, and a 30-minute prep plan.</description>
     </item>
     <item>
       <title>No-Code AI Career Transition Path for Non-Engineers</title>
