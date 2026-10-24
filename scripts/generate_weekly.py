@@ -320,8 +320,8 @@ def extract_json(text: str) -> dict:
 def validate(payload: dict, existing_slugs: list[str], week_slug: str) -> list[str]:
     errs: list[str] = []
     updates = payload.get("updates")
-    if not isinstance(updates, list) or not (2 <= len(updates) <= 10):
-        errs.append("updates must be a list of 2-10 items")
+    if not isinstance(updates, list) or not (2 <= len(updates) <= 12):
+        errs.append("updates must be a list of 2-12 items")
         updates = updates if isinstance(updates, list) else []
     for i, u in enumerate(updates):
         for f in ("category", "title", "body", "source_url", "action", "action_link"):
@@ -430,6 +430,7 @@ PUBLISHED_HUBS = {
     datetime.date(2026, 9, 27),
     datetime.date(2026, 10, 4),
     datetime.date(2026, 10, 15),
+    datetime.date(2026, 10, 24),
 }
 
 
