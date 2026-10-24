@@ -1,0 +1,114 @@
+{
+  "week_label": "This week",
+  "week_date": "2026-10-24",
+  "headline": "Agent Skills get a shared home",
+  "lede": "On 22 October 2026 Anthropic said it is donating Agent Skills to the Agentic AI Foundation.",
+  "summary": "Anthropic is donating Agent Skills to the Agentic AI Foundation. The earlier cards stay: GPT-6.1 Sol, Gemini 4 Argon, Muse Wonder, the Gemini agent, Haiku 5.5, Claude in Docs, Sheets, and Slides, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
+  "page_title": "This Week in AI, Oct 24, 2026: Agent Skills",
+  "meta_description": "Reviewed Oct 24, 2026: Anthropic is donating Agent Skills to a shared foundation.",
+  "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
+  "updates": [
+    {
+      "category": "Agents",
+      "date": "2026-10-22",
+      "title": "Agent Skills move to a shared foundation",
+      "body": "On 22 October 2026 Anthropic said it is donating Agent Skills, the open standard that gives agents specialized knowledge and workflows, to the Agentic AI Foundation under the Linux Foundation. A skill is a folder with a SKILL.md file, plus any scripts or reference material the task needs. More than 70 agent platforms, including ChatGPT, Cursor, GitHub Copilot, and VS Code, have integrated the standard. You can keep using it or contribute without joining the foundation. Anthropic has proposed security guidance for people who write and install skills.",
+      "source_url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "action": "Check the company AI policy first, then write one repeated procedure you own as a skill a coworker could follow, and read it yourself before anyone installs it.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Models",
+      "title": "GPT-6.1 Sol is an upgrade to GPT-6 Sol",
+      "body": "OpenAI introduced GPT-6.1 Sol as an upgrade to GPT-6 Sol. OpenAI says it nearly matches GPT-6 Astra on agentic coding, computer use, and professional work. It is available to Plus, Pro, Business, Enterprise, and Edu users in ChatGPT Work and Codex, and it is not yet available in Chat. Developers get it in the API as gpt-6.1-sol.",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "action": "Check the company AI policy first, then rerun one multi-step task you already did on GPT-6 Sol and note which output needed fewer fixes.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Models",
+      "date": "2026-10-13",
+      "title": "Gemini 4 Argon is globally available",
+      "body": "On 13 October 2026 Google made Gemini 4 Argon globally available. Developers and enterprises get it through the API in AI Studio and the Gemini platform, and enterprises can use Gemini for business. Google AI Ultra subscribers get it in Google Antigravity. Google AI Pro and Ultra subscribers get it in the Gemini app and AI Mode. It is for complex work across software engineering, enterprise knowledge work such as legal and finance, cybersecurity, and science. The Gemini app adds a toggle from chat to tasks.",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "action": "Check the company AI policy first, then give one long-horizon task you own a clear goal, allowed sources, and a finish line, and review the result yourself.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Models",
+      "date": "2026-10-12",
+      "title": "Muse Wonder is Meta's most capable pair",
+      "body": "On 12 October 2026 Meta introduced Muse Wonder and Muse Wonder Full, its most capable models, for personal and professional agent tasks. Active Memory carries context across conversations. Active Focus keeps working toward a goal and checks in before important actions. Muse Wonder is available now through the Meta Model API and Muse Code. Muse Wonder Full is for Muse Code subscribers. Muse Wonder will later power Muse, rolling out first to subscribers.",
+      "source_url": "https://research.meta.ai/blog/muse-wonder",
+      "action": "Before trusting any agent's memory at work, write down three facts it should carry over, then check in a second session whether it recalled them correctly. You stay the check, and follow your company's AI policy.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Agents",
+      "date": "2026-10-08",
+      "title": "Gemini agent is a universal agent for work",
+      "body": "On 8 October 2026, Google Cloud announced the Gemini agent and called it a universal agent for work. One prompt box carries the organization's business context. It plans the work, uses skills and tools, and connects to Cloud customers' business systems. It brings finished work back inside documents, the inbox, and developer environments. It picks the best model for the job, with built-in cost controls and enterprise security, admin, and governance.",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/",
+      "action": "Write one outcome-shaped request for a recurring task you own (the goal, allowed sources, what done looks like, where you sign off), then run it by hand once and time it as your baseline.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Models",
+      "date": "2026-10-07",
+      "title": "Claude Haiku 5.5 is for high-volume work",
+      "body": "On 7 October 2026 Anthropic introduced Claude Haiku 5.5 and called it the cheapest, fastest, and most capable small model it has released. It is for high-volume, cost-sensitive work such as summaries, compactions, database queries, and classification. It pairs with Opus 5.5 and Sonnet 5.5 as a subagent on coding work. It is the first Haiku-class model with an adjustable effort setting. It is available now on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure.",
+      "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+      "action": "Check the company AI policy first, then move one repetitive summary or classification task onto Haiku 5.5 and spot-check five outputs against the source.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Tools",
+      "title": "Claude works in Docs, Sheets, and Slides",
+      "body": "Claude for Google Workspace is in public beta on all paid Claude plans. Claude works inside Docs, Sheets, and Slides. Beta Docs, Sheets, and Slides connectors also let Claude create and edit those files from chat.",
+      "source_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+      "action": "Run your weekly Sheet cleanup once in the Claude sidebar and time it against your manual run.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Models",
+      "date": "2026-09-28",
+      "title": "Claude Sonnet 5.5 is for scoped work",
+      "body": "Anthropic released Sonnet 5.5 on 28 September 2026 as a faster, lower-cost complement to Opus 5.5 for well-scoped tasks such as bugs, documents, slides, and spreadsheets. In Claude Code and Anthropic's apps, the default effort is Medium.",
+      "source_url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "action": "Move one well-scoped task you already own onto Sonnet 5.5 before you spend Opus on it.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Tools",
+      "title": "Claude Code aliases now point at 5.5",
+      "body": "On the Anthropic API, opus resolves to Opus 5.5 and sonnet resolves to Sonnet 5.5. Claude Platform on AWS still resolves sonnet to Sonnet 4.6. Bedrock and Google Cloud Agent Platform resolve it to Sonnet 4.5. Microsoft Foundry resolves opus to Opus 4.6 and sonnet to Sonnet 4.5. Sonnet 5.5 needs Claude Code v2.1.284 or later, and Opus 5.5 needs v2.1.280 or later.",
+      "source_url": "https://code.claude.com/docs/en/model-config",
+      "action": "Check which alias your session resolves. If a 5.5 request fails, update Claude Code before you brief a long task.",
+      "action_link": "prompts.html"
+    },
+    {
+      "category": "Agents",
+      "title": "ChatGPT dots keep working between chats",
+      "body": "OpenAI describes dots as always-on agents in ChatGPT that take ongoing work and keep going between conversations. You set a goal, connect the apps, and define what the dot may do on its own. Rollout is gradual for eligible Pro and Business Premium users aged 18 or older. Pro excludes the EEA, Switzerland, and the UK at launch, and Enterprise is a beta that is off by default.",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "action": "Write the brief before you create one: goal, inputs, allowed tools, and the stop condition.",
+      "action_link": "blog/hand-off-a-recurring-workflow.html"
+    },
+    {
+      "category": "Connected AI",
+      "date": "2026-09-25",
+      "title": "Work IQ business data is in preview",
+      "body": "Microsoft's 25 September 2026 post says Work IQ now grounds Copilot and agents in Dynamics 365 and Power Platform data, plus Microsoft 365 context. The preview started 30 September 2026 and continues through October. Governed actions stay inside the user's permissions and can require approval.",
+      "source_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "action": "Name one business question that needs your Dynamics or Power Platform data, then decide whether Work IQ should be on for that question.",
+      "action_link": "blog/copilot-work-iq-on-off.html"
+    }
+  ],
+  "post": {
+    "slug": "weekly-ai-brief-2026-10-04",
+    "title": "Limited access, and agents that keep going",
+    "description": "Reviewed Oct 24, 2026: Anthropic is donating Agent Skills to a shared foundation.",
+    "category": "Weekly Brief",
+    "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is globally available. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
+  }
+}
