@@ -2,10 +2,10 @@
   "week_label": "This week",
   "week_date": "2026-10-24",
   "headline": "Agent Skills get a shared home",
-  "lede": "On 22 October 2026 Anthropic said it is donating Agent Skills to the Agentic AI Foundation. OpenAI's frontier models are coming to Google Cloud's Model Garden, with general availability planned in the coming weeks.",
-  "summary": "Anthropic is donating Agent Skills to the Agentic AI Foundation. OpenAI's frontier models are coming to Google Cloud. The earlier cards stay: GPT-6.1 Sol, Gemini 4 Argon, Muse Wonder, the Gemini agent, Haiku 5.5, Claude in Docs, Sheets, and Slides, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
+  "lede": "On 22 October 2026 Anthropic said it is donating Agent Skills to the Agentic AI Foundation.",
+  "summary": "Anthropic is donating Agent Skills to the Agentic AI Foundation. The earlier cards stay: GPT-6.1 Sol, Gemini 4 Argon, Muse Wonder, the Gemini agent, Haiku 5.5, Claude in Docs, Sheets, and Slides, Sonnet 5.5, Claude Code aliases, ChatGPT dots, and Work IQ.",
   "page_title": "This Week in AI, Oct 24, 2026: Agent Skills",
-  "meta_description": "Reviewed Oct 24, 2026: Anthropic is donating Agent Skills to a shared foundation, and OpenAI models are coming to Google Cloud.",
+  "meta_description": "Reviewed Oct 24, 2026: Anthropic is donating Agent Skills to a shared foundation.",
   "prompt_of_week": "You are handing off one recurring workflow. Goal: [ONE OUTCOME]. Inputs you may read: [NAMED FILES OR SYSTEMS]. Tools you may use: [LIST]. You may not send, pay, delete, or change access. Stop and ask when a source is missing, a figure is not in the inputs, or the next step needs a human sign-off. Return the draft, the sources you used, and anything you refused to do.",
   "updates": [
     {
@@ -16,15 +16,6 @@
       "source_url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
       "action": "Check the company AI policy first, then write one repeated procedure you own as a skill a coworker could follow, and read it yourself before anyone installs it.",
       "action_link": "prompts.html"
-    },
-    {
-      "category": "Tools",
-      "date": "2026-10-21",
-      "title": "OpenAI models are coming to Google Cloud",
-      "body": "On 21 October 2026 OpenAI said it is partnering with Google Cloud to bring OpenAI's frontier models and Codex agentic workflows into Google Cloud's Model Garden. Customers will be able to buy those models through the Google Cloud Marketplace, and enterprises with Google Cloud spend commitments will be able to draw those purchases down against the commitments. The integration pairs the models with Google Cloud's access controls and centralized data governance. OpenAI models will soon be available in Google Antigravity and the Gemini Agent. General availability is planned in the coming weeks. Microsoft remains OpenAI's primary cloud partner.",
-      "source_url": "https://openai.com/index/openai-models-google-cloud",
-      "action": "Check the company AI policy first, then name one workflow you already run on an OpenAI model and the company data it would be allowed to see if that model were reached through Google Cloud.",
-      "action_link": "blog/hand-off-a-recurring-workflow.html"
     },
     {
       "category": "Models",
@@ -116,7 +107,7 @@
   "post": {
     "slug": "weekly-ai-brief-2026-10-04",
     "title": "Limited access, and agents that keep going",
-    "description": "Reviewed Oct 24, 2026: Anthropic is donating Agent Skills to a shared foundation, and OpenAI models are coming to Google Cloud.",
+    "description": "Reviewed Oct 24, 2026: Anthropic is donating Agent Skills to a shared foundation.",
     "category": "Weekly Brief",
     "body_html": "<section><h2>Sources</h2><p>Gemini 4 Argon is globally available. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\">Google's announcement</a>.</p><p>Claude Sonnet 5.5 is for scoped work. <a href=\"https://www.anthropic.com/claude-sonnet-5-5\">Anthropic's Sonnet 5.5 page</a>.</p></section>"
   }
