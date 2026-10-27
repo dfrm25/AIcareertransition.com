@@ -86,6 +86,38 @@ def _domain_ok(url: str) -> bool:
     )
 
 
+def _norm_url(url: str) -> str:
+    url = str(url or "").strip().split("#", 1)[0].split("?", 1)[0]
+    if url.endswith("/"):
+        url = url[:-1]
+    return url.lower()
+
+
+# Announcement URLs for GPT-6.1 Terra. A later daily run must not add a second card.
+_TERRA_SOURCE_RE = re.compile(
+    r"introducing-gpt-6-1-terra|gpt-6-1-terra-in-github-copilot|gpt-6-1-terra-now-generally-available",
+    re.I,
+)
+
+
+def update_already_on_hub(update: dict, covered: list[str]) -> bool:
+    """True when the hub already carries this announcement.
+
+    Match ignores a trailing slash, query, or fragment. GPT-6.1 Terra also
+    matches by its OpenAI, Microsoft, and GitHub announcement URLs, or by a
+    title that names the model, once any of those URLs is already on the hub.
+    """
+    src = str(update.get("source_url") or "")
+    norms = {_norm_url(item) for item in covered}
+    if _norm_url(src) and _norm_url(src) in norms:
+        return True
+    if not any(_TERRA_SOURCE_RE.search(item) for item in covered):
+        return False
+    if _TERRA_SOURCE_RE.search(src):
+        return True
+    return re.search(r"gpt-6\.1\s*terra", str(update.get("title") or ""), re.I) is not None
+
+
 # --------------------------------------------------------------------------- #
 # 1. Leads from official feeds (hints for the agent, never published as-is)
 # --------------------------------------------------------------------------- #
@@ -170,7 +202,7 @@ Find what OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini, Workspace), and 
 Leads from official feeds (incomplete, and many are not relevant):
 {lead_lines}
 
-Already covered on the site (do not repeat these):
+Already covered on the site (do not repeat these URLs, or a second card for the same model announcement):
 {covered}
 
 What counts: new features people can use at work, new models in the products people use, plan or availability changes, new admin, privacy, or data controls, agent features.
@@ -309,7 +341,7 @@ def validate(payload: dict, since: datetime.date, today: datetime.date,
         src = u.get("source_url", "")
         if src and not _domain_ok(src):
             errs.append(f"update[{i}] source is not an official vendor page: {src}")
-        if src in hub_sources:
+        if update_already_on_hub(u, hub_sources):
             errs.append(f"update[{i}] is already on the hub: {src}")
         try:
             day = datetime.date.fromisoformat(str(u.get("date", ""))[:10])
@@ -538,7 +570,7 @@ def render_home(payload: dict) -> str:
             <p class="card-description" style="margin-top: var(--space-sm);"><strong>Check:</strong> {esc(u["watch_out"])}</p>
           </div>'''
         )
-    n = len(payload["updates"])
+    n = len(payload["updates"]) + int(payload.get("kept_cards") or 0)
     return (
         f'        <h2 class="ax-h2">{esc(payload["headline"])}</h2>\n'
         f'        <p class="ax-sh__sub">{esc(payload["lede"])}</p>\n'
@@ -584,6 +616,24 @@ def hub_sources(text: str) -> list[str]:
     return sorted(set(re.findall(r'href="(https://[^"]+)"', block.group(1))))
 
 
+def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
+    """The live Terra card, when this brief did not already include that announcement.
+
+    The daily rewrite replaces the updates block. Terra is removed from a new
+    payload by the already-on-the-hub check, so the existing card has to be
+    copied forward or the refresh drops it.
+    """
+    if any(_TERRA_SOURCE_RE.search(str(src or "")) for src in incoming_sources):
+        return ""
+    block = re.search(r"<!-- WEEKLY:UPDATES:START -->(.*?)<!-- WEEKLY:UPDATES:END -->", text, re.DOTALL)
+    if not block:
+        return ""
+    for art in re.findall(r'<article class="ax-wcard"[^>]*>.*?</article>', block.group(1), re.DOTALL):
+        if "introducing-gpt-6-1-terra" in art:
+            return art.strip()
+    return ""
+
+
 def tracker_text(text: str) -> str:
     block = re.search(r"<!-- WEEKLY:TRACKER:START -->(.*?)<!-- WEEKLY:TRACKER:END -->", text, re.DOTALL)
     if not block:
@@ -615,8 +665,14 @@ def rewrite_hub(text: str, payload: dict, published: datetime.date) -> str:
                          render_strip(published, carried_week_dates(text, published)))
     text = replace_block(text, "<!-- WEEKLY:SUMMARY:START -->", "<!-- WEEKLY:SUMMARY:END -->",
                          render_summary(payload["summary"], since, slug))
+    incoming = [str(u.get("source_url") or "") for u in payload["updates"]]
+    updates_html = render_updates(payload["updates"])
+    extra = kept_terra_card(text, incoming)
+    payload["kept_cards"] = 1 if extra else 0
+    if extra:
+        updates_html = updates_html.replace("\n</div></div>", "\n" + extra + "\n</div></div>", 1)
     text = replace_block(text, "<!-- WEEKLY:UPDATES:START -->", "<!-- WEEKLY:UPDATES:END -->",
-                         render_updates(payload["updates"]))
+                         updates_html)
     text = replace_block(text, "<!-- WEEKLY:TIP:START -->", "<!-- WEEKLY:TIP:END -->",
                          render_tip(payload["tip"], slug))
     if payload.get("tracker"):
@@ -867,6 +923,18 @@ def main() -> int:
     if payload.get("skip"):
         print(f"[info] quiet day, nothing published: {payload.get('reason', 'no reason given')}")
         return 0
+
+    updates = payload.get("updates")
+    if isinstance(updates, list):
+        fresh, skipped = [], []
+        for item in updates:
+            if update_already_on_hub(item, covered):
+                skipped.append(str(item.get("title") or item.get("source_url") or "update"))
+            else:
+                fresh.append(item)
+        if skipped:
+            print("[info] already on the hub, not repeated: " + "; ".join(skipped))
+        payload["updates"] = fresh
 
     slug = f"weekly-ai-brief-{today.isoformat()}"
     payload.setdefault("post", {})["slug"] = slug
