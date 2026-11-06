@@ -106,15 +106,19 @@ _ANNOUNCEMENTS = (
         re.compile(r"introducing-gemini-4-carbon", re.I),
         re.compile(r"gemini\s*4\s*carbon", re.I),
     ),
+    (
+        re.compile(r"introducing-images-2-6", re.I),
+        re.compile(r"images\s*2\.6", re.I),
+    ),
 )
 
 
 def update_already_on_hub(update: dict, covered: list[str]) -> bool:
     """True when the hub already carries this announcement.
 
-    Match ignores a trailing slash, query, or fragment. GPT-6.1 Terra and
-    Gemini 4 Carbon also match by announcement URL or by a title that names
-    the model, once that announcement is already linked on the hub.
+    Match ignores a trailing slash, query, or fragment. GPT-6.1 Terra,
+    Gemini 4 Carbon, and Images 2.6 also match by announcement URL or by a
+    title that names them, once that announcement is already linked on the hub.
     """
     src = str(update.get("source_url") or "")
     norms = {_norm_url(item) for item in covered}
@@ -634,22 +638,30 @@ def hub_sources(text: str) -> list[str]:
     return sorted(set(re.findall(r'href="(https://[^"]+)"', "\n".join(chunks))))
 
 
-def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
-    """The live Terra card, when this brief did not already include that announcement.
+_KEEP_URL_MARKERS = (
+    "introducing-gpt-6-1-terra",
+    "introducing-images-2-6",
+)
 
-    The daily rewrite replaces the updates block. Terra is removed from a new
-    payload by the already-on-the-hub check, so the existing card has to be
-    copied forward or the refresh drops it.
+
+def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
+    """Pinned cards the new brief did not already include.
+
+    The daily rewrite replaces the updates block. Terra and Images 2.6 are
+    removed from a new payload by the already-on-the-hub check, so those
+    cards are copied forward or the refresh drops them.
     """
-    if any(_ANNOUNCEMENTS[0][0].search(str(src or "")) for src in incoming_sources):
-        return ""
+    incoming = "\n".join(str(src or "") for src in incoming_sources)
     block = re.search(r"<!-- WEEKLY:UPDATES:START -->(.*?)<!-- WEEKLY:UPDATES:END -->", text, re.DOTALL)
     if not block:
         return ""
+    kept = []
     for art in re.findall(r'<article class="ax-wcard"[^>]*>.*?</article>', block.group(1), re.DOTALL):
-        if "introducing-gpt-6-1-terra" in art:
-            return art.strip()
-    return ""
+        for marker in _KEEP_URL_MARKERS:
+            if marker in art and marker not in incoming:
+                kept.append(art.strip())
+                break
+    return "\n".join(kept)
 
 
 def tracker_text(text: str) -> str:
@@ -686,7 +698,7 @@ def rewrite_hub(text: str, payload: dict, published: datetime.date) -> str:
     incoming = [str(u.get("source_url") or "") for u in payload["updates"]]
     updates_html = render_updates(payload["updates"])
     extra = kept_terra_card(text, incoming)
-    payload["kept_cards"] = 1 if extra else 0
+    payload["kept_cards"] = extra.count("<article") if extra else 0
     if extra:
         updates_html = updates_html.replace("\n</div></div>", "\n" + extra + "\n</div></div>", 1)
     text = replace_block(text, "<!-- WEEKLY:UPDATES:START -->", "<!-- WEEKLY:UPDATES:END -->",
