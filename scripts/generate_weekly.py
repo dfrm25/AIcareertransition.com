@@ -110,6 +110,10 @@ _ANNOUNCEMENTS = (
         re.compile(r"introducing-images-2-6", re.I),
         re.compile(r"images\s*2\.6", re.I),
     ),
+    (
+        re.compile(r"claude-fable-and-mythos-5-2", re.I),
+        re.compile(r"fable\s*5\.2|mythos\s*5\.2", re.I),
+    ),
 )
 
 
@@ -117,8 +121,9 @@ def update_already_on_hub(update: dict, covered: list[str]) -> bool:
     """True when the hub already carries this announcement.
 
     Match ignores a trailing slash, query, or fragment. GPT-6.1 Terra,
-    Gemini 4 Carbon, and Images 2.6 also match by announcement URL or by a
-    title that names them, once that announcement is already linked on the hub.
+    Gemini 4 Carbon, Images 2.6, and Claude Fable 5.2 also match by
+    announcement URL or by a title that names Fable 5.2 or Mythos 5.2, once
+    that announcement is already linked on the hub.
     """
     src = str(update.get("source_url") or "")
     norms = {_norm_url(item) for item in covered}
@@ -641,15 +646,16 @@ def hub_sources(text: str) -> list[str]:
 _KEEP_URL_MARKERS = (
     "introducing-gpt-6-1-terra",
     "introducing-images-2-6",
+    "claude-fable-and-mythos-5-2",
 )
 
 
 def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
     """Pinned cards the new brief did not already include.
 
-    The daily rewrite replaces the updates block. Terra and Images 2.6 are
-    removed from a new payload by the already-on-the-hub check, so those
-    cards are copied forward or the refresh drops them.
+    The daily rewrite replaces the updates block. Terra, Images 2.6, and
+    Fable 5.2 are removed from a new payload by the already-on-the-hub check,
+    so those cards are copied forward or the refresh drops them.
     """
     incoming = "\n".join(str(src or "") for src in incoming_sources)
     block = re.search(r"<!-- WEEKLY:UPDATES:START -->(.*?)<!-- WEEKLY:UPDATES:END -->", text, re.DOTALL)

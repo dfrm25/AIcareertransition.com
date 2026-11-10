@@ -6,15 +6,15 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Nov 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 10 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <item>
       <title>This Week in AI: AI Moved Into Your Files</title>
       <link>https://aicareertransition.com/this-week.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/this-week.html</guid>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Images 2.6 is in ChatGPT, Codex, and the API. Check faces, logos, and numbers before you share a still or a GIF.</description>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Claude Fable 5.2 is for large, open-ended technical work. Start most tasks on Opus 5.5, and review the output before you share it.</description>
     </item>
     <item>
       <title>AI Moved Into Your Files. Check Its Work There.</title>
