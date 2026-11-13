@@ -103,8 +103,12 @@ _ANNOUNCEMENTS = (
         re.compile(r"gpt-6\.1\s*terra", re.I),
     ),
     (
-        re.compile(r"introducing-gemini-4-carbon", re.I),
+        re.compile(r"introducing-gemini-4-carbon|gemini-4-carbon-now-available", re.I),
         re.compile(r"gemini\s*4\s*carbon", re.I),
+    ),
+    (
+        re.compile(r"introducing-gemini-4-hydrogen", re.I),
+        re.compile(r"gemini\s*4\s*hydrogen", re.I),
     ),
     (
         re.compile(r"introducing-images-2-6", re.I),
@@ -647,15 +651,18 @@ _KEEP_URL_MARKERS = (
     "introducing-gpt-6-1-terra",
     "introducing-images-2-6",
     "claude-fable-and-mythos-5-2",
+    "gemini-4-carbon-now-available",
+    "introducing-gemini-4-hydrogen",
 )
 
 
 def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
     """Pinned cards the new brief did not already include.
 
-    The daily rewrite replaces the updates block. Terra, Images 2.6, and
-    Fable 5.2 are removed from a new payload by the already-on-the-hub check,
-    so those cards are copied forward or the refresh drops them.
+    The daily rewrite replaces the updates block. Terra, Images 2.6,
+    Fable 5.2, Carbon, and Hydrogen are removed from a new payload by the
+    already-on-the-hub check, so those cards are copied forward or the
+    refresh drops them.
     """
     incoming = "\n".join(str(src or "") for src in incoming_sources)
     block = re.search(r"<!-- WEEKLY:UPDATES:START -->(.*?)<!-- WEEKLY:UPDATES:END -->", text, re.DOTALL)
