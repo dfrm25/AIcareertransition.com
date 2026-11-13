@@ -6,22 +6,22 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
+    <item>
+      <title>This Week in AI: AI Moved Into Your Files</title>
+      <link>https://aicareertransition.com/this-week.html</link>
+      <guid isPermaLink="true">https://aicareertransition.com/this-week.html</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Gemini 4 Hydrogen is for everyday agentic work. Carbon is for harder tasks, and Argon remains the pick for most work.</description>
+    </item>
     <item>
       <title>AI Moved Into Your Files. Check Its Work There.</title>
       <link>https://aicareertransition.com/blog/weekly-ai-brief-2026-10-24.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/blog/weekly-ai-brief-2026-10-24.html</guid>
       <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
       <description>Office inside Copilot, Claude inside Google Docs and Sheets, Gemini on full BigQuery tables, agents that keep working, and Gemini 4 Argon. What changed, who gets it, and how to check the work.</description>
-    </item>
-    <item>
-      <title>This Week in AI: AI Moved Into Your Files</title>
-      <link>https://aicareertransition.com/this-week.html</link>
-      <guid isPermaLink="true">https://aicareertransition.com/this-week.html</guid>
-      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
-      <description>AI moved into your files: Office inside Copilot, Claude in Google Docs and Sheets, Gemini on full BigQuery tables, Claude Duet, Gemini 4 Argon, GPT-6.1 Sol. Who gets it and what to check.</description>
     </item>
     <item>
       <title>Copilot gets business context</title>
