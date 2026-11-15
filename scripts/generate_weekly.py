@@ -111,6 +111,14 @@ _ANNOUNCEMENTS = (
         re.compile(r"gemini\s*4\s*hydrogen", re.I),
     ),
     (
+        re.compile(r"introducing-chatgpt-wallet", re.I),
+        re.compile(r"chatgpt wallet", re.I),
+    ),
+    (
+        re.compile(r"google-wallet-gemini-app", re.I),
+        re.compile(r"google wallet", re.I),
+    ),
+    (
         re.compile(r"introducing-images-2-6", re.I),
         re.compile(r"images\s*2\.6", re.I),
     ),
@@ -653,14 +661,17 @@ _KEEP_URL_MARKERS = (
     "claude-fable-and-mythos-5-2",
     "gemini-4-carbon-now-available",
     "introducing-gemini-4-hydrogen",
+    "introducing-chatgpt-wallet",
+    "google-wallet-gemini-app",
 )
 
 
 def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
     """Pinned cards the new brief did not already include.
 
-    The daily rewrite replaces the updates block. Terra, Images 2.6,
-    Fable 5.2, Carbon, and Hydrogen are removed from a new payload by the
+    The daily rewrite replaces the updates block. Pinned cards, including
+    Terra, Images 2.6, Fable 5.2, Carbon, Hydrogen, ChatGPT Wallet, and
+    Gemini's Google Wallet connection, are removed from a new payload by the
     already-on-the-hub check, so those cards are copied forward or the
     refresh drops them.
     """
