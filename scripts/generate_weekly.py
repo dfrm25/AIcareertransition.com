@@ -656,6 +656,9 @@ def hub_sources(text: str) -> list[str]:
 
 
 _KEEP_URL_MARKERS = (
+    "introducing-gemini-4-neon",
+    "introducing-gpt-6-2-astra-sol",
+    "microsoft-ignite-2026",
     "introducing-gpt-6-1-terra",
     "introducing-images-2-6",
     "claude-fable-and-mythos-5-2",
@@ -669,7 +672,7 @@ _KEEP_URL_MARKERS = (
 def kept_terra_card(text: str, incoming_sources: list[str]) -> str:
     """Pinned cards the new brief did not already include.
 
-    The daily rewrite replaces the updates block. Pinned cards, including
+    The daily rewrite replaces the updates block. Pinned cards, including Gemini 4 Neon, GPT-6.2 Astra and Sol, the Ignite MAI models,
     Terra, Images 2.6, Fable 5.2, Carbon, Hydrogen, ChatGPT Wallet, and
     Gemini's Google Wallet connection, are removed from a new payload by the
     already-on-the-hub check, so those cards are copied forward or the

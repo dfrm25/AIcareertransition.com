@@ -1,5 +1,5 @@
 # AI Career Transition - LLM content map
-# Last updated: 2026-10-24
+# Last updated: 2026-11-24
 
 site: https://aicareertransition.com
 name: AI Career Transition
@@ -7,6 +7,7 @@ description: Practical AI education for professionals focused on career outcomes
 
 ## Live / Updated Weekly
 # Best single source for what changed in AI this week, with official-source links and career actions.
+# Reviewed 2026-11-24. Lead item: Google Gemini 4 Neon (18 Nov 2026), attributed to blog.google. Also GPT-6.2 Astra and Sol, and Microsoft MAI.
 - https://aicareertransition.com/this-week.html
 - https://aicareertransition.com/feed.xml
 
