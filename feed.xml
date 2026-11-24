@@ -6,15 +6,15 @@
     <atom:link href="https://aicareertransition.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Weekly AI model, agent, and workflow updates plus new career guides for professionals. Official-source-first, no hype.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 +0000</lastBuildDate>
-    <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
     <ttl>1440</ttl>
     <item>
-      <title>This Week in AI: GPT-6.2 Astra and Microsoft's MAI Models</title>
+      <title>This Week in AI: Gemini 4 Neon, GPT-6.2 Astra, and MAI</title>
       <link>https://aicareertransition.com/this-week.html</link>
       <guid isPermaLink="true">https://aicareertransition.com/this-week.html</guid>
-      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
-      <description>OpenAI says GPT-6.2 Astra is its frontier model and Sol is the everyday model. Microsoft says MAI Code 2 is in GitHub Copilot. For people already in a job.</description>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Google says Gemini 4 Neon: frontier-level intelligence for software, knowledge work, and science, at $3 per million input tokens. For people already in a job.</description>
     </item>
     <item>
       <title>AI Moved Into Your Files. Check Its Work There.</title>
