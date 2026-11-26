@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="AI 101 for people who already have a job: current ChatGPT, Claude, Gemini, and Copilot basics, plus one workflow you can finish this week.">
+  <meta name="description" content="AI 101 for people who already have a job: ChatGPT, Claude, Gemini, and Copilot basics for 2026, which model to use for which task, and one workflow to finish this week.">
   <meta name="robots" content="index, follow">
   
   <!-- Open Graph -->
@@ -39,9 +39,9 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "AI 101 for People Who Already Have a Job",
-    "description": "Current ChatGPT, Claude, Gemini, and Copilot basics, plus one workflow you can finish this week.",
+    "description": "ChatGPT, Claude, Gemini, and Copilot basics for 2026, which model to use for which task, and one workflow you can finish this week.",
     "url": "https://aicareertransition.com/101.html",
-    "dateModified": "2026-09-27",
+    "dateModified": "2026-11-26",
     "isPartOf": {"@type": "WebSite", "name": "AI Career Transition", "url": "https://aicareertransition.com"},
     "publisher": {"@type": "Organization", "name": "AI Career Transition"}
   }
@@ -76,6 +76,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI model should I use at work in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use your company's approved tool first. Then match the model to the job. Each vendor now has a model for its hardest work (OpenAI GPT-6.2 Astra, Claude Fable 5.2, Gemini 4 Carbon) and one for everyday work (GPT-6.2 Sol, Claude Opus 5.5, Gemini 4 Neon or Hydrogen). Start on the everyday model and move up only when you would otherwise fix a lot of the output."
       }
     }
   ]
@@ -153,6 +161,7 @@
     <section class="section" style="padding-top: 0; padding-bottom: 0;">
       <div class="container">
         <p class="proof-meta" style="text-align: center; margin: 0;"><a href="career.html#roadmap">Your path: 101 → 201 → proof</a></p>
+        <p class="proof-meta" style="text-align: center; margin: var(--space-xs) 0 0;">Reviewed <time datetime="2026-11-26">26 Nov 2026</time>. Model names checked against each vendor's own page.</p>
       </div>
     </section>
 
@@ -436,6 +445,45 @@
           </div>
         </div>
 
+        <div id="which-model" class="card animate-on-scroll" style="max-width: 900px; margin: 0 auto var(--space-xl); padding: var(--space-xl);">
+          <h3 style="font-size: 1.0625rem; margin-bottom: var(--space-sm);">Which model to pick in late 2026</h3>
+          <p style="line-height: 1.7; color: var(--color-text-secondary); margin-bottom: var(--space-md);">Every big vendor now splits its lineup into a model for the hardest projects and a cheaper one for everyday work. Start on the everyday model. Move up only when you keep fixing the output.</p>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size:15px;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--border-color);">
+                  <th style="text-align: left; padding: var(--space-sm) var(--space-md);">Vendor</th>
+                  <th style="text-align: left; padding: var(--space-sm) var(--space-md);">Everyday work</th>
+                  <th style="text-align: left; padding: var(--space-sm) var(--space-md);">Hardest work</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: var(--space-sm) var(--space-md); font-weight: 600;">OpenAI</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">GPT-6.2 Sol</td>
+                  <td style="padding: var(--space-sm) var(--space-md);"><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank" rel="noopener noreferrer">GPT-6.2 Astra</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: var(--space-sm) var(--space-md); font-weight: 600;">Anthropic</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">Claude Opus 5.5</td>
+                  <td style="padding: var(--space-sm) var(--space-md);"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer">Claude Fable 5.2</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: var(--space-sm) var(--space-md); font-weight: 600;">Google</td>
+                  <td style="padding: var(--space-sm) var(--space-md);"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" rel="noopener noreferrer">Gemini 4 Neon</a> or Hydrogen</td>
+                  <td style="padding: var(--space-sm) var(--space-md);"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener noreferrer">Gemini 4 Carbon</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: var(--space-sm) var(--space-md); font-weight: 600;">Microsoft</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">Copilot on Auto</td>
+                  <td style="padding: var(--space-sm) var(--space-md);">Think deeper, or a named model under More</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: var(--space-md); font-size:15px; color: var(--color-text-muted);">What you see depends on your plan and what your company turned on. <a href="tools-comparison.html" style="color: var(--color-accent-primary);">Compare the tools by role</a> · <a href="this-week.html" style="color: var(--color-accent-primary);">What changed this week</a></p>
+        </div>
+
         <div class="grid grid-4 animate-on-scroll">
           <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-card" style="text-decoration: none;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT logo" class="tool-card-logo" style="background: #fff; padding: 12px;" width="2406" height="2406">
@@ -575,6 +623,10 @@
           <div class="accordion-item">
             <div class="accordion-header">Do I need to pay for AI tools?</div>
             <div class="accordion-content">No. ChatGPT, Gemini, and Claude all offer free tiers. Start free, then upgrade if you hit limits.</div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">Which AI model should I use at work in 2026?</div>
+            <div class="accordion-content">Use your company's approved tool first. Then match the model to the job. Each vendor now has a model for its hardest work (OpenAI GPT-6.2 Astra, Claude Fable 5.2, Gemini 4 Carbon) and one for everyday work (GPT-6.2 Sol, Claude Opus 5.5, Gemini 4 Neon or Hydrogen). Start on the everyday model and move up only when you would otherwise fix a lot of the output. <a href="#which-model">See the table</a>.</div>
           </div>
         </div>
       </div>
